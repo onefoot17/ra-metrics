@@ -11,7 +11,7 @@
                         <img src="../assets/img/user/user-13.jpg" alt="" />
                     </div>
                     <div class="info">
-                        <b class="caret pull-right"></b>Felipe Pastana
+                        <b class="caret pull-right"></b>{{Auth::user()->name}}
                         <small>Back end developer</small>
                     </div>
                 </a>
@@ -36,7 +36,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li><a href="page_blank.html">Blank Page</a></li>
-                    <li class="active"><a href="page_with_footer.html">Caregiver List</a></li>
+                    <li class="active"><a href="page_with_footer.html">Dashboard</a></li>
                 </ul>
             </li>
             <!-- begin sidebar minify button -->
