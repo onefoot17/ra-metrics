@@ -33,7 +33,7 @@
 			<!-- begin brand -->
 			<div class="login-header">
 				<div class="brand">
-					<span class="logo"></span> <b>Color</b> Admin
+					<span class="logo"></span> <b>RA</b> Metrics
 					<small>responsive bootstrap 4 admin template</small>
 				</div>
 				<div class="icon">
@@ -61,7 +61,7 @@
 						<button type="submit" class="btn btn-success btn-block btn-lg">Sign me in</button>
 					</div>
 					<div class="m-t-20">
-						Not a member yet? Click <a href="javascript:;">here</a> to register.
+						Not a member yet? Click <a href="{{route('register)}}">here</a> to register.
                     </div>
 
                     <br/>
