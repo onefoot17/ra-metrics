@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>RA Metrics | Register Page</title>
+	<title>RA-METRICS | Register Page</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -27,7 +27,7 @@
 			<div class="news-feed">
 				<div class="news-image" style="background-image: url({{asset('color-admin/assets/img/login-bg/login-bg-15.jpg')}})"></div>
 				<div class="news-caption">
-					<h4 class="caption-title"><b>RA</b> Metrics</h4>
+					<h4 class="caption-title"><b>RA</b>-METRICS</h4>
 					<p>
 						As a Color Admin app administrator, you use the Color Admin console to manage your organization’s account, such as add new users, manage security settings, and turn on the services you want your team to access.
 					</p>
@@ -39,7 +39,7 @@
 				<!-- begin register-header -->
 				<h1 class="register-header">
 					Sign Up
-					<small>Create your RA Metrics Account. It’s free and always will be.</small>
+					<small>Create your RA-METRICS Account. It’s free and always will be.</small>
 				</h1>
 				<!-- end register-header -->
 				<!-- begin register-content -->
@@ -97,7 +97,7 @@
 						</div>
 						<hr />
 						<p class="text-center mb-0">
-							&copy; RA Metrics All Right Reserved 2020
+							&copy; RA-METRICS All Right Reserved 2020
 						</p>
 					</form>
 				</div>

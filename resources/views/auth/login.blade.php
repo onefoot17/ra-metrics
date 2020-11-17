@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Color Admin | Login Page</title>
+	<title>RA-METRICS | Login Page</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -33,7 +33,7 @@
 			<!-- begin brand -->
 			<div class="login-header">
 				<div class="brand">
-					<span class="logo"></span> <b>RA</b> Metrics
+					<span class="logo"></span> <b>RA</b>-METRICS
 					<small>responsive bootstrap 4 admin template</small>
 				</div>
 				<div class="icon">
