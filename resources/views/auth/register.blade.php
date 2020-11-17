@@ -85,6 +85,9 @@
 							<button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
                         </div>
                         
+                        <br/>
+                        <br/>
+
                         <div class="text-danger">
                             <x-jet-validation-errors class="mb-4" />
                         </div>
