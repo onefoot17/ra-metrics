@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Plants\PlantParentsSpecies;
+use App\Http\Controllers\Plants\PlantParentSpecieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +25,10 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'plants'], function(){
     Route::group(['prefix' => 'plants-parents-species'], function(){
-        Route::get('/', [PlantParentsSpecies::class, 'index'])->name('plant_parents_species_index');
-        Route::get('/create', [PlantParentsSpecies::class, 'create'])->name('plant_parents_species_create');
-        Route::post('/store', [PlantParentsSpecies::class, 'store'])->name('plant_parents_species_store');
+        Route::get('/', [PlantParentSpecieController::class, 'index'])->name('plant_parents_species_index');
+        Route::get('/create', [PlantParentSpecieController::class, 'create'])->name('plant_parents_species_create');
+        Route::post('/store', [PlantParentSpecieController::class, 'store'])->name('plant_parents_species_store');
+        Route::get('/edit', [PlantParentSpecieController::class, 'edit'])->name('plant_parents_species_edit');
     });
 });
 

@@ -18,11 +18,11 @@
     <ol class="breadcrumb float-xl-right">
         <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
         <li class="breadcrumb-item"><a href="javascript:;">Plants</a></li>
-        <li class="breadcrumb-item active">Insert Plant Parents Species</li>
+        <li class="breadcrumb-item active">Edit Plant Parents Species</li>
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Plant <small> insert</small></h1>
+    <h1 class="page-header">Plant <small> edit</small></h1>
     <!-- end page-header -->
     
     <!-- begin panel -->

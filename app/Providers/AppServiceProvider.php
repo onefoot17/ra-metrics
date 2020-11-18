@@ -13,7 +13,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('App\Repositories\Plants\Contracts\PlantRepositoryInterface', 'App\Repositories\Plants\PlantRepository');
+        /**
+         * Services
+         */
+        $this->app->bind('App\Services\Plants\Contracts\PlantServiceInterface', 'App\Services\Plants\PlantService');
+
+        /**
+         * Repositories
+         */
+        $this->app->bind('App\Repositories\Plants\Contracts\PlantParentSpecieRepositoryInterface', 'App\Repositories\Plants\PlantParentSpecieRepository');
     }
 
     /**

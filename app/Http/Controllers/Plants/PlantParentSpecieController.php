@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Plants;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Repositories\Plants\Contracts\PlantRepositoryInterface;
+use App\Services\Plants\Contracts\PlantServiceInterface;
 
-class PlantParentsSpecies extends Controller
+class PlantParentSpecieController extends Controller
 {
 
     public function __construct()
@@ -41,9 +41,9 @@ class PlantParentsSpecies extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, PlantRepositoryInterface $plants)
+    public function store(Request $request, PlantServiceInterface $plantService)
     {
-        $plants->store($request);
+        $plantService->storePlantParentSpecie($request);
 
         return back()->with('message-success', 'Plant parent specie saved succefully!');
     }
@@ -67,7 +67,7 @@ class PlantParentsSpecies extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('plants.plants-parents-species.edit');
     }
 
     /**
@@ -77,9 +77,11 @@ class PlantParentsSpecies extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, PlantService $plantService)
     {
-        //
+        $plantService->update($request, $id);
+
+        return back()->with('message-success', 'Plant parent specie updated succefully!');
     }
 
     /**
