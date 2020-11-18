@@ -49,7 +49,7 @@
 						<label class="control-label">{{ __('Name') }} <span class="text-danger">*</span></label>
 						<div class="row row-space-10">
 							<div class="col-md-12 m-b-15">
-								<input type="text" class="form-control" placeholder="Name" id='name' name='name' required />
+								<input type="text" class="form-control" placeholder="Name" id='name' name='name' value='{{old('name')}}' required />
 							</div>
 							<!-- <div class="col-md-6 m-b-15">
 								<input type="text" class="form-control" placeholder="Last name" required />
@@ -58,7 +58,7 @@
 						<label class="control-label">{{ __('Email') }} <span class="text-danger">*</span></label>
 						<div class="row m-b-15">
 							<div class="col-md-12">
-								<input type="text" class="form-control" placeholder="Email address" id="email" name="email" required />
+								<input type="text" class="form-control" placeholder="Email address" id="email" name="email" value='{{old('email')}}' required />
 							</div>
 						</div>
 						<label class="control-label">{{ __('Password') }} <span class="text-danger">*</span></label>

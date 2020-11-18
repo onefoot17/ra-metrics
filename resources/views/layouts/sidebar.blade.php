@@ -12,7 +12,7 @@
                     </div>
                     <div class="info">
                         <b class="caret pull-right"></b>{{Auth::user()->name}}
-                        <small>Back end developer</small>
+                        <small>{{date('M-d-Y')}}</small>
                     </div>
                 </a>
             </li>
@@ -32,11 +32,20 @@
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fa fa-cogs"></i>
-                    <span>Admin <span class="label label-theme">NEW</span></span>
+                    <span>Plant <span class="label label-theme">NEW</span></span>
                 </a>
                 <ul class="sub-menu">
-                    <li><a href="page_blank.html">Blank Page</a></li>
-                    <li class="active"><a href="page_with_footer.html">Dashboard</a></li>
+                    <li  @if(Route::currentRouteName() === 'home') class="active" @endif><a href="{{route('home')}}">Home</a></li>                   
+                    <li class="has-sub @if(Route::currentRouteName() === 'plant_parents_species_create') active @endif">
+                        <a href="javascript:;">
+                            <b class="caret"></b>
+                            Plant Parents Species
+                        </a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:;">List</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_parents_species_create') class="active" @endif><a href="{{route('plant_parents_species_create')}}">Create</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             <!-- begin sidebar minify button -->

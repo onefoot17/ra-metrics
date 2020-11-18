@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>RA Metrics | @yield('title')</title>
+	<title>RA-METRICS | @yield('title')</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
     <meta content="" name="author" />
@@ -53,7 +53,7 @@
             @if(!is_null(session('message-success')))
                 $(document).ready(function() {
                     $.gritter.add({
-                        title: "Sucesso!",
+                        title: "Success!",
                         text: '{{session('message-success')}}'
                     });
                     return false;
