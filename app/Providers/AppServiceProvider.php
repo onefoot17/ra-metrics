@@ -22,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
          * Repositories
          */
         $this->app->bind('App\Repositories\Plants\Contracts\PlantParentSpecieRepositoryInterface', 'App\Repositories\Plants\PlantParentSpecieRepository');
+        $this->app->bind('App\Repositories\Plants\Contracts\PlantTypeRepositoryInterface', 'App\Repositories\Plants\PlantTypeRepository');
     }
 
     /**

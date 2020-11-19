@@ -36,10 +36,12 @@ class PlantParentSpecieRepository implements PlantParentSpecieRepositoryInterfac
 
     public function update($request, $id)
     {
+        $comments = substr($request->comments, 0, 254);
+        
         $update = PlantParentSpecie::where('id', $id)
         ->update([
             'plant_parent_name' => $request->plant_parent_name,
-            'comments' => $request->comments
+            'comments' => $comments
         ]);
 
         return $update;
