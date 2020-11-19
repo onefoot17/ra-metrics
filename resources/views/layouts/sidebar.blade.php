@@ -59,11 +59,26 @@
                         @endif">
                         <a href="javascript:;">
                             <b class="caret"></b>
-                            Plants Types
+                            Plant Types
                         </a>
                         <ul class="sub-menu">
                             <li @if(Route::currentRouteName() === 'plant_types_index') class="active" @endif><a href="{{route('plant_types_index')}}">List</a></li>
                             <li @if(Route::currentRouteName() === 'plant_types_create') class="active" @endif><a href="{{route('plant_types_create')}}">Create</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub 
+                        @if(Route::currentRouteName() === 'plant_create' 
+                        or Route::currentRouteName() === 'plant_index'
+                        or Route::currentRouteName() === 'plant_edit') 
+                        active 
+                        @endif">
+                        <a href="javascript:;">
+                            <b class="caret"></b>
+                            Plants
+                        </a>
+                        <ul class="sub-menu">
+                            <li @if(Route::currentRouteName() === 'plant_index') class="active" @endif><a href="{{route('plant_index')}}">List</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_create') class="active" @endif><a href="{{route('plant_create')}}">Create</a></li>
                         </ul>
                     </li>
                 </ul>

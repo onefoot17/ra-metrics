@@ -17,4 +17,11 @@ interface PlantServiceInterface
     public function storePlantType($request);
     public function updatePlantType($request, $id);
     public function destroyPlantType($id);
+
+    // Plants
+    public function getPlant($id);
+    public function getPlants();
+    public function storePlant($request);
+    public function updatePlant($request, $id);
+    public function destroyPlant($id);
 }
