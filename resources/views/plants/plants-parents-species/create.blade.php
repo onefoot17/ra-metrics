@@ -3,7 +3,7 @@
 @php 
 
 @endphp
-@section('title') {{ $title ?? 'Edit Plant Parents Species' }} @stop
+@section('title') {{ $title ?? 'Create Plant Parents Species' }} @stop
 
 @section('css')
     @parent
@@ -18,11 +18,11 @@
     <ol class="breadcrumb float-xl-right">
         <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
         <li class="breadcrumb-item"><a href="javascript:;">Plants</a></li>
-        <li class="breadcrumb-item active">Edit Plant Parents Species</li>
+        <li class="breadcrumb-item active">Insert Plant Parents Species</li>
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Plant <small> edit</small></h1>
+    <h1 class="page-header">Plant <small> insert</small></h1>
     <!-- end page-header -->
     
     <!-- begin panel -->
@@ -37,12 +37,12 @@
             </div>
         </div>
         <div class="panel-body">
-            <form action="{{route('plant_parents_species_update', ['id' => $plantParentSpecie->id])}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('plant_parents_species_store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row m-b-15">
-                    <label class="col-form-label col-md-3">Plant Parent name</label>
+                    <label class="col-form-label col-md-3">Parent name</label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control m-b-5" placeholder="Enter specie name" name="plant_parent_name" id='plant_parent_name' value="{{$plantParentSpecie->plant_parent_name}}" />
+                        <input type="text" class="form-control m-b-5" placeholder="Enter specie name" name="plant_parent_name" id='plant_specie_name' />
                     </div>
                 </div>
                 <div class="form-group row m-b-15">
@@ -54,7 +54,7 @@
                 <div class="form-group row m-b-15">
                     <label class="col-form-label col-md-3">Comments</label>
                     <div class="col-md-9">
-                        <textarea class="form-control" rows="3" name='comments' id='comments'>{{$plantParentSpecie->comments}}</textarea>
+                        <textarea class="form-control" rows="3" name='comments' id='comments'></textarea>
                         <small class="f-s-12 text-grey-darker pull-right">Only 255 characters</small>
                     </div>
                 </div>

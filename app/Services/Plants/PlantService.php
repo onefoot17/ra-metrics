@@ -13,10 +13,38 @@ class PlantService implements PlantServiceInterface
         $this->plantParentSpecieRepository = $plantParentSpecieRepository;
     }
 
+    public function getPlantParentSpecie($id)
+    {
+        $plantParentSpecie = $this->plantParentSpecieRepository->show($id);
+
+        return $plantParentSpecie;
+    }
+
+    public function getPlantParentsSpecies()
+    {
+        $plantParentsSpecies = $this->plantParentSpecieRepository->list();
+
+        return $plantParentsSpecies;
+    }
+
+    public function updatePlantParentSpecie($request, $id)
+    {
+        $update = $this->plantParentSpecieRepository->update($request, $id);
+
+        return $update;
+    }
+
     public function storePlantParentSpecie($request)
     {
         $insert = $this->plantParentSpecieRepository->store($request);
 
         return $insert;
+    }
+
+    public function destroyPlantParentSpecie($id)
+    {
+        $destroy = $this->plantParentSpecieRepository->destroy($id);
+
+        return $destroy;
     }
 }

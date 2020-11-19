@@ -20,9 +20,13 @@ class PlantParentSpecieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PlantServiceInterface $plantService)
     {
-        
+        $plantParentsSpecies = $plantService->getPlantParentsSpecies();
+
+        return view('plants.plants-parents-species.index', [
+            'plantParentsSpecies' => $plantParentsSpecies
+        ]);
     }
 
     /**
@@ -32,7 +36,7 @@ class PlantParentSpecieController extends Controller
      */
     public function create()
     {
-        return view('plants.plants-parents-species.index');
+        return view('plants.plants-parents-species.create');
     }
 
     /**
@@ -45,7 +49,7 @@ class PlantParentSpecieController extends Controller
     {
         $plantService->storePlantParentSpecie($request);
 
-        return back()->with('message-success', 'Plant parent specie saved succefully!');
+        return redirect()->route('plant_parents_species_index')->with('message-success', 'Plant parent specie saved succefully!');
     }
 
     /**
@@ -65,9 +69,13 @@ class PlantParentSpecieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, PlantServiceInterface $plantService)
     {
-        return view('plants.plants-parents-species.edit');
+        $plantParentSpecie = $plantService->getPlantParentSpecie($id);
+
+        return view('plants.plants-parents-species.edit', [
+            'plantParentSpecie' => $plantParentSpecie
+        ]);
     }
 
     /**
@@ -77,9 +85,9 @@ class PlantParentSpecieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id, PlantService $plantService)
+    public function update(Request $request, $id, PlantServiceInterface $plantService)
     {
-        $plantService->update($request, $id);
+        $plantService->updatePlantParentSpecie($request, $id);
 
         return back()->with('message-success', 'Plant parent specie updated succefully!');
     }
@@ -90,8 +98,10 @@ class PlantParentSpecieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, PlantServiceInterface $plantService)
     {
-        //
+        $plantService->destroyPlantParentSpecie($id);
+
+        return back()->with('message-success', 'Plant parent specie deleted succefully!');
     }
 }

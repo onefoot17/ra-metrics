@@ -8,9 +8,18 @@ use App\Models\Plants\PlantParentSpecie;
 
 class PlantParentSpecieRepository implements PlantParentSpecieRepositoryInterface {
 
+    public function show($id)
+    {
+        $show = PlantParentSpecie::where('id', $id)->first();
+
+        return $show;
+    }
+
     public function list()
     {
-        
+        $list = PlantParentSpecie::all();
+
+        return $list;
     }
 
     public function store($request)
@@ -18,7 +27,7 @@ class PlantParentSpecieRepository implements PlantParentSpecieRepositoryInterfac
         $comments = substr($request->comments, 0, 254);
 
         $insert = new PlantParentSpecie();
-        $insert->plant_specie_name = $request->plant_specie_name;
+        $insert->plant_parent_name = $request->plant_parent_name;
         $insert->comments = $comments;
         $insert->save();
 
@@ -29,11 +38,22 @@ class PlantParentSpecieRepository implements PlantParentSpecieRepositoryInterfac
     {
         $update = PlantParentSpecie::where('id', $id)
         ->update([
-            'plant_specie_name' => $request->plant_specie_name,
+            'plant_parent_name' => $request->plant_parent_name,
             'comments' => $request->comments
         ]);
 
         return $update;
+    }
+
+    public function destroy($id)
+    {
+        // $destroy = PlantParentSpecie::where('id', $id)
+        // ->delete();
+
+        //Same thing but save time for being simplier to type
+        $destroy = PlantParentSpecie::destroy($id);
+
+        return $destroy;
     }
 
 }

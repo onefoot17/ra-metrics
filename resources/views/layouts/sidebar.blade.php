@@ -32,17 +32,22 @@
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fa fa-cogs"></i>
-                    <span>Plant <span class="label label-theme">NEW</span></span>
+                    <span>System <span class="label label-theme">NEW</span></span>
                 </a>
                 <ul class="sub-menu">
                     <li  @if(Route::currentRouteName() === 'home') class="active" @endif><a href="{{route('home')}}">Home</a></li>                   
-                    <li class="has-sub @if(Route::currentRouteName() === 'plant_parents_species_create') active @endif">
+                    <li class="has-sub 
+                    @if(Route::currentRouteName() === 'plant_parents_species_create' 
+                    or Route::currentRouteName() === 'plant_parents_species_index'
+                    or Route::currentRouteName() === 'plant_parents_species_edit') 
+                    active 
+                    @endif">
                         <a href="javascript:;">
                             <b class="caret"></b>
                             Plant Parents Species
                         </a>
                         <ul class="sub-menu">
-                            <li><a href="javascript:;">List</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_parents_species_index') class="active" @endif><a href="{{route('plant_parents_species_index')}}">List</a></li>
                             <li @if(Route::currentRouteName() === 'plant_parents_species_create') class="active" @endif><a href="{{route('plant_parents_species_create')}}">Create</a></li>
                         </ul>
                     </li>

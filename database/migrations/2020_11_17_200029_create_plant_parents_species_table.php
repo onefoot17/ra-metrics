@@ -19,7 +19,7 @@ class CreatePlantParentsSpeciesTable extends Migration
         Schema::create('plants.plant_parents_species', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('plant_specie_name');
+            $table->string('plant_parent_name');
             $table->string('plant_image')->nullable();
             $table->string('comments')->nullable();
         });
