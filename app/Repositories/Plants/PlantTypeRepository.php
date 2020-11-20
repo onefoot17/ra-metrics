@@ -17,7 +17,7 @@ class PlantTypeRepository implements PlantTypeRepositoryInterface {
 
     public function list()
     {
-        $list = PlantType::all();
+        $list = PlantType::orderBy('id', 'desc')->get();
 
         return $list;
     }

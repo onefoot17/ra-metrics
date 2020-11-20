@@ -17,7 +17,7 @@ class PlantRepository implements PlantRepositoryInterface {
 
     public function list()
     {
-        $list = Plant::all();
+        $list = Plant::orderBy('id', 'desc')->get();
 
         return $list;
     }

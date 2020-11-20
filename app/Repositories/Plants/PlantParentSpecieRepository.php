@@ -17,7 +17,7 @@ class PlantParentSpecieRepository implements PlantParentSpecieRepositoryInterfac
 
     public function list()
     {
-        $list = PlantParentSpecie::all();
+        $list = PlantParentSpecie::orderBy('id', 'desc')->get();
 
         return $list;
     }

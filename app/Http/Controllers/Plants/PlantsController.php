@@ -51,6 +51,17 @@ class PlantsController extends Controller
      */
     public function store(Request $request, PlantServiceInterface $plantService)
     {
+        $validateData = $request->validate([
+            'plant_parent_specieid' => [
+                'required'
+            ],
+            'plant_typeid' => [
+                'required'
+            ],
+            'comments' => [
+                'max:255'
+            ]
+        ]);
         $plantService->storePlant($request);
 
         return redirect()->route('plant_index')->with('message-success', 'Plant saved succefully!');
@@ -75,7 +86,15 @@ class PlantsController extends Controller
      */
     public function edit($id, PlantServiceInterface $plantService)
     {
-        //
+        $plant = $plantService->getPlant($id);
+        $plantParentsSpecies = $plantService->getPlantParentsSpecies();
+        $plantTypes = $plantService->getPlantTypes();
+
+        return view('plants.plants.edit', [
+            'plant' => $plant,
+            'plantParentsSpecies' => $plantParentsSpecies,
+            'plantTypes' => $plantTypes
+        ]);
     }
 
     /**
@@ -87,7 +106,21 @@ class PlantsController extends Controller
      */
     public function update(Request $request, $id, PlantServiceInterface $plantService)
     {
-        //
+        $validateData = $request->validate([
+            'plant_parent_specieid' => [
+                'required'
+            ],
+            'plant_typeid' => [
+                'required'
+            ],
+            'comments' => [
+                'max:255'
+            ]
+        ]);
+
+        $plantService->updatePlant($request, $id);
+
+        return back()->with('message-success', 'Plant updated succefully!');
     }
 
     /**
@@ -98,6 +131,8 @@ class PlantsController extends Controller
      */
     public function destroy($id, PlantServiceInterface $plantService)
     {
-        //
+        $plantService->destroyPlant($id);
+
+        return back()->with('message-success', 'Plant deleted succefully!');
     }
 }

@@ -44,17 +44,17 @@
                 <table class="table table-striped m-b-0">
                     <thead>
                         <tr>
-                            <th>Comments</th>
                             <th>Plant Parent</th>
                             <th>Plant Type</th>
+                            <th>Comments</th>
                             <th width="1%"></th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($plants as $ind => $plantsCollection)
                             <tr>
-                                <td>{{$plantsCollection->plant_parent_specieid}}</td>
-                                <td>{{$plantsCollection->plant_typeid}}</td>
+                                <td>{{$plantsCollection->plantParentSpecie->plant_parent_name}}</td>
+                                <td>{{$plantsCollection->plantType->characteristic}}</td>
                                 <td>{{$plantsCollection->comments}}</td>
                                 <td class="with-btn" nowrap>
                                     <form method="POST" action="{{route('plant_destroy', ['id' => $plantsCollection->id])}}" id='form_{{$plantsCollection->id}}'>
