@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="panel-body">
-            Panel Content Here
+            Panel Content Here - Edited and placed by Jenkins!
         </div>
     </div>
     <!-- end panel -->
