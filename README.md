@@ -1,61 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# RA-METRICS System
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This tutorial has been developed to help everyone who needs new features on RA-METRICS system.
 
-## About Laravel
+## Requirements for Laravel (PHP Extensions)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+* [Laravel 8.x](https://laravel.com/docs/8.x) - Built over Laravel framework
+* [PHP](http://www.php.net/) - PHP >= 7.3
+* [Nginx](https://www.nginx.com/) ou Apache 2.2
+* [PostgreSQL](https://www.postgresql.org/) - PostgreSQL >= 12.0
+* OpenSSL PHP Extension
+* PDO PHP Extension
+* CURL PHP Extension
+* Mbstring PHP Extension
+* Tokenizer PHP Extension
+* XML PHP Extension
+* Ctype PHP Extension
+* JSON PHP Extension
+* BCMath PHP Extension
+* Fileinfo PHP Extension
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Setting up the local environment
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+It is requested to install the below software list in order to run the website just as it runs on the web server.
 
-## Learning Laravel
+* [Composer](https://getcomposer.org/)
+* [GIT](https://git-scm.com/)
+* [Nginx](https://www.nginx.com/) OR 
+* [Apache](https://www.apache.org/)
+* [Postgres](https://www.postgresql.org/)
+* [VSCode](https://code.visualstudio.com/)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Set up Nginx in order to run Laravel correctly. To do so, just go into Nginx config file, which is at /var/nginx/sites-available/default, and add the follow source code snippet inside the **server** TAG:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+location /rametrics {
+    alias /var/www/html/rametrics/public;
+    try_files $uri $uri/ @rametrics;
 
-## Laravel Sponsors
+    location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_param SCRIPT_FILENAME $request_filename;
+            fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+    }
+}
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+location @bimstation {
+        rewrite /rametrics/(.*)$ /rametrics/index.php?/$1 last;
+}
+```
 
-### Premium Partners
+Just in case the Apache was used to supply the web server, use the code snippet below on the Apache config file which is at C:\xampp\apache\conf\httpd.conf:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+```
+LoadModule rewrite_module modules/mod_rewrite.so
 
-## Contributing
+Alias /rametrics "C:/xampp/htodocs/rametrics/public"
+<Directory "C:/xampp/htodocs/rametrics/public">
+   Options +FollowSymlinks +Indexes
+   AllowOverride All
+</Directory>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
 
-## Code of Conduct
+Still in Apache case, open up the file at app_root/app/public/.htaccess and add underneath the variable RewriteEngine On:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+RewriteBase /rametrics
+```
 
-## Security Vulnerabilities
+## Setting up RA-METRICS to run locally
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Now the local environment is duly configured, the code only needs to be cloned from Bitbucket into the local machine. Note: It has been using terminal command lines to clone and commit through GIT.
 
-## License
+```
+git clone git@bitbucket.org:vcomp/rametrics.git
+```
+or
+```
+git clone https://vcompdev@bitbucket.org/vcomp/rametrics.git
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* Inside root project folder, run the follow command lines in order to update Laravel Dependencies and built the local database as well
+```
+composer update
+php artisan migrate:refresh --seed
+```
+* Still at root project folder, copy the **.env.exemple** file content into a new file called **.env** (Whether there is no .env file at your project root folder, just make up a brand new)
+
+## Systems running on Linux
+
+* It is necessary provide writting permission for some directories, such as, app_root/bootstrap and app_root/storage
+
+```
+sudo chmod 775 -R storage/ bootstrap/
+sudo chown -R www-data:localuser app_root/storage/ app_root/bootstrap/ 
+```
+
+Now the environment is settled down. Go and build a amazing thing!
