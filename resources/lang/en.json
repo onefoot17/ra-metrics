@@ -10,6 +10,10 @@
     "Create":"Create",
     "Plant Types":"Plant Types",
 
+    "English":"English",
+    "French":"French",
+    "Portuguese":"Portuguese",
+
     "Home":"Home",
     "Plants":"Plants",
     "Plant":"Plant",
@@ -24,5 +28,6 @@
     "Cancel":"Cancel",
     "Are you sure?":"Are you sure?",
     "You will not be able to recover this information!":"You will not be able to recover this information!",
-    "RA-METRICS - Vcomp Inc All Rights Reserved":"RA-METRICS - Vcomp Inc All Rights Reserved"
+    "RA-METRICS - Vcomp Inc All Rights Reserved":"RA-METRICS - Vcomp Inc All Rights Reserved",
+    "more options":"more options"
 }

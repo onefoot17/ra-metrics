@@ -92,11 +92,11 @@
                 <span class="name d-none d-sm-inline">{{App::getLocale()}}</span> <b class="caret"></b>
             </a>
             <div class="dropdown-menu">
-                <a href="{{route(Route::currentRouteName(), ['en'])}}" class="dropdown-item"><span class="flag-icon flag-icon-ca" title="ca"></span> English</a>
-                <a href="{{route(Route::currentRouteName(), ['fr'])}}" class="dropdown-item"><span class="flag-icon flag-icon-ca" title="ca"></span> French</a>
-                <a href="{{route(Route::currentRouteName(), ['pt_BR'])}}" class="dropdown-item"><span class="flag-icon flag-icon-br" title="br"></span> Portuguese</a>
+                <a href="{{route(Route::currentRouteName(), ['en'])}}" class="dropdown-item"><span class="flag-icon flag-icon-ca" title="ca"></span> @lang('English')</a>
+                <a href="{{route(Route::currentRouteName(), ['fr'])}}" class="dropdown-item"><span class="flag-icon flag-icon-ca" title="ca"></span> @lang('French')</a>
+                <a href="{{route(Route::currentRouteName(), ['pt_BR'])}}" class="dropdown-item"><span class="flag-icon flag-icon-br" title="br"></span> @lang('Portuguese')</a>
                 <div class="dropdown-divider"></div>
-                <a href="javascript:;" class="dropdown-item text-center">more options</a>
+                <a href="javascript:;" class="dropdown-item text-center">@lang('more options')</a>
             </div>
         </li>
         <li class="dropdown navbar-user">
