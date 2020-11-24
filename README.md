@@ -40,7 +40,7 @@ location /rametrics {
     }
 }
 
-location @bimstation {
+location @rametrics {
         rewrite /rametrics/(.*)$ /rametrics/index.php?/$1 last;
 }
 ```
