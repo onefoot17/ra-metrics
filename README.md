@@ -4,7 +4,7 @@ This tutorial has been developed to help everyone who needs new features for RA-
 
 ## Requirements for Laravel
 
-It is requested to install the below software list in order to run the website as well as it runs on the web server.
+It is requested to install the below software list in order to run the website as well as it runs on the production server.
 
 * [Laravel 8.x](https://laravel.com/docs/8.x) - Built over Laravel framework
 * [PHP](http://www.php.net/) - PHP >= 7.3
@@ -76,7 +76,7 @@ or
 git clone https://vcompdev@bitbucket.org/vcomp/rametrics.git
 ```
 
-* Inside root project folder, run the follow command lines in order to update Laravel Dependencies and built the local database as well
+* Inside root project folder, run the follow command lines in order to update Laravel dependencies, besides building the local database as well
 ```
 composer update
 php artisan migrate:refresh --seed
