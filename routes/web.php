@@ -40,7 +40,7 @@ Route::group(['prefix' => '{language}'], function(){
 
     Route::group(['prefix' => 'plants'], function(){
         
-        Route::group(['prefix' => 'plants-parents-species'], function(){
+        Route::group(['prefix' => 'plant-parents-species'], function(){
             Route::get('/', [PlantParentSpecieController::class, 'index'])->name('plant_parents_species_index');
             Route::get('/create', [PlantParentSpecieController::class, 'create'])->name('plant_parents_species_create');
             Route::post('/store', [PlantParentSpecieController::class, 'store'])->name('plant_parents_species_store');
