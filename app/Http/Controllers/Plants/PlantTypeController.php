@@ -48,16 +48,17 @@ class PlantTypeController extends Controller
     {
         $plantService->storePlantType($request);
 
-        return redirect()->route('plant_types_index')->with('message-success', 'Plant type saved succefully!');
+        return redirect()->route('plant_types_index', [$request->segment(1)])->with('message-success', 'Plant type saved succefully!');
     }
 
     /**
      * Display the specified resource.
      *
+     * @param  string $lang
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($lang, $id)
     {
         //
     }
@@ -65,10 +66,11 @@ class PlantTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @param  string $lang
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, PlantServiceInterface $plantService)
+    public function edit($lang, $id, PlantServiceInterface $plantService)
     {
         $plantType = $plantService->getPlantType($id);
 
@@ -81,10 +83,11 @@ class PlantTypeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  string $lang
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id, PlantServiceInterface $plantService)
+    public function update(Request $request, $lang, $id, PlantServiceInterface $plantService)
     {
         $plantService->updatePlantType($request, $id);
 
@@ -94,10 +97,11 @@ class PlantTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param  string $lang
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, PlantServiceInterface $plantService)
+    public function destroy($lang, $id, PlantServiceInterface $plantService)
     {
         $plantService->destroyPlantType($id);
 

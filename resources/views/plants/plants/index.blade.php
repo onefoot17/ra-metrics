@@ -57,10 +57,10 @@
                                 <td>{{$plantsCollection->plantType->characteristic}}</td>
                                 <td>{{$plantsCollection->comments}}</td>
                                 <td class="with-btn" nowrap>
-                                    <form method="POST" action="{{route('plant_destroy', ['id' => $plantsCollection->id])}}" id='form_{{$plantsCollection->id}}'>
+                                    <form method="POST" action="{{route('plant_destroy', [Request::segment(1), 'id' => $plantsCollection->id])}}" id='form_{{$plantsCollection->id}}'>
                                         @csrf
                                         <input type="hidden" name="_method" value="DELETE">
-                                        <a href="{{route('plant_edit', ['id' => $plantsCollection->id])}}" class="btn btn-sm btn-primary width-60 m-r-2">Edit</a>
+                                        <a href="{{route('plant_edit', [Request::segment(1), 'id' => $plantsCollection->id])}}" class="btn btn-sm btn-primary width-60 m-r-2">Edit</a>
                                         <a href="javascript:;" 
                                             class="btn btn-sm btn-red width-60"
                                             data-click="swal-danger"

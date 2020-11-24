@@ -64,7 +64,7 @@ class PlantsController extends Controller
         ]);
         $plantService->storePlant($request);
 
-        return redirect()->route('plant_index')->with('message-success', 'Plant saved succefully!');
+        return redirect()->route('plant_index', [$request->segment(1)])->with('message-success', 'Plant saved succefully!');
     }
 
     /**
@@ -73,7 +73,7 @@ class PlantsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($lang, $id)
     {
         //
     }
@@ -81,10 +81,11 @@ class PlantsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @param  string $lang
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, PlantServiceInterface $plantService)
+    public function edit($lang, $id, PlantServiceInterface $plantService)
     {
         $plant = $plantService->getPlant($id);
         $plantParentsSpecies = $plantService->getPlantParentsSpecies();
@@ -101,10 +102,11 @@ class PlantsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  string $lang
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id, PlantServiceInterface $plantService)
+    public function update(Request $request, $lang, $id, PlantServiceInterface $plantService)
     {
         $validateData = $request->validate([
             'plant_parent_specieid' => [
@@ -126,10 +128,11 @@ class PlantsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param  string $lang
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id, PlantServiceInterface $plantService)
+    public function destroy($lang, $id, PlantServiceInterface $plantService)
     {
         $plantService->destroyPlant($id);
 

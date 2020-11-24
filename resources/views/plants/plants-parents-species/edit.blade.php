@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="panel-body">
-            <form action="{{route('plant_parents_species_update', ['id' => $plantParentSpecie->id])}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('plant_parents_species_update', [Request::Segment(1), 'id' => $plantParentSpecie->id])}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row m-b-15">
                     <label class="col-form-label col-md-3">Plant Parent name</label>

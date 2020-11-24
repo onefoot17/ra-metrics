@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="panel-body">
-            <form action="{{route('plant_update', ['id' => $plant->id])}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('plant_update', [Request::segment(1), 'id' => $plant->id])}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="_method" value="PUT">
                 <div class="form-group row m-b-15">

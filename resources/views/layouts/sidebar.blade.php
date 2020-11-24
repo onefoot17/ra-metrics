@@ -35,7 +35,8 @@
                     <span>System <span class="label label-theme">NEW</span></span>
                 </a>
                 <ul class="sub-menu">
-                    <li  @if(Route::currentRouteName() === 'home') class="active" @endif><a href="{{route('home')}}">Home</a></li>                   
+                    <li  @if(Route::currentRouteName() === 'home') class="active" @endif>
+                        <a href="{{route('home', [Request::segment(1)])}}">Home</a></li>                   
                     <li class="has-sub 
                         @if(Route::currentRouteName() === 'plant_parents_species_create' 
                         or Route::currentRouteName() === 'plant_parents_species_index'
@@ -47,8 +48,8 @@
                             Plant Parents Species
                         </a>
                         <ul class="sub-menu">
-                            <li @if(Route::currentRouteName() === 'plant_parents_species_index') class="active" @endif><a href="{{route('plant_parents_species_index')}}">List</a></li>
-                            <li @if(Route::currentRouteName() === 'plant_parents_species_create') class="active" @endif><a href="{{route('plant_parents_species_create')}}">Create</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_parents_species_index') class="active" @endif><a href="{{route('plant_parents_species_index', [Request::segment(1)])}}">List</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_parents_species_create') class="active" @endif><a href="{{route('plant_parents_species_create', [Request::segment(1)])}}">Create</a></li>
                         </ul>
                     </li>
                     <li class="has-sub 
@@ -62,8 +63,8 @@
                             Plant Types
                         </a>
                         <ul class="sub-menu">
-                            <li @if(Route::currentRouteName() === 'plant_types_index') class="active" @endif><a href="{{route('plant_types_index')}}">List</a></li>
-                            <li @if(Route::currentRouteName() === 'plant_types_create') class="active" @endif><a href="{{route('plant_types_create')}}">Create</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_types_index') class="active" @endif><a href="{{route('plant_types_index', [Request::segment(1)])}}">List</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_types_create') class="active" @endif><a href="{{route('plant_types_create', [Request::segment(1)])}}">Create</a></li>
                         </ul>
                     </li>
                     <li class="has-sub 
@@ -77,8 +78,8 @@
                             Plants
                         </a>
                         <ul class="sub-menu">
-                            <li @if(Route::currentRouteName() === 'plant_index') class="active" @endif><a href="{{route('plant_index')}}">List</a></li>
-                            <li @if(Route::currentRouteName() === 'plant_create') class="active" @endif><a href="{{route('plant_create')}}">Create</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_index') class="active" @endif><a href="{{route('plant_index', [Request::segment(1)])}}">List</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_create') class="active" @endif><a href="{{route('plant_create', [Request::segment(1)])}}">Create</a></li>
                         </ul>
                     </li>
                 </ul>
