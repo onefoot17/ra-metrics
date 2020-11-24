@@ -85,7 +85,7 @@ php artisan migrate:refresh --seed
 
 ## Systems running on Linux
 
-* It is necessary provide writting permission for some directories, such as, app_root/bootstrap and app_root/storage
+* It is necessary provide writting permission for some directories, such as, **app_root/bootstrap** and **app_root/storage**
 
 ```
 sudo chmod 775 -R storage/ bootstrap/
