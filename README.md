@@ -1,13 +1,18 @@
 # RA-METRICS System
 
-This tutorial has been developed to help everyone who needs new features on RA-METRICS system.
+This tutorial has been developed to help everyone who needs new features for RA-METRICS system.
 
-## Requirements for Laravel (PHP Extensions)
+## Requirements for Laravel
+
+It is requested to install the below software list in order to run the website as well as it runs on the web server.
 
 * [Laravel 8.x](https://laravel.com/docs/8.x) - Built over Laravel framework
 * [PHP](http://www.php.net/) - PHP >= 7.3
 * [Nginx](https://www.nginx.com/) ou Apache 2.2
 * [PostgreSQL](https://www.postgresql.org/) - PostgreSQL >= 12.0
+* [Composer](https://getcomposer.org/) - Composer
+* [GIT](https://git-scm.com/) - GIT
+* [VSCode](https://code.visualstudio.com/) - Microsoft Visual Studio Code
 * OpenSSL PHP Extension
 * PDO PHP Extension
 * CURL PHP Extension
@@ -19,18 +24,9 @@ This tutorial has been developed to help everyone who needs new features on RA-M
 * BCMath PHP Extension
 * Fileinfo PHP Extension
 
-## Setting up the local environment
+## Web servers
 
-It is requested to install the below software list in order to run the website just as it runs on the web server.
-
-* [Composer](https://getcomposer.org/)
-* [GIT](https://git-scm.com/)
-* [Nginx](https://www.nginx.com/) OR 
-* [Apache](https://www.apache.org/)
-* [Postgres](https://www.postgresql.org/)
-* [VSCode](https://code.visualstudio.com/)
-
-Set up Nginx in order to run Laravel correctly. To do so, just go into Nginx config file, which is at /var/nginx/sites-available/default, and add the follow source code snippet inside the **server** TAG:
+Set up Nginx in order to run Laravel correctly. To do so, just go into Nginx config file at **/var/nginx/sites-available/default**, and add the follow source code snippet inside the **server** TAG:
 
 ```
 location /rametrics {
@@ -49,7 +45,7 @@ location @bimstation {
 }
 ```
 
-Just in case the Apache was used to supply the web server, use the code snippet below on the Apache config file which is at C:\xampp\apache\conf\httpd.conf:
+Just in case the Apache was used to supply the web server, use the code snippet below on the Apache config file at **C:\xampp\apache\conf\httpd.conf**
 
 ```
 LoadModule rewrite_module modules/mod_rewrite.so
@@ -62,7 +58,7 @@ Alias /rametrics "C:/xampp/htodocs/rametrics/public"
 
 ```
 
-Still in Apache case, open up the file at app_root/app/public/.htaccess and add underneath the variable RewriteEngine On:
+Still in Apache case, open up the file at **app_root/app/public/.htaccess** and add underneath the variable RewriteEngine On:
 
 ```
 RewriteBase /rametrics
