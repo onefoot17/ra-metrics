@@ -92,4 +92,4 @@ sudo chmod 775 -R storage/ bootstrap/
 sudo chown -R www-data:localuser app_root/storage/ app_root/bootstrap/ 
 ```
 
-Now the environment is settled down. Go and build a amazing thing!
+Now the environment is settled down, just go and build something amazing!
