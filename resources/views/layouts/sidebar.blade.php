@@ -18,25 +18,25 @@
             </li>
             <li>
                 <ul class="nav nav-profile">
-                    <li><a href="javascript:;"><i class="fa fa-cog"></i> Settings</a></li>
-                    <li><a href="javascript:;"><i class="fa fa-pencil-alt"></i> Send Feedback</a></li>
-                    <li><a href="javascript:;"><i class="fa fa-question-circle"></i> Helps</a></li>
+                    <li><a href="javascript:;"><i class="fa fa-cog"></i> @lang('Settings')</a></li>
+                    <li><a href="javascript:;"><i class="fa fa-pencil-alt"></i> @lang('Send Feedback')</a></li>
+                    <li><a href="javascript:;"><i class="fa fa-question-circle"></i> @lang('Helps')</a></li>
                 </ul>
             </li>
         </ul>
         <!-- end sidebar user -->
         <!-- begin sidebar nav -->
-        <ul class="nav"><li class="nav-header">Navigation</li>            
+        <ul class="nav"><li class="nav-header">@lang('Navigation')</li>            
             
             <li class="has-sub active">
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fa fa-cogs"></i>
-                    <span>System <span class="label label-theme">NEW</span></span>
+                    <span>@lang('System') <span class="label label-theme">@lang('NEW')</span></span>
                 </a>
                 <ul class="sub-menu">
                     <li  @if(Route::currentRouteName() === 'home') class="active" @endif>
-                        <a href="{{route('home', [Request::segment(1)])}}">Home</a></li>                   
+                        <a href="{{route('home', [Request::segment(1)])}}">@lang('Home')</a></li>                   
                     <li class="has-sub 
                         @if(Route::currentRouteName() === 'plant_parents_species_create' 
                         or Route::currentRouteName() === 'plant_parents_species_index'
@@ -45,11 +45,11 @@
                         @endif">
                         <a href="javascript:;">
                             <b class="caret"></b>
-                            Plant Parents Species
+                            @lang('Plant Parents Species')
                         </a>
                         <ul class="sub-menu">
-                            <li @if(Route::currentRouteName() === 'plant_parents_species_index') class="active" @endif><a href="{{route('plant_parents_species_index', [Request::segment(1)])}}">List</a></li>
-                            <li @if(Route::currentRouteName() === 'plant_parents_species_create') class="active" @endif><a href="{{route('plant_parents_species_create', [Request::segment(1)])}}">Create</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_parents_species_index') class="active" @endif><a href="{{route('plant_parents_species_index', [Request::segment(1)])}}">@lang('List')</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_parents_species_create') class="active" @endif><a href="{{route('plant_parents_species_create', [Request::segment(1)])}}">@lang('Create')</a></li>
                         </ul>
                     </li>
                     <li class="has-sub 
@@ -60,11 +60,11 @@
                         @endif">
                         <a href="javascript:;">
                             <b class="caret"></b>
-                            Plant Types
+                            @lang('Plant Types')
                         </a>
                         <ul class="sub-menu">
-                            <li @if(Route::currentRouteName() === 'plant_types_index') class="active" @endif><a href="{{route('plant_types_index', [Request::segment(1)])}}">List</a></li>
-                            <li @if(Route::currentRouteName() === 'plant_types_create') class="active" @endif><a href="{{route('plant_types_create', [Request::segment(1)])}}">Create</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_types_index') class="active" @endif><a href="{{route('plant_types_index', [Request::segment(1)])}}">@lang('List')</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_types_create') class="active" @endif><a href="{{route('plant_types_create', [Request::segment(1)])}}">@lang('Create')</a></li>
                         </ul>
                     </li>
                     <li class="has-sub 
@@ -75,11 +75,11 @@
                         @endif">
                         <a href="javascript:;">
                             <b class="caret"></b>
-                            Plants
+                            @lang('Plants')
                         </a>
                         <ul class="sub-menu">
-                            <li @if(Route::currentRouteName() === 'plant_index') class="active" @endif><a href="{{route('plant_index', [Request::segment(1)])}}">List</a></li>
-                            <li @if(Route::currentRouteName() === 'plant_create') class="active" @endif><a href="{{route('plant_create', [Request::segment(1)])}}">Create</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_index') class="active" @endif><a href="{{route('plant_index', [Request::segment(1)])}}">@lang('List')</a></li>
+                            <li @if(Route::currentRouteName() === 'plant_create') class="active" @endif><a href="{{route('plant_create', [Request::segment(1)])}}">@lang('Create')</a></li>
                         </ul>
                     </li>
                 </ul>

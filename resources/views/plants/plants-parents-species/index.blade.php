@@ -16,19 +16,19 @@
 <div id="content" class="content">
     <!-- begin breadcrumb -->
     <ol class="breadcrumb float-xl-right">
-        <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
-        <li class="breadcrumb-item"><a href="javascript:;">Plants</a></li>
-        <li class="breadcrumb-item active">List Plant Parents Species</li>
+        <li class="breadcrumb-item"><a href="javascript:;">@lang('Home')</a></li>
+        <li class="breadcrumb-item"><a href="javascript:;">@lang('Plants')</a></li>
+        <li class="breadcrumb-item active">@lang('List Plant Parents Species')</li>
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Plant <small> list</small></h1>
+    <h1 class="page-header">@lang('Plant') <small> @lang('list')</small></h1>
     <!-- end page-header -->
     
     <!-- begin panel -->
     <div class="panel panel-inverse">
         <div class="panel-heading">
-            <h4 class="panel-title">Plant Parents / Species</h4>
+            <h4 class="panel-title">@lang('Plant Parents / Species')</h4>
             <div class="panel-heading-btn">
                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
@@ -44,9 +44,9 @@
                 <table class="table table-striped m-b-0">
                     <thead>
                         <tr>
-                            <th>Image</th>
-                            <th>Parent Name</th>
-                            <th>Comments</th>
+                            <th>@lang('Image')</th>
+                            <th>@lang('Parent Name')</th>
+                            <th>@lang('Comments')</th>
                             <th width="1%"></th>
                         </tr>
                     </thead>
@@ -65,14 +65,14 @@
                                     <form method="POST" action="{{route('plant_parents_species_destroy', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" id='form_{{$plantParentsSpeciesCollection->id}}'>
                                         @csrf
                                         <input type="hidden" name="_method" value="DELETE">
-                                        <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-sm btn-primary width-60 m-r-2">Edit</a>
+                                        <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-sm btn-primary width-60 m-r-2">@lang('Edit')</a>
                                         <a href="javascript:;" 
                                             class="btn btn-sm btn-red width-60"
                                             data-click="swal-danger"
                                             id="{{$plantParentsSpeciesCollection->id}}"
                                             {{-- onclick="event.preventDefault();
                                                 this.closest('form').submit();" --}}
-                                                >Delete</a>
+                                                >@lang('Delete')</a>
                                     </form>
                                 </td>
                             </tr>
@@ -102,20 +102,20 @@
                 let id = $(this).attr('id');
                 e.preventDefault();
                 swal({
-                    title: 'Are you sure?',
-                    text: 'You will not be able to recover this information!',
+                    title: '@lang("Are you sure?")',
+                    text: '@lang("You will not be able to recover this information!")',
                     icon: 'error',
                     dangerMode: true,
                     buttons: {
                         cancel: {
-                            text: 'Cancel',
+                            text: '@lang("Cancel")',
                             value: null,
                             visible: true,
                             className: 'btn btn-default',
                             closeModal: true,
                         },
                         confirm: {
-                            text: 'Delete',
+                            text: '@lang("Delete")',
                             value: true,
                             visible: true,
                             className: 'btn btn-danger',

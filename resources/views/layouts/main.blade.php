@@ -14,6 +14,7 @@
         <link href="{{asset('color-admin/assets/css/default/app.min.css')}}" rel="stylesheet" />
         <link href="{{asset('color-admin/assets/plugins/gritter/css/jquery.gritter.css')}}" rel="stylesheet" />
         <!-- ================== END BASE CSS STYLE ================== -->
+        <link href="{{asset('color-admin/assets/plugins/flag-icon-css/css/flag-icon.min.css')}}" rel="stylesheet" />
     @show
 </head>
 <body>

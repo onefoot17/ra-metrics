@@ -81,6 +81,24 @@
                 </div>
             </div>
         </li>
+        <li class="dropdown navbar-language">
+            <a href="#" class="dropdown-toggle pr-1 pl-1 pr-sm-3 pl-sm-3" data-toggle="dropdown">
+                @if(App::getLocale() == 'en' or App::getLocale() == 'fr')
+                    <span class="flag-icon flag-icon-ca" title="ca"></span>
+                @else
+                    <span class="flag-icon flag-icon-br" title="br"></span>
+                @endif
+
+                <span class="name d-none d-sm-inline">{{App::getLocale()}}</span> <b class="caret"></b>
+            </a>
+            <div class="dropdown-menu">
+                <a href="{{route(Route::currentRouteName(), ['en'])}}" class="dropdown-item"><span class="flag-icon flag-icon-ca" title="ca"></span> English</a>
+                <a href="{{route(Route::currentRouteName(), ['fr'])}}" class="dropdown-item"><span class="flag-icon flag-icon-ca" title="ca"></span> French</a>
+                <a href="{{route(Route::currentRouteName(), ['pt_BR'])}}" class="dropdown-item"><span class="flag-icon flag-icon-br" title="br"></span> Portuguese</a>
+                <div class="dropdown-divider"></div>
+                <a href="javascript:;" class="dropdown-item text-center">more options</a>
+            </div>
+        </li>
         <li class="dropdown navbar-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="{{asset('color-admin/assets/img/user/user-13.jpg')}}" alt="" /> 
