@@ -3,7 +3,7 @@
 @php 
 
 @endphp
-@section('title') {{ $title ?? 'Edit Plant Type' }} @stop
+@section('title') {{ $title ?? __('Edit Plant Type') }} @stop
 
 @section('css')
     @parent
@@ -16,19 +16,19 @@
 <div id="content" class="content">
     <!-- begin breadcrumb -->
     <ol class="breadcrumb float-xl-right">
-        <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
-        <li class="breadcrumb-item"><a href="javascript:;">Plants</a></li>
-        <li class="breadcrumb-item active">Edit Plant Type</li>
+        <li class="breadcrumb-item"><a href="javascript:;">@lang('Home')</a></li>
+        <li class="breadcrumb-item"><a href="javascript:;">@lang('Plants')</a></li>
+        <li class="breadcrumb-item active">@lang('Edit Plant Type')</li>
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Plant <small> edit</small></h1>
+    <h1 class="page-header">@lang('Plant') <small> @lang('edit')</small></h1>
     <!-- end page-header -->
     
     <!-- begin panel -->
     <div class="panel panel-inverse">
         <div class="panel-heading">
-            <h4 class="panel-title">Plant Types</h4>
+            <h4 class="panel-title">@lang('Plant Types')</h4>
             <div class="panel-heading-btn">
                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
@@ -41,22 +41,22 @@
                 @csrf
                 <input type="hidden" name="_method" value="PUT">
                 <div class="form-group row m-b-15">
-                    <label class="col-form-label col-md-3">Plant Characteristic</label>
+                    <label class="col-form-label col-md-3">@lang('Plant Characteristic')</label>
                     <div class="col-md-9">
                         <input type="text" class="form-control m-b-5" placeholder="Enter specie name" name="characteristic" id='characteristic' value="{{$plantType->characteristic}}" />
                     </div>
                 </div>
                 <div class="form-group row m-b-15">
-                    <label class="col-form-label col-md-3">Comments</label>
+                    <label class="col-form-label col-md-3">@lang('Comments')</label>
                     <div class="col-md-9">
                         <textarea class="form-control" rows="3" name='comments' id='comments'>{{$plantType->comments}}</textarea>
-                        <small class="f-s-12 text-grey-darker pull-right">Only 255 characters</small>
+                        <small class="f-s-12 text-grey-darker pull-right">@lang('Only 255 characters')</small>
                     </div>
                 </div>
                 <div class="form-group row m-b-15">
                     <label class="col-form-label col-md-3"></label>
                     <div class="col-md-9">
-                        <button type="submit" class="btn btn-lime">Submit</button>
+                        <button type="submit" class="btn btn-lime">@lang('Submit')</button>
                     </div>
                 </div>
             </form>

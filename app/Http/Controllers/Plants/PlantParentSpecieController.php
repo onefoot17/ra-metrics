@@ -49,7 +49,7 @@ class PlantParentSpecieController extends Controller
     {
         $plantService->storePlantParentSpecie($request);
 
-        return redirect()->route('plant_parents_species_index', [$request->Segment(1)])->with('message-success', 'Plant parent specie saved succefully!');
+        return redirect()->route('plant_parents_species_index', [$request->Segment(1)])->with('message-success', __('Plant parent specie saved succefully!'));
     }
 
     /**
@@ -91,7 +91,7 @@ class PlantParentSpecieController extends Controller
     {
         $plantService->updatePlantParentSpecie($request, $id);
 
-        return back()->with('message-success', 'Plant parent specie updated succefully!');
+        return back()->with('message-success', __('Plant parent specie updated succefully!'));
     }
 
     /**
@@ -105,6 +105,6 @@ class PlantParentSpecieController extends Controller
     {
         $plantService->destroyPlantParentSpecie($id);
 
-        return back()->with('message-success', 'Plant parent specie deleted succefully!');
+        return back()->with('message-success', __('Plant parent specie deleted succefully!'));
     }
 }

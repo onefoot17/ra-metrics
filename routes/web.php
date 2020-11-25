@@ -39,7 +39,7 @@ Route::group(['prefix' => '{language}'], function(){
     })->name('home')->middleware('auth');
 
     Route::group(['prefix' => 'plants'], function(){
-        
+    
         Route::group(['prefix' => 'plant-parents-species'], function(){
             Route::get('/', [PlantParentSpecieController::class, 'index'])->name('plant_parents_species_index');
             Route::get('/create', [PlantParentSpecieController::class, 'create'])->name('plant_parents_species_create');
@@ -66,9 +66,7 @@ Route::group(['prefix' => '{language}'], function(){
             Route::put('/update/{id}', [PlantsController::class, 'update'])->name('plant_update');
             Route::delete('/destroy/{id}', [PlantsController::class, 'destroy'])->name('plant_destroy');
         });
-
     });
-
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

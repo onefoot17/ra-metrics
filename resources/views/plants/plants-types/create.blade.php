@@ -3,7 +3,7 @@
 @php 
 
 @endphp
-@section('title') {{ $title ?? 'Create Plant Types' }} @stop
+@section('title') {{ $title ?? __('Create Plant Types') }} @stop
 
 @section('css')
     @parent
@@ -16,19 +16,19 @@
 <div id="content" class="content">
     <!-- begin breadcrumb -->
     <ol class="breadcrumb float-xl-right">
-        <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
-        <li class="breadcrumb-item"><a href="javascript:;">Plants</a></li>
-        <li class="breadcrumb-item active">Insert Plant Types</li>
+        <li class="breadcrumb-item"><a href="javascript:;">@lang('Home')</a></li>
+        <li class="breadcrumb-item"><a href="javascript:;">@lang('')Plants</a></li>
+        <li class="breadcrumb-item active">@lang('Insert Plant Types')</li>
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Plant <small> insert</small></h1>
+    <h1 class="page-header">@lang('Plant') <small> @lang('insert')</small></h1>
     <!-- end page-header -->
     
     <!-- begin panel -->
     <div class="panel panel-inverse">
         <div class="panel-heading">
-            <h4 class="panel-title">Plant Types</h4>
+            <h4 class="panel-title">@lang('Plant Types')</h4>
             <div class="panel-heading-btn">
                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
@@ -40,22 +40,22 @@
             <form action="{{route('plant_types_store', [Request::segment(1)])}}" method="POST" enctype="application/x-www-form-urlencoded">
                 @csrf
                 <div class="form-group row m-b-15">
-                    <label class="col-form-label col-md-3">Characteristic</label>
+                    <label class="col-form-label col-md-3">@lang('Characteristic')</label>
                     <div class="col-md-9">
                         <input type="text" class="form-control m-b-5" placeholder="Characteristic" name="characteristic" id='characteristic' />
                     </div>
                 </div>
                 <div class="form-group row m-b-15">
-                    <label class="col-form-label col-md-3">Comments</label>
+                    <label class="col-form-label col-md-3">@lang('Comments')</label>
                     <div class="col-md-9">
                         <textarea class="form-control" rows="3" name='comments' id='comments'></textarea>
-                        <small class="f-s-12 text-grey-darker pull-right">Only 255 characters</small>
+                        <small class="f-s-12 text-grey-darker pull-right">@lang('Only 255 characters')</small>
                     </div>
                 </div>
                 <div class="form-group row m-b-15">
                     <label class="col-form-label col-md-3"></label>
                     <div class="col-md-9">
-                        <button type="submit" class="btn btn-lime">Submit</button>
+                        <button type="submit" class="btn btn-lime">@lang('Submit')</button>
                     </div>
                 </div>
             </form>

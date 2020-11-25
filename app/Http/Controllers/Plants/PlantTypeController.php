@@ -48,7 +48,7 @@ class PlantTypeController extends Controller
     {
         $plantService->storePlantType($request);
 
-        return redirect()->route('plant_types_index', [$request->segment(1)])->with('message-success', 'Plant type saved succefully!');
+        return redirect()->route('plant_types_index', [$request->segment(1)])->with('message-success', __('Plant type saved succefully!'));
     }
 
     /**
@@ -91,7 +91,7 @@ class PlantTypeController extends Controller
     {
         $plantService->updatePlantType($request, $id);
 
-        return back()->with('message-success', 'Plant type updated succefully!');
+        return back()->with('message-success', __('Plant type updated succefully!'));
     }
 
     /**
@@ -105,6 +105,6 @@ class PlantTypeController extends Controller
     {
         $plantService->destroyPlantType($id);
 
-        return back()->with('message-success', 'Plant type deleted succefully!');
+        return back()->with('message-success', __('Plant type deleted succefully!'));
     }
 }

@@ -3,7 +3,7 @@
 @php 
 
 @endphp
-@section('title') {{ $title ?? 'Edit Plant' }} @stop
+@section('title') {{ $title ?? __('Edit Plant') }} @stop
 
 @section('css')
     @parent
@@ -16,19 +16,19 @@
 <div id="content" class="content">
     <!-- begin breadcrumb -->
     <ol class="breadcrumb float-xl-right">
-        <li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
-        <li class="breadcrumb-item"><a href="javascript:;">Plants</a></li>
-        <li class="breadcrumb-item active">Edit Plant</li>
+        <li class="breadcrumb-item"><a href="javascript:;">@lang('Home')</a></li>
+        <li class="breadcrumb-item"><a href="javascript:;">@lang('Plants')</a></li>
+        <li class="breadcrumb-item active">@lang('')Edit Plant</li>
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Plant <small> edit</small></h1>
+    <h1 class="page-header">@lang('Plant') <small> @lang('edit')</small></h1>
     <!-- end page-header -->
     
     <!-- begin panel -->
     <div class="panel panel-inverse">
         <div class="panel-heading">
-            <h4 class="panel-title">Plant</h4>
+            <h4 class="panel-title">@lang('Plant')</h4>
             <div class="panel-heading-btn">
                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
@@ -41,10 +41,10 @@
                 @csrf
                 <input type="hidden" name="_method" value="PUT">
                 <div class="form-group row m-b-15">
-                    <label class="col-form-label col-md-3">Plant Parent</label>
+                    <label class="col-form-label col-md-3">@lang('Plant Parent')</label>
                     <div class="col-md-9">
                         <select class="form-control" name="plant_parent_specieid" id="plant_parent_specieid">
-                            <option value="{{old('plant_parent_specieid')}}">Select one</option>
+                            <option value="{{old('plant_parent_specieid')}}">@lang('Select one')</option>
                             @foreach($plantParentsSpecies as $ind => $plantParentSpeciesCollection)
                                 <option value="{{$plantParentSpeciesCollection->id}}" @if($plantParentSpeciesCollection->id == $plant->plant_parent_specieid) selected @endif>{{$plantParentSpeciesCollection->plant_parent_name}}</option>
                             @endforeach
@@ -59,10 +59,10 @@
                     </div>
                 </div>
                 <div class="form-group row m-b-15">
-                    <label class="col-form-label col-md-3">Plant type</label>
+                    <label class="col-form-label col-md-3">@lang('Plant type')</label>
                     <div class="col-md-9">
                         <select class="form-control" name="plant_typeid" id="plant_typeid">
-                            <option value="{{old('plant_typeid')}}">Select one</option>
+                            <option value="{{old('plant_typeid')}}">@lang('Select one')</option>
                             @foreach($plantTypes as $ind => $plantTypesCollection)
                                 <option value="{{$plantTypesCollection->id}}" @if($plantTypesCollection->id == $plant->plant_typeid) selected @endif>{{$plantTypesCollection->characteristic}}</option>
                             @endforeach
@@ -77,11 +77,11 @@
                     </div>
                 </div>
                 <div class="form-group row m-b-15">
-                    <label class="col-form-label col-md-3">Comments</label>
+                    <label class="col-form-label col-md-3">@lang('Comments')</label>
                     <div class="col-md-9">
                         <textarea class="form-control" rows="3" name='comments' id='comments'>{{$plant->comments}}</textarea>
                         <small class="f-s-12 text-grey-darker pull-right">
-                            Only 255 characters
+                            @lang('Only 255 characters')
                             @error('comments')
                                 <br/>
                                 <div class="alert alert-danger fade show">
@@ -95,7 +95,7 @@
                 <div class="form-group row m-b-15">
                     <label class="col-form-label col-md-3"></label>
                     <div class="col-md-9">
-                        <button type="submit" class="btn btn-lime">Submit</button>
+                        <button type="submit" class="btn btn-lime">@lang('Submit')</button>
                     </div>
                 </div>
             </form>
