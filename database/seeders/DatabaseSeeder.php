@@ -27,5 +27,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'vio@vcompinc.com',
             'password' => Hash::make('12345678')
         ]);
+
+        User::insert([
+            'name' => 'Earl Misquitta',
+            'email' => 'earl@vcompinc.com',
+            'password' => Hash::make('12345678')
+        ]);
     }
 }
