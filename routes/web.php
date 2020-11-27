@@ -39,7 +39,7 @@ Route::group(['prefix' => '{language}'], function(){
     })->name('home')->middleware('auth');
 
     Route::get('/hello', function(){
-        return 'Hello World';
+        return view('website.index');
     });
 
     Route::group(['prefix' => 'plants'], function(){
