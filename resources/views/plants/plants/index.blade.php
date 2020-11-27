@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts-color-admin.main')
 
 @php 
 
@@ -17,7 +17,7 @@
     <!-- begin breadcrumb -->
     <ol class="breadcrumb float-xl-right">
         <li class="breadcrumb-item"><a href="javascript:;">@lang('Home')</a></li>
-        <li class="breadcrumb-item"><a href="javascript:;">@lang('')Plants</a></li>
+        <li class="breadcrumb-item"><a href="javascript:;">@lang('Plants')</a></li>
         <li class="breadcrumb-item active">@lang('Plants List')</li>
     </ol>
     <!-- end breadcrumb -->
