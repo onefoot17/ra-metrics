@@ -38,6 +38,10 @@ Route::group(['prefix' => '{language}'], function(){
         return view('main.index');
     })->name('home')->middleware('auth');
 
+    Route::get('/hello', function(){
+        return 'Hello World';
+    });
+
     Route::group(['prefix' => 'plants'], function(){
     
         Route::group(['prefix' => 'plant-parents-species'], function(){
