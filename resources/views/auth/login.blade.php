@@ -1,106 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title>RA-METRICS | Login Page</title>
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-	<meta content="" name="description" />
-	<meta content="" name="author" />
-	
-	<!-- ================== BEGIN BASE CSS STYLE ================== -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-	<link href="{{asset('color-admin/assets/css/default/app.min.css')}}" rel="stylesheet" />
-	<!-- ================== END BASE CSS STYLE ================== -->
-</head>
-<body class="pace-top">
-	<!-- begin #page-loader -->
-	<div id="page-loader" class="fade show">
-		<span class="spinner"></span>
-	</div>
-	<!-- end #page-loader -->
-	
-	<!-- begin login-cover -->
-	<div class="login-cover">
-		<div class="login-cover-image" style="background-image: url({{asset('color-admin/assets/img/login-bg/login-bg-17.jpg')}})" data-id="login-cover-image"></div>
-		<div class="login-cover-bg"></div>
-	</div>
-	<!-- end login-cover -->
-	
-	<!-- begin #page-container -->
-	<div id="page-container" class="fade">
-		<!-- begin login -->
-		<div class="login login-v2" data-pageload-addclass="animated fadeIn">
-			<!-- begin brand -->
-			<div class="login-header">
-				<div class="brand">
-					<span class="logo"></span> <b>RA</b>-METRICS
-					<small>responsive bootstrap 4 admin template</small>
-				</div>
-				<div class="icon">
-					<i class="fa fa-lock"></i>
-				</div>
-			</div>
-			<!-- end brand -->
-			<!-- begin login-content -->
-			<div class="login-content">
-				<form action="{{ route('login') }}" method="POST" class="margin-bottom-0">
-                    @csrf
-					<div class="form-group m-b-20">
-						<input type="text" class="form-control form-control-lg" placeholder="Email Address" name='email' id="email" required autofocus />
-					</div>
-					<div class="form-group m-b-20">
-						<input type="password" class="form-control form-control-lg" placeholder="Password" name='password' id="password" required />
-					</div>
-					<div class="checkbox checkbox-css m-b-20">
-						<input type="checkbox" id="remember_me" name='remember' class="form-checkbox" /> 
-						<label for="remember_checkbox">
-							Remember Me
-						</label>
-					</div>
-					<div class="login-buttons">
-						<button type="submit" class="btn btn-success btn-block btn-lg">Sign me in</button>
-					</div>
-					<div class="m-t-20">
-						Not a member yet? Click <a href="{{route('register')}}">here</a> to register.
-                    </div>
+    <head>
+        <meta charset="utf-8" />
+        <title>Log In | RA-METRICS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
-                    <br/>
-                    <br/>
+		<!-- App css -->
+		<link href="{{asset('ubold/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+		<link href="{{asset('ubold/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+
+		<link href="{{asset('ubold/assets/css/bootstrap-dark.min.css')}}" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
+		<link href="{{asset('ubold/assets/css/app-dark.min.css')}}" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+
+		<!-- icons -->
+		<link href="{{asset('ubold/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body class="loading authentication-bg authentication-bg-pattern">
+
+        <div class="account-pages mt-5 mb-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card bg-pattern">
+
+                            <div class="card-body p-4">
+                                
+                                <div class="text-center w-75 m-auto">
+                                    <div class="auth-logo">
+                                        <a href="index.html" class="logo logo-dark text-center">
+                                            <span class="logo-lg">
+												{{-- <img src="{{asset('ubold/assets/images/logo-dark.png')}}" alt="" height="22"> --}}
+												RA-METRICS
+                                            </span>
+                                        </a>
                     
-                    <div class="text-danger">
-                        <x-jet-validation-errors class="mb-4" />
-                    </div>
+                                        <a href="index.html" class="logo logo-light text-center">
+                                            <span class="logo-lg">
+												{{-- <img src="{{asset('ubold/assets/images/logo-light.png')}}" alt="" height="22"> --}}
+												RA-METRICS
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
+                                </div>
 
-				</form>
-			</div>
-			<!-- end login-content -->
-		</div>
-		<!-- end login -->
-		
-		<!-- begin login-bg -->
-		<ul class="login-bg-list clearfix">
-			<li class="active"><a href="javascript:;" data-click="change-bg" data-img="{{asset('color-admin/assets/img/login-bg/login-bg-17.jpg')}}" style="background-image: url({{asset('color-admin/assets/img/login-bg/login-bg-17.jpg')}})"></a></li>
-			<li><a href="javascript:;" data-click="change-bg" data-img="{{asset('color-admin/assets/img/login-bg/login-bg-16.jpg')}}" style="background-image: url({{asset('color-admin/assets/img/login-bg/login-bg-16.jpg')}})"></a></li>
-			<li><a href="javascript:;" data-click="change-bg" data-img="{{asset('color-admin/assets/img/login-bg/login-bg-15.jpg')}}" style="background-image: url({{asset('color-admin/assets/img/login-bg/login-bg-15.jpg')}})"></a></li>
-			<li><a href="javascript:;" data-click="change-bg" data-img="{{asset('color-admin/assets/img/login-bg/login-bg-14.')}}" style="background-image: url({{asset('color-admin/assets/img/login-bg/login-bg-14.jpg')}})"></a></li>
-			<li><a href="javascript:;" data-click="change-bg" data-img="{{asset('color-admin/assets/img/login-bg/login-bg-13.jpg')}}" style="background-image: url({{asset('color-admin/assets/img/login-bg/login-bg-13.jpg')}})"></a></li>
-			<li><a href="javascript:;" data-click="change-bg" data-img="{{asset('color-admin/assets/img/login-bg/login-bg-12.jpg')}}" style="background-image: url({{asset('color-admin/assets/img/login-bg/login-bg-12.jpg')}})"></a></li>
-		</ul>
-		<!-- end login-bg -->
-		
-		<!-- begin scroll to top btn -->
-		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
-		<!-- end scroll to top btn -->
-	</div>
-	<!-- end page container -->
-	
-	<!-- ================== BEGIN BASE JS ================== -->
-	<script src="{{asset('color-admin/assets/js/app.min.js')}}"></script>
-	<script src="{{asset('color-admin/assets/js/theme/default.min.js')}}"></script>
-	<!-- ================== END BASE JS ================== -->
-	
-	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
-	<script src="{{asset('color-admin/assets/js/demo/login-v2.demo.js')}}"></script>
-	<!-- ================== END PAGE LEVEL JS ================== -->
-</body>
+                                <form action="{{ route('login') }}" method="POST">
+									@csrf
+                                    <div class="form-group mb-3">
+                                        <label for="emailaddress">Email address</label>
+                                        <input class="form-control" type="email" placeholder="Enter your email" name='email' id="email" required autofocus>
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="password">Password</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
+                                            <div class="input-group-append" data-password="false">
+                                                <div class="input-group-text">
+                                                    <span class="password-eye"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="remember_me" name='remember' checked>
+                                            <label class="custom-control-label" for="checkbox-signin">Remember me</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-0 text-center">
+                                        <button class="btn btn-primary btn-block" type="submit"> Log In </button>
+									</div>
+
+									<br>
+									
+									<div class="text-danger">
+										<x-jet-validation-errors class="mb-4" />
+									</div>
+
+                                </form>
+
+                                {{-- <div class="text-center">
+                                    <h5 class="mt-3 text-muted">Sign in with</h5>
+                                    <ul class="social-list list-inline mt-3 mb-0">
+                                        <li class="list-inline-item">
+                                            <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github"></i></a>
+                                        </li>
+                                    </ul>
+                                </div> --}}
+
+                            </div> <!-- end card-body -->
+                        </div>
+                        <!-- end card -->
+
+                        <div class="row mt-3">
+                            <div class="col-12 text-center">
+                                <p> <a href="auth-recoverpw.html" class="text-white-50 ml-1">Forgot your password?</a></p>
+                                {{-- <p class="text-white-50">Don't have an account? <a href="auth-register.html" class="text-white ml-1"><b>Sign Up</b></a></p> --}}
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end page -->
+
+
+        <footer class="footer footer-alt">
+            <script>document.write(new Date().getFullYear())</script> &copy; RA-METRICS by <a href="https://vcompinc.com" class="text-white-50">VComp Inc.</a> 
+        </footer>
+
+        <!-- Vendor js -->
+        <script src="{{asset('ubold/assets/js/vendor.min.js')}}"></script>
+
+        <!-- App js -->
+        <script src="{{asset('ubold/assets/js/app.min.js')}}"></script>
+        
+    </body>
 </html>
