@@ -1,0 +1,75 @@
+// Colours
+$black: #000000 !default;
+$blue-very-light: #7ba4d9 !default;
+$blue-light: #336699 !default;
+$blue-medium: #008bb0 !default;
+$blue-dark: #002a5c !default;
+$gray-very-light: #dddddd !default;
+$gray-light: #cecfcb !default;
+$gray-medium: #999999 !default;
+$gray-dark: #666666 !default;
+$green-very-light: #dae5cd !default;
+$green-light: #99cc99 !default;
+$green-medium: #339933 !default;
+$gold-very-light: #FAFAD2 !default;
+$gold-light: #ffcc33 !default;
+$gold-medium: #ffe498 !default;
+$red: #e31837 !default;
+$white: #ffffff !default;
+
+// IE Fallback
+$vars: (
+    red-medium: #e31837,
+    white-very-light: #ffffff
+);
+
+// Spacing
+$section-width: 960px;
+$margin: 1rem !default;
+$padding: 1rem !default;
+
+// Class names
+$es: '__' !default; // Element separator
+$ms: '--' !default; // Modifier separator
+$header: 'header' !default;
+$nav: 'nav' !default;
+$section: 'section' !default;
+$ra__plants: 'ra__plants' !default;
+$footer: 'footer' !default;
+
+// CSS variables
+// Convert Hex values to RGBA if needed
+@function hex-to-rgb( $hex ) {
+    @return red( $hex ), green( $hex ), blue( $hex );
+}
+@mixin var($property, $varName) {
+    #{$property}: map-get($vars, $varName);
+    #{$property}: var(--#{$varName}, map-get($vars, $varName));
+}
+
+:root {
+    --black: #{ map-get( $vars, $black ) };
+    --blue-very-light: #{ $blue-very-light };
+    --blue-light: #{ $blue-light };
+    --blue-light--rgb: #{ hex-to-rgb( $blue-light ) };
+    --blue-medium: #{ $blue-medium };
+    --blue-medium--rgb: #{ hex-to-rgb( $blue-medium ) };
+    --blue-dark: #{ $blue-dark };
+    --blue-dark--rgb: #{ hex-to-rgb( $blue-dark ) };
+    --gray-very-light: #{ $gray-very-light };
+    --gray-light: #{ $gray-light };
+    --gray-medium: #{ $gray-medium };
+    --gray-dark: #{ $gray-dark };
+    --green-very-light: #{ $green-very-light };
+    --green-light: #{ $green-light };
+    --green-medium: #{ $green-medium };
+    --gold-very-light: #{ $gold-very-light };
+    --gold-light: #{ $gold-light };
+    --gold-medium: #{ $gold-medium };
+    --red: #{ $red };
+    --red-medium: #{ map-get( $vars, red-medium ) };
+    --white: #{ $white };
+    --white-very-light: #{ map-get( $vars, white-very-light ) };
+    --margin: #{ $margin };
+    --padding: #{ $padding };
+}
