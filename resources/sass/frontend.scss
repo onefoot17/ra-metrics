@@ -1,0 +1,22 @@
+:root {
+    --black: red;
+    --white: rgb( 255, 255, 255 );
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+section {
+    background-color: black;
+
+    article {
+        background-color: black;
+
+        div {
+            background-color: black;
+        }
+    }
+}
