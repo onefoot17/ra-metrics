@@ -1,0 +1,17 @@
+body {
+  background-color: red;
+  color: rgb( 255, 255, 255 );
+}
+
+section {
+  background-color: black;
+}
+
+section article {
+  background-color: black;
+}
+
+section article div {
+  background-color: black;
+}
+
