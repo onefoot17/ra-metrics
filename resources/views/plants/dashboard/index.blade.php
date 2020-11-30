@@ -37,7 +37,43 @@
 
         <div class="row">
 
-            <div class="col-lg-12">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="header-title">@lang('Insert Plant Parents / Species')</h4>
+
+                        <p class="sub-header">
+                            Most common form control, text-based input fields. Includes support for all HTML5 types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and <code>color</code>.
+                        </p>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form action="{{route('plant_dashboard_store', [Request::Segment(1)])}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="form-group mb-3">
+                                        <label for="simpleinput">@lang('Parent name')</label>
+                                        <input type="text" class="form-control" name="plant_parent_name" id='plant_specie_name' />
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="simpleinput">@lang('Image')</label>
+                                        <input type="file" class="form-control" name="plant_image" id='plant_image' />
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="simpleinput">@lang('Comments')</label>
+                                        <textarea class="form-control" rows="3" name='comments' id='comments'></textarea>
+                                        <small class="f-s-12 text-grey-darker pull-right">@lang('Only 255 characters')</small>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <button type="submit" class="btn btn-blue waves-effect waves-light">@lang('Submit')</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div> <!-- end card-body -->
+                </div> <!-- end card -->
+            </div><!-- end col -->
+
+            <div class="col-lg-6">
                 <div class="card-box">
                     <h4 class="header-title">@lang('Plant Parents / Species')</h4>
 
@@ -63,7 +99,7 @@
                                         <td>{{$plantParentsSpeciesCollection->plant_parent_name}}</td>
                                         <td>{{$plantParentsSpeciesCollection->comments}}</td>
                                         <td class="with-btn" nowrap>
-                                            <form method="POST" action="{{route('plant_parents_species_destroy', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" id='form_{{$plantParentsSpeciesCollection->id}}'>
+                                            <form method="POST" action="{{route('plant_dashboard_destroy', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" id='form_{{$plantParentsSpeciesCollection->id}}'>
                                                 @csrf
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-outline-primary waves-effect waves-light">@lang('Edit')</a>
@@ -85,7 +121,6 @@
             </div> <!-- end col -->
         </div>
         <!-- end row -->
-        
     </div> <!-- container -->
 
 @stop

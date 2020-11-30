@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts-color-admin.main')
 
 @php 
 
