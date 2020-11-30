@@ -27,14 +27,14 @@
 
     </head>
 
-    <body class="loading">
+    <body class="loading" data-layout-mode="horizontal" data-layout='{"mode": "dark", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'>
 
         <!-- Begin page -->
         <div id="wrapper">
 
             @include('layouts.topbar')
 
-            @include('layouts.left-sidebar')
+            @include('layouts.topnav')
 
             <!-- ============================================================== -->
             <!-- Start Page Content here -->
