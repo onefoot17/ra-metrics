@@ -19,7 +19,7 @@ class CreatePlantSitesTable extends Migration
             $table->unsignedBigInteger('plantsid');
             $table->unsignedBigInteger('sitesid');
 
-            $table->foreign('plantsid')->references('id')->on('plants.plants');
+            $table->foreign('plantsid')->references('id')->on('plants.plants')->onDelete('cascade');
             //$table->foreign('sitesid')->references('id')->on('plants.sites');
         });
     }

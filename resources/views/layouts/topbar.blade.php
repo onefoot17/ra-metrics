@@ -145,28 +145,27 @@
 
             <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="{{asset('ubold/assets/images/flags/us.jpg')}}" alt="user-image" height="16">
+                    @if(App::getLocale() == 'en' or App::getLocale() == 'fr')
+                        <img src="{{asset('ubold/assets/images/flags/ca.png')}}" alt="user-image" height="16">
+                    @else
+                        <img src="{{asset('ubold/assets/images/flags/br.png')}}" alt="user-image" height="16">
+                    @endif
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="{{asset('ubold/assets/images/flags/germany.jpg')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">German</span>
+                    <a href="{{route(Route::currentRouteName(), ['en', 'id' => request()->id])}}" class="dropdown-item">
+                        <img src="{{asset('ubold/assets/images/flags/ca.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('English')</span>
                     </a>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="{{asset('ubold/assets/images/flags/italy.jpg')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Italian</span>
+                    <a href="{{route(Route::currentRouteName(), ['fr', 'id' => request()->id])}}" class="dropdown-item">
+                        <img src="{{asset('ubold/assets/images/flags/ca.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('French')</span>
                     </a>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="{{asset('ubold/assets/images/flags/spain.jpg')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Spanish</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="{{asset('ubold/assets/images/flags/russia.jpg')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Russian</span>
+                    <a href="{{route(Route::currentRouteName(), ['pt_BR', 'id' => request()->id])}}" class="dropdown-item">
+                        <img src="{{asset('ubold/assets/images/flags/br.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('Portuguese')</span>
                     </a>
 
                 </div>
@@ -303,11 +302,11 @@
                 </div>
             </li>
 
-            <li class="dropdown notification-list">
+            {{-- <li class="dropdown notification-list">
                 <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
                     <i class="fe-settings noti-icon"></i>
                 </a>
-            </li>
+            </li> --}}
 
         </ul>
 

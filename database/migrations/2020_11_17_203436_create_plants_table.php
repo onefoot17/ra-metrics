@@ -20,8 +20,8 @@ class CreatePlantsTable extends Migration
             $table->unsignedBigInteger('plant_typeid');
             $table->string('comments')->nullable();
 
-            $table->foreign('plant_parent_specieid')->references('id')->on('plants.plant_parents_species');
-            $table->foreign('plant_typeid')->references('id')->on('plants.plant_types');
+            $table->foreign('plant_parent_specieid')->references('id')->on('plants.plant_parents_species')->onDelete('cascade');
+            $table->foreign('plant_typeid')->references('id')->on('plants.plant_types')->onDelete('cascade');
 
         });
     }

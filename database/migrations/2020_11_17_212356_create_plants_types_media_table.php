@@ -22,7 +22,7 @@ class CreatePlantsTypesMediaTable extends Migration
             $table->string('s3_address');
             $table->string('comments')->nullable();
 
-            $table->foreign('plantsid')->references('id')->on('plants.plants');
+            $table->foreign('plantsid')->references('id')->on('plants.plants')->onDelete('cascade');
         });
     }
 
