@@ -12,7 +12,37 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="{{route('plant_dashboard_index', [Request::segment(1)])}}" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fe-briefcase mr-1"></i> @lang('Plants')
+                            <i class="fe-sun mr-1"></i> @lang('Plants')
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe-users mr-1"></i> @lang('Participants')
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="icon dripicons-location mr-1"></i> @lang('Locations/Sites')
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe-database mr-1"></i> @lang('Data')
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe-clipboard mr-1"></i> @lang('Reports')
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe-help-circle mr-1"></i> @lang('Help')
                         </a>
                     </li>
 

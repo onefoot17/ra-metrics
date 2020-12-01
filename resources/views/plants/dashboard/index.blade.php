@@ -40,12 +40,7 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title">@lang('Insert Plant Parents / Species')</h4>
-
-                        <p class="sub-header">
-                            Most common form control, text-based input fields. Includes support for all HTML5 types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and <code>color</code>.
-                        </p>
-
+                        <h4 class="header-title">@lang('New Plant Parents / Species')</h4>
                         <div class="row">
                             <div class="col-lg-12">
                                 <form action="{{route('plant_dashboard_store', [Request::Segment(1)])}}" method="POST" enctype="multipart/form-data">

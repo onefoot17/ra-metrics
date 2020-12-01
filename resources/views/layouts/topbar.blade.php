@@ -83,11 +83,11 @@
                 </div>
             </li>
 
-            <li class="dropdown d-none d-lg-inline-block">
+            {{-- <li class="dropdown d-none d-lg-inline-block">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen" href="#">
                     <i class="fe-maximize noti-icon"></i>
                 </a>
-            </li>
+            </li> --}}
 
             {{-- <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -312,23 +312,25 @@
 
         <!-- LOGO -->
         <div class="logo-box">
-            <a href="index.html" class="logo logo-dark text-center">
+            <a href="{{route('home', [Request::segment(1)])}}" class="logo logo-dark text-center">
                 <span class="logo-sm">
                     <img src="{{asset('ubold/assets/images/logo-sm.png')}}" alt="" height="22">
                     <!-- <span class="logo-lg-text-light">UBold</span> -->
                 </span>
                 <span class="logo-lg">
-                    <img src="{{asset('ubold/assets/images/logo-dark.png')}}" alt="" height="20">
+                    {{-- <img src="{{asset('ubold/assets/images/logo-dark.png')}}" alt="" height="20"> --}}
+                    <img src="{{asset('images/logo.png')}}" alt="" height="20">
                     <!-- <span class="logo-lg-text-light">U</span> -->
                 </span>
             </a>
 
-            <a href="index.html" class="logo logo-light text-center">
+            <a href="{{route('home', [Request::segment(1)])}}" class="logo logo-light text-center">
                 <span class="logo-sm">
                     <img src="{{asset('ubold/assets/images/logo-sm.png')}}" alt="" height="22">
                 </span>
                 <span class="logo-lg">
-                    <img src="{{asset('ubold/assets/images/logo-light.png')}}" alt="" height="20">
+                    {{-- <img src="{{asset('ubold/assets/images/logo-light.png')}}" alt="" height="20"> --}}
+                    <img src="{{asset('images/logo.png')}}" alt="" height="20">
                 </span>
             </a>
         </div>

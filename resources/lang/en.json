@@ -49,7 +49,7 @@
     "RA-METRICS - Vcomp Inc All Rights Reserved":"RA-METRICS - Vcomp Inc All Rights Reserved",
     "more options":"more options",
     "Admin":"Admin",
-    "Insert Plant Parents / Species":"Insert Plant Parents / Species",
+    "New Plant Parents / Species":"New Plant Parents / Species",
     "insert":"insert",
     "Insert":"Insert",
     "Only 255 characters":"Only 255 characters",
@@ -63,5 +63,10 @@
     "Plant Type":"Plant Type",
     "Edit Plant":"Edit Plant",
     "Select one":"Select one",
-    "Create Plants":"Create Plants"
+    "Create Plants":"Create Plants",
+    "Participants":"Participants",
+    "Locations/Sites":"Locations/Sites",
+    "Data":"Data",
+    "Reports":"Reports",
+    "Help":"Help"
 }
