@@ -8,7 +8,7 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('ubold/assets/images/favicon.ico')}}">
+        <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
 
         @section('css')
             <!-- Jquery Toast css -->
@@ -46,8 +46,29 @@
 
             <div class="content-page">
                 <div class="content">
+                    <!-- Start Content-->
+                    <div class="container-fluid">
 
-                    @yield('content')
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            {{-- <li class="breadcrumb-item"><a href="javascript: void(0);"></a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);"></a></li>
+                                            <li class="breadcrumb-item active"></li> --}}
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title"></h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
+
+                        @yield('content')
+
+                    </div> <!-- container -->
         
                 </div> <!-- content -->
         

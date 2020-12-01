@@ -37,14 +37,14 @@
                                         <a href="index.html" class="logo logo-dark text-center">
                                             <span class="logo-lg">
 												{{-- <img src="{{asset('ubold/assets/images/logo-dark.png')}}" alt="" height="22"> --}}
-												RA-METRICS
+												<img src="{{asset('images/logo-dark.png')}}" alt="" height="30">
                                             </span>
                                         </a>
                     
                                         <a href="index.html" class="logo logo-light text-center">
                                             <span class="logo-lg">
 												{{-- <img src="{{asset('ubold/assets/images/logo-light.png')}}" alt="" height="22"> --}}
-												RA-METRICS
+												<img src="{{asset('images/logo-light.png')}}" alt="" height="30">
                                             </span>
                                         </a>
                                     </div>
@@ -129,7 +129,7 @@
 
 
         <footer class="footer footer-alt">
-            <script>document.write(new Date().getFullYear())</script> &copy; RA-METRICS by <a href="https://vcompinc.com" class="text-white-50">VComp Inc.</a> 
+            <script>document.write(new Date().getFullYear())</script> &copy; RA-METRICS by <a href="https://vcompinc.com" target='_blank' class="text-white-50">VCOMP Inc.</a> 
         </footer>
 
         <!-- Vendor js -->

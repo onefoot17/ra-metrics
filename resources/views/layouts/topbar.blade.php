@@ -147,6 +147,8 @@
                 <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     @if(App::getLocale() == 'en' or App::getLocale() == 'fr')
                         <img src="{{asset('ubold/assets/images/flags/ca.png')}}" alt="user-image" height="16">
+                    @elseif(App::getLocale() == 'ro')
+                        <img src="{{asset('ubold/assets/images/flags/ro.png')}}" alt="user-image" height="16">
                     @else
                         <img src="{{asset('ubold/assets/images/flags/br.png')}}" alt="user-image" height="16">
                     @endif
@@ -161,6 +163,11 @@
                     <!-- item-->
                     <a href="{{route(Route::currentRouteName(), ['fr', 'id' => request()->id])}}" class="dropdown-item">
                         <img src="{{asset('ubold/assets/images/flags/ca.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('French')</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="{{route(Route::currentRouteName(), ['ro', 'id' => request()->id])}}" class="dropdown-item">
+                        <img src="{{asset('ubold/assets/images/flags/ro.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('Romanian')</span>
                     </a>
 
                     <!-- item-->
@@ -319,7 +326,7 @@
                 </span>
                 <span class="logo-lg">
                     {{-- <img src="{{asset('ubold/assets/images/logo-dark.png')}}" alt="" height="20"> --}}
-                    <img src="{{asset('images/logo.png')}}" alt="" width="150">
+                    <img src="{{asset('images/logo-dark.png')}}" alt="" width="150">
                     <!-- <span class="logo-lg-text-light">U</span> -->
                 </span>
             </a>
@@ -330,7 +337,7 @@
                 </span>
                 <span class="logo-lg">
                     {{-- <img src="{{asset('ubold/assets/images/logo-light.png')}}" alt="" height="20"> --}}
-                    <img src="{{asset('images/logo.png')}}" alt="" width="150">
+                    <img src="{{asset('images/logo-light.png')}}" alt="" width="150">
                 </span>
             </a>
         </div>
