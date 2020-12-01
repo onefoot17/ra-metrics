@@ -319,7 +319,7 @@
                 </span>
                 <span class="logo-lg">
                     {{-- <img src="{{asset('ubold/assets/images/logo-dark.png')}}" alt="" height="20"> --}}
-                    <img src="{{asset('images/logo.png')}}" alt="" height="20">
+                    <img src="{{asset('images/logo.png')}}" alt="" width="150">
                     <!-- <span class="logo-lg-text-light">U</span> -->
                 </span>
             </a>
@@ -330,7 +330,7 @@
                 </span>
                 <span class="logo-lg">
                     {{-- <img src="{{asset('ubold/assets/images/logo-light.png')}}" alt="" height="20"> --}}
-                    <img src="{{asset('images/logo.png')}}" alt="" height="20">
+                    <img src="{{asset('images/logo.png')}}" alt="" width="150">
                 </span>
             </a>
         </div>
