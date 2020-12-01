@@ -1,22 +1,30 @@
-:root {
-    --black: red;
-    --white: rgb( 255, 255, 255 );
-}
+// Intialization
+@import '_reset';
+@import '_variables';
+@import '_mixins';
 
-body {
-    background-color: var(--black);
-    color: var(--white);
-}
+.#{$ra__plants} {
+    &#{$es}display {
+        @include display-flex(
+            $align-items: flex-start
+        );
 
-
-section {
-    background-color: black;
-
-    article {
-        background-color: black;
-
-        div {
-            background-color: black;
+        @include for-desktop-1400-down {
+            > * {
+                flex-basis: 100%;
+                max-width: initial;
+            }
         }
+    }
+
+    &#{$es}display__tr {
+        @include display-flex(
+            $align-items: flex-start,
+            $flex-shrink: 1
+        );
+    }
+
+    &#{$es}display__td {
+        border: none !important;
     }
 }

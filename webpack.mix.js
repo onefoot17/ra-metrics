@@ -32,4 +32,4 @@ mix.sass( 'resources/sass/frontend.scss', 'public/css' )
         ]
     });
 
-mix.browserSync( 'http://192.168.10.10/color-admin/hello' );
+mix.browserSync( 'http://192.168.10.10/' );

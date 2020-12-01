@@ -23,11 +23,15 @@
 
             <!-- icons -->
             <link href="{{asset('ubold/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+
+
+            <!-- Custom CSS -->
+            <link rel="stylesheet" href="{{asset('css/frontend.css')}}">
         @show
 
     </head>
-
-    <body class="loading" data-layout-mode="horizontal" data-layout='{"mode": "dark", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'>
+    
+    <body class="loading ra__{{ Request::segment( 2 ) }} ra__{{ Request::segment( 3 ) }}" data-layout-mode="horizontal" data-layout='{"mode": "dark", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'>
 
         <!-- Begin page -->
         <div id="wrapper">
