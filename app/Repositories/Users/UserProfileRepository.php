@@ -23,11 +23,11 @@ class UserProfileRepository implements UserProfileRepositoryInterface {
 
     public function update($request, $id)
     {
+        $password_array = (!empty($request->password))?['password' => Hash::make($request->password)]:[];
+        
         $update_array = [
             'name' => $request->name
         ];
-
-        $password_array = (!empty($request->password))?['password' => Hash::make($request->password)]:[];
 
         $update_array = array_merge($update_array, $password_array);
 
