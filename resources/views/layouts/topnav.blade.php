@@ -12,7 +12,7 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="{{route('plant_dashboard_index', [Request::segment(1)])}}" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fe-sun mr-1"></i> @lang('Plants')
+                            <i class="fab fa-pagelines mr-1"></i> @lang('Plants')
                         </a>
                     </li>
 
