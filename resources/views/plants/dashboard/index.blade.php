@@ -30,8 +30,13 @@
                                     <input type="text" class="form-control" name="plant_parent_name" id='plant_specie_name' />
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label for="simpleinput">@lang('Image')</label>
-                                    <input type="file" class="form-control" name="plant_image" id='plant_image' />
+                                    <label>@lang('Image')</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile04">
+                                            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="simpleinput">@lang('Comments')</label>

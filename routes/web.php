@@ -5,8 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Plants\PlantParentSpecieController;
 use App\Http\Controllers\Plants\PlantTypeController;
 use App\Http\Controllers\Plants\PlantsController;
-
 use App\Http\Controllers\Plants\DashboardController;
+use App\Http\Controllers\Auth\MyProfileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,11 @@ Route::group(['prefix' => '{language}'], function(){
     Route::get('/', function () {
         return view('main.index');
     })->name('home')->middleware('auth');
+
+    Route::group(['prefix' => 'my-profile'], function(){
+        Route::get('/', [MyProfileController::class, 'edit'])->name('my_profile_edit');
+        Route::put('/edit', [MyProfileController::class, 'update'])->name('my_profile_update');
+    });
 
     Route::group(['prefix' => 'admin'], function(){
 

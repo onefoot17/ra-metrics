@@ -15,6 +15,7 @@
     "Cancelled":"Cancelled",
     "Nothing was deleted":"Nothing was deleted",
     "Your file has been deleted.":"Your file has been deleted.",
+    "My Profile edited succefully!":"My Profile edited succefully!",
 
     "Settings":"Settings",
     "Send Feedback":"Send Feedback",
@@ -70,5 +71,9 @@
     "Data":"Data",
     "Reports":"Reports",
     "Help":"Help",
-    "Total Plants": "Total Plants"
+    "Total Plants": "Total Plants",
+    "My Profile":"My Profile",
+    "Name":"Name",
+    "Password":"Password",
+    "Email":"Email"
 }

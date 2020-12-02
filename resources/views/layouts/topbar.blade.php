@@ -283,7 +283,7 @@
                     </div>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="{{route('my_profile_edit', [Request::segment(1)])}}" class="dropdown-item notify-item">
                         <i class="fe-user"></i>
                         <span>My Account</span>
                     </a>
@@ -321,7 +321,7 @@
         <div class="logo-box">
             <a href="{{route('home', [Request::segment(1)])}}" class="logo logo-dark text-center">
                 <span class="logo-sm">
-                    <img src="{{asset('ubold/assets/images/logo-sm.png')}}" alt="" height="22">
+                    <img src="{{asset('images/logo-sm.png')}}" alt="" height="22">
                     <!-- <span class="logo-lg-text-light">UBold</span> -->
                 </span>
                 <span class="logo-lg">
@@ -333,7 +333,7 @@
 
             <a href="{{route('home', [Request::segment(1)])}}" class="logo logo-light text-center">
                 <span class="logo-sm">
-                    <img src="{{asset('ubold/assets/images/logo-sm.png')}}" alt="" height="22">
+                    <img src="{{asset('images/logo-sm.png')}}" alt="" height="22">
                 </span>
                 <span class="logo-lg">
                     {{-- <img src="{{asset('ubold/assets/images/logo-light.png')}}" alt="" height="20"> --}}

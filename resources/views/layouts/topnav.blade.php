@@ -5,12 +5,6 @@
             <div class="collapse navbar-collapse" id="topnav-menu-content">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle arrow-none" href="{{route('home', [Request::segment(1)])}}" id="topnav-dashboard" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fe-airplay mr-1"></i> @lang('Home')
-                        </a>
-                    </li>
-
-                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="{{route('plant_dashboard_index', [Request::segment(1)])}}" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
                             <i class="fab fa-pagelines mr-1"></i> @lang('Plants')
                         </a>
