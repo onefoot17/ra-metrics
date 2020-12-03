@@ -285,13 +285,13 @@
                     <!-- item-->
                     <a href="{{route('my_profile_edit', [Request::segment(1)])}}" class="dropdown-item notify-item">
                         <i class="fe-user"></i>
-                        <span>My Account</span>
+                        <span>@lang('My Profile')</span>
                     </a>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="{{route('settings_edit', [Request::segment(1)])}}" class="dropdown-item notify-item">
                         <i class="fe-settings"></i>
-                        <span>Settings</span>
+                        <span>@lang('Settings')</span>
                     </a>
 
                     <div class="dropdown-divider"></div>
@@ -309,11 +309,11 @@
                 </div>
             </li>
 
-            {{-- <li class="dropdown notification-list">
+            <li class="dropdown notification-list">
                 <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
                     <i class="fe-settings noti-icon"></i>
                 </a>
-            </li> --}}
+            </li>
 
         </ul>
 

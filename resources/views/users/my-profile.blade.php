@@ -17,7 +17,7 @@
         <div class="card">
             <div class="card-body">
 
-                <h4 class="header-title">@lang('My Profile') <small>(Last updated: 2020-02-02 15:14)</small></h4>
+                <h4 class="header-title">@lang('My Profile') <small>(@lang('Last updated'): 2020-02-02 15:14)</small></h4>
 
                 <form action="{{route('my_profile_update', [Request::segment(1)])}}" method="POST">
                     @csrf

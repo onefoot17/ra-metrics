@@ -75,5 +75,8 @@
     "My Profile":"My Profile",
     "Name":"Name",
     "Password":"Password",
-    "Email":"Email"
+    "Email":"Email",
+    "Last updated":"Last updated",
+    "Language":"Language",
+    "Theme Colour":"Theme Colour"
 }

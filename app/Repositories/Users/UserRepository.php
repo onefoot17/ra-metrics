@@ -2,29 +2,32 @@
 
 namespace App\Repositories\Users;
 
-use App\Repositories\Users\Contracts\UserProfileRepositoryInterface;
+use App\Repositories\Users\Contracts\UserRepositoryInterface;
 
 use App\Models\User;
 
 use Auth;
 use Hash;
 
-class UserProfileRepository implements UserProfileRepositoryInterface {
+class UserRepository implements UserRepositoryInterface {
 
     public function store($request)
     {
         
     }
 
-    public function edit($id)
+    public function show($id)
     {
-        
+        $query = UserProfileRepositoryInterface::where('id', $id)
+        ->first();
+
+        return $query;
     }
 
     public function update($request, $id)
     {
         $password_array = (!empty($request->password))?['password' => Hash::make($request->password)]:[];
-        
+
         $update_array = [
             'name' => $request->name
         ];

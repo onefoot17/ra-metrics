@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
+use App\Models\Setting;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,22 +17,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::insert([
-            'name' => 'Felipe Pastana',
-            'email' => 'felipe@vcompinc.com',
-            'password' => Hash::make('12345678')
-        ]);
+        $felipe = new User();
+        $felipe->name = 'Felipe Pastana';
+        $felipe->email = 'felipe@vcompinc.com';
+        $felipe->password = Hash::make('12345678');
+        $felipe->save();
 
-        User::insert([
-            'name' => 'Vio Ivanescu',
-            'email' => 'vio@vcompinc.com',
-            'password' => Hash::make('12345678')
-        ]);
+        $setting = new Setting([]);
+        $felipe->settings()->save($setting);
 
-        User::insert([
-            'name' => 'Earl Misquitta',
-            'email' => 'earl@vcompinc.com',
-            'password' => Hash::make('12345678')
-        ]);
+        $vio = new User();
+        $vio->name = 'Vio Ivanescu';
+        $vio->email = 'vio@vcompinc.com';
+        $vio->password = Hash::make('12345678');
+        $vio->save();
+
+        $setting = new Setting([]);
+        $vio->settings()->save($setting);
+
+        $earl = new User();
+        $earl->name = 'Earl Misquitta';
+        $earl->email = 'earl@vcompinc.com';
+        $earl->password = Hash::make('12345678');
+        $earl->save();
+
+        $setting = new Setting([]);
+        $earl->settings()->save($setting);
     }
 }
