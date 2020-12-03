@@ -49,7 +49,7 @@ Route::group(['prefix' => '{language}'], function(){
 
     Route::group(['prefix' => 'settings'], function(){
         Route::get('/', [SettingsController::class, 'edit'])->name('settings_edit');
-        Route::put('/edit', [SettingsController::class, 'update'])->name('settings_update');
+        Route::put('/edit/{id}', [SettingsController::class, 'update'])->name('settings_update');
     });
 
     Route::group(['prefix' => 'admin'], function(){

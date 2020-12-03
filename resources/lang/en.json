@@ -16,6 +16,7 @@
     "Nothing was deleted":"Nothing was deleted",
     "Your file has been deleted.":"Your file has been deleted.",
     "My Profile edited succefully!":"My Profile edited succefully!",
+    "Setting edited succefully!":"Setting edited succefully!",
 
     "Settings":"Settings",
     "Send Feedback":"Send Feedback",
@@ -78,5 +79,6 @@
     "Email":"Email",
     "Last updated":"Last updated",
     "Language":"Language",
-    "Theme Colour":"Theme Colour"
+    "Theme Colour":"Theme Colour",
+    "Permantent Language":"Permantent Language"
 }

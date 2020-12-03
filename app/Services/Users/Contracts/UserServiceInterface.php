@@ -8,4 +8,7 @@ interface UserServiceInterface
     public function getUserProfile($id);
     public function updateUserProfile($request, $id);
     public function destroyUserProfile($id);
+
+    public function getSettings($id);
+    public function updateSetting($request, $id);
 }

@@ -16,6 +16,7 @@
     "Nothing was deleted":"",
     "Your file has been deleted.":"",
     "My Profile edited succefully!":"",
+    "Setting edited succefully!":"",
 
     "Settings":"",
     "Send Feedback":"",
@@ -78,5 +79,6 @@
     "Email":"",
     "Last updated":"",
     "Language":"",
-    "Theme Colour":""
+    "Theme Colour":"",
+    "Permantent Language":""
 }

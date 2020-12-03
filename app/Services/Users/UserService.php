@@ -5,15 +5,17 @@ namespace App\Services\Users;
 use App\Services\Users\Contracts\UserServiceInterface;
 
 use App\Repositories\Users\Contracts\UserRepositoryInterface;
-
+use App\Repositories\Users\Contracts\SettingRepositoryInterface;
 
 class UserService implements UserServiceInterface
 {
     public function __construct(
-        UserRepositoryInterface $UserRepositoryInterface
+        UserRepositoryInterface $UserRepositoryInterface,
+        SettingRepositoryInterface $SettingRepositoryInterface
     )
     {
         $this->UserRepositoryInterface = $UserRepositoryInterface;
+        $this->SettingRepositoryInterface = $SettingRepositoryInterface;
     }
 
     // My Profile
@@ -41,6 +43,15 @@ class UserService implements UserServiceInterface
 
     public function getSettings($id)
     {
+        $query = $this->SettingRepositoryInterface->show($id);
 
+        return $query;
+    }
+
+    public function updateSetting($request, $id)
+    {
+        $update = $this->SettingRepositoryInterface->update($request, $id);
+
+        return $update;
     }
 }

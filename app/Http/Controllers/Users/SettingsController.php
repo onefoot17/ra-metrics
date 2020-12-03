@@ -23,13 +23,18 @@ class SettingsController extends Controller
 
     public function edit($language, UserService $userService)
     {
-        $user_info = $userService->getSettings(Auth::User()->id);
-        return view('users.settings');
+        $settings = $userService->getSettings(Auth::User()->settings->id);
+
+        return view('users.settings', [
+            'settings' => $settings
+        ]);
     }
 
-    public function update($language, $id, Request $request)
+    public function update($language, $id, Request $request, UserService $userService)
     {
+        $userService->updateSetting($request, $id);
 
+        return back()->with('message-success', __('Setting edited succefully!'));
     }
 
     public function destroy()

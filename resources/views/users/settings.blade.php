@@ -20,18 +20,18 @@
         <div class="card">
             <div class="card-body">
 
-                <h4 class="header-title">@lang('Settings') <small>(@lang('Last updated'): 2020-02-02 15:14)</small></h4>
+                <h4 class="header-title">@lang('Settings') <small>(@lang('Last updated'): {{$settings->updated_at}})</small></h4>
 
-                <form action="{{route('settings_update', [Request::segment(1)])}}" method="POST">
+                <form action="{{route('settings_update', [Request::segment(1), 'id' => $settings->id])}}" method="POST">
                     @csrf
                     <input type="hidden" name="_method" value="PUT">
                     <div class="form-group">
                         <label class="mb-1">@lang('Permantent Language')</label>
 
                         <div class="col-md-12">
-                            <select class="selectpicker" data-style="btn-outline-danger">
-                                <option>English</option>
-                                <option>French</option>
+                            <select class="selectpicker" data-style="btn-outline-danger" id="language" name="language">
+                                <option value="en" @if(trim($settings->language) == 'en') selected @endif>@lang('English')</option>
+                                <option value="fr" @if(trim($settings->language) == 'fr') selected @endif>@lang('French')</option>
                             </select>
                         </div>
                         <!-- end col-->
@@ -42,7 +42,7 @@
                         <label class="mb-1">@lang('Theme Colour')</label>
                         <div class="input-group">
                             <div class="switchery-demo">
-                                <input type="checkbox" checked data-plugin="switchery" data-color="#000000"/>
+                                <input type="checkbox" @if($settings->theme_color === 'dark') checked @endif data-plugin="switchery" data-color="#000000" name="theme_color"/>
                             </div>
                         </div>
                     </div>
