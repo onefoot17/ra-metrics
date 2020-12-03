@@ -34,7 +34,7 @@ class SettingsController extends Controller
     {
         $userService->updateSetting($request, $id);
 
-        return redirect()->route('settings_edit', ['language' => trim(Auth::User()->settings->language)])->with('message-success', __('Setting edited succefully!'));
+        return redirect()->route('settings_edit', ['language' => Auth::User()->settings->language])->with('message-success', __('Setting edited succefully!'));
     }
 
     public function destroy()
