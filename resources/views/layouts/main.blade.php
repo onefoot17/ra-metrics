@@ -31,7 +31,7 @@
 
     </head>
     
-    <body class="loading ra__{{ Request::segment( 2 ) }} ra__{{ Request::segment( 3 ) }}" data-layout-mode="horizontal" data-layout='{"mode": "dark", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'>
+    <body class="loading ra__{{ Request::segment( 2 ) }} ra__{{ Request::segment( 3 ) }}" data-layout-mode="horizontal" data-layout='{"mode": "{{Auth::User()->settings->theme_color}}", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'>
 
         <!-- Begin page -->
         <div id="wrapper">
