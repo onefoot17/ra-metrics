@@ -53,10 +53,20 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label>@lang('Phone Number')</label>
+                        <label>@lang('Confirm Password')</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">C</span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="@lang('Confirm Password')" aria-label="@lang('Confirm Password')" aria-describedby="basic-addon1" name="password_confirmation" id='password_confirmation' readonly onfocus="this.removeAttribute('readonly');">
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>@lang('Phone Number')</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">P</span>
                             </div>
                             <input type="text" class="form-control" placeholder="@lang('Phone Number')" aria-label="@lang('Phone Number')" aria-describedby="basic-addon1" value="{{Auth::User()->phone_number}}" name='phone_number' id='phone_number'>
                         </div>
@@ -67,9 +77,7 @@
                             @lang('Edit')
                         </button>
                     </div>
-
                 </form>
-
             </div> <!-- end card-body -->
         </div> <!-- end card -->
     </div> <!-- end col -->
