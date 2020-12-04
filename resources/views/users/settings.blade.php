@@ -28,30 +28,37 @@
                     <div class="form-group">
                         <label class="mb-1">@lang('Permantent Language')</label>
 
-                        <div class="col-md-12">
+                        <div class="">
                             <select class="selectpicker" data-style="btn-outline-danger" id="language" name="language">
                                 <option value="en" @if(trim($settings->language) == 'en') selected @endif>@lang('English')</option>
                                 <option value="fr" @if(trim($settings->language) == 'fr') selected @endif>@lang('French')</option>
                             </select>
                         </div>
                         <!-- end col-->
-
                     </div>
 
-                    <div class="form-group mb-3">
+                    <div class="form-group">
                         <label class="mb-1">@lang('Theme Colour')</label>
                         <div class="input-group">
                             <div class="switchery-demo">
-                                <input type="checkbox" @if($settings->theme_color === 'dark') checked @endif data-plugin="switchery" data-color="#000000" data-size="small" name="theme_color"/>
+                                <span>Dark</span>
+
+                                <input type="checkbox" @if($settings->theme_color === 'dark') checked @endif data-plugin="switchery" data-color="#000000" data-size="small" name="theme_color" />
+
+                                <span>Light</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-group mb-3">
+                    <div class="form-group">
                         <label class="mb-1">@lang('2-Step Verification')</label>
                         <div class="input-group">
                             <div class="switchery-demo">
-                                <input type="checkbox" @if($settings->two_step_verification == true) checked @endif data-plugin="switchery" data-color="#f1b53d" data-size="small" name="two_step_verification"/>
+                                <span>On</span>
+
+                                <input type="checkbox" @if($settings->two_step_verification == true) checked @endif data-plugin="switchery" data-color="#f1b53d" data-size="small" name="two_step_verification" />
+
+                                <span>Off</span>
                             </div>
                         </div>
                     </div>
@@ -72,7 +79,7 @@
                             </div>
                         @endif
                     @endif
-                    <div class="form-group mb-3">
+                    <div class="form-group">
                         <button class="ladda-button btn btn-success" dir="ltr" data-style="expand-left">
                             @lang('Save')
                         </button>
