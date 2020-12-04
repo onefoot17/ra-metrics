@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Auth\LoginController;
+
 use App\Http\Controllers\Plants\PlantParentSpecieController;
 use App\Http\Controllers\Plants\PlantTypeController;
 use App\Http\Controllers\Plants\PlantsController;
@@ -25,8 +27,14 @@ use App\Http\Controllers\Users\SettingsController;
 //     return view('welcome');
 // });
 
+Route::post('/authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
+
 Route::get('/', function () {
-    return redirect()->route('home', ['en']);
+    if(Auth::check()){
+        return redirect()->route('home', [Auth::User()->settings->language]);
+    } else {
+        return redirect()->route('home', ['en']);
+    }
 })->name('index')->middleware('auth');
 
 Route::get('/timezones', function(){
