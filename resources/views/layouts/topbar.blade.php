@@ -28,7 +28,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="dropdown-menu dropdown-lg" id="search-dropdown">
+                        <div class="ra__dropdown-menu dropdown-menu dropdown-lg" id="search-dropdown">
                             <!-- item-->
                             <div class="dropdown-header noti-title">
                                 <h5 class="text-overflow mb-2">Found 22 results</h5>
@@ -90,7 +90,7 @@
                 <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="fe-search noti-icon"></i>
                 </a>
-                <div class="dropdown-menu dropdown-lg dropdown-menu-right p-0">
+                <div class="ra__dropdown-menu dropdown-menu dropdown-lg ra__dropdown-menu dropdown-menu-right p-0">
                     <form class="p-3">
                         <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
                     </form>
@@ -107,7 +107,7 @@
                 <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="fe-grid noti-icon"></i>
                 </a>
-                <div class="dropdown-menu dropdown-lg dropdown-menu-right">
+                <div class="ra__dropdown-menu dropdown-menu dropdown-lg ra__dropdown-menu dropdown-menu-right">
 
                     <div class="p-lg-1">
                         <div class="row no-gutters">
@@ -167,7 +167,7 @@
                         <img src="{{asset('ubold/assets/images/flags/br.png')}}" alt="user-image" height="16">
                     @endif
                 </a>
-                <div class="dropdown-menu dropdown-menu-right">
+                <div class="ra__dropdown-menu dropdown-menu ra__dropdown-menu dropdown-menu-right">
 
                     <!-- item-->
                     <a href="{{route(Route::currentRouteName(), ['en', 'id' => request()->id])}}" class="dropdown-item">
@@ -197,7 +197,7 @@
                     <i class="fe-bell noti-icon"></i>
                     <span class="badge badge-danger rounded-circle noti-icon-badge">9</span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+                <div class="ra__dropdown-menu dropdown-menu ra__dropdown-menu dropdown-menu-right dropdown-lg">
 
                     <!-- item-->
                     <div class="dropdown-item noti-title">
@@ -290,7 +290,7 @@
                         {{Auth::user()->name}} <i class="mdi mdi-chevron-down"></i> 
                     </span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                <div class="ra__dropdown-menu dropdown-menu ra__dropdown-menu dropdown-menu-right profile-dropdown ">
                     <!-- item-->
                     <div class="dropdown-header noti-title">
                         <h6 class="text-overflow m-0">Welcome !</h6>
@@ -355,7 +355,7 @@
                     Create New
                     <i class="mdi mdi-chevron-down"></i> 
                 </a>
-                <div class="dropdown-menu">
+                <div class="ra__dropdown-menu dropdown-menu">
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item">
                         <i class="fe-briefcase mr-1"></i>

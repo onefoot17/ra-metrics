@@ -17,6 +17,19 @@
     }
 }
 
+::placeholder {
+    color: $gray-light !important;
+}
+
+/* ::selection {
+    color: $green !important;
+} */
+
+input:focus {
+    // background-color: $gray-light !important;
+    color: $white !important;
+}
+
 img {
     display: block;
 }
@@ -36,6 +49,10 @@ h6 {
     @include line-height;
 
     color: $white;
+}
+
+h4.header-title {
+    font-size: 2.4rem;
 }
 
 p {
@@ -60,17 +77,87 @@ a {
     color: $white !important;
 }
 
-.header-title {
+/* .header-title {
     font-size: inherit;
-}
+} */
 
-.dropdown-item {
-    color: $white;
+.dropdown {
+    &-menu {
+        background-color: $gray-medium;
+    }
+    
+    &-item {
+        color: $white;
+    }
 }
 
 .table td,
 .table th {
     color: $white;
+}
+
+.input-group-text {
+    background-color: $gray-medium;
+    color: $white;
+    font-size: inherit;
+}
+
+.form-group {
+    margin-bottom: $margin*4;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.form-control {
+    background-color: $gray-medium;
+    color: $white;
+    font-size: inherit;
+}
+
+.btn-success {
+    background-color: $green;
+    border: none;
+    box-shadow: none;
+    color: $black;
+}
+
+.btn-outline-danger {
+    color: $green;
+    border-color: $green;
+    width: auto !important;
+
+    &:hover {
+        background-color: $green;
+        border-color: $green;
+        color: $black;
+    }
+
+    &.focus,
+    &:focus {
+        box-shadow: 0 0 0 .15rem rgba(var(--green), .5);
+    }
+
+    &.disabled,
+    &:disabled {
+        background-color: transparent;
+        color: $green;
+    }
+
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active,
+    .show > &.dropdown-toggle {
+        background-color: $green;
+        border-color: $green;
+        color: $black;
+    }
+
+    &:not(:disabled):not(.disabled).active:focus,
+    &:not(:disabled):not(.disabled):active:focus,
+    .show > &.dropdown-toggle:focus {
+        box-shadow: 0 0 0 .15rem rgba(var(--green), .5);
+    }
 }
 
 .fa,
@@ -82,10 +169,19 @@ a {
     display: flex;
 }
 
+.card {
+    background-color: $gray-dark;
+
+    &-box {
+        background-color: $gray-dark;
+    }
+}
+
 .#{$ra} {
     &#{$es}content__content-page {
         margin-top: 80px;
-        padding: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 65px !important;
 
         @include for-640-down {
             margin-top: 125px;
@@ -245,12 +341,26 @@ a {
                         display: block;
                     }
                 }
+
+                .dropdown-menu {
+                    background-color: $gray-medium;
+                }
                 
                 .dropdown-item {
                     color: $white;
+                    display: flex;
+                    align-items: center;
                     
                     &:hover {
                         color: $green !important;
+                    }
+
+                    > *:first-child {
+                        margin-right: $margin !important;
+                    }
+
+                    > *:last-child {
+                        margin-right: 0;
                     }
                 }
             }
@@ -273,14 +383,6 @@ a {
         &#{$es}navbar-toggle {
             padding-right: 0 !important;
         }
-    }
-
-    &#{$es}card-box {
-        background-color: $gray-dark;
-    }
-
-    &#{$es}card {
-        background-color: $gray-dark;
     }
 
     &#{$es}plants {
@@ -313,7 +415,7 @@ a {
 .#{$footer} {
     background-color: $gray-dark;
     color: $white;
-    position: static;
+    // position: static;
     
     .footer-links a {
         color: $white;
