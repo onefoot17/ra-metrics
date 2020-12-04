@@ -18,8 +18,20 @@ class UserRepository implements UserRepositoryInterface {
 
     public function show($id)
     {
-        $query = UserProfileRepositoryInterface::where('id', $id)
+        $query = User::where('id', $id)
         ->first();
+
+        if(!empty($query->phone_number)){
+
+            $area_code = substr($query->phone_number, 0, 3);
+            $phone_prefix = substr($query->phone_number, 3, 3);
+            $phone_sufix = substr($query->phone_number, 6, 4);
+
+            $query->masked_phone_number = '('.$area_code.') '.$phone_prefix.'-'.$phone_sufix;
+
+        } else {
+            $query->masked_phone_number = null;
+        }
 
         return $query;
     }
@@ -29,7 +41,8 @@ class UserRepository implements UserRepositoryInterface {
         $password_array = (!empty($request->password))?['password' => Hash::make($request->password)]:[];
 
         $update_array = [
-            'name' => $request->name
+            'name' => $request->name,
+            'phone_number' => $request->phone_number
         ];
 
         $update_array = array_merge($update_array, $password_array);

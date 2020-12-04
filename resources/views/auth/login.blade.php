@@ -15,7 +15,7 @@
 		<link href="{{asset('ubold/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
 
 		<link href="{{asset('ubold/assets/css/bootstrap-dark.min.css')}}" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
-		<link href="{{asset('ubold/assets/css/app-dark.min.css')}}" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+		<link href="{{asset('ubold/assets/css/app-dark.css')}}" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
 
 		<!-- icons -->
 		<link href="{{asset('ubold/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />

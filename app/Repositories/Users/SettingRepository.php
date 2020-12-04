@@ -27,7 +27,7 @@ class SettingRepository implements SettingRepositoryInterface {
     public function update($request, $id)
     {
         switch($request->theme_color){
-            case true:
+            case 'on':
                 $theme_color = 'dark';
                 break;
             case false:
@@ -41,7 +41,9 @@ class SettingRepository implements SettingRepositoryInterface {
         $update = Setting::where('id', $id)
         ->update([
             'language' => $request->language,
-            'theme_color' => $theme_color
+            'theme_color' => $theme_color,
+            'two_step_verification' => ($request->two_step_verification === 'on')?true:false,
+            'two_step_verification_type' => (!isset($request->two_step_verification_type))?'email':$request->two_step_verification_type
         ]);
 
         return $update;

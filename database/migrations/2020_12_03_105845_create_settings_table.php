@@ -19,6 +19,8 @@ class CreateSettingsTable extends Migration
             $table->foreignId('user_id')->nullable()->index();
             $table->string('language')->default('en');
             $table->enum('theme_color', ['light', 'dark'])->default('dark');
+            $table->boolean('two_step_verification')->default(false);
+            $table->enum('two_step_verification_type', ['email', 'cellphone'])->default('email');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

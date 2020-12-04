@@ -22,7 +22,7 @@ class UserService implements UserServiceInterface
 
     public function getUserProfile($id)
     {
-        $query = $this->UserRepositoryInterface->show();
+        $query = $this->UserRepositoryInterface->show($id);
 
         return $query;
     }

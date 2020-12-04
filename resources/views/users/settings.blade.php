@@ -42,11 +42,36 @@
                         <label class="mb-1">@lang('Theme Colour')</label>
                         <div class="input-group">
                             <div class="switchery-demo">
-                                <input type="checkbox" @if($settings->theme_color === 'dark') checked @endif data-plugin="switchery" data-color="#000000" name="theme_color"/>
+                                <input type="checkbox" @if($settings->theme_color === 'dark') checked @endif data-plugin="switchery" data-color="#000000" data-size="small" name="theme_color"/>
                             </div>
                         </div>
                     </div>
 
+                    <div class="form-group mb-3">
+                        <label class="mb-1">@lang('2-Step Verification')</label>
+                        <div class="input-group">
+                            <div class="switchery-demo">
+                                <input type="checkbox" @if($settings->two_step_verification == true) checked @endif data-plugin="switchery" data-color="#f1b53d" data-size="small" name="two_step_verification"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    @if($settings->two_step_verification == true)
+                        <div class="radio radio-info mb-2">
+                            <input type="radio" name="two_step_verification_type" id="two_step_verification_type_email" value="email" @if($settings->two_step_verification_type === 'email') checked @endif>
+                            <label for="two_step_verification_type_email">
+                                @lang('Email') ({{$user->email}})
+                            </label>
+                        </div>
+                        @if(!empty($user->phone_number))
+                            <div class="radio radio-primary mb-2">
+                                <input type="radio" name="two_step_verification_type" id="two_step_verification_type_cellphone" value="cellphone" @if($settings->two_step_verification_type === 'cellphone') checked @endif>
+                                <label for="two_step_verification_type_cellphone">
+                                    @lang('Phone Number') {{$user->masked_phone_number}}
+                                </label>
+                            </div>
+                        @endif
+                    @endif
                     <div class="form-group mb-3">
                         <button class="ladda-button btn btn-success" dir="ltr" data-style="expand-left">
                             @lang('Save')

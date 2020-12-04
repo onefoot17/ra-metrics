@@ -23,10 +23,12 @@ class SettingsController extends Controller
 
     public function edit($language, UserService $userService)
     {
+        $user = $userService->getUserProfile(Auth::User()->id);
         $settings = $userService->getSettings(Auth::User()->settings->id);
 
         return view('users.settings', [
-            'settings' => $settings
+            'settings' => $settings,
+            'user' => $user
         ]);
     }
 
