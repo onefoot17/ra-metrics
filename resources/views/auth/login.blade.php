@@ -54,12 +54,12 @@
                                 <form action="{{ route('authenticate') }}" method="POST">
 									@csrf
                                     <div class="form-group mb-3">
-                                        <label for="emailaddress">Email address</label>
+                                        <label for="emailaddress">@lang('auth.email_address')</label>
                                         <input class="form-control" type="email" placeholder="Enter your email" name='email' id="email" required autofocus>
                                     </div>
 
                                     <div class="form-group mb-3">
-                                        <label for="password">Password</label>
+                                        <label for="password">@lang('auth.password')</label>
                                         <div class="input-group input-group-merge">
                                             <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
                                             <div class="input-group-append" data-password="false">
@@ -73,12 +73,12 @@
                                     <div class="form-group mb-3">
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="" id="remember_me" name='remember' checked>
-                                            <label class="" for="checkbox-signin">Remember me</label>
+                                            <label class="" for="checkbox-signin">@lang('auth.remember_me')</label>
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-0 text-center">
-                                        <button class="btn btn-primary btn-block" type="submit"> Log In </button>
+                                        <button class="btn btn-primary btn-block" type="submit"> @lang('auth.log_in') </button>
 									</div>
 
 									<br>
