@@ -22,7 +22,7 @@
 
     </head>
 
-    <body class="loading authentication-bg authentication-bg-pattern">
+    <body class="loading authentication-bg authentication-bg-pattern" data-layout='{"mode": "dark"}'>
 
         <div class="account-pages mt-5 mb-5">
             <div class="container">
