@@ -49,7 +49,7 @@
 
                     <div class="form-group mb-3">
                         <button class="ladda-button btn btn-success" dir="ltr" data-style="expand-left">
-                            @lang('Edit')
+                            @lang('Save')
                         </button>
                     </div>
 
