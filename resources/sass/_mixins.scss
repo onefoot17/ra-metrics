@@ -1,12 +1,42 @@
 // Media Queries
+@mixin for-375-down {
+    @media (max-width: 375px) { @content; }
+}
+@mixin for-375-up {
+    @media (min-width: 376px) { @content; }
+}
+@mixin for-480-down {
+    @media (max-width: 479px) { @content; }
+}
+@mixin for-480-up {
+    @media (min-width: 480px) { @content; }
+}
 @mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-down {
     @media (max-width: 599px) { @content; }
 }
 @mixin for-tablet-portrait-up {
     @media (min-width: 600px) { @content; }
 }
+@mixin for-640-down {
+    @media (max-width: 639px) { @content; }
+}
+@mixin for-640-up {
+    @media (min-width: 640px) { @content; }
+}
+@mixin for-tablet-landscape-down {
+    @media (max-width: 899px) { @content; }
+}
 @mixin for-tablet-landscape-up {
     @media (min-width: 900px) { @content; }
+}
+@mixin for-992-down {
+    @media (max-width: 991px) { @content; }
+}
+@mixin for-992-up {
+    @media (min-width: 992px) { @content; }
 }
 @mixin for-desktop-down {
     @media (max-width: 1199px) { @content; }
@@ -22,6 +52,44 @@
 }
 @mixin for-big-desktop-up {
     @media (min-width: 1800px) { @content; }
+}
+
+// Buttons
+@mixin button-styles( $background-color: transparent, /*$border-color: transparent,*/ $border-radius: 50px, $color: var(--white), $font-size: 2rem, $padding: $padding/2 $padding*2, $text-decoration: none ) {
+    background-color: $background-color;
+    // border: 2px solid $border-color;
+    border-radius: $border-radius;
+    color: $color;
+    font-size: $font-size;
+    padding: $padding;
+    text-decoration: $text-decoration;
+}
+
+@mixin button-hover( $button: button, $background-color: var(--purple), /*$border-color: $background-color,*/ $color: var(--black), $text-decoration: none ) {
+    @if $button == button {
+        &:hover {
+            background-color: $background-color;
+            // border-color: $border-color;
+            color: $color;
+            text-decoration: $text-decoration;
+        }
+    } @else if $button == outside_link {
+        &:hover button {
+            background-color: $background-color;
+            // border-color: $border-color;
+            color: $color;
+        }
+    } @else if $button == inside_link {
+        &:hover {
+            background-color: $background-color;
+            // border-color: $border-color;
+        
+            a {
+                color: $color;
+                text-decoration: $text-decoration;
+            }
+        }
+    }
 }
 
 // Spacing
@@ -46,4 +114,59 @@
             }
         }
     }
+}
+
+// Ratio
+@mixin ratio( $ratio: 1_1 ) {
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+
+        @if $ratio == 16_9 {
+            // 16:9 - 56.25%
+            padding-top: 56.25%;
+        } @else if $ratio == 4_3 {
+            // 4:3 - 75%
+            padding-top: 56.25%;
+        } @else if $ratio == 3_2 {
+            // 3:2 - 66.66%
+            padding-top: 56.25%;
+        } @else if $ratio == 8_5 {
+            // 8:5 - 62.5%
+            padding-top: 56.25%;
+        } @else if $ratio == 'logo' {
+            padding-top: 18.25%;
+        } @else {
+            // 1:1 - 100%
+            padding-top: 100%;
+        }
+    }
+
+    :first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+// Typography
+@mixin line-height( $line-height: 1.3 ) {
+    line-height: $line-height;
+}
+
+// Animation
+@mixin transition( $transition-property: all, $transition-duration: 200ms, $transition-timing-function: ease-in-out ) {
+    transition: $transition-property $transition-duration $transition-timing-function;
+}
+
+//Color
+@mixin background-color-rgba( $color-hex, $color-opacity ) {
+    background-color: rgb( $color-hex ) !important;
+    background-color: rgba( $color-hex, $color-opacity ) !important;
 }

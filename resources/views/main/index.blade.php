@@ -14,18 +14,17 @@
 
     <div class="row">
         <div class="col-md-6 col-xl-3">
-            <div class="widget-rounded-circle card-box">
+            <div class="widget-rounded-circle ra__card-box card-box">
                 <div class="row">
                     <div class="col-6">
                         <div class="avatar-lg rounded-circle bg-soft-primary border-primary border">
-                            <br>
-                            <center><i class="fas fa-tree font-22 avatar-title text-primary"></i></center>
+                            <i class="fas fa-tree font-22 avatar-title text-primary"></i>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="text-right">
                             <h3 class="mt-1"><span data-plugin="counterup">548</span></h3>
-                            <p class="text-muted mb-1 text-truncate">@lang('Plant Parents / Species')</p>
+                            <p class="mb-1 text-truncate">@lang('Plant Parents / Species')</p>
                         </div>
                     </div>
                 </div> <!-- end row-->
@@ -33,7 +32,7 @@
         </div> <!-- end col-->
 
         <div class="col-md-6 col-xl-3">
-            <div class="widget-rounded-circle card-box">
+            <div class="widget-rounded-circle ra__card-box card-box">
                 <div class="row">
                     <div class="col-6">
                         <div class="avatar-lg rounded-circle bg-soft-success border-success border">
@@ -43,7 +42,7 @@
                     <div class="col-6">
                         <div class="text-right">
                             <h3 class="text-dark mt-1"><span data-plugin="counterup">214</span></h3>
-                            <p class="text-muted mb-1 text-truncate">@lang('Plant Types')</p>
+                            <p class="mb-1 text-truncate">@lang('Plant Types')</p>
                         </div>
                     </div>
                 </div> <!-- end row-->
@@ -51,18 +50,17 @@
         </div> <!-- end col-->
 
         <div class="col-md-6 col-xl-3">
-            <div class="widget-rounded-circle card-box">
+            <div class="widget-rounded-circle ra__card-box card-box">
                 <div class="row">
                     <div class="col-6">
                         <div class="avatar-lg rounded-circle bg-soft-info border-info border">
-                            <br>
-                            <center><i class="fab fa-pagelines font-22 avatar-title text-info"></i></center>
+                            <i class="fab fa-pagelines font-22 avatar-title text-info"></i>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="text-right">
                             <h3 class="text-dark mt-1"><span data-plugin="counterup">1009</span></h3>
-                            <p class="text-muted mb-1 text-truncate">@lang('Total Plants')</p>
+                            <p class="mb-1 text-truncate">@lang('Total Plants')</p>
                         </div>
                     </div>
                 </div> <!-- end row-->
@@ -70,7 +68,7 @@
         </div> <!-- end col-->
 
         <div class="col-md-6 col-xl-3">
-            <div class="widget-rounded-circle card-box">
+            <div class="widget-rounded-circle ra__card-box card-box">
                 <div class="row">
                     <div class="col-6">
                         <div class="avatar-lg rounded-circle bg-soft-warning border-warning border">
@@ -80,7 +78,7 @@
                     <div class="col-6">
                         <div class="text-right">
                             <h3 class="text-dark mt-1"><span data-plugin="counterup">97</span></h3>
-                            <p class="text-muted mb-1 text-truncate">@lang('Participants')</p>
+                            <p class="mb-1 text-truncate">@lang('Participants')</p>
                         </div>
                     </div>
                 </div> <!-- end row-->
@@ -91,7 +89,7 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <div class="card">
+            <div class="ra__card card">
                 <div class="card-body">
                     <div class="card-widgets">
                         <a href="javascript: void(0);" data-toggle="reload"><i class="mdi mdi-refresh"></i></a>
@@ -213,7 +211,7 @@
             <div class="row">
                 <div class="col-xl-12 col-md-12">
                     <!-- Portlet card -->
-                    <div class="card">
+                    <div class="ra__card card">
                         <div class="card-body" dir="ltr">
                             <div class="card-widgets">
                                 <a href="javascript: void(0);" data-toggle="reload"><i class="mdi mdi-refresh"></i></a>
@@ -227,15 +225,15 @@
                                     <div class="row mt-2">
                                         <div class="col-4">
                                             <h3 data-plugin="counterup">548</h3>
-                                            <p class="text-muted font-13 mb-0 text-truncate">@lang('Plant Parents / Species')</p>
+                                            <p class="font-13 mb-0 text-truncate">@lang('Plant Parents / Species')</p>
                                         </div>
                                         <div class="col-4">
                                             <h3 data-plugin="counterup">214</h3>
-                                            <p class="text-muted font-13 mb-0 text-truncate">@lang('Plant Types')</p>
+                                            <p class="font-13 mb-0 text-truncate">@lang('Plant Types')</p>
                                         </div>
                                         <div class="col-4">
                                             <h3 data-plugin="counterup">1009</h3>
-                                            <p class="text-muted font-13 mb-0 text-truncate">@lang('Total Plants')</p>
+                                            <p class="font-13 mb-0 text-truncate">@lang('Total Plants')</p>
                                         </div>
                                     </div> <!-- end row -->
         
@@ -248,7 +246,7 @@
                 </div> <!-- end col-->
         
                 <div class="col-lg-12">
-                    <div class="card">
+                    <div class="ra__card card">
                         <div class="card-body">
                             <div class="card-widgets">
                                 <a href="javascript: void(0);" data-toggle="reload"><i class="mdi mdi-refresh"></i></a>
@@ -262,15 +260,15 @@
                                     <div id="total-users" data-colors="#00acc1,#4b88e4,#e3eaef,#fd7e14"></div>
                                     <div class="row mt-3">
                                         <div class="col-4">
-                                            <p class="text-muted font-15 mb-1 text-truncate">Target</p>
+                                            <p class="font-15 mb-1 text-truncate">Target</p>
                                             <h4><i class="fe-arrow-down text-danger mr-1"></i>18k</h4>
                                         </div>
                                         <div class="col-4">
-                                            <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
+                                            <p class="font-15 mb-1 text-truncate">Last week</p>
                                             <h4><i class="fe-arrow-up text-success mr-1"></i>3.25k</h4>
                                         </div>
                                         <div class="col-4">
-                                            <p class="text-muted font-15 mb-1 text-truncate">Last Month</p>
+                                            <p class="font-15 mb-1 text-truncate">Last Month</p>
                                             <h4><i class="fe-arrow-up text-success mr-1"></i>28k</h4>
                                         </div>
                                     </div> <!-- end row -->
@@ -288,7 +286,7 @@
     <div class="row">
         <div class="col-xl-4 col-md-6">
             <!-- Portlet card -->
-            <div class="card">
+            <div class="ra__card card">
                 <div class="card-body" dir="ltr">
                     <div class="card-widgets">
                         <a href="javascript: void(0);" data-toggle="reload"><i class="mdi mdi-refresh"></i></a>
@@ -302,15 +300,15 @@
                             <div class="row mt-2">
                                 <div class="col-4">
                                     <h3 data-plugin="counterup">3,487</h3>
-                                    <p class="text-muted font-13 mb-0 text-truncate">Total Sales</p>
+                                    <p class="font-13 mb-0 text-truncate">Total Sales</p>
                                 </div>
                                 <div class="col-4">
                                     <h3 data-plugin="counterup">814</h3>
-                                    <p class="text-muted font-13 mb-0 text-truncate">Open Campaign</p>
+                                    <p class="font-13 mb-0 text-truncate">Open Campaign</p>
                                 </div>
                                 <div class="col-4">
                                     <h3 data-plugin="counterup">5,324</h3>
-                                    <p class="text-muted font-13 mb-0 text-truncate">Daily Sales</p>
+                                    <p class="font-13 mb-0 text-truncate">Daily Sales</p>
                                 </div>
                             </div> <!-- end row -->
 
@@ -323,7 +321,7 @@
         </div> <!-- end col-->
 
         <div class="col-lg-4">
-            <div class="card-box">
+            <div class="ra__card-box card-box">
                 <div class="dropdown float-right">
                     <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
                         <i class="mdi mdi-dots-vertical"></i>
@@ -346,32 +344,32 @@
                     
                     <div id="total-revenue" class="mt-0"  data-colors="#f1556c"></div>
 
-                    <h5 class="text-muted mt-0">Total sales made today</h5>
+                    <h5 class="mt-0">Total sales made today</h5>
                     <h2>$178</h2>
 
-                    <p class="text-muted w-75 mx-auto sp-line-2">Traditional heading elements are designed to work best in the meat of your page content.</p>
+                    <p class="w-75 mx-auto sp-line-2">Traditional heading elements are designed to work best in the meat of your page content.</p>
 
                     <div class="row mt-3">
                         <div class="col-4">
-                            <p class="text-muted font-15 mb-1 text-truncate">Target</p>
+                            <p class="font-15 mb-1 text-truncate">Target</p>
                             <h4><i class="fe-arrow-down text-danger mr-1"></i>$7.8k</h4>
                         </div>
                         <div class="col-4">
-                            <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
+                            <p class="font-15 mb-1 text-truncate">Last week</p>
                             <h4><i class="fe-arrow-up text-success mr-1"></i>$1.4k</h4>
                         </div>
                         <div class="col-4">
-                            <p class="text-muted font-15 mb-1 text-truncate">Last Month</p>
+                            <p class="font-15 mb-1 text-truncate">Last Month</p>
                             <h4><i class="fe-arrow-down text-danger mr-1"></i>$15k</h4>
                         </div>
                     </div>
                     
                 </div>
-            </div> <!-- end card-box -->
+            </div> <!-- end ra__card-box card-box -->
         </div> <!-- end col-->
 
         <div class="col-lg-4">
-            <div class="card">
+            <div class="ra__card card">
                 <div class="card-body">
                     <div class="card-widgets">
                         <a href="javascript: void(0);" data-toggle="reload"><i class="mdi mdi-refresh"></i></a>
@@ -385,15 +383,15 @@
                             <div id="total-users2" data-colors="#00acc1,#4b88e4,#e3eaef,#fd7e14"></div>
                             <div class="row mt-3">
                                 <div class="col-4">
-                                    <p class="text-muted font-15 mb-1 text-truncate">Target</p>
+                                    <p class="font-15 mb-1 text-truncate">Target</p>
                                     <h4><i class="fe-arrow-down text-danger mr-1"></i>18k</h4>
                                 </div>
                                 <div class="col-4">
-                                    <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
+                                    <p class="font-15 mb-1 text-truncate">Last week</p>
                                     <h4><i class="fe-arrow-up text-success mr-1"></i>3.25k</h4>
                                 </div>
                                 <div class="col-4">
-                                    <p class="text-muted font-15 mb-1 text-truncate">Last Month</p>
+                                    <p class="font-15 mb-1 text-truncate">Last Month</p>
                                     <h4><i class="fe-arrow-up text-success mr-1"></i>28k</h4>
                                 </div>
                             </div> <!-- end row -->

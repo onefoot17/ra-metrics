@@ -1,8 +1,22 @@
 <!-- Topbar Start -->
-<div class="navbar-custom">
-    <div class="container-fluid">
-        <ul class="list-unstyled topnav-menu float-right mb-0">
+<div class="ra__navbar navbar-custom">
+    <div class="ra__navbar__inner container-fluid">
+        <!-- LOGO -->
+        <div class="ra__navbar__logo-box logo-box">
+            <a href="{{route('home', [Request::segment(1)])}}" class="logo logo-light text-center">
+                <span class="ra__navbar__logo-con logo-sm">
+                    <img class="ra__navbar__logo" src="{{asset('images/logo-light.png')}}" alt="" width="150" />
+                </span>
 
+                <span class="ra__navbar__logo-con logo-lg">
+                    <img class="ra__navbar__logo" src="{{asset('images/logo-light.png')}}" alt="" width="150" />
+                </span>
+            </a>
+        </div>
+
+        @include('layouts.topnav')
+
+        <ul class="ra__navbar__topnav-menu list-unstyled topnav-menu float-right mb-0">
             {{-- <li class="d-none d-lg-block">
                 <form class="app-search">
                     <div class="app-search-box dropdown">
@@ -72,8 +86,8 @@
                 </form>
             </li> --}}
 
-            <li class="dropdown d-inline-block d-lg-none">
-                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+            <li class="ra__navbar__topnav-menu__nav-link-con dropdown d-inline-block">
+                <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="fe-search noti-icon"></i>
                 </a>
                 <div class="dropdown-menu dropdown-lg dropdown-menu-right p-0">
@@ -83,14 +97,14 @@
                 </div>
             </li>
 
-            {{-- <li class="dropdown d-none d-lg-inline-block">
-                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen" href="#">
+            {{-- <li class="ra__navbar__topnav-menu__nav-link-con dropdown d-none d-lg-inline-block">
+                <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen" href="#">
                     <i class="fe-maximize noti-icon"></i>
                 </a>
             </li> --}}
 
-            {{-- <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
-                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+            {{-- <li class="ra__navbar__topnav-menu__nav-link-con dropdown d-none d-lg-inline-block topbar-dropdown">
+                <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="fe-grid noti-icon"></i>
                 </a>
                 <div class="dropdown-menu dropdown-lg dropdown-menu-right">
@@ -143,8 +157,8 @@
                 </div>
             </li> --}}
 
-            <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
-                <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+            <li class="ra__navbar__topnav-menu__nav-link-con ra__navbar__topnav-menu__nav-link-con--lang-con dropdown d-lg-inline-block topbar-dropdown">
+                <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     @if(App::getLocale() == 'en' or App::getLocale() == 'fr')
                         <img src="{{asset('ubold/assets/images/flags/ca.png')}}" alt="user-image" height="16">
                     @elseif(App::getLocale() == 'ro')
@@ -178,8 +192,8 @@
                 </div>
             </li>
 
-            {{-- <li class="dropdown notification-list topbar-dropdown">
-                <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+            {{-- <li class="ra__navbar__topnav-menu__nav-link-con dropdown notification-list topbar-dropdown">
+                <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="fe-bell noti-icon"></i>
                     <span class="badge badge-danger rounded-circle noti-icon-badge">9</span>
                 </a>
@@ -269,8 +283,8 @@
                 </div>
             </li> --}}
 
-            <li class="dropdown notification-list topbar-dropdown">
-                <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+            <li class="ra__navbar__topnav-menu__nav-link-con dropdown notification-list topbar-dropdown">
+                <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     {{-- <img src="{{asset('ubold/assets/images/users/user-1.jpg')}}" alt="user-image" class="rounded-circle"> --}}
                     <span class="pro-user-name ml-1">
                         {{Auth::user()->name}} <i class="mdi mdi-chevron-down"></i> 
@@ -309,40 +323,15 @@
                 </div>
             </li>
 
-            {{-- <li class="dropdown notification-list">
-                <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
+            {{-- <li class="ra__navbar__topnav-menu__nav-link-con dropdown notification-list">
+                <a href="javascript:void(0);" class="ra__navbar__topnav-menu__nav-link nav-link right-bar-toggle waves-effect waves-light">
                     <i class="fe-settings noti-icon"></i>
                 </a>
             </li> --}}
 
         </ul>
 
-        <!-- LOGO -->
-        <div class="logo-box">
-            <a href="{{route('home', [Request::segment(1)])}}" class="logo logo-dark text-center">
-                <span class="logo-sm">
-                    <img src="{{asset('images/logo-sm.png')}}" alt="" height="22">
-                    <!-- <span class="logo-lg-text-light">UBold</span> -->
-                </span>
-                <span class="logo-lg">
-                    {{-- <img src="{{asset('ubold/assets/images/logo-dark.png')}}" alt="" height="20"> --}}
-                    <img src="{{asset('images/logo-dark.png')}}" alt="" width="150">
-                    <!-- <span class="logo-lg-text-light">U</span> -->
-                </span>
-            </a>
-
-            <a href="{{route('home', [Request::segment(1)])}}" class="logo logo-light text-center">
-                <span class="logo-sm">
-                    <img src="{{asset('images/logo-sm.png')}}" alt="" height="22">
-                </span>
-                <span class="logo-lg">
-                    {{-- <img src="{{asset('ubold/assets/images/logo-light.png')}}" alt="" height="20"> --}}
-                    <img src="{{asset('images/logo-light.png')}}" alt="" width="150">
-                </span>
-            </a>
-        </div>
-
-        <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+        <ul class="ra__navbar__topnav-menu-left list-unstyled topnav-menu topnav-menu-left m-0">
             <li>
                 <button class="button-menu-mobile waves-effect waves-light">
                     <i class="fe-menu"></i>
@@ -351,7 +340,7 @@
 
             <li>
                 <!-- Mobile menu toggle (Horizontal Layout)-->
-                <a class="navbar-toggle nav-link" data-toggle="collapse" data-target="#topnav-menu-content">
+                <a class="ra__navbar__navbar-toggle navbar-toggle ra__navbar__topnav-menu-left__nav-link nav-link" data-toggle="collapse" data-target="#topnav-menu-content">
                     <div class="lines">
                         <span></span>
                         <span></span>
@@ -362,7 +351,7 @@
             </li>   
 
             {{-- <li class="dropdown d-none d-xl-block">
-                <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                <a class="ra__navbar__topnav-menu-left__nav-link nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     Create New
                     <i class="mdi mdi-chevron-down"></i> 
                 </a>
@@ -402,7 +391,8 @@
                 </div>
             </li> --}}
         </ul>
-        <div class="clearfix"></div>
+
+        {{-- <div class="clearfix"></div> --}}
     </div>
 </div>
 <!-- end Topbar -->

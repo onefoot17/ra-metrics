@@ -26,7 +26,7 @@
 
 
             <!-- Custom CSS -->
-            <link rel="stylesheet" href="{{asset('css/frontend.css')}}">
+            <link rel="stylesheet" href="{{asset('css/admin.css')}}">
         @show
 
     </head>
@@ -38,42 +38,37 @@
 
             @include('layouts.topbar')
 
-            @include('layouts.topnav')
-
             <!-- ============================================================== -->
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
-            <div class="content-page">
+            <div class="ra__content__content-page content-page">
                 <div class="content">
                     <!-- Start Content-->
-                    <div class="container-fluid">
-
-                        <!-- start page title -->
+                    <div class="ra__content__content-page__container-fluid container-fluid">
+                        {{-- <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            {{-- <li class="breadcrumb-item"><a href="javascript: void(0);"></a></li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);"></a></li>
-                                            <li class="breadcrumb-item active"></li> --}}
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);"></a></li>
+                                            <li class="breadcrumb-item active"></li>
                                         </ol>
                                     </div>
                                     <h4 class="page-title"></h4>
                                 </div>
                             </div>
-                        </div>     
-                        <!-- end page title --> 
+                        </div>
+                        <!-- end page title -->  --}}
 
                         @yield('content')
 
-                    </div> <!-- container -->
-        
+                    </div> <!-- container -->        
                 </div> <!-- content -->
         
                 @include('layouts.footer')
-        
             </div>
 
             <!-- ============================================================== -->
