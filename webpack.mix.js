@@ -16,8 +16,26 @@ mix.js( 'resources/js/app.js', 'public/js' )
         require( 'postcss-import' ),
         require( 'tailwindcss' ),
     ])
-    .webpackConfig( require( './webpack.config' ) );
+    .webpackConfig( require( './webpack.config' ) )
+    .sourceMaps();;
 
+// Admin
+mix.sass( 'resources/sass/admin.scss', 'public/css' )
+    .options({
+        /* autoprefixer: {
+            options: {
+                browsers: [
+                    'last 6 versions',
+                ]
+            }
+        }, */
+        postCss: [
+            require( 'postcss-css-variables' ) ()
+        ]
+    })
+    .sourceMaps();
+
+// Frontend
 mix.sass( 'resources/sass/frontend.scss', 'public/css' )
     .options({
         /* autoprefixer: {
@@ -30,6 +48,7 @@ mix.sass( 'resources/sass/frontend.scss', 'public/css' )
         postCss: [
             require( 'postcss-css-variables' ) ()
         ]
-    });
+    })
+    .sourceMaps();
 
 mix.browserSync( process.env.APP_URL );

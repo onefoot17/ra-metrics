@@ -2,29 +2,3 @@
 @import '_reset';
 @import '_variables';
 @import '_mixins';
-
-.#{$ra__plants} {
-    &#{$es}display {
-        @include display-flex(
-            $align-items: flex-start
-        );
-
-        @include for-desktop-1400-down {
-            > * {
-                flex-basis: 100%;
-                max-width: initial;
-            }
-        }
-    }
-
-    &#{$es}display__tr {
-        @include display-flex(
-            $align-items: flex-start,
-            $flex-shrink: 1
-        );
-    }
-
-    &#{$es}display__td {
-        border: none !important;
-    }
-}
