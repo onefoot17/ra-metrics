@@ -41,11 +41,11 @@
                         <label class="mb-1">@lang('Theme Colour')</label>
                         <div class="input-group">
                             <div class="switchery-demo">
-                                <span>Dark</span>
+                                <span>Light</span>
 
                                 <input type="checkbox" @if($settings->theme_color === 'dark') checked @endif data-plugin="switchery" data-color="#000000" data-size="small" name="theme_color" />
 
-                                <span>Light</span>
+                                <span>Dark</span>
                             </div>
                         </div>
                     </div>
