@@ -20,18 +20,18 @@
         <div class="card">
             <div class="card-body">
 
-                <h4 class="header-title">@lang('Settings') <small>(@lang('Last updated'): 2020-02-02 15:14)</small></h4>
+                <h4 class="header-title">@lang('Settings') <small>(@lang('Last updated'): {{$settings->updated_at}})</small></h4>
 
-                <form action="{{route('settings_update', [Request::segment(1)])}}" method="POST">
+                <form action="{{route('settings_update', [Request::segment(1), 'id' => $settings->id])}}" method="POST">
                     @csrf
                     <input type="hidden" name="_method" value="PUT">
                     <div class="form-group">
                         <label class="mb-1">@lang('Permantent Language')</label>
 
                         <div class="col-md-12">
-                            <select class="selectpicker" data-style="btn-outline-danger">
-                                <option>English</option>
-                                <option>French</option>
+                            <select class="selectpicker" data-style="btn-outline-danger" id="language" name="language">
+                                <option value="en" @if(trim($settings->language) == 'en') selected @endif>@lang('English')</option>
+                                <option value="fr" @if(trim($settings->language) == 'fr') selected @endif>@lang('French')</option>
                             </select>
                         </div>
                         <!-- end col-->
@@ -42,14 +42,39 @@
                         <label class="mb-1">@lang('Theme Colour')</label>
                         <div class="input-group">
                             <div class="switchery-demo">
-                                <input type="checkbox" checked data-plugin="switchery" data-color="#000000"/>
+                                <input type="checkbox" @if($settings->theme_color === 'dark') checked @endif data-plugin="switchery" data-color="#000000" data-size="small" name="theme_color"/>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group mb-3">
+                        <label class="mb-1">@lang('2-Step Verification')</label>
+                        <div class="input-group">
+                            <div class="switchery-demo">
+                                <input type="checkbox" @if($settings->two_step_verification == true) checked @endif data-plugin="switchery" data-color="#f1b53d" data-size="small" name="two_step_verification"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    @if($settings->two_step_verification == true)
+                        <div class="radio radio-info mb-2">
+                            <input type="radio" name="two_step_verification_type" id="two_step_verification_type_email" value="email" @if($settings->two_step_verification_type === 'email') checked @endif>
+                            <label for="two_step_verification_type_email">
+                                @lang('Email') ({{$user->email}})
+                            </label>
+                        </div>
+                        @if(!empty($user->phone_number))
+                            <div class="radio radio-primary mb-2">
+                                <input type="radio" name="two_step_verification_type" id="two_step_verification_type_cellphone" value="cellphone" @if($settings->two_step_verification_type === 'cellphone') checked @endif>
+                                <label for="two_step_verification_type_cellphone">
+                                    @lang('Phone Number') {{$user->masked_phone_number}}
+                                </label>
+                            </div>
+                        @endif
+                    @endif
+                    <div class="form-group mb-3">
                         <button class="ladda-button btn btn-success" dir="ltr" data-style="expand-left">
-                            @lang('Edit')
+                            @lang('Save')
                         </button>
                     </div>
 

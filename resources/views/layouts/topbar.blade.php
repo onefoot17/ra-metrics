@@ -323,11 +323,11 @@
                 </div>
             </li>
 
-            <li class="ra__navbar__topnav-menu__nav-link-con dropdown notification-list">
+            {{-- <li class="ra__navbar__topnav-menu__nav-link-con dropdown notification-list">
                 <a href="javascript:void(0);" class="ra__navbar__topnav-menu__nav-link nav-link right-bar-toggle waves-effect waves-light">
                     <i class="fe-settings noti-icon"></i>
                 </a>
-            </li>
+            </li> --}}
 
         </ul>
 

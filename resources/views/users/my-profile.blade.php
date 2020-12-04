@@ -53,6 +53,16 @@
                     </div>
 
                     <div class="form-group mb-3">
+                        <label>@lang('Phone Number')</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">C</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="@lang('Phone Number')" aria-label="@lang('Phone Number')" aria-describedby="basic-addon1" value="{{Auth::User()->phone_number}}" name='phone_number' id='phone_number'>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
                         <button class="ladda-button btn btn-success" dir="ltr" data-style="expand-left">
                             @lang('Edit')
                         </button>
