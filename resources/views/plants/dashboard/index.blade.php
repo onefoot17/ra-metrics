@@ -25,11 +25,11 @@
                         <div class="col-lg-12">
                             <form action="{{route('plant_dashboard_store', [Request::Segment(1)])}}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <div class="form-group mb-3">
+                                <div class="form-group">
                                     <label for="simpleinput">@lang('Parent name')</label>
                                     <input type="text" class="form-control" name="plant_parent_name" id='plant_specie_name' />
                                 </div>
-                                <div class="form-group mb-3">
+                                <div class="form-group">
                                     <label>@lang('Image')</label>
                                     <div class="input-group">
                                         <div class="custom-file">
@@ -38,13 +38,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group mb-3">
+                                <div class="form-group">
                                     <label for="simpleinput">@lang('Comments')</label>
                                     <textarea class="form-control" rows="3" name='comments' id='comments'></textarea>
                                     <small class="f-s-12 text-grey-darker pull-right">@lang('Only 255 characters')</small>
                                 </div>
-                                <div class="form-group mb-3">
-                                    <button type="submit" class="btn btn-blue waves-effect waves-light">@lang('Submit')</button>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success waves-effect waves-light">@lang('Submit')</button>
                                 </div>
                             </form>
                         </div>
@@ -55,7 +55,7 @@
 
         <div class="col-lg-6">
             <div class="card-box">
-                <h3 class="header-title">@lang('Plant Parents / Species')</h3>
+                <h4 class="header-title">@lang('Plant Parents / Species')</h4>
 
                 <div class="table-responsive">
                     <table class="table table-striped mb-0 ra__plants__display__table">

@@ -1,10 +1,11 @@
 // Colours
 $black: #000000 !default;
 $gray-very-light: #dddddd !default;
-$gray-light: #cecfcb !default;
+$gray-light: #38414a !default;
 $gray-medium: #2e3e4c !default;
 $gray-dark: #1e2933 !default;
-$purple: #ff02c8 !default;
+$purple: #972b84 !default;
+$purple-light: #ff02c8 !default;
 $red: #e31837 !default;
 $green: #61ff2a !default;
 $white: #ffffff !default;
@@ -51,8 +52,9 @@ $footer: 'footer' !default;
     --red: #{ $red };
     --red-medium: #{ map-get( $vars, red-medium ) };
     --green: #{ $green };
-    --white: #{ $white };
     --white-very-light: #{ map-get( $vars, white-very-light ) };
+    --white: #{ $white };
+    --white--rgb: #{ hex-to-rgb( $white ) };
     --margin: #{ $margin };
     --padding: #{ $padding };
 }
