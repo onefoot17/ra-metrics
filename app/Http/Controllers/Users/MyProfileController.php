@@ -36,6 +36,10 @@ class MyProfileController extends Controller
     {
         $update = $userService->updateUserProfile($request, $id);
 
+        if(isset($update['error'])){
+            return back()->with('message-error', __($update['error']));
+        }
+
         return back()->with('message-success', __('My Profile edited succefully!'));
     }
 

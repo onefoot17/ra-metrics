@@ -38,7 +38,16 @@ class UserRepository implements UserRepositoryInterface {
 
     public function update($request, $id)
     {
-        $password_array = (!empty($request->password))?['password' => Hash::make($request->password)]:[];
+        if(!empty($request->password)){
+            if($request->password === $request->password_confirmation){
+                $password_array = ['password' => Hash::make($request->password)];
+            } else {
+                $password_array = [];
+                $error = ['error' => __('validation.confirmed', ['attribute' => 'Password'])];
+            }
+        } else {
+            $password_array = [];
+        }
 
         $update_array = [
             'name' => $request->name,
@@ -49,6 +58,10 @@ class UserRepository implements UserRepositoryInterface {
 
         $update = User::where('id', Auth::User()->id)
         ->update($update_array);
+
+        if(isset($error)){
+            return $error;
+        }
 
         return $update;
     }
