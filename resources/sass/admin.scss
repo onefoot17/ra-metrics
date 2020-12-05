@@ -9,25 +9,26 @@
 }
 
 #{$body} {
-    background-color: $black;
-    color: $white;
-
     * {
         font-size: $font-size;
     }
+
+    &.ra__dark {
+        background-color: $black;
+        color: $white;
+    }
 }
 
-::placeholder {
-    color: $gray-light !important;
+input::placeholder {
+    .ra__dark & {
+        color: rgba( var(--white--rgb), .5 ) !important;
+    }
 }
-
-/* ::selection {
-    color: $green !important;
-} */
 
 input:focus {
-    // background-color: $gray-light !important;
-    color: $white !important;
+    .ra__dark & {
+        color: $white !important;
+    }
 }
 
 img {
@@ -48,7 +49,9 @@ h5,
 h6 {
     @include line-height;
 
-    color: $white;
+    .ra__dark & {
+        color: $white;
+    }
 }
 
 h4.header-title {
@@ -58,52 +61,77 @@ h4.header-title {
 p {
     @include line-height;
 
-    color: $white;
+    .ra__dark & {
+        color: $white;
+    }
 }
 
 a {
     @include line-height;
 
-    color: $white;
-               
+    color: $purple !important;
+
+    .ra__dark & {
+        color: $green !important;
+    }
+    
     &:hover {
         @include transition;
 
-        color: $green !important;
+        color: $black !important;
+        
+        .ra__dark & {
+            color: $white !important;
+        }
     }
 }
 
 .text-muted {
-    color: $white !important;
-}
-
-/* .header-title {
-    font-size: inherit;
-} */
-
-.dropdown {
-    &-menu {
-        background-color: $gray-medium;
-    }
-    
-    &-item {
-        color: $white;
+    .ra__dark & {
+        color: $white !important;
     }
 }
 
 .table td,
 .table th {
-    color: $white;
+    .ra__dark & {
+        color: $white;
+    }
+}
+
+.dropdown {
+    &-menu {
+        min-width: initial !important;
+
+        .ra__dark & {
+            background-color: $gray-medium;
+        }
+    }
+    
+    &-item {
+        color: inherit !important;
+
+        &:hover {
+            color: $purple !important;
+        }
+
+        .ra__dark & {
+            color: $white !important;
+        }
+    }
 }
 
 .input-group-text {
-    background-color: $gray-medium;
-    color: $white;
     font-size: inherit;
+
+    .ra__dark & {
+        background-color: $gray-medium;
+        color: $white;
+    }
 }
 
 .form-group {
-    margin-bottom: $margin*4;
+    margin-bottom: $margin*2;
 
     &:last-of-type {
         margin-bottom: 0;
@@ -111,54 +139,108 @@ a {
 }
 
 .form-control {
-    background-color: $gray-medium;
-    color: $white;
     font-size: inherit;
-}
 
-.btn-success {
-    background-color: $green;
-    border: none;
-    box-shadow: none;
-    color: $black;
-}
-
-.btn-outline-danger {
-    color: $green;
-    border-color: $green;
-    width: auto !important;
-
-    &:hover {
-        background-color: $green;
-        border-color: $green;
-        color: $black;
-    }
-
-    &.focus,
-    &:focus {
-        box-shadow: 0 0 0 .15rem rgba(var(--green), .5);
-    }
-
-    &.disabled,
-    &:disabled {
-        background-color: transparent;
-        color: $green;
-    }
-
-    &:not(:disabled):not(.disabled).active,
-    &:not(:disabled):not(.disabled):active,
-    .show > &.dropdown-toggle {
-        background-color: $green;
-        border-color: $green;
-        color: $black;
-    }
-
-    &:not(:disabled):not(.disabled).active:focus,
-    &:not(:disabled):not(.disabled):active:focus,
-    .show > &.dropdown-toggle:focus {
-        box-shadow: 0 0 0 .15rem rgba(var(--green), .5);
+    .ra__dark & {
+        background-color: $gray-medium;
+        color: $white;
     }
 }
+
+.btn {
+    font-size: $font-size;
+
+    &-success {
+        background-color: $purple;
+        border: none;
+        box-shadow: none;
+        color: $white;
+
+        &:hover {
+            background-color: $black;
+        }
+
+        .ra__dark & {
+            background-color: $green;
+            color: $black;
+            
+            &:hover {
+                background-color: $black;
+                color: $white;
+            }
+        }
+    }
+}
+
+// .ra__settings {
+    .btn-outline-success {
+        border-color: $purple;
+        color: $purple;
+        width: auto !important;
+        
+        .ra__dark & {
+            border-color: $green;
+            color: $green;
+        }
+
+        &:hover {
+            background-color: $purple;
+            border-color: $purple;
+            color: $white;
+            
+            .ra__dark & {
+                background-color: $green;
+                border-color: $green;
+                color: $black;
+            }
+        }
+
+        &.focus,
+        &:focus {
+            box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
+            
+            .ra__dark & {
+                box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
+            }
+        }
+
+        &.disabled,
+        &:disabled {
+            background-color: transparent;
+            color: $purple;
+            
+            .ra__dark & {
+                color: $green;
+            }
+        }
+
+        &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active,
+        .show & > .dropdown-toggle,
+        .show > &.dropdown-toggle {
+            background-color: $purple;
+            border-color: $purple;
+            color: $white;
+            
+            .ra__dark & {
+                background-color: $green;
+                border-color: $green;
+                color: $black;
+            }
+        }
+
+        &:not(:disabled):not(.disabled).active:focus,
+        &:not(:disabled):not(.disabled):active:focus,
+        .show & > .dropdown-toggle:focus,
+        .show > &.dropdown-toggle:focus {
+            box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
+            
+            .ra__dark & {
+                box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
+            }
+        }
+    }
+// }
 
 .fa,
 .fab,
@@ -170,10 +252,12 @@ a {
 }
 
 .card {
-    background-color: $gray-dark;
-
-    &-box {
+    .ra__dark & {
         background-color: $gray-dark;
+
+        &-box {
+            background-color: $gray-dark;
+        }
     }
 }
 
@@ -197,17 +281,17 @@ a {
     }
 
     &#{$es}navbar {
-        background-color: $gray-dark;
         height: auto;
         padding: $padding;
+
+        .ra__dark & {
+            background-color: $gray-dark;
+        }
 
         &#{$es}inner {
             @include display-flex(
                 $media-queries: false
             );
-            /* @include for-992-down {
-                align-items: flex-start;
-            } */
 
             position: relative;
 
@@ -250,19 +334,27 @@ a {
         }
 
         &#{$es}topnav {
-            background-color: $gray-dark;
+            background-color: $gray-light;
+            box-shadow: none;
             height: auto;
             margin-top: initial;
             padding: 0;
             padding-right: $padding;
             position: static;
+            
+            .ra__dark & {
+                background-color: $gray-dark;
+            }
 
             @include for-992-down {
-                background-color: $gray-medium;
                 flex-shrink: 1;
                 order: 2;
                 position: absolute;
                 top: 100%;
+                
+                .ra__dark & {
+                    background-color: $gray-medium;
+                }
             }
 
             @include for-640-down {
@@ -270,8 +362,13 @@ a {
             }
             
             .navbar-nav .nav-link {
-                color: $white;
+                color: rgba( var(--white--rgb), .6 );
+
                 font-size: initial;
+                
+                .ra__dark & {
+                    color: $white;
+                }
 
                 @include for-992-down {
                     &.dropdown-toggle {
@@ -300,27 +397,27 @@ a {
                     justify-content: flex-end;
                 }
                 
-                /* @include for-480-down {
-                    justify-content: center;
-                } */
-                
                 &#{$es}nav-link {
-                    color: $white !important;
+                    color: rgba( var(--white--rgb), .6 ) !important;
                     max-height: initial !important;
                     line-height: 1 !important;
                     padding-left: 0 !important;
                     padding-right: $padding*2 !important;
+                    
+                    .ra__dark & {
+                        color: $white !important;
+                    }
 
                     @include for-992-down {
                         text-align: left !important;
-
-                        // &-con:first-child a {
-                        //     padding-top: 0 !important;
-                        // }
                     }
                     
                     &:hover {
-                        color: $green !important;
+                        color: $purple-light !important;
+
+                        .ra__dark & {
+                            color: $green !important;
+                        }
                     }
 
                     &-con {
@@ -328,7 +425,7 @@ a {
                             min-width: initial;
                         }
                             
-                        &:last-child a {
+                        &:last-child > a {
                             padding-right: 0 !important;
                         }
                     }
@@ -343,16 +440,23 @@ a {
                 }
 
                 .dropdown-menu {
-                    background-color: $gray-medium;
+                    .ra__dark & {
+                        background-color: $gray-medium;
+                    }
                 }
                 
                 .dropdown-item {
-                    color: $white;
                     display: flex;
                     align-items: center;
+
+                    .ra__dark & {
+                        color: $white;
+                    }
                     
                     &:hover {
-                        color: $green !important;
+                        .ra__dark & {
+                            color: $green !important;
+                        }
                     }
 
                     > *:first-child {
@@ -413,11 +517,14 @@ a {
 }
 
 .#{$footer} {
-    background-color: $gray-dark;
-    color: $white;
-    // position: static;
+    .ra__dark & {
+        background-color: $gray-dark;
+        color: $white;
+    }
     
     .footer-links a {
-        color: $white;
+        .ra__dark & {
+            color: $white;
+        }
     }
 }

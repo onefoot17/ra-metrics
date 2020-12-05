@@ -26,10 +26,10 @@
                     @csrf
                     <input type="hidden" name="_method" value="PUT">
                     <div class="form-group">
-                        <label class="mb-1">@lang('Permantent Language')</label>
+                        <label class="mb-1">@lang('Choose your Language')</label>
 
                         <div class="">
-                            <select class="selectpicker" data-style="btn-outline-danger" id="language" name="language">
+                            <select class="selectpicker" data-style="btn-outline-success" id="language" name="language">
                                 <option value="en" @if(trim($settings->language) == 'en') selected @endif>@lang('English')</option>
                                 <option value="fr" @if(trim($settings->language) == 'fr') selected @endif>@lang('French')</option>
                             </select>
