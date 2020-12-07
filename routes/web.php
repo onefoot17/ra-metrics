@@ -38,7 +38,6 @@ Route::get('/', function () {
 })->name('index')->middleware('auth');
 
 Route::get('/forgot-password', [LoginController::class, 'forgotPassword'])->name('password.request');
-Route::post('/auth_confirm_mail', [LoginController::class, 'confirmMail'])->name('password.confirm.mail');
 
 Route::group(['prefix' => '{language}'], function(){
 
