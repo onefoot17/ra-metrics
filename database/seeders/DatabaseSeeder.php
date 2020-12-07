@@ -43,5 +43,14 @@ class DatabaseSeeder extends Seeder
 
         $setting = new Setting([]);
         $earl->settings()->save($setting);
+
+        $felipe = new User();
+        $felipe->name = 'Felipe Pastana Gmail';
+        $felipe->email = 'felipeapastana@gmail.com';
+        $felipe->password = Hash::make('12345678');
+        $felipe->save();
+
+        $setting = new Setting([]);
+        $felipe->settings()->save($setting);
     }
 }

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Log In | RA-METRICS</title>
+        <title>Log In | {{env('APP_NAME')}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -34,14 +34,14 @@
                                 
                                 <div class="text-center w-75 m-auto">
                                     <div class="auth-logo">
-                                        <a href="index.html" class="logo logo-dark text-center">
+                                        <a href="{{route('index')}}" class="logo logo-dark text-center">
                                             <span class="logo-lg">
 												{{-- <img src="{{asset('ubold/assets/images/logo-dark.png')}}" alt="" height="22"> --}}
 												<img src="{{asset('images/logo-dark.png')}}" alt="" height="30">
                                             </span>
                                         </a>
                     
-                                        <a href="index.html" class="logo logo-light text-center">
+                                        <a href="{{route('index')}}" class="logo logo-light text-center">
                                             <span class="logo-lg">
 												{{-- <img src="{{asset('ubold/assets/images/logo-light.png')}}" alt="" height="22"> --}}
 												<img src="{{asset('images/logo-light.png')}}" alt="" height="30">
@@ -59,7 +59,7 @@
                                     </div>
 
                                     <div class="form-group mb-3">
-                                        <label for="password">@lang('auth.password')</label>
+                                        <label for="password">@lang('auth.password_')</label>
                                         <div class="input-group input-group-merge">
                                             <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password">
                                             <div class="input-group-append" data-password="false">
@@ -85,7 +85,13 @@
 									
 									<div class="text-danger">
 										<x-jet-validation-errors class="mb-4" />
-									</div>
+                                    </div>
+                                    
+                                    @if (session('status'))
+                                        <div class="text-success">
+                                            {{ session('status') }}
+                                        </div>
+                                    @endif
 
                                 </form>
 
@@ -113,7 +119,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p> <a href="auth-recoverpw.html" class="text-white-50 ml-1">Forgot your password?</a></p>
+                                <p> <a href="{{route('password.request')}}" class="text-white-50 ml-1">Forgot your password?</a></p>
                                 {{-- <p class="text-white-50">Don't have an account? <a href="auth-register.html" class="text-white ml-1"><b>Sign Up</b></a></p> --}}
                             </div> <!-- end col -->
                         </div>
@@ -129,7 +135,7 @@
 
 
         <footer class="footer footer-alt">
-            <script>document.write(new Date().getFullYear())</script> &copy; RA-METRICS by <a href="https://vcompinc.com" target='_blank' class="text-white-50">VCOMP Inc.</a> 
+            <script>document.write(new Date().getFullYear())</script> &copy; {{env('APP_NAME')}} by <a href="https://vcompinc.com" target='_blank' class="text-white-50">VCOMP Inc.</a> 
         </footer>
 
         <!-- Vendor js -->

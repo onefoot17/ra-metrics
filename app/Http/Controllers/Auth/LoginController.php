@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
 
 use illuminate\Support\Facades\Auth;
 
@@ -30,5 +31,12 @@ class LoginController extends Controller
                 'password' => [__('auth.failed')]
             ]);
         }
+    }
+
+    public function forgotPassword()
+    {
+        $this->middleware('guest');
+
+        return view('auth.forgot-password');
     }
 }
