@@ -23,7 +23,7 @@
                     <h4 class="header-title">@lang('New Plant Parents / Species')</h4>
                     <div class="row">
                         <div class="col-lg-12">
-                            <form action="{{route('plant_dashboard_store', [Request::Segment(1)])}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('plant_parents_species_store', [Request::Segment(1)])}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="simpleinput">@lang('Parent name')</label>
@@ -74,7 +74,7 @@
                                     </td>
 
                                     <td class="with-btn ra__plants__display__td" nowrap>
-                                        <form method="POST" action="{{route('plant_dashboard_destroy', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" id='form_{{$plantParentsSpeciesCollection->id}}' class="ra__plants__display__buttons">
+                                        <form method="POST" action="{{route('plant_parents_species_destroy', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" id='form_{{$plantParentsSpeciesCollection->id}}' class="ra__plants__display__buttons">
                                             @csrf
                                             <input type="hidden" name="_method" value="DELETE">
                                             <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-outline-primary waves-effect waves-light ra__plants__display__buttons__edit">@lang('Edit')</a>

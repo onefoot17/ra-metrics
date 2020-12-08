@@ -15,7 +15,12 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
-    public function dashboard(PlantServiceInterface $plantService)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexParentSpecies(PlantServiceInterface $plantService)
     {
         $plantParentsSpecies = $plantService->getPlantParentsSpecies();
         $plantTypes = $plantService->getPlantTypes();
@@ -29,47 +34,16 @@ class DashboardController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, PlantServiceInterface $plantService)
+    public function storeParentSpecie(Request $request, PlantServiceInterface $plantService)
     {
         $plantService->storePlantParentSpecie($request);
 
         return redirect()->route('plant_dashboard_index', [$request->Segment(1)])->with('message-success', __('Plant parent specie saved succefully!'));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**

@@ -49,7 +49,8 @@ class PlantParentSpecieController extends Controller
     {
         $plantService->storePlantParentSpecie($request);
 
-        return redirect()->route('plant_parents_species_index', [$request->Segment(1)])->with('message-success', __('Plant parent specie saved succefully!'));
+        // return redirect()->route('plant_parents_species_index', [$request->Segment(1)])->with('message-success', __('Plant parent specie saved succefully!'));
+        return redirect()->back()->with('message-success', __('Plant parent specie saved succefully!'));
     }
 
     /**

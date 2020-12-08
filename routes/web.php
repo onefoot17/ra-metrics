@@ -61,11 +61,9 @@ Route::group(['prefix' => '{language}'], function(){
 
         Route::group(['prefix' => 'plants'], function(){
 
-            Route::group(['prefix' => 'dashboard'], function(){
-                Route::get('/', [DashboardController::class, 'dashboard'])->name('plant_dashboard_index');
-                Route::post('/store', [DashboardController::class, 'store'])->name('plant_dashboard_store');
-                Route::delete('/destroy/{id}', [DashboardController::class, 'destroy'])->name('plant_dashboard_destroy');
-            });
+            Route::get('/', [DashboardController::class, 'indexParentSpecies'])->name('plant_dashboard_index');
+
+
 
             Route::group(['prefix' => 'plant-parents-species'], function(){
                 Route::get('/', [PlantParentSpecieController::class, 'index'])->name('plant_parents_species_index');
