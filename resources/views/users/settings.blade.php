@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.admin.main')
 
 @section('title') {{ $title ?? __('Settings') }} @stop
 

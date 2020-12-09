@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Plants;
+namespace App\Http\Controllers\Admin\Plants;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Services\Plants\Contracts\PlantServiceInterface;
 
-class PlantTypeController extends Controller
+class PlantParentSpecieController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -21,10 +22,10 @@ class PlantTypeController extends Controller
      */
     public function index(PlantServiceInterface $plantService)
     {
-        $plantTypes = $plantService->getPlantTypes();
+        $plantParentsSpecies = $plantService->getPlantParentsSpecies();
 
-        return view('plants.plants-types.index', [
-            'plantTypes' => $plantTypes
+        return view('plants.plants-parents-species.index', [
+            'plantParentsSpecies' => $plantParentsSpecies
         ]);
     }
 
@@ -35,7 +36,7 @@ class PlantTypeController extends Controller
      */
     public function create()
     {
-        return view('plants.plants-types.create');
+        return view('plants.plants-parents-species.create');
     }
 
     /**
@@ -46,20 +47,19 @@ class PlantTypeController extends Controller
      */
     public function store(Request $request, PlantServiceInterface $plantService)
     {
-        $plantService->storePlantType($request);
+        $plantService->storePlantParentSpecie($request);
 
-        //return redirect()->route('plant_types_index', [$request->segment(1)])->with('message-success', __('Plant type saved succefully!'));
-        return redirect()->back()->with('message-success', __('Plant type saved succefully!'));
+        // return redirect()->route('plant_parents_species_index', [$request->Segment(1)])->with('message-success', __('Plant parent specie saved succefully!'));
+        return redirect()->back()->with('message-success', __('Plant parent specie saved succefully!'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  string $lang
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($lang, $id)
+    public function show($id)
     {
         //
     }
@@ -73,10 +73,10 @@ class PlantTypeController extends Controller
      */
     public function edit($lang, $id, PlantServiceInterface $plantService)
     {
-        $plantType = $plantService->getPlantType($id);
+        $plantParentSpecie = $plantService->getPlantParentSpecie($id);
 
-        return view('plants.plants-types.edit', [
-            'plantType' => $plantType
+        return view('plants.plants-parents-species.edit', [
+            'plantParentSpecie' => $plantParentSpecie
         ]);
     }
 
@@ -90,9 +90,9 @@ class PlantTypeController extends Controller
      */
     public function update(Request $request, $lang, $id, PlantServiceInterface $plantService)
     {
-        $plantService->updatePlantType($request, $id);
+        $plantService->updatePlantParentSpecie($request, $id);
 
-        return back()->with('message-success', __('Plant type updated succefully!'));
+        return back()->with('message-success', __('Plant parent specie updated succefully!'));
     }
 
     /**
@@ -104,8 +104,8 @@ class PlantTypeController extends Controller
      */
     public function destroy($lang, $id, PlantServiceInterface $plantService)
     {
-        $plantService->destroyPlantType($id);
+        $plantService->destroyPlantParentSpecie($id);
 
-        return back()->with('message-success', __('Plant type deleted succefully!'));
+        return back()->with('message-success', __('Plant parent specie deleted succefully!'));
     }
 }

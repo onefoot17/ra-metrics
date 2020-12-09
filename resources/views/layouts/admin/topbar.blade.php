@@ -14,7 +14,7 @@
             </a>
         </div>
 
-        @include('layouts.topnav')
+        @include('layouts.admin.topnav')
 
         <ul class="ra__navbar__topnav-menu list-unstyled topnav-menu float-right mb-0">
             {{-- <li class="d-none d-lg-block">

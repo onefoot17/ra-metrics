@@ -4,12 +4,12 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\LoginController;
 
-use App\Http\Controllers\Plants\PlantParentSpecieController;
-use App\Http\Controllers\Plants\PlantTypeController;
-use App\Http\Controllers\Plants\PlantsController;
-use App\Http\Controllers\Plants\DashboardController;
-use App\Http\Controllers\Users\MyProfileController;
-use App\Http\Controllers\Users\SettingsController;
+use App\Http\Controllers\Admin\Plants\PlantParentSpecieController;
+use App\Http\Controllers\Admin\Plants\PlantTypeController;
+use App\Http\Controllers\Admin\Plants\PlantsController;
+use App\Http\Controllers\Admin\Plants\DashboardController;
+use App\Http\Controllers\Admin\Users\MyProfileController;
+use App\Http\Controllers\Admin\Users\SettingsController;
 
 
 /*
@@ -43,21 +43,21 @@ Route::group(['prefix' => '{language}'], function(){
 
     App::setLocale(Request::segment(1));
 
-    Route::get('/', function () {
-        return view('main.index');
-    })->name('home')->middleware('auth');
-
-    Route::group(['prefix' => 'my-profile'], function(){
-        Route::get('/', [MyProfileController::class, 'edit'])->name('my_profile_edit');
-        Route::put('/edit', [MyProfileController::class, 'update'])->name('my_profile_update');
-    });
-
-    Route::group(['prefix' => 'settings'], function(){
-        Route::get('/', [SettingsController::class, 'edit'])->name('settings_edit');
-        Route::put('/edit/{id}', [SettingsController::class, 'update'])->name('settings_update');
-    });
-
     Route::group(['prefix' => 'admin'], function(){
+
+        Route::get('/', function () {
+            return view('main.index');
+        })->name('home')->middleware('auth');
+    
+        Route::group(['prefix' => 'my-profile'], function(){
+            Route::get('/', [MyProfileController::class, 'edit'])->name('my_profile_edit');
+            Route::put('/edit', [MyProfileController::class, 'update'])->name('my_profile_update');
+        });
+    
+        Route::group(['prefix' => 'settings'], function(){
+            Route::get('/', [SettingsController::class, 'edit'])->name('settings_edit');
+            Route::put('/edit/{id}', [SettingsController::class, 'update'])->name('settings_update');
+        });
 
         Route::group(['prefix' => 'plants'], function(){
 

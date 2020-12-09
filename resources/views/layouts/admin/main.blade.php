@@ -15,7 +15,7 @@
         <!-- Begin page -->
         <div id="wrapper">
 
-            @include('layouts.topbar')
+            @include('layouts.admin.topbar')
 
             <!-- ============================================================== -->
             <!-- Start Page Content here -->
@@ -58,7 +58,7 @@
         </div>
         <!-- END wrapper -->
 
-        @include('layouts.right-bar')
+        @include('layouts.admin.right-bar')
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
