@@ -63,8 +63,6 @@ Route::group(['prefix' => '{language}'], function(){
 
             Route::get('/', [DashboardController::class, 'indexParentSpecies'])->name('plant_dashboard_index');
 
-
-
             Route::group(['prefix' => 'plant-parents-species'], function(){
                 Route::get('/', [PlantParentSpecieController::class, 'index'])->name('plant_parents_species_index');
                 Route::get('/create', [PlantParentSpecieController::class, 'create'])->name('plant_parents_species_create');

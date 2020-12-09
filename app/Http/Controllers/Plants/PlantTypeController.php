@@ -48,7 +48,8 @@ class PlantTypeController extends Controller
     {
         $plantService->storePlantType($request);
 
-        return redirect()->route('plant_types_index', [$request->segment(1)])->with('message-success', __('Plant type saved succefully!'));
+        //return redirect()->route('plant_types_index', [$request->segment(1)])->with('message-success', __('Plant type saved succefully!'));
+        return redirect()->back()->with('message-success', __('Plant type saved succefully!'));
     }
 
     /**
