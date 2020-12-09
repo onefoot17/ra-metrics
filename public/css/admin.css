@@ -180,7 +180,7 @@ body.ra__dark {
 }
 
 body.ra__login.authentication-bg-pattern {
-  background-image: url("/images/bg-login.jpg");
+  background-image: url("http://localhost/rametrics/images/bg-login.jpg");
   height: 100%;
 }
 

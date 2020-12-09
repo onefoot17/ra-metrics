@@ -20,7 +20,9 @@ mix.js( 'resources/js/app.js', 'public/js' )
     .sourceMaps();;
 
 // Admin
-mix.sass( 'resources/sass/admin.scss', 'public/css' )
+mix.sass( 'resources/sass/admin.scss', 'public/css', {
+        data: '$appUrl:\'' + process.env.APP_URL + '\';'
+    })
     .options({
         /* autoprefixer: {
             options: {
