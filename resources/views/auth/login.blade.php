@@ -21,14 +21,14 @@
                                     <div class="auth-logo">
                                         <a href="{{route('index')}}" class="logo logo-dark text-center">
                                             <span class="logo-lg">
-												{{-- <img src="{{asset('ubold/assets/images/logo-dark.png')}}" alt="" height="22"> --}}
+												{{-- <img src="{{asset('admin/assets/images/logo-dark.png')}}" alt="" height="22"> --}}
 												<img src="{{asset('images/logo-dark.png')}}" alt="" height="30">
                                             </span>
                                         </a>
                     
                                         <a href="{{route('index')}}" class="logo logo-light text-center">
                                             <span class="logo-lg">
-												{{-- <img src="{{asset('ubold/assets/images/logo-light.png')}}" alt="" height="22"> --}}
+												{{-- <img src="{{asset('admin/assets/images/logo-light.png')}}" alt="" height="22"> --}}
 												<img src="{{asset('images/logo-light.png')}}" alt="" height="30">
                                             </span>
                                         </a>
@@ -124,10 +124,10 @@
         </footer>
 
         <!-- Vendor js -->
-        <script src="{{asset('ubold/assets/js/vendor.min.js')}}"></script>
+        <script src="{{asset('admin/assets/js/vendor.min.js')}}"></script>
 
         <!-- App js -->
-        <script src="{{asset('ubold/assets/js/app.min.js')}}"></script>
+        <script src="{{asset('admin/assets/js/app.min.js')}}"></script>
         
     </body>
 </html>

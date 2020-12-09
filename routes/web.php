@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Plants\PlantsController;
 use App\Http\Controllers\Admin\Plants\DashboardController;
 use App\Http\Controllers\Admin\Users\MyProfileController;
 use App\Http\Controllers\Admin\Users\SettingsController;
+use App\Http\Controllers\Website\IndexController;
 
 
 /*
@@ -35,7 +36,7 @@ Route::get('/', function () {
     } else {
         return redirect()->route('home', ['en']);
     }
-})->name('index')->middleware('auth');
+})->name('index');
 
 Route::get('/forgot-password', [LoginController::class, 'forgotPassword'])->name('password.request');
 
@@ -43,11 +44,13 @@ Route::group(['prefix' => '{language}'], function(){
 
     App::setLocale(Request::segment(1));
 
+    Route::get('/', [IndexController::class, 'index'])->name('home');
+
     Route::group(['prefix' => 'admin'], function(){
 
         Route::get('/', function () {
             return view('admin.main.index');
-        })->name('home')->middleware('auth');
+        })->name('admin_home')->middleware('auth');
     
         Route::group(['prefix' => 'my-profile'], function(){
             Route::get('/', [MyProfileController::class, 'edit'])->name('my_profile_edit');
