@@ -6,7 +6,7 @@
     @parent
 
     <!-- Loading button css -->
-    <link href="{{asset('ubold/assets/libs/ladda/ladda-themeless.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/assets/libs/ladda/ladda-themeless.min.css')}}" rel="stylesheet" type="text/css" />
 
 @stop
 
@@ -90,10 +90,10 @@
     @parent
 
     <!-- Loading buttons js -->
-    <script src="{{asset('ubold/assets/libs/ladda/spin.min.js')}}"></script>
-    <script src="{{asset('ubold/assets/libs/ladda/ladda.min.js')}}"></script>
+    <script src="{{asset('admin/assets/libs/ladda/spin.min.js')}}"></script>
+    <script src="{{asset('admin/assets/libs/ladda/ladda.min.js')}}"></script>
 
     <!-- Buttons init js-->
-    <script src="{{asset('ubold/assets/js/pages/loading-btn.init.js')}}"></script>
+    <script src="{{asset('admin/assets/js/pages/loading-btn.init.js')}}"></script>
 
 @stop

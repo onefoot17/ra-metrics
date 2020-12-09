@@ -2,7 +2,7 @@
 
 @section('css')
     <!-- Jquery Toast css -->
-    <link href="{{asset('ubold/assets/libs/jquery-toast-plugin/jquery.toast.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/assets/libs/jquery-toast-plugin/jquery.toast.min.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- Admin CSS -->
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
@@ -64,17 +64,17 @@
         <div class="rightbar-overlay"></div>
 
         <!-- Vendor js -->
-        <script src="{{asset('ubold/assets/js/vendor.min.js')}}"></script>
+        <script src="{{asset('admin/assets/js/vendor.min.js')}}"></script>
 
         <!-- Tost-->
-        <script src="{{asset('ubold/assets/libs/jquery-toast-plugin/jquery.toast.min.js')}}"></script>
+        <script src="{{asset('admin/assets/libs/jquery-toast-plugin/jquery.toast.min.js')}}"></script>
 
         @section('js')
         
         @show
 
         <!-- App js -->
-        <script src="{{asset('ubold/assets/js/app.min.js')}}"></script>
+        <script src="{{asset('admin/assets/js/app.min.js')}}"></script>
 
         <script>
             !(function (p) {

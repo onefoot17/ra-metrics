@@ -10,7 +10,7 @@
     @parent
 
     <!-- Sweet Alert-->
-    <link href="{{asset('ubold/assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
 @stop
 
 @section('content')
@@ -167,7 +167,7 @@
     @parent
 
     <!-- Sweet Alerts js -->
-    <script src="{{asset('ubold/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
+    <script src="{{asset('admin/assets/libs/sweetalert2/sweetalert2.min.js')}}"></script>
 
     <script>
     $().ready(function(){

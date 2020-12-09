@@ -5,11 +5,11 @@
 @section('css')
     @parent
 
-    <link href="{{asset('ubold/assets/libs/mohithg-switchery/switchery.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('ubold/assets/libs/bootstrap-select/css/bootstrap-select.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/assets/libs/mohithg-switchery/switchery.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/assets/libs/bootstrap-select/css/bootstrap-select.min.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- Loading button css -->
-    <link href="{{asset('ubold/assets/libs/ladda/ladda-themeless.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/assets/libs/ladda/ladda-themeless.min.css')}}" rel="stylesheet" type="text/css" />
 
 @stop
 
@@ -98,15 +98,15 @@
 @section('js')
     @parent
 
-    <script src="{{asset('ubold/assets/libs/mohithg-switchery/switchery.min.js')}}"></script>
-    <script src="{{asset('ubold/assets/libs/bootstrap-select/js/bootstrap-select.min.js')}}"></script>
+    <script src="{{asset('admin/assets/libs/mohithg-switchery/switchery.min.js')}}"></script>
+    <script src="{{asset('admin/assets/libs/bootstrap-select/js/bootstrap-select.min.js')}}"></script>
 
     <!-- Loading buttons js -->
-    <script src="{{asset('ubold/assets/libs/ladda/spin.min.js')}}"></script>
-    <script src="{{asset('ubold/assets/libs/ladda/ladda.min.js')}}"></script>
+    <script src="{{asset('admin/assets/libs/ladda/spin.min.js')}}"></script>
+    <script src="{{asset('admin/assets/libs/ladda/ladda.min.js')}}"></script>
 
     <!-- Buttons init js-->
-    <script src="{{asset('ubold/assets/js/pages/loading-btn.init.js')}}"></script>
+    <script src="{{asset('admin/assets/js/pages/loading-btn.init.js')}}"></script>
     
     <script>
         !function($) {

@@ -408,7 +408,7 @@
 @section('js')
     @parent
 
-    <script src="{{asset('ubold/assets/libs/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
+    <script src="{{asset('admin/assets/libs/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
 
     <script>
         $( document ).ready(function() {
@@ -449,8 +449,8 @@
     </script>
 
     <!-- Plugins js -->
-    <script src="{{('ubold/assets/libs/morris.js06/morris.min.js')}}"></script>
-    <script src="{{('ubold/assets/libs/raphael/raphael.min.js')}}"></script>
+    <script src="{{asset('admin/assets/libs/morris.js06/morris.min.js')}}"></script>
+    <script src="{{asset('admin/assets/libs/raphael/raphael.min.js')}}"></script>
 
     <script>
 
@@ -499,7 +499,7 @@
 
     </script>
 
-    <script src="{{asset('ubold/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
+    <script src="{{asset('admin/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
 
     <script>
         //
