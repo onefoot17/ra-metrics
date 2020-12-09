@@ -166,6 +166,10 @@ html {
   text-rendering: optimizeLegibility !important;
 }
 
+html.ra__login {
+  height: 100%;
+}
+
 body * {
   font-size: 1.4rem;
 }
@@ -173,6 +177,32 @@ body * {
 body.ra__dark {
   background-color: #000000;
   color: #ffffff;
+}
+
+body.ra__login.authentication-bg-pattern {
+  background-image: url("/images/bg-login.jpg");
+  height: 100%;
+}
+
+body.ra__login .account-pages {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-top: 1rem;
+}
+
+.ra__dark body.ra__login .account-pages {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+body.ra__login[data-sidebar-size=condensed] {
+  min-height: initial !important;
+}
+
+body.ra__login[data-sidebar-size=condensed] .logo span.logo-lg {
+  display: block !important;
 }
 
 .ra__dark input::-moz-placeholder {
@@ -314,23 +344,27 @@ a:hover {
   font-size: 1.4rem;
 }
 
-.btn-success {
+.btn-success,
+.btn-primary {
   background-color: #972b84;
   border: none;
   box-shadow: none;
   color: #ffffff;
 }
 
-.btn-success:hover {
+.btn-success:hover,
+.btn-primary:hover {
   background-color: #000000;
 }
 
-.ra__dark .btn-success {
+.ra__dark .btn-success,
+.ra__dark .btn-primary {
   background-color: #61ff2a;
   color: #000000;
 }
 
-.ra__dark .btn-success:hover {
+.ra__dark .btn-success:hover,
+.ra__dark .btn-primary:hover {
   background-color: #000000;
   color: #ffffff;
 }
@@ -756,6 +790,16 @@ body[data-sidebar-size=condensed] .ra__navbar__logo-box {
 
 .ra__plants__display__td {
   border: none !important;
+}
+
+.ra__forgot-password {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 1rem;
+}
+
+.ra__dark .ra__forgot-password {
+  background-color: #1e2933;
 }
 
 .ra__dark .footer {
