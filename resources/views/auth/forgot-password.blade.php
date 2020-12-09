@@ -1,10 +1,17 @@
+@section( 'html_class' ) {{ $html_class ?? __( 'ra__authentication' ) }} @stop
+
 @section('title') {{ $title ?? __('Forgot Password') }} @stop
+
+@section('css-admin')
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
+@stop
 
 @include('layouts.header')
 
-    <body class="loading authentication-bg authentication-bg-pattern" data-layout='{"mode": "dark"}'>
+    <body class="@yield('html_class') ra__light @if ( !empty( Request::segment( 1 ) ) ) ra__{{ Request::segment( 1 ) }}@endif @if ( !empty( Request::segment( 2 ) ) ) ra__{{ Request::segment( 2 ) }}@endif @if ( !empty( Request::segment( 3 ) ) ) ra__{{ Request::segment( 3 ) }}@endif loading authentication-bg authentication-bg-pattern" data-layout-mode="horizontal" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'>
 
-        <div class="account-pages mt-5 mb-5">
+        <div class="account-pages">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
@@ -117,9 +124,9 @@
 
                         @if (!session('status'))
 
-                            <div class="row mt-3">
+                        <div class="ra__account-pages__bottom row">
                                 <div class="col-12 text-center">
-                                    <p class="text-white-50">Back to <a href="{{route('login')}}" class="text-white ml-1"><b>Log in</b></a></p>
+                                    <p class="ml-1">Back to <a href="{{route('login')}}" class="text-white ml-1"><b>Log in</b></a></p>
                                 </div> <!-- end col -->
                             </div>
                             <!-- end row -->
@@ -134,7 +141,7 @@
         <!-- end page -->
 
 
-        <footer class="footer footer-alt">
+        <footer class="footer">
             <script>document.write(new Date().getFullYear())</script> &copy; {{env('APP_NAME')}} by <a href="https://vcompinc.com" target='_blank' class="text-white-50">VCOMP Inc.</a> 
         </footer>
 

@@ -10,24 +10,27 @@
 
 #{$html} {
     // Login page
-    &.ra__login {
+    &.ra__authentication {
         height: 100%;
     }
 }
 
 #{$body} {
-    * {
-        font-size: $font-size;
-    }
-    
+    color: $black;
+
     &.ra__dark {
         background-color: $black;
         color: $white;
     }
+
+    * {
+        font-size: $font-size;
+    }
     
-    &.ra__login {
+    &.ra__authentication {
         &.authentication-bg-pattern {
-            background-image: url($appUrl + '/images/bg-login.jpg'); 
+            background-image: url($appUrl + '/images/bg-login.jpg');
+            background-repeat: no-repeat;
             height: 100%;
         }
 
@@ -105,19 +108,23 @@ p {
 a {
     @include line-height;
 
-    color: $purple !important;
-
-    .ra__dark & {
-        color: $green !important;
-    }
-    
     &:hover {
         @include transition;
+    }
 
+    &:not(.btn):not(.nav-link):not(.dropdown-item) {
         color: $black !important;
-        
+
         .ra__dark & {
             color: $white !important;
+        }
+
+        &:hover {
+            color: $purple !important;
+
+            .ra__dark & {
+                color: $green !important;
+            }
         }
     }
 }
@@ -153,10 +160,15 @@ a {
 
         .ra__dark & {
             color: $white !important;
+
+            &:hover {
+                color: $green !important;
+            }
         }
     }
 }
 
+// Forms
 .input-group-text {
     font-size: inherit;
 
@@ -166,36 +178,51 @@ a {
     }
 }
 
-.form-group {
-    margin-bottom: $margin*2;
+.form {
+    &-group {
+        margin-bottom: $margin*2;
 
-    &:last-of-type {
-        margin-bottom: 0;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &-control {
+        font-size: inherit;
+        
+        .ra__dark & {
+            background-color: $gray-medium;
+            color: $white;
+        }
     }
 }
 
-.form-control {
-    font-size: inherit;
-
-    .ra__dark & {
-        background-color: $gray-medium;
-        color: $white;
-    }
-}
-
+// Buttons
 .btn {
+    border-radius: .25rem;
     font-size: $font-size;
+    padding: $padding/2 $padding*2;
 
     &-success,
-    &-primary {
-        background-color: $purple;
+    &-primary,
+    &-danger {
         border: none;
         box-shadow: none;
         color: $white;
+        width: auto !important;
 
         &:hover {
             background-color: $black;
         }
+    }
+
+    &:hover {
+        background-color: $black;
+    }
+
+    &-success,
+    &-primary {
+        background-color: $purple;
 
         .ra__dark & {
             background-color: $green;
@@ -207,77 +234,125 @@ a {
             }
         }
     }
-}
 
-// .ra__settings {
-    .btn-outline-success {
-        border-color: $purple;
-        color: $purple;
-        width: auto !important;
-        
-        .ra__dark & {
-            border-color: $green;
-            color: $green;
-        }
+    &-danger {
+        background-color: $red;
+    }
 
-        &:hover {
-            background-color: $purple;
+    /* // .ra__settings {
+        &-outline-success {
             border-color: $purple;
-            color: $white;
-            
-            .ra__dark & {
-                background-color: $green;
-                border-color: $green;
-                color: $black;
-            }
-        }
-
-        &.focus,
-        &:focus {
-            box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-            
-            .ra__dark & {
-                box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
-            }
-        }
-
-        &.disabled,
-        &:disabled {
-            background-color: transparent;
             color: $purple;
+            width: auto !important;
             
             .ra__dark & {
+                border-color: $green;
                 color: $green;
             }
+
+            &:hover {
+                background-color: $purple;
+                border-color: $purple;
+                color: $white;
+                
+                .ra__dark & {
+                    background-color: $green;
+                    border-color: $green;
+                    color: $black;
+                }
+            }
+
+            &.focus,
+            &:focus {
+                box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
+                
+                .ra__dark & {
+                    box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
+                }
+            }
+
+            &.disabled,
+            &:disabled {
+                background-color: transparent;
+                color: $purple;
+                
+                .ra__dark & {
+                    color: $green;
+                }
+            }
+
+            &:not(:disabled):not(.disabled).active,
+            &:not(:disabled):not(.disabled):active,
+            .show & > .dropdown-toggle,
+            .show > &.dropdown-toggle {
+                background-color: $purple;
+                border-color: $purple;
+                color: $white;
+                
+                .ra__dark & {
+                    background-color: $green;
+                    border-color: $green;
+                    color: $black;
+                }
+            }
+
+            &:not(:disabled):not(.disabled).active:focus,
+            &:not(:disabled):not(.disabled):active:focus,
+            .show & > .dropdown-toggle:focus,
+            .show > &.dropdown-toggle:focus {
+                box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
+                
+                .ra__dark & {
+                    box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
+                }
+            }
+        }
+    // } */
+}
+
+// Alerts
+.swal2 {
+    &-popup {
+        background-color: $gray-dark;
+        border-radius: .25rem;
+        max-width: 400px;
+        width: 40%;
+
+        .ra__dark & {
+            background-color: $white;
         }
 
-        &:not(:disabled):not(.disabled).active,
-        &:not(:disabled):not(.disabled):active,
-        .show & > .dropdown-toggle,
-        .show > &.dropdown-toggle {
-            background-color: $purple;
-            border-color: $purple;
-            color: $white;
+        .swal2-icon {
+            &.swal2-warning,
+            &.swal2-error {
+                border-color: $red;
+                color: $red;
+            }
             
+            &.swal2-error [class^=swal2-x-mark-line] {
+                background-color: $red;
+            }
+        }
+        
+        .swal2-title,
+        .swal2-content {
+            color: $white;
+
             .ra__dark & {
-                background-color: $green;
-                border-color: $green;
                 color: $black;
             }
         }
+        
+        .swal2-styled {
+            @include transition;
 
-        &:not(:disabled):not(.disabled).active:focus,
-        &:not(:disabled):not(.disabled):active:focus,
-        .show & > .dropdown-toggle:focus,
-        .show > &.dropdown-toggle:focus {
-            box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-            
-            .ra__dark & {
-                box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
+            &.swal2-confirm {
+                @extend .btn;
+                @extend .btn-success;
             }
         }
     }
-// }
+}
 
 .fa,
 .fab,
@@ -552,8 +627,8 @@ a {
         }
     }
 
-    // Login page
-    &#{$es}forgot-password {
+    // Authentication pages
+    &#{$es}account-pages__bottom {
         background-color: $white;
         // color: $black;
         margin: 0;
@@ -566,6 +641,8 @@ a {
 }
 
 .#{$footer} {
+    color: $black;
+
     .ra__dark & {
         background-color: $gray-dark;
         color: $white;

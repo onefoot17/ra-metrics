@@ -3,7 +3,9 @@
 @section('css')
     <!-- Jquery Toast css -->
     <link href="{{asset('ubold/assets/libs/jquery-toast-plugin/jquery.toast.min.css')}}" rel="stylesheet" type="text/css" />
+@stop
 
+@section('css-admin')
     <!-- Admin CSS -->
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
 @stop

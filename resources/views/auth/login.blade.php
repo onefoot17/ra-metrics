@@ -1,13 +1,15 @@
+@section( 'html_class' ) {{ $html_class ?? __( 'ra__authentication' ) }} @stop
+
 @section('title') {{ $title ?? __('Log In') }} @stop
 
-@section('css')
+@section('css-admin')
     <!-- Admin CSS -->
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
 @stop
 
 @include('layouts.header')
 
-    <body class="ra__light @if ( !empty( Request::segment( 1 ) ) ) ra__{{ Request::segment( 1 ) }}@endif @if ( !empty( Request::segment( 2 ) ) ) ra__{{ Request::segment( 2 ) }}@endif @if ( !empty( Request::segment( 3 ) ) ) ra__{{ Request::segment( 3 ) }}@endif loading authentication-bg authentication-bg-pattern" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'>
+    <body class="@yield('html_class') ra__light @if ( !empty( Request::segment( 1 ) ) ) ra__{{ Request::segment( 1 ) }}@endif @if ( !empty( Request::segment( 2 ) ) ) ra__{{ Request::segment( 2 ) }}@endif @if ( !empty( Request::segment( 3 ) ) ) ra__{{ Request::segment( 3 ) }}@endif loading authentication-bg authentication-bg-pattern" data-layout-mode="horizontal" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'>
 
         <div class="account-pages">
             <div class="container">
@@ -33,7 +35,7 @@
                                             </span>
                                         </a>
                                     </div>
-                                    <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
+                                    <p class="mb-4 mt-3">Enter your email address and password to access admin panel.</p>
                                 </div>
 
                                 <form action="{{ route('authenticate') }}" method="POST">
@@ -102,9 +104,10 @@
                         </div>
                         <!-- end card -->
 
-                        <div class="ra__forgot-password row">
+                        <div class="ra__account-pages__bottom row">
                             <div class="col-12 text-center">
-                                <p> <a href="{{route('password.request')}}" class="ml-1">Forgot your password?</a></p>
+                                <p class="ml-1"><a href="{{route('password.request')}}" class="ml-1">Forgot your password?</a></p>
+                                
                                 {{-- <p class="text-white-50">Don't have an account? <a href="auth-register.html" class="text-white ml-1"><b>Sign Up</b></a></p> --}}
                             </div> <!-- end col -->
                         </div>
@@ -119,7 +122,7 @@
         <!-- end page -->
 
 
-        <footer class="footer footer-alt">
+        <footer class="footer">
             <script>document.write(new Date().getFullYear())</script> &copy; {{env('APP_NAME')}} by <a href="https://vcompinc.com" target='_blank' class="text-white-50">VCOMP Inc.</a> 
         </footer>
 
