@@ -26,7 +26,7 @@ class SettingsController extends Controller
         $user = $userService->getUserProfile(Auth::User()->id);
         $settings = $userService->getSettings(Auth::User()->settings->id);
 
-        return view('users.settings', [
+        return view('admin.users.settings', [
             'settings' => $settings,
             'user' => $user
         ]);
