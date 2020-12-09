@@ -3,6 +3,7 @@
 @php 
 
 @endphp
+
 @section('title') {{ $title ?? __('List Plant Parents Species') }} @stop
 
 @section('css')
@@ -10,7 +11,6 @@
 
     <!-- Sweet Alert-->
     <link href="{{asset('ubold/assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
-
 @stop
 
 @section('content')
