@@ -1,36 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>RA-METRICS | @yield('title')</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
+@section('title') {{ $title ?? __('Home') }} @stop
 
-        @section('css')
-            <!-- Jquery Toast css -->
-            <link href="{{asset('ubold/assets/libs/jquery-toast-plugin/jquery.toast.min.css')}}" rel="stylesheet" type="text/css" />
+@section('css')
+    <!-- Jquery Toast css -->
+    <link href="{{asset('ubold/assets/libs/jquery-toast-plugin/jquery.toast.min.css')}}" rel="stylesheet" type="text/css" />
 
-            <!-- App css -->
-            <link href="{{asset('ubold/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
-            <link href="{{asset('ubold/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
+@stop
 
-            <link href="{{asset('ubold/assets/css/bootstrap-dark.min.css')}}" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" />
-            <link href="{{asset('ubold/assets/css/app-dark.min.css')}}" rel="stylesheet" type="text/css" id="app-dark-stylesheet" />
+@include('layouts.header')
 
-            <!-- icons -->
-            <link href="{{asset('ubold/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-
-
-            <!-- Custom CSS -->
-            <link rel="stylesheet" href="{{asset('css/admin.css')}}">
-        @show
-
-    </head>
-    
     <body class="loading ra__{{Auth::User()->settings->theme_color}} @if ( !empty( Request::segment( 2 ) ) ) ra__{{ Request::segment( 2 ) }}@endif @if ( !empty( Request::segment( 3 ) ) ) ra__{{ Request::segment( 3 ) }}@endif" data-layout-mode="horizontal" data-layout='{"mode": "{{Auth::User()->settings->theme_color}}", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'>
 
         <!-- Begin page -->
