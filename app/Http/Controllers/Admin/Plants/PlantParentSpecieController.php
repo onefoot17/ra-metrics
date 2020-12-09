@@ -24,7 +24,7 @@ class PlantParentSpecieController extends Controller
     {
         $plantParentsSpecies = $plantService->getPlantParentsSpecies();
 
-        return view('plants.plants-parents-species.index', [
+        return view('admin.plants.plants-parents-species.index', [
             'plantParentsSpecies' => $plantParentsSpecies
         ]);
     }
@@ -36,7 +36,7 @@ class PlantParentSpecieController extends Controller
      */
     public function create()
     {
-        return view('plants.plants-parents-species.create');
+        return view('admin.plants.plants-parents-species.create');
     }
 
     /**
@@ -75,7 +75,7 @@ class PlantParentSpecieController extends Controller
     {
         $plantParentSpecie = $plantService->getPlantParentSpecie($id);
 
-        return view('plants.plants-parents-species.edit', [
+        return view('admin.plants.plants-parents-species.edit', [
             'plantParentSpecie' => $plantParentSpecie
         ]);
     }

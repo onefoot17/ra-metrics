@@ -26,7 +26,7 @@ class DashboardController extends Controller
         $plantTypes = $plantService->getPlantTypes();
         $plants = $plantService->getPlants();
 
-        return view('plants.dashboard.index', [
+        return view('admin.plants.dashboard.index', [
             'plantParentsSpecies' => $plantParentsSpecies,
             'plantTypes' => $plantTypes,
             'plants' => $plants

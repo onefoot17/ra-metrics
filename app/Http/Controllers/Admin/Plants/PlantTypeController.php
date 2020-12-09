@@ -23,7 +23,7 @@ class PlantTypeController extends Controller
     {
         $plantTypes = $plantService->getPlantTypes();
 
-        return view('plants.plants-types.index', [
+        return view('admin.plants.plants-types.index', [
             'plantTypes' => $plantTypes
         ]);
     }
@@ -35,7 +35,7 @@ class PlantTypeController extends Controller
      */
     public function create()
     {
-        return view('plants.plants-types.create');
+        return view('admin.plants.plants-types.create');
     }
 
     /**
@@ -75,7 +75,7 @@ class PlantTypeController extends Controller
     {
         $plantType = $plantService->getPlantType($id);
 
-        return view('plants.plants-types.edit', [
+        return view('admin.plants.plants-types.edit', [
             'plantType' => $plantType
         ]);
     }

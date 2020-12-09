@@ -46,7 +46,7 @@ Route::group(['prefix' => '{language}'], function(){
     Route::group(['prefix' => 'admin'], function(){
 
         Route::get('/', function () {
-            return view('main.index');
+            return view('admin.main.index');
         })->name('home')->middleware('auth');
     
         Route::group(['prefix' => 'my-profile'], function(){
