@@ -8,14 +8,50 @@
     text-rendering: optimizeLegibility !important;
 }
 
+#{$html} {
+    // Login page
+    &.ra__login {
+        height: 100%;
+    }
+}
+
 #{$body} {
     * {
         font-size: $font-size;
     }
-
+    
     &.ra__dark {
         background-color: $black;
         color: $white;
+    }
+    
+    &.ra__login {
+        &.authentication-bg-pattern {
+            background-image: url('/images/bg-login.jpg');
+            height: 100%;
+        }
+
+        .account-pages {
+            background-color: rgba( var(--black--rgb), .2 );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            // margin-top: 0 !important;
+            padding-top: $padding;
+
+            .ra__dark & {     
+                background-color: rgba( var(--black--rgb), .5 );
+            }
+        }
+
+        &[data-sidebar-size=condensed] {
+            min-height: initial !important;
+
+            .logo span.logo-lg {
+                display: block !important;
+            }
+        }
     }
 }
 
@@ -150,7 +186,8 @@ a {
 .btn {
     font-size: $font-size;
 
-    &-success {
+    &-success,
+    &-primary {
         background-color: $purple;
         border: none;
         box-shadow: none;
@@ -512,6 +549,18 @@ a {
 
         &#{$es}display__td {
             border: none !important;
+        }
+    }
+
+    // Login page
+    &#{$es}forgot-password {
+        background-color: $white;
+        // color: $black;
+        margin: 0;
+        padding: $padding;
+
+        .ra__dark & {     
+            background-color: $gray-dark;
         }
     }
 }

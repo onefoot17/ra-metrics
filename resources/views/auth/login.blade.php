@@ -7,9 +7,9 @@
 
 @include('layouts.header')
 
-    <body class="loading authentication-bg authentication-bg-pattern" data-layout='{"mode": "dark"}'>
+    <body class="ra__light @if ( !empty( Request::segment( 1 ) ) ) ra__{{ Request::segment( 1 ) }}@endif @if ( !empty( Request::segment( 2 ) ) ) ra__{{ Request::segment( 2 ) }}@endif @if ( !empty( Request::segment( 3 ) ) ) ra__{{ Request::segment( 3 ) }}@endif loading authentication-bg authentication-bg-pattern" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'>
 
-        <div class="account-pages mt-5 mb-5">
+        <div class="account-pages">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
@@ -102,9 +102,9 @@
                         </div>
                         <!-- end card -->
 
-                        <div class="row mt-3">
+                        <div class="ra__forgot-password row">
                             <div class="col-12 text-center">
-                                <p> <a href="{{route('password.request')}}" class="text-white-50 ml-1">Forgot your password?</a></p>
+                                <p> <a href="{{route('password.request')}}" class="ml-1">Forgot your password?</a></p>
                                 {{-- <p class="text-white-50">Don't have an account? <a href="auth-register.html" class="text-white ml-1"><b>Sign Up</b></a></p> --}}
                             </div> <!-- end col -->
                         </div>
