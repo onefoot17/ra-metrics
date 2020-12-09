@@ -22,7 +22,7 @@ class MyProfileController extends Controller
      */
     public function edit($language)
     {
-        return view('users.my-profile');
+        return view('admin.users.my-profile');
     }
 
     /**
