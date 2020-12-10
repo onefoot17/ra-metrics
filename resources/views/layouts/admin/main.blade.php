@@ -4,6 +4,7 @@
     <!-- Jquery Toast css -->
     <link href="{{asset('admin/assets/libs/jquery-toast-plugin/jquery.toast.min.css')}}" rel="stylesheet" type="text/css" />
 
+@section('css-admin')
     <!-- Admin CSS -->
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
 @stop

@@ -77,9 +77,9 @@
                                         <form method="POST" action="{{route('plant_parents_species_destroy', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" id='form-plant-parent-specie-{{$plantParentsSpeciesCollection->id}}' class="ra__plants__display__buttons">
                                             @csrf
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-outline-primary waves-effect waves-light ra__plants__display__buttons__edit">@lang('Edit')</a>
+                                            <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-success waves-effect waves-light ra__plants__display__buttons__edit">@lang('Edit')</a>
                                             <a href="javascript:;" 
-                                                class="btn btn-outline-danger waves-effect waves-light delete_data"
+                                                class="btn btn-danger waves-effect waves-light delete_data"
                                                 variable-name='plant-parent-specie' plant-parent-specie='{{$plantParentsSpeciesCollection->id}}'
                                                 {{-- onclick="event.preventDefault();
                                                     this.closest('form').submit();" --}}
@@ -145,8 +145,8 @@
                                             <form method="POST" action="{{route('plant_types_destroy', [Request::segment(1), 'id' => $plantTypesCollection->id])}}" id='form-plant-type-{{$plantTypesCollection->id}}'>
                                                 @csrf
                                                 <input type="hidden" name="_method" value="DELETE">
-                                                <a href="{{route('plant_types_edit', [Request::segment(1), 'id' => $plantTypesCollection->id])}}"  type="button" class="btn btn-outline-primary waves-effect waves-light">@lang('Edit')</a>
-                                                <button type="button" class="btn btn-outline-danger waves-effect waves-light delete_data" data-click="swal-danger" plant-type="{{$plantTypesCollection->id}}" variable-name='plant-type'>@lang('Delete')</button>
+                                                <a href="{{route('plant_types_edit', [Request::segment(1), 'id' => $plantTypesCollection->id])}}"  type="button" class="btn btn-primary waves-effect waves-light">@lang('Edit')</a>
+                                                <button type="button" class="btn btn-danger waves-effect waves-light delete_data" data-click="swal-danger" plant-type="{{$plantTypesCollection->id}}" variable-name='plant-type'>@lang('Delete')</button>
                                             </form>
                                         </td>
                                     </tr>
