@@ -23,6 +23,12 @@
                     </li>
 
                     <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
+                        <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="{{route('admin_users_index', [Request::segment(1)])}}" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fe-user-plus mr-1"></i> @lang('Users')
+                        </a>
+                    </li>
+
+                    <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
                         <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="#" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
                             <i class="icon dripicons-location mr-1"></i> @lang('Locations/Sites')
                         </a>

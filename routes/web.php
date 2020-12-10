@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Plants\PlantsController;
 use App\Http\Controllers\Admin\Plants\DashboardController;
 use App\Http\Controllers\Admin\Users\MyProfileController;
 use App\Http\Controllers\Admin\Users\SettingsController;
+use App\Http\Controllers\Admin\Users\UsersController;
 use App\Http\Controllers\Website\IndexController;
 
 
@@ -60,6 +61,10 @@ Route::group(['prefix' => '{language}'], function(){
         Route::group(['prefix' => 'settings'], function(){
             Route::get('/', [SettingsController::class, 'edit'])->name('settings_edit');
             Route::put('/edit/{id}', [SettingsController::class, 'update'])->name('settings_update');
+        });
+
+        Route::group(['prefix' => 'users'], function(){
+            Route::get('/', [UsersController::class, 'index'])->name('admin_users_index');
         });
 
         Route::group(['prefix' => 'plants'], function(){
