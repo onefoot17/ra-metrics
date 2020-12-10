@@ -11,8 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js( 'resources/js/app.js', 'public/js' )
-    .postCss( 'resources/css/app.css', 'public/css', [
+mix.js( 'resources/js/app.js', 'public/assets/js' )
+    .postCss( 'resources/css/app.css', 'public/assets/css', [
         require( 'postcss-import' ),
         require( 'tailwindcss' ),
     ])
@@ -20,8 +20,8 @@ mix.js( 'resources/js/app.js', 'public/js' )
     .sourceMaps();;
 
 // Admin
-mix.sass( 'resources/sass/admin.scss', 'public/css', {
-        data: '$appUrl:\'' + process.env.APP_URL + '\';'
+mix.sass( 'resources/sass/admin.scss', 'public/assets/css', {
+        // data: '$appUrl:\'' + process.env.APP_URL + '\';'
     })
     .options({
         /* autoprefixer: {
@@ -38,7 +38,7 @@ mix.sass( 'resources/sass/admin.scss', 'public/css', {
     .sourceMaps();
 
 // Frontend
-mix.sass( 'resources/sass/frontend.scss', 'public/css' )
+mix.sass( 'resources/sass/frontend.scss', 'public/assets/css' )
     .options({
         /* autoprefixer: {
             options: {

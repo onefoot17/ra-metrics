@@ -5,11 +5,11 @@
         <div class="ra__navbar__logo-box logo-box">
             <a href="{{route('home', [Request::segment(1)])}}" class="logo logo-light text-center">
                 <span class="ra__navbar__logo-con logo-sm">
-                    <img class="ra__navbar__logo" src="{{asset('images/logo-light.png')}}" alt="" width="150" />
+                    <img class="ra__navbar__logo" src="{{asset( 'assets/images/logo-light.png')}}" alt="" width="150" />
                 </span>
 
                 <span class="ra__navbar__logo-con logo-lg">
-                    <img class="ra__navbar__logo" src="{{asset('images/logo-light.png')}}" alt="" width="150" />
+                    <img class="ra__navbar__logo" src="{{asset( 'assets/images/logo-light.png')}}" alt="" width="150" />
                 </span>
             </a>
         </div>
