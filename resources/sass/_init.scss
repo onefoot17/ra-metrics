@@ -40,6 +40,8 @@ p {
 a {
     @include line-height;
 
+    color: inherit;
+    
     &:hover {
         @include transition;
     }

@@ -10,8 +10,6 @@
 
 @include('layouts.header')
 
-    <body class="@yield('html_class') ra__light @if ( !empty( Request::segment( 1 ) ) ) ra__{{ Request::segment( 1 ) }}@endif @if ( !empty( Request::segment( 2 ) ) ) ra__{{ Request::segment( 2 ) }}@endif @if ( !empty( Request::segment( 3 ) ) ) ra__{{ Request::segment( 3 ) }}@endif loading authentication-bg authentication-bg-pattern" data-layout-mode="horizontal" data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'>
-
         <div class="account-pages">
             <div class="container">
                 <div class="row justify-content-center">
