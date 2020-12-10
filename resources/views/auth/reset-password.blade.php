@@ -5,7 +5,7 @@
 @include('admin.layouts.styles')
 
 @section('css-default')
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/assets/css/admin.css')}}">
 @stop
 
 @include('layouts.header')

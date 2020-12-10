@@ -20,7 +20,7 @@ mix.js( 'resources/js/app.js', 'public/assets/js' )
     .sourceMaps();;
 
 // Admin
-mix.sass( 'resources/sass/admin.scss', 'public/assets/css', {
+mix.sass( 'resources/sass/admin.scss', 'public/admin/assets/css', {
         // data: '$appUrl:\'' + process.env.APP_URL + '\';'
     })
     .options({
@@ -38,7 +38,7 @@ mix.sass( 'resources/sass/admin.scss', 'public/assets/css', {
     .sourceMaps();
 
 // Frontend
-mix.sass( 'resources/sass/frontend.scss', 'public/assets/css' )
+mix.sass( 'resources/sass/frontend.scss', 'public/website/assets/css' )
     .options({
         /* autoprefixer: {
             options: {

@@ -166,6 +166,14 @@ html {
   text-rendering: optimizeLegibility !important;
 }
 
+body {
+  color: #000000;
+}
+
+body * {
+  font-size: 1.4rem;
+}
+
 html.ra__authentication {
   height: 100%;
 }
@@ -177,10 +185,6 @@ body {
 body.ra__dark {
   background-color: #000000;
   color: #ffffff;
-}
-
-body * {
-  font-size: 1.4rem;
 }
 
 body.ra__authentication.authentication-bg-pattern {

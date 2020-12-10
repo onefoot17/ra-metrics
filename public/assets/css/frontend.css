@@ -161,3 +161,16 @@ html {
   width: 100%;
 }
 
+* {
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+body {
+  color: #000000;
+}
+
+body * {
+  font-size: 1.4rem;
+}
+

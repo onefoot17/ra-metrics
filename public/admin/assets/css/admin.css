@@ -166,64 +166,8 @@ html {
   text-rendering: optimizeLegibility !important;
 }
 
-html.ra__authentication {
-  height: 100%;
-}
-
-body {
-  color: #000000;
-}
-
-body.ra__dark {
-  background-color: #000000;
-  color: #ffffff;
-}
-
 body * {
   font-size: 1.4rem;
-}
-
-body.ra__authentication.authentication-bg-pattern {
-  background-image: url("http://rametrics.test//images/bg-login.jpg");
-  background-repeat: no-repeat;
-  height: 100%;
-}
-
-body.ra__authentication .account-pages {
-  background-color: rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding-top: 1rem;
-}
-
-.ra__dark body.ra__authentication .account-pages {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-body.ra__authentication[data-sidebar-size=condensed] {
-  min-height: initial !important;
-}
-
-body.ra__authentication[data-sidebar-size=condensed] .logo span.logo-lg {
-  display: block !important;
-}
-
-.ra__dark input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-
-.ra__dark input:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-
-.ra__dark input::placeholder {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-
-.ra__dark input:focus {
-  color: #ffffff !important;
 }
 
 img {
@@ -245,31 +189,8 @@ h6 {
   line-height: 1.3;
 }
 
-.ra__dark .h1,
-.ra__dark .h2,
-.ra__dark .h3,
-.ra__dark .h4,
-.ra__dark .h5,
-.ra__dark .h6,
-.ra__dark h1,
-.ra__dark h2,
-.ra__dark h3,
-.ra__dark h4,
-.ra__dark h5,
-.ra__dark h6 {
-  color: #ffffff;
-}
-
-h4.header-title {
-  font-size: 2.4rem;
-}
-
 p {
   line-height: 1.3;
-}
-
-.ra__dark p {
-  color: #ffffff;
 }
 
 a {
@@ -278,85 +199,6 @@ a {
 
 a:hover {
   transition: all 200ms ease-in-out;
-}
-
-a:not(.btn):not(.nav-link):not(.dropdown-item) {
-  color: #000000 !important;
-}
-
-.ra__dark a:not(.btn):not(.nav-link):not(.dropdown-item) {
-  color: #ffffff !important;
-}
-
-a:not(.btn):not(.nav-link):not(.dropdown-item):hover {
-  color: #972b84 !important;
-}
-
-.ra__dark a:not(.btn):not(.nav-link):not(.dropdown-item):hover {
-  color: #61ff2a !important;
-}
-
-#wrapper {
-  height: auto;
-}
-
-.ra__dark .text-muted {
-  color: #ffffff !important;
-}
-
-.ra__dark .table td,
-.ra__dark .table th {
-  color: #ffffff;
-}
-
-.dropdown-menu {
-  min-width: initial !important;
-}
-
-.ra__dark .dropdown-menu {
-  background-color: #2e3e4c;
-}
-
-.dropdown-item {
-  color: inherit !important;
-}
-
-.dropdown-item:hover {
-  color: #972b84 !important;
-}
-
-.ra__dark .dropdown-item {
-  color: #ffffff !important;
-}
-
-.ra__dark .dropdown-item:hover {
-  color: #61ff2a !important;
-}
-
-.input-group-text {
-  font-size: inherit;
-}
-
-.ra__dark .input-group-text {
-  background-color: #2e3e4c;
-  color: #ffffff;
-}
-
-.form-group {
-  margin-bottom: 2rem;
-}
-
-.form-group:last-of-type {
-  margin-bottom: 0;
-}
-
-.form-control {
-  font-size: inherit;
-}
-
-.ra__dark .form-control {
-  background-color: #2e3e4c;
-  color: #ffffff;
 }
 
 .btn,
@@ -516,6 +358,164 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):hover {
 
 .swal2-popup .swal2-styled {
   transition: all 200ms ease-in-out;
+}
+
+html.ra__authentication {
+  height: 100%;
+}
+
+body {
+  color: #000000;
+}
+
+body.ra__dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.ra__authentication.authentication-bg-pattern {
+  background-image: url("/assets/images/bg-login.jpg");
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+body.ra__authentication .account-pages {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-top: 1rem;
+}
+
+.ra__dark body.ra__authentication .account-pages {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+body.ra__authentication[data-sidebar-size=condensed] {
+  min-height: initial !important;
+}
+
+body.ra__authentication[data-sidebar-size=condensed] .logo span.logo-lg {
+  display: block !important;
+}
+
+.ra__dark input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.ra__dark input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.ra__dark input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.ra__dark input:focus {
+  color: #ffffff !important;
+}
+
+.ra__dark .h1,
+.ra__dark .h2,
+.ra__dark .h3,
+.ra__dark .h4,
+.ra__dark .h5,
+.ra__dark .h6,
+.ra__dark h1,
+.ra__dark h2,
+.ra__dark h3,
+.ra__dark h4,
+.ra__dark h5,
+.ra__dark h6 {
+  color: #ffffff;
+}
+
+h4.header-title {
+  font-size: 2.4rem;
+}
+
+.ra__dark p {
+  color: #ffffff;
+}
+
+a:not(.btn):not(.nav-link):not(.dropdown-item) {
+  color: #000000 !important;
+}
+
+.ra__dark a:not(.btn):not(.nav-link):not(.dropdown-item) {
+  color: #ffffff !important;
+}
+
+a:not(.btn):not(.nav-link):not(.dropdown-item):hover {
+  color: #972b84 !important;
+}
+
+.ra__dark a:not(.btn):not(.nav-link):not(.dropdown-item):hover {
+  color: #61ff2a !important;
+}
+
+#wrapper {
+  height: auto;
+}
+
+.ra__dark .text-muted {
+  color: #ffffff !important;
+}
+
+.ra__dark .table td,
+.ra__dark .table th {
+  color: #ffffff;
+}
+
+.dropdown-menu {
+  min-width: initial !important;
+}
+
+.ra__dark .dropdown-menu {
+  background-color: #2e3e4c;
+}
+
+.dropdown-item {
+  color: inherit !important;
+}
+
+.dropdown-item:hover {
+  color: #972b84 !important;
+}
+
+.ra__dark .dropdown-item {
+  color: #ffffff !important;
+}
+
+.ra__dark .dropdown-item:hover {
+  color: #61ff2a !important;
+}
+
+.input-group-text {
+  font-size: inherit;
+}
+
+.ra__dark .input-group-text {
+  background-color: #2e3e4c;
+  color: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.form-control {
+  font-size: inherit;
+}
+
+.ra__dark .form-control {
+  background-color: #2e3e4c;
+  color: #ffffff;
 }
 
 .fa,

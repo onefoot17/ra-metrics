@@ -161,3 +161,202 @@ html {
   width: 100%;
 }
 
+* {
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+body * {
+  font-size: 1.4rem;
+}
+
+img {
+  display: block;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.3;
+}
+
+p {
+  line-height: 1.3;
+}
+
+a {
+  line-height: 1.3;
+}
+
+a:hover {
+  transition: all 200ms ease-in-out;
+}
+
+.btn,
+.swal2-popup .swal2-styled.swal2-confirm {
+  border-radius: 0.25rem;
+  font-size: 1.4rem;
+  padding: 0.5rem 2rem;
+  /* // .ra__settings {
+      &-outline-success {
+          border-color: $purple;
+          color: $purple;
+          width: auto !important;
+
+          .ra__dark & {
+              border-color: $green;
+              color: $green;
+          }
+
+          &:hover {
+              background-color: $purple;
+              border-color: $purple;
+              color: $white;
+
+              .ra__dark & {
+                  background-color: $green;
+                  border-color: $green;
+                  color: $black;
+              }
+          }
+
+          &.focus,
+          &:focus {
+              box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
+
+              .ra__dark & {
+                  box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
+              }
+          }
+
+          &.disabled,
+          &:disabled {
+              background-color: transparent;
+              color: $purple;
+
+              .ra__dark & {
+                  color: $green;
+              }
+          }
+
+          &:not(:disabled):not(.disabled).active,
+          &:not(:disabled):not(.disabled):active,
+          .show & > .dropdown-toggle,
+          .show > &.dropdown-toggle {
+              background-color: $purple;
+              border-color: $purple;
+              color: $white;
+
+              .ra__dark & {
+                  background-color: $green;
+                  border-color: $green;
+                  color: $black;
+              }
+          }
+
+          &:not(:disabled):not(.disabled).active:focus,
+          &:not(:disabled):not(.disabled):active:focus,
+          .show & > .dropdown-toggle:focus,
+          .show > &.dropdown-toggle:focus {
+              box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
+
+              .ra__dark & {
+                  box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
+              }
+          }
+      }
+  // } */
+}
+
+.btn-success,
+.swal2-popup .swal2-styled.swal2-confirm,
+.btn-primary,
+.btn-danger {
+  border: none;
+  box-shadow: none;
+  color: #ffffff;
+  width: auto !important;
+}
+
+.btn-success:hover,
+.swal2-popup .swal2-styled.swal2-confirm:hover,
+.btn-primary:hover,
+.btn-danger:hover {
+  background-color: #000000;
+}
+
+.btn:hover,
+.swal2-popup .swal2-styled.swal2-confirm:hover {
+  background-color: #000000;
+}
+
+.btn-success,
+.swal2-popup .swal2-styled.swal2-confirm,
+.btn-primary {
+  background-color: #972b84;
+}
+
+.ra__dark .btn-success,
+.ra__dark .swal2-popup .swal2-styled.swal2-confirm,
+.swal2-popup .ra__dark .swal2-styled.swal2-confirm,
+.ra__dark .btn-primary {
+  background-color: #61ff2a;
+  color: #000000;
+}
+
+.ra__dark .btn-success:hover,
+.ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover,
+.swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover,
+.ra__dark .btn-primary:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn-danger {
+  background-color: #dd3333;
+}
+
+.swal2-popup {
+  background-color: #1e2933;
+  border-radius: 0.25rem;
+  max-width: 400px;
+  width: 40%;
+}
+
+.ra__dark .swal2-popup {
+  background-color: #ffffff;
+}
+
+.swal2-popup .swal2-icon.swal2-warning,
+.swal2-popup .swal2-icon.swal2-error {
+  border-color: #dd3333;
+  color: #dd3333;
+}
+
+.swal2-popup .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+  background-color: #dd3333;
+}
+
+.swal2-popup .swal2-title,
+.swal2-popup .swal2-content {
+  color: #ffffff;
+}
+
+.ra__dark .swal2-popup .swal2-title,
+.ra__dark .swal2-popup .swal2-content {
+  color: #000000;
+}
+
+.swal2-popup .swal2-styled {
+  transition: all 200ms ease-in-out;
+}
+
