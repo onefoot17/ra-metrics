@@ -8,10 +8,6 @@
 
 @include('layouts.header')
 
-    <body class="@yield('html_class') @if ( !empty( Request::segment( 1 ) ) ) ra__{{ Request::segment( 1 ) }}@endif @if ( !empty( Request::segment( 2 ) ) ) ra__{{ Request::segment( 2 ) }}@endif @if ( !empty( Request::segment( 3 ) ) ) ra__{{ Request::segment( 3 ) }}@endif">
-
-    {{-- <body class="loading ra__{{Auth::User()->settings->theme_color}} @if ( !empty( Request::segment( 2 ) ) ) ra__{{ Request::segment( 2 ) }}@endif @if ( !empty( Request::segment( 3 ) ) ) ra__{{ Request::segment( 3 ) }}@endif" data-layout-mode="horizontal" data-layout='{"mode": "{{Auth::User()->settings->theme_color}}", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'> --}}
-
         <!--Navbar Start-->
         <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
             <div class="container-fluid">
@@ -24,31 +20,40 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="mdi mdi-menu"></i>
                 </button>
+                
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
                         <li class="nav-item active">
                             <a href="#home" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#features" class="nav-link">Features</a>
+                            <a href="#contact" class="nav-link">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#demo" class="nav-link">Demos</a>
+                            <a href="#contact" class="nav-link">Contact Us</a>
                         </li>
+                        
+                        @auth
                         <li class="nav-item">
-                            <a href="#pricing" class="nav-link">Pricing</a>
+                            <a href="{{ route('admin_home', [ Request::segment( 1 ) ] ) }}" class="nav-link">Admin</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#faq" class="nav-link">Faqs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#clients" class="nav-link">Clients</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#contact" class="nav-link">Contact</a>
-                        </li>
+                        @endauth
                     </ul>
-                    <button class="btn btn-info navbar-btn">Try for Free</button>
+
+                    <button class="btn btn-info navbar-btn">
+                        @auth
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a href="javascript:void(0);" class="" onclick="event.preventDefault(); this.closest('form').submit();">
+                                    <i class="fe-log-out"></i>
+
+                                    <span>{{ __( 'Logout' ) }}</span>
+                                </a>
+                            </form>
+                        @else
+                            <a href="/login" class="">Login</a>
+                        @endauth
+                    </button>
                 </div>
             </div>
         </nav>

@@ -23,3 +23,5 @@
         <!-- Default CSS -->
         @yield('css-default')
     </head>
+
+    <body class="@if ( Request::segment( 2 ) == 'admin' || Request::segment( 1 ) == 'login' ) loading @endif @auth @if ( Request::segment( 2 ) == 'admin' ) ra__{{Auth::User()->settings->theme_color}} @endif @endauth @if ( Request::segment( 1 ) == 'login' ) authentication-bg authentication-bg-pattern @endif @yield('html_class') @if ( !empty( Request::segment( 1 ) ) ) ra__{{ Request::segment( 1 ) }}@endif @if ( !empty( Request::segment( 2 ) ) ) ra__{{ Request::segment( 2 ) }}@endif @if ( !empty( Request::segment( 3 ) ) ) ra__{{ Request::segment( 3 ) }}@endif" @if ( Auth::check() || Request::segment( 1 ) == 'login' )data-layout-mode="horizontal" @endif @if ( Auth::check() ) data-layout='{"mode": "{{Auth::User()->settings->theme_color}}", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'@endif>
