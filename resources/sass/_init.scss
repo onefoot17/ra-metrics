@@ -1,0 +1,49 @@
+// Intialization
+@import '_reset';
+@import '_variables';
+@import '_mixins';
+
+* {
+    -webkit-font-smoothing: subpixel-antialiased !important; 
+    text-rendering: optimizeLegibility !important;
+}
+
+#{$body} {
+    * {
+        font-size: $font-size;
+    }
+}
+
+img {
+    display: block;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include line-height;
+}
+
+p {
+    @include line-height;
+}
+
+a {
+    @include line-height;
+
+    &:hover {
+        @include transition;
+    }
+}
+
+@import '_buttons';
+@import '_alerts';

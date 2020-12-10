@@ -1,0 +1,43 @@
+// Alerts
+.swal2 {
+    &-popup {
+        background-color: $gray-dark;
+        border-radius: .25rem;
+        max-width: 400px;
+        width: 40%;
+
+        .ra__dark & {
+            background-color: $white;
+        }
+
+        .swal2-icon {
+            &.swal2-warning,
+            &.swal2-error {
+                border-color: $red;
+                color: $red;
+            }
+            
+            &.swal2-error [class^=swal2-x-mark-line] {
+                background-color: $red;
+            }
+        }
+        
+        .swal2-title,
+        .swal2-content {
+            color: $white;
+
+            .ra__dark & {
+                color: $black;
+            }
+        }
+        
+        .swal2-styled {
+            @include transition;
+
+            &.swal2-confirm {
+                @extend .btn;
+                @extend .btn-success;
+            }
+        }
+    }
+}

@@ -1,12 +1,5 @@
 // Intialization
-@import '_reset';
-@import '_variables';
-@import '_mixins';
-
-* {
-    -webkit-font-smoothing: subpixel-antialiased !important; 
-    text-rendering: optimizeLegibility !important;
-}
+@import '_init';
 
 #{$html} {
     // Login page
@@ -21,10 +14,6 @@
     &.ra__dark {
         background-color: $black;
         color: $white;
-    }
-
-    * {
-        font-size: $font-size;
     }
     
     &.ra__authentication {
@@ -71,10 +60,6 @@ input:focus {
     }
 }
 
-img {
-    display: block;
-}
-
 .h1,
 .h2,
 .h3,
@@ -87,8 +72,6 @@ h3,
 h4,
 h5,
 h6 {
-    @include line-height;
-
     .ra__dark & {
         color: $white;
     }
@@ -99,20 +82,12 @@ h4.header-title {
 }
 
 p {
-    @include line-height;
-
     .ra__dark & {
         color: $white;
     }
 }
 
 a {
-    @include line-height;
-
-    &:hover {
-        @include transition;
-    }
-
     &:not(.btn):not(.nav-link):not(.dropdown-item) {
         color: $black !important;
 
@@ -198,163 +173,6 @@ a {
         .ra__dark & {
             background-color: $gray-medium;
             color: $white;
-        }
-    }
-}
-
-// Buttons
-.btn {
-    border-radius: .25rem;
-    font-size: $font-size;
-    padding: $padding/2 $padding*2;
-
-    &-success,
-    &-primary,
-    &-danger {
-        border: none;
-        box-shadow: none;
-        color: $white;
-        width: auto !important;
-
-        &:hover {
-            background-color: $black;
-        }
-    }
-
-    &:hover {
-        background-color: $black;
-    }
-
-    &-success,
-    &-primary {
-        background-color: $purple;
-
-        .ra__dark & {
-            background-color: $green;
-            color: $black;
-            
-            &:hover {
-                background-color: $black;
-                color: $white;
-            }
-        }
-    }
-
-    &-danger {
-        background-color: $red;
-    }
-
-    /* // .ra__settings {
-        &-outline-success {
-            border-color: $purple;
-            color: $purple;
-            width: auto !important;
-            
-            .ra__dark & {
-                border-color: $green;
-                color: $green;
-            }
-
-            &:hover {
-                background-color: $purple;
-                border-color: $purple;
-                color: $white;
-                
-                .ra__dark & {
-                    background-color: $green;
-                    border-color: $green;
-                    color: $black;
-                }
-            }
-
-            &.focus,
-            &:focus {
-                box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-                
-                .ra__dark & {
-                    box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
-                }
-            }
-
-            &.disabled,
-            &:disabled {
-                background-color: transparent;
-                color: $purple;
-                
-                .ra__dark & {
-                    color: $green;
-                }
-            }
-
-            &:not(:disabled):not(.disabled).active,
-            &:not(:disabled):not(.disabled):active,
-            .show & > .dropdown-toggle,
-            .show > &.dropdown-toggle {
-                background-color: $purple;
-                border-color: $purple;
-                color: $white;
-                
-                .ra__dark & {
-                    background-color: $green;
-                    border-color: $green;
-                    color: $black;
-                }
-            }
-
-            &:not(:disabled):not(.disabled).active:focus,
-            &:not(:disabled):not(.disabled):active:focus,
-            .show & > .dropdown-toggle:focus,
-            .show > &.dropdown-toggle:focus {
-                box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-                
-                .ra__dark & {
-                    box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
-                }
-            }
-        }
-    // } */
-}
-
-// Alerts
-.swal2 {
-    &-popup {
-        background-color: $gray-dark;
-        border-radius: .25rem;
-        max-width: 400px;
-        width: 40%;
-
-        .ra__dark & {
-            background-color: $white;
-        }
-
-        .swal2-icon {
-            &.swal2-warning,
-            &.swal2-error {
-                border-color: $red;
-                color: $red;
-            }
-            
-            &.swal2-error [class^=swal2-x-mark-line] {
-                background-color: $red;
-            }
-        }
-        
-        .swal2-title,
-        .swal2-content {
-            color: $white;
-
-            .ra__dark & {
-                color: $black;
-            }
-        }
-        
-        .swal2-styled {
-            @include transition;
-
-            &.swal2-confirm {
-                @extend .btn;
-                @extend .btn-success;
-            }
         }
     }
 }

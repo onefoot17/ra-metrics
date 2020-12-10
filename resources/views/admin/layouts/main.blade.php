@@ -7,7 +7,7 @@
     <link href="{{ asset( 'admin/assets/libs/jquery-toast-plugin/jquery.toast.min.css' ) }}" rel="stylesheet" type="text/css" />
 
 @section('css-default')
-    <link rel="stylesheet" href="{{ asset( 'css/admin.css' ) }}">
+    <link rel="stylesheet" href="{{ asset( 'admin/assets/css/admin.css' ) }}">
 @stop
 
 @include('layouts.header')

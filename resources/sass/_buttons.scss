@@ -1,0 +1,112 @@
+// Buttons
+.btn {
+    border-radius: .25rem;
+    font-size: $font-size;
+    padding: $padding/2 $padding*2;
+
+    &-success,
+    &-primary,
+    &-danger {
+        border: none;
+        box-shadow: none;
+        color: $white;
+        width: auto !important;
+
+        &:hover {
+            background-color: $black;
+        }
+    }
+
+    &:hover {
+        background-color: $black;
+    }
+
+    &-success,
+    &-primary {
+        background-color: $purple;
+
+        .ra__dark & {
+            background-color: $green;
+            color: $black;
+            
+            &:hover {
+                background-color: $black;
+                color: $white;
+            }
+        }
+    }
+
+    &-danger {
+        background-color: $red;
+    }
+
+    /* // .ra__settings {
+        &-outline-success {
+            border-color: $purple;
+            color: $purple;
+            width: auto !important;
+            
+            .ra__dark & {
+                border-color: $green;
+                color: $green;
+            }
+
+            &:hover {
+                background-color: $purple;
+                border-color: $purple;
+                color: $white;
+                
+                .ra__dark & {
+                    background-color: $green;
+                    border-color: $green;
+                    color: $black;
+                }
+            }
+
+            &.focus,
+            &:focus {
+                box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
+                
+                .ra__dark & {
+                    box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
+                }
+            }
+
+            &.disabled,
+            &:disabled {
+                background-color: transparent;
+                color: $purple;
+                
+                .ra__dark & {
+                    color: $green;
+                }
+            }
+
+            &:not(:disabled):not(.disabled).active,
+            &:not(:disabled):not(.disabled):active,
+            .show & > .dropdown-toggle,
+            .show > &.dropdown-toggle {
+                background-color: $purple;
+                border-color: $purple;
+                color: $white;
+                
+                .ra__dark & {
+                    background-color: $green;
+                    border-color: $green;
+                    color: $black;
+                }
+            }
+
+            &:not(:disabled):not(.disabled).active:focus,
+            &:not(:disabled):not(.disabled):active:focus,
+            .show & > .dropdown-toggle:focus,
+            .show > &.dropdown-toggle:focus {
+                box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
+                
+                .ra__dark & {
+                    box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
+                }
+            }
+        }
+    // } */
+}
