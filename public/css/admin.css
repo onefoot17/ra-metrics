@@ -296,6 +296,10 @@ a:not(.btn):not(.nav-link):not(.dropdown-item):hover {
   color: #61ff2a !important;
 }
 
+#wrapper {
+  height: auto;
+}
+
 .ra__dark .text-muted {
   color: #ffffff !important;
 }

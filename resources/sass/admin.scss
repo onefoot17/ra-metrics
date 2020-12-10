@@ -129,6 +129,10 @@ a {
     }
 }
 
+#wrapper {
+    height: auto;
+}
+
 .text-muted {
     .ra__dark & {
         color: $white !important;
