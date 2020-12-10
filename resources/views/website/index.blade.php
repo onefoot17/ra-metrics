@@ -1,36 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>UBold - Responsive Admin Dashboard & Landing Page Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+@section('title') {{ $title ?? __('Home') }} @stop
 
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('website/images/favicon.ico')}}">
+@include('website.styles')
 
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="{{asset('website/css/bootstrap.min.css')}}" type="text/css">
+@section('css-default')
+    <link rel="stylesheet" href="{{ asset( 'website/assets/css/frontend.css' ) }}">
+@stop
 
-        <!--Material Icon -->
-        <link rel="stylesheet" type="text/css" href="{{asset('website/css/materialdesignicons.min.css')}}" />
+@include('layouts.header')
 
-        <!-- Custom  sCss -->
-        <link rel="stylesheet" type="text/css" href="{{asset('website/css/style.css')}}" />
+    <body class="@yield('html_class') @if ( !empty( Request::segment( 1 ) ) ) ra__{{ Request::segment( 1 ) }}@endif @if ( !empty( Request::segment( 2 ) ) ) ra__{{ Request::segment( 2 ) }}@endif @if ( !empty( Request::segment( 3 ) ) ) ra__{{ Request::segment( 3 ) }}@endif">
 
-    </head>
-
-    <body>
+    {{-- <body class="loading ra__{{Auth::User()->settings->theme_color}} @if ( !empty( Request::segment( 2 ) ) ) ra__{{ Request::segment( 2 ) }}@endif @if ( !empty( Request::segment( 3 ) ) ) ra__{{ Request::segment( 3 ) }}@endif" data-layout-mode="horizontal" data-layout='{"mode": "{{Auth::User()->settings->theme_color}}", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'> --}}
 
         <!--Navbar Start-->
         <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
             <div class="container-fluid">
                 <!-- LOGO -->
                 <a class="logo text-uppercase" href="index.html">
-                    <img src="{{asset('images/logo-light.png')}}" alt="" class="logo-light" height="30" />
-                    <img src="{{asset('images/logo-dark.png')}}" alt="" class="logo-dark" height="30" />
+                    <img src="{{asset('assets/images/logo-light.png')}}" alt="" class="logo-light" height="30" />
+                    <img src="{{asset('assets/images/logo-dark.png')}}" alt="" class="logo-dark" height="30" />
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,9 +82,9 @@
                             </div>
                             <div class="col-xl-4 offset-xl-2 col-lg-5 offset-lg-1 col-md-7">
                                 <div class="home-img position-relative">
-                                    <img src="{{asset('website/images/home-img.png')}}" alt="" class="home-first-img">
-                                    <img src="{{asset('website/images/home-img.png')}}" alt="" class="home-second-img mx-auto d-block">
-                                    <img src="{{asset('website/images/home-img.png')}}" alt="" class="home-third-img">
+                                    <img src="{{ asset( 'website/assets/images/home-img.png')}}" alt="" class="home-first-img">
+                                    <img src="{{ asset( 'website/assets/images/home-img.png')}}" alt="" class="home-second-img mx-auto d-block">
+                                    <img src="{{ asset( 'website/assets/images/home-img.png')}}" alt="" class="home-third-img">
                                 </div>
                             </div>
                         </div>
@@ -115,22 +103,22 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="client-images">
-                                <img src="{{asset('website/images/clients/1.png')}}" alt="logo-img" class="mx-auto img-fluid d-block">
+                                <img src="{{ asset( 'website/assets/images/clients/1.png')}}" alt="logo-img" class="mx-auto img-fluid d-block">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="client-images">
-                                <img src="{{asset('website/images/clients/3.png')}}" alt="logo-img" class="mx-auto img-fluid d-block">
+                                <img src="{{ asset( 'website/assets/images/clients/3.png')}}" alt="logo-img" class="mx-auto img-fluid d-block">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="client-images">
-                                <img src="{{asset('website/images/clients/4.png')}}" alt="logo-img" class="mx-auto img-fluid d-block">
+                                <img src="{{ asset( 'website/assets/images/clients/4.png')}}" alt="logo-img" class="mx-auto img-fluid d-block">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="client-images">
-                                <img src="{{asset('website/images/clients/6.png')}}" alt="logo-img" class="mx-auto img-fluid d-block">
+                                <img src="{{ asset( 'website/assets/images/clients/6.png')}}" alt="logo-img" class="mx-auto img-fluid d-block">
                             </div>
                         </div>
                     </div> <!-- end row -->
@@ -156,7 +144,7 @@
                     <div class="col-lg-4">
                         <div class="features-box">
                             <div class="features-img mb-4">
-                                <img src="{{asset('website/images/icons/layers.png')}}" alt="">
+                                <img src="{{ asset( 'website/assets/images/icons/layers.png')}}" alt="">
                             </div>
                             <h4 class="mb-2">Responsive Layouts</h4>
                             <p class="text-muted">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit</p>
@@ -166,7 +154,7 @@
                     <div class="col-lg-4">
                         <div class="features-box">
                             <div class="features-img mb-4">
-                                <img src="{{asset('website/images/icons/core.png')}}" alt="">
+                                <img src="{{ asset( 'website/assets/images/icons/core.png')}}" alt="">
                             </div>
                             <h4 class="mb-2">Based on Bootstrap UI</h4>
                             <p class="text-muted">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
@@ -176,7 +164,7 @@
                     <div class="col-lg-4">
                         <div class="features-box">
                             <div class="features-img mb-4">
-                                <img src="{{asset('website/images/icons/paperdesk.png')}}" alt="">
+                                <img src="{{ asset( 'website/assets/images/icons/paperdesk.png')}}" alt="">
                             </div>
                             <h4 class="mb-2">Creative Design</h4>
                             <p class="text-muted">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
@@ -190,7 +178,7 @@
                     <div class="col-lg-4">
                         <div class="features-box">
                             <div class="features-img mb-4">
-                                <img src="{{asset('website/images/icons/solarsystem.png')}}" alt="">
+                                <img src="{{ asset( 'website/assets/images/icons/solarsystem.png')}}" alt="">
                             </div>
                             <h4 class="mb-3">Awesome Support</h4>
                             <p class="text-muted">At solmen va esser necessi far uniform grammatica pronun e plu sommun paroles.</p>
@@ -200,7 +188,7 @@
                     <div class="col-lg-4">
                         <div class="features-box">
                             <div class="features-img mb-4">
-                                <img src="{{asset('website/images/icons/datatext.png')}}" alt="">
+                                <img src="{{ asset( 'website/assets/images/icons/datatext.png')}}" alt="">
                             </div>
                             <h4 class="mb-3">Easy to customize</h4>
                             <p class="text-muted">If several languages coalesce the grammar of the is more simple languages.</p>
@@ -210,7 +198,7 @@
                     <div class="col-lg-4">
                         <div class="features-box">
                             <div class="features-img mb-4">
-                                <img src="{{asset('website/images/icons/browserscript.png')}}" alt="">
+                                <img src="{{ asset( 'website/assets/images/icons/browserscript.png')}}" alt="">
                             </div>
                             <h4 class="mb-3">Quality Code</h4>
                             <p class="text-muted">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
@@ -239,7 +227,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="demo-box bg-white mt-4 p-2">
                             <a href="#" class="text-dark">
-                                <img src="{{asset('website/images/demo/index_1.jpg')}}" alt="" class="img-fluid mx-auto d-block">
+                                <img src="{{ asset( 'website/assets/images/demo/index_1.jpg')}}" alt="" class="img-fluid mx-auto d-block">
                                 <div class="p-3 text-center">
                                     <h5 class="mb-0">light Layouts</h5>
                                 </div>
@@ -250,7 +238,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="demo-box bg-white mt-4 p-2">
                             <a href="#" class="text-dark">
-                                <img src="{{asset('website/images/demo/index_2.jpg')}}" alt="" class="img-fluid mx-auto d-block">
+                                <img src="{{ asset( 'website/assets/images/demo/index_2.jpg')}}" alt="" class="img-fluid mx-auto d-block">
                                 <div class="p-3 text-center">
                                     <h5 class="mb-0">Dark Layouts</h5>
                                 </div>
@@ -261,7 +249,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="demo-box bg-white mt-4 p-2">
                             <a href="#" class="text-dark">
-                                <img src="{{asset('website/images/demo/index_3.jpg')}}" alt="" class="img-fluid mx-auto d-block">
+                                <img src="{{ asset( 'website/assets/images/demo/index_3.jpg')}}" alt="" class="img-fluid mx-auto d-block">
                                 <div class="p-3 text-center">
                                     <h5 class="mb-0">Material Design </h5>
                                 </div>
@@ -272,7 +260,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="demo-box bg-white mt-4 p-2">
                             <a href="#" class="text-dark">
-                                <img src="{{asset('website/images/demo/index_4.jpg')}}" alt="" class="img-fluid mx-auto d-block">
+                                <img src="{{ asset( 'website/assets/images/demo/index_4.jpg')}}" alt="" class="img-fluid mx-auto d-block">
                                 <div class="p-3 text-center">
                                     <h5 class="mb-0">Purple Layouts</h5>
                                 </div>
@@ -283,7 +271,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="demo-box bg-white mt-4 p-2">
                             <a href="#" class="text-dark">
-                                <img src="{{asset('website/images/demo/index_5.jpg')}}" alt="" class="img-fluid mx-auto d-block">
+                                <img src="{{ asset( 'website/assets/images/demo/index_5.jpg')}}" alt="" class="img-fluid mx-auto d-block">
                                 <div class="p-3 text-center">
                                     <h5 class="mb-0">Boxed Layouts</h5>
                                 </div>
@@ -294,7 +282,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="demo-box bg-white mt-4 p-2">
                             <a href="#" class="text-dark">
-                                <img src="{{asset('website/images/demo/index_6.jpg')}}" alt="" class="img-fluid mx-auto d-block">
+                                <img src="{{ asset( 'website/assets/images/demo/index_6.jpg')}}" alt="" class="img-fluid mx-auto d-block">
                                 <div class="p-3 text-center">
                                     <h5 class="mb-0">Horizontal </h5>
                                 </div>
@@ -334,7 +322,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="feature-img">
-                            <img src="{{asset('website/images/features-img/img-2.png')}}" alt="" class="img-fluid mx-auto d-block">
+                            <img src="{{ asset( 'website/assets/images/features-img/img-2.png')}}" alt="" class="img-fluid mx-auto d-block">
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -368,7 +356,7 @@
 
                     <div class="col-lg-6">
                         <div class="feature-img">
-                            <img src="{{asset('website/images/features-img/img-1.png')}}" alt="" class="img-fluid mx-auto d-block">
+                            <img src="{{ asset( 'website/assets/images/features-img/img-1.png')}}" alt="" class="img-fluid mx-auto d-block">
                         </div>
                     </div>
                 </div>
@@ -381,7 +369,7 @@
         <!-- pricing start -->
         <section class="section pb-0 bg-gradient" id="pricing">
             <div class="bg-shape">
-                <img src="{{asset('website/images/bg-shape.png')}}" alt="" class="img-fluid mx-auto d-block">
+                <img src="{{ asset( 'website/assets/images/bg-shape.png')}}" alt="" class="img-fluid mx-auto d-block">
             </div>
             <div class="container-fluid">
                 <div class="row justify-content-center">
@@ -616,7 +604,7 @@
                             </div>
                             <div class="p-4">
                                 <div class="testi-img float-left mr-2">
-                                    <img src="{{asset('website/images/testi/img-2.png')}}" alt="" class="rounded-circle">
+                                    <img src="{{ asset( 'website/assets/images/testi/img-2.png')}}" alt="" class="rounded-circle">
                                 </div>
                                 <div>
                                     <h5 class="mb-0">Michael Morrell</h5>
@@ -633,7 +621,7 @@
                             </div>
                             <div class="p-4">
                                 <div class="testi-img float-left mr-2">
-                                    <img src="{{asset('website/images/testi/img-1.png')}}" alt="" class="rounded-circle">
+                                    <img src="{{ asset( 'website/assets/images/testi/img-1.png')}}" alt="" class="rounded-circle">
                                 </div>
                                 <div>
                                     <h5 class="mb-0">John Seidel</h5>
@@ -650,7 +638,7 @@
                             </div>
                             <div class="p-4">
                                 <div class="testi-img float-left mr-2">
-                                    <img src="{{asset('website/images/testi/img-3.png')}}" alt="" class="rounded-circle">
+                                    <img src="{{ asset( 'website/assets/images/testi/img-3.png')}}" alt="" class="rounded-circle">
                                 </div>
                                 <div>
                                     <h5 class="mb-0">Robert Taylor</h5>
@@ -670,7 +658,7 @@
         <!-- contact start -->
         <section class="section pb-0 bg-gradient" id="contact">
             <div class="bg-shape">
-                <img src="{{asset('website/images/bg-shape-light.png')}}" alt="" class="img-fluid mx-auto d-block">
+                <img src="{{ asset( 'website/assets/images/bg-shape-light.png')}}" alt="" class="img-fluid mx-auto d-block">
             </div>
             <div class="container-fluid">
                 <div class="row">
@@ -809,7 +797,7 @@
                     <div class="col-lg-4">
                         <div class="pr-lg-4">
                             <div class="mb-4">
-                                <img src="{{asset('website/images/logo-light.png')}}" alt="" height="20">
+                                <img src="{{ asset( 'website/assets/images/logo-light.png')}}" alt="" height="20">
                             </div>
                             <p class="text-white-50">A Responsive Bootstrap 4 Web App Kit</p>
                             <p class="text-white-50">Ubold is a fully featured premium admin template built on top of awesome Bootstrap 4.1.3, modern web technology HTML5, CSS3 and jQuery.</p>
@@ -894,13 +882,13 @@
         <a href="#" class="back-to-top" id="back-to-top"> <i class="mdi mdi-chevron-up"> </i> </a>
 
         <!-- javascript -->
-        <script src="{{asset('website/js/jquery.min.js')}}"></script>
-        <script src="{{asset('website/js/bootstrap.bundle.min.js')}}"></script>
-        <script src="{{asset('website/js/jquery.easing.min.js')}}"></script>
-        <script src="{{asset('website/js/scrollspy.min.js')}}"></script>
+        <script src="{{asset('website/assets/js/jquery.min.js')}}"></script>
+        <script src="{{asset('website/assets/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('website/assets/js/jquery.easing.min.js')}}"></script>
+        <script src="{{asset('website/assets/js/scrollspy.min.js')}}"></script>
 
         <!-- custom js -->
-        <script src="{{asset('website/js/app.js')}}"></script>
+        <script src="{{asset('website/assets/js/app.js')}}"></script>
     </body>
 
 </html>

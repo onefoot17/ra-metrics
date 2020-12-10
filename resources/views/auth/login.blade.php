@@ -2,8 +2,9 @@
 
 @section('title') {{ $title ?? __('Log In') }} @stop
 
-@section('css-admin')
-    <!-- Admin CSS -->
+@include('admin.layouts.styles')
+
+@section('css-default')
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
 @stop
 
@@ -24,7 +25,7 @@
                                         <a href="{{route('index')}}" class="logo logo-dark text-center">
                                             <span class="logo-lg">
 												{{-- <img src="{{asset('admin/assets/images/logo-dark.png')}}" alt="" height="22"> --}}
-												<img src="{{asset('images/logo-dark.png')}}" alt="" height="30">
+												<img src="{{asset('assets/images/logo-dark.png')}}" alt="" height="30">
                                             </span>
                                         </a>
                     

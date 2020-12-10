@@ -29,7 +29,7 @@
     
     &.ra__authentication {
         &.authentication-bg-pattern {
-            background-image: url($appUrl + '/images/bg-login.jpg');
+            background-image: url($appUrl + 'assets/images/bg-login.jpg');
             background-repeat: no-repeat;
             height: 100%;
         }
