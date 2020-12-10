@@ -66,7 +66,7 @@
     
                                 <tr class="ra__plants__display__tr">
                                     <td class="ra__plants__display__td">
-                                        <img src="{{asset('color-admin/assets/img/user/user-'.$ind.'.jpg')}}" class="img-rounded height-30" />
+                                        <img src="{{asset('admin/assets/images/users/user-'.$ind.'.jpg')}}" class="img-rounded height-30" />
                                     </td>
                                     
                                     <td class="ra__plants__display__td">
