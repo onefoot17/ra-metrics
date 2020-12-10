@@ -2,8 +2,9 @@
 
 @section('title') {{ $title ?? __('Forgot Password') }} @stop
 
-@section('css-admin')
-    <!-- Admin CSS -->
+@include('admin.layouts.styles')
+
+@section('css-default')
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
 @stop
 
@@ -86,7 +87,7 @@
                                         <div class="auth-logo">
                                             <a href="index.html" class="logo logo-dark text-center">
                                                 <span class="logo-lg">
-                                                    <img src="{{asset('images/logo-dark.png')}}" alt="" height="30">
+                                                    <img src="{{asset('assets/images/logo-dark.png')}}" alt="" height="30">
                                                 </span>
                                             </a>
                         

@@ -1,8 +1,5 @@
-@extends('layouts.admin.main')
+@extends('admin.layouts.main')
 
-@php 
-
-@endphp
 @section('title') {{ $title ?? __('List Plant Parents Species') }} @stop
 
 @section('css')

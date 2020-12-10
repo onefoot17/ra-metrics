@@ -184,7 +184,7 @@ body * {
 }
 
 body.ra__authentication.authentication-bg-pattern {
-  background-image: url("http://rametrics.test//images/bg-login.jpg");
+  background-image: url("http://rametrics.test/assets/images/bg-login.jpg");
   background-repeat: no-repeat;
   height: 100%;
 }
