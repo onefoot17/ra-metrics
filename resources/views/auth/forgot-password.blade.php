@@ -93,7 +93,7 @@
                         
                                             <a href="{{route('index')}}" class="logo logo-light text-center">
                                                 <span class="logo-lg">
-                                                    <img src="{{asset('images/logo-light.png')}}" alt="" height="30">
+                                                    <img src="{{asset( 'assets/images/logo-light.png')}}" alt="" height="30">
                                                 </span>
                                             </a>
                                         </div>
