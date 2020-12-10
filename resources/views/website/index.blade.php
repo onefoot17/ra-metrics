@@ -32,7 +32,7 @@
                         <li class="nav-item">
                             <a href="#contact" class="nav-link">Contact Us</a>
                         </li>
-                        
+
                         @auth
                         <li class="nav-item">
                             <a href="{{ route('admin_home', [ Request::segment( 1 ) ] ) }}" class="nav-link">Admin</a>
@@ -51,7 +51,7 @@
                                 </a>
                             </form>
                         @else
-                            <a href="/login" class="">Login</a>
+                            <a href="{{ route('login' ) }}" class="">Login</a>
                         @endauth
                     </button>
                 </div>
