@@ -2,6 +2,8 @@
 
 namespace App\Services\Users;
 
+use Illuminate\Support\Facades\Validator;
+
 use App\Services\Users\Contracts\UserServiceInterface;
 
 use App\Repositories\Users\Contracts\UserRepositoryInterface;
@@ -53,5 +55,39 @@ class UserService implements UserServiceInterface
         $update = $this->SettingRepositoryInterface->update($request, $id);
 
         return $update;
+    }
+
+    // Users Screen
+
+    public function getAllUsers()
+    {
+        $query = $this->UserRepositoryInterface->getAll();
+
+        return $query;
+    }
+
+    public function storeUser($request)
+    {
+        //$checkUser = $this->UserRepositoryInterface->checkUserByEmail($request->email);
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:3',
+            'email' => 'email:rfc,dns||unique:App\Models\User',
+            'password' => 'required|string|min:8|confirmed',
+            'phone_number' => 'min:10'
+        ]);
+
+        if($validator->fails()){
+            $insert = $validator->errors();
+        } else {
+            $insert = $this->UserRepositoryInterface->store($request);
+        }
+
+        return $insert;
+    }
+
+    public function destroyUser($id)
+    {
+        $this->UserRepositoryInterface->destroy($id);
     }
 }

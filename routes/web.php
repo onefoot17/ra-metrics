@@ -65,6 +65,10 @@ Route::group(['prefix' => '{language}'], function(){
 
         Route::group(['prefix' => 'users'], function(){
             Route::get('/', [UsersController::class, 'index'])->name('admin_users_index');
+            Route::post('/store', [UsersController::class, 'store'])->name('admin_users_store');
+            Route::get('/edit/{id}', [UsersController::class, 'edit'])->name('admin_users_edit');
+            Route::put('/update/{id}', [UsersController::class, 'update'])->name('admin_users_update');
+            Route::delete('/destroy/{id}', [UsersController::class, 'destroy'])->name('admin_users_destroy');
         });
 
         Route::group(['prefix' => 'plants'], function(){

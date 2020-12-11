@@ -13,7 +13,14 @@ class UserRepository implements UserRepositoryInterface {
 
     public function store($request)
     {
-        
+        $store = new User();
+        $store->name = $request->name;
+        $store->email = $request->email;
+        $store->password = Hash::make($request->password);
+        $store->phone_number = $request->phone_number;
+        $store->save();
+
+        return $store;
     }
 
     public function show($id)
@@ -56,7 +63,7 @@ class UserRepository implements UserRepositoryInterface {
 
         $update_array = array_merge($update_array, $password_array);
 
-        $update = User::where('id', Auth::User()->id)
+        $update = User::where('id', $id)
         ->update($update_array);
 
         if(isset($error)){
@@ -68,7 +75,23 @@ class UserRepository implements UserRepositoryInterface {
 
     public function destroy($id)
     {
-        
+        $delete = User::where('id', $id)
+        ->delete();
+
+        return $delete;
     }
 
+    public function getAll()
+    {
+        $query = User::orderBy('id')->get();
+
+        return $query;
+    }
+
+    public function checkUserByEmail($email)
+    {
+        $user = User::where('email', $email)->first();
+
+        return $user;
+    }
 }
