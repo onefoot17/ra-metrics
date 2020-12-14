@@ -26,7 +26,7 @@ class UsersController extends Controller
         $result = $userService->storeUser($request);
 
         if($result instanceof \Illuminate\Support\MessageBag){
-            return back()->withInput()->with('message-error', __($result->first()));
+            return back()->withInput()->withErrors($result, 'storeUser');
         } else {
             return back()->with('message-success', __('User stored succefully!'));
         }

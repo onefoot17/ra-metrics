@@ -26,60 +26,95 @@
                             <form action="{{route('admin_users_store', [Request::segment(1)])}}" method="POST">
                                 @csrf
                                 <div class="form-group mb-3">
-                                    <label>@lang('Name')</label>
+                                    <label for="name">@lang('Name')</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">N</span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="@lang('Name')" aria-label="@lang('Name')" aria-describedby="basic-addon1" name="name" id='name' value="{{ old('name') }}">
+                                        <input type="text" class="form-control @error('name', 'storeUser') is-invalid @enderror" placeholder="@lang('Name')" aria-label="@lang('Name')" aria-describedby="basic-addon1" name="name" id='name' value="{{ old('name') }}">
+                                        @error('name', 'storeUser')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
             
                                 <div class="form-group mb-3">
-                                    <label>@lang('Email')</label>
+                                    <label for="email">@lang('Email')</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">@</span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="@lang('Email')" aria-label="@lang('Email')" aria-describedby="basic-addon1" name='email' id='email' value="{{ old('email') }}">
+                                        <input type="text" class="form-control @error('email', 'storeUser') is-invalid @enderror" placeholder="@lang('Email')" aria-label="@lang('Email')" aria-describedby="basic-addon1" name='email' id='email' value="{{ old('email') }}">
+                                        @error('email', 'storeUser')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
             
                                 <div class="form-group mb-3">
-                                    <label>@lang('Password')</label>
+                                    <label for="password">@lang('Password')</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">P</span>
                                         </div>
-                                        <input type="password" class="form-control" placeholder="@lang('Password')" aria-label="@lang('Password')" aria-describedby="basic-addon1" name="password" id='password' readonly onfocus="this.removeAttribute('readonly');">
+                                        <input type="password" class="form-control @error('password', 'storeUser') is-invalid @enderror" placeholder="@lang('Password')" aria-label="@lang('Password')" aria-describedby="basic-addon1" name="password" id='password' readonly onfocus="this.removeAttribute('readonly');">
+                                        @error('password', 'storeUser')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
             
                                 <div class="form-group mb-3">
-                                    <label>@lang('Confirm Password')</label>
+                                    <label for="password_confirmation">@lang('Confirm Password')</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">C</span>
                                         </div>
-                                        <input type="password" class="form-control" placeholder="@lang('Confirm Password')" aria-label="@lang('Confirm Password')" aria-describedby="basic-addon1" name="password_confirmation" id='password_confirmation' readonly onfocus="this.removeAttribute('readonly');">
+                                        <input type="password" class="form-control @error('password', 'storeUser') is-invalid @enderror" placeholder="@lang('Confirm Password')" aria-label="@lang('Confirm Password')" aria-describedby="basic-addon1" name="password_confirmation" id='password_confirmation' readonly onfocus="this.removeAttribute('readonly');">
+                                        @error('password', 'storeUser')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
             
                                 <div class="form-group mb-3">
-                                    <label>@lang('Phone Number')</label>
+                                    <label for="phone_number">@lang('Phone Number')</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">P</span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="@lang('Phone Number')" aria-label="@lang('Phone Number')" aria-describedby="basic-addon1" name='phone_number' id='phone_number' value="{{ old('phone_number') }}">
+                                        <input type="text" class="form-control @error('phone_number', 'storeUser') is-invalid @enderror" placeholder="@lang('Phone Number')" aria-label="@lang('Phone Number')" aria-describedby="basic-addon1" name='phone_number' id='phone_number' value="{{ old('phone_number') }}">
+                                        @error('phone_number', 'storeUser')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
             
                                 <div class="form-group mb-3">
                                     <button class="ladda-button btn btn-success" dir="ltr" data-style="expand-left">
-                                        @lang('Save')
+                                        @lang('Update')
                                     </button>
                                 </div>
+
+                                @if ($errors->storeUser->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->storeUser->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                             </form>
                         </div>
                     </div>
