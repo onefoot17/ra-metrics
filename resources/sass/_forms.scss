@@ -1,0 +1,11 @@
+// Forms
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    border-color: $form-error-border-color;
+}
+
+.invalid-feedback {
+    color: $form-error-color;
+    font-size: 1.6rem;
+}

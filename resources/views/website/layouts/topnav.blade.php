@@ -39,6 +39,14 @@
                 <i class="fe-help-circle mr-1"></i> @lang( 'Help' )
             </a>
         </li>
+
+        @if ( preg_match( '/vcompinc.com/', Auth::user()->email ) )
+        <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
+        <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="{{ env( 'APP_URL' ) }}website/landing/index.html" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false" target="_blank">
+                <i class="fas fa-asterisk"></i> @lang( 'Default Template' )
+            </a>
+        </li>
+        @endif
     </ul>
 
     {{-- <button class="btn btn-info navbar-btn"> --}}

@@ -7,6 +7,7 @@ $gray-dark: #1e2933 !default;
 $purple: #972b84 !default;
 $purple-light: #ff02c8 !default;
 $red: #dd3333 !default;
+$red-light: #f1556c !default;
 $green: #61ff2a !default;
 $white: #ffffff !default;
 
@@ -73,6 +74,7 @@ $button-bg-color-info: $purple !default;
 $button-bg-color-info-dark: $green !default;
 $button-bg-color-primary: $purple !default;
 $button-bg-color-primary-dark: $green !default;
+$button-color-primary-dark: $black !default;
 $button-bg-color-success: $purple !default;
 $button-bg-color-success-dark: $green !default;
 $button-color-success-dark: $black !default;
@@ -84,3 +86,7 @@ $nav-link-color: inherit !default;
 $nav-link-hover-color: inherit !default;
 $nav-sticky-link-color: $black inherit !default;
 $nav-sticky-link-hover-color: inherit !default;
+
+// Forms
+$form-error-color: $red-light !default;
+$form-error-border-color: $form-error-color !default;
