@@ -1,0 +1,81 @@
+// Authentication pages
+
+// Login page
+#{$html} {
+    &.ra__authentication {
+        height: 100%;
+    }
+}
+
+#{$body} {
+    color: $black;
+
+    &.ra__dark {
+        background-color: $black;
+        color: $white;
+    }
+
+    &.ra__authentication {
+        &.authentication-bg-pattern {
+            // background-image: url($appUrl + 'assets/images/bg-login.jpg');
+            background-image: url('/assets/images/bg-login.jpg');
+            background-repeat: no-repeat;
+            height: 100%;
+        }
+
+        .account-pages {
+            background-color: rgba( var(--black--rgb), .2 );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            // margin-top: 0 !important;
+            padding-top: $padding;
+
+            .ra__dark & {
+                background-color: rgba( var(--black--rgb), .5 );
+            }
+        }
+
+        &[data-sidebar-size=condensed] {
+            min-height: initial !important;
+
+            .logo span.logo-lg {
+                display: block !important;
+            }
+        }
+    }
+}
+
+.#{$ra} {
+    // Authentication pages
+    &#{$es}account-pages__bottom {
+        background-color: $white;
+        // color: $black;
+        margin: 0;
+        padding: $padding;
+
+        .ra__dark & {
+            background-color: $gray-dark;
+        }
+    }
+
+    &#{$es}authentication {
+        .auth-logo {
+            margin-bottom: $margin;
+
+            img {
+                display: inline-block;
+            }
+        }
+
+        .custom-control {
+            padding-left: 0;
+        }
+
+        button[ type=submit ] {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}

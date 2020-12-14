@@ -27,7 +27,7 @@ $ms: '--' !default; // Modifier separator
 $html: 'html' !default;
 $body: 'body' !default;
 $header: 'header' !default;
-$nav: 'nav' !default;
+$nav: '.nav' !default;
 $section: 'section' !default;
 $ra: 'ra' !default;
 $footer: 'footer' !default;
@@ -62,3 +62,25 @@ $footer: 'footer' !default;
 
 // Typography
 $font-size: 1.4rem !default;
+
+// Buttons
+$button-color: $white !default;
+$button-color-dark: $button-color !default;
+$button-hover-color: $white !default;
+$button-bg-color-danger: $red !default;
+$button-bg-color-danger-dark: $red !default;
+$button-bg-color-info: $purple !default;
+$button-bg-color-info-dark: $green !default;
+$button-bg-color-primary: $purple !default;
+$button-bg-color-primary-dark: $green !default;
+$button-bg-color-success: $purple !default;
+$button-bg-color-success-dark: $green !default;
+$button-color-success-dark: $black !default;
+$button-bg-hover-color: $black !default;
+$button-bg-hover-color-dark: $black !default;
+
+// Navigation
+$nav-link-color: inherit !default;
+$nav-link-hover-color: inherit !default;
+$nav-sticky-link-color: $black inherit !default;
+$nav-sticky-link-hover-color: inherit !default;

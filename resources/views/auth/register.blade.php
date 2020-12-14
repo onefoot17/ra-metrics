@@ -1,4 +1,16 @@
-@section('title') {{ $title ?? __('Register') }} @stop
+@section( 'html_class' ) {{ $html_class ?? __( 'ra__authentication' ) }} @stop
+
+@section( 'login_class' ) {{ $login_class ?? __( 'loading authentication-bg authentication-bg-pattern' ) }} @stop
+
+@section( 'login_data' ){{ $login_data ?? __( 'horizontal' ) }}@stop
+
+@section( 'title' ) {{ $title ?? __( 'Register' ) }} @stop
+
+@include('admin.layouts.styles')
+
+@section('css-default')
+    <link rel="stylesheet" href="{{asset('admin/assets/css/admin.css')}}">
+@stop
 
 @include('layouts.header')
 
@@ -8,7 +20,7 @@
 		<span class="spinner"></span>
 	</div>
 	<!-- end #page-loader -->
-	
+
 	<!-- begin #page-container -->
 	<div id="page-container" class="fade">
 		<!-- begin register -->
@@ -74,7 +86,7 @@
 						<div class="register-buttons">
 							<button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
                         </div>
-                        
+
                         <br/>
                         <br/>
 
@@ -96,13 +108,13 @@
 			<!-- end right-content -->
 		</div>
 		<!-- end register -->
-		
+
 		<!-- begin scroll to top btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
 		<!-- end scroll to top btn -->
 	</div>
 	<!-- end page container -->
-	
+
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="{{asset('color-admin/assets/js/app.min.js')}}"></script>
 	<script src="{{asset('color-admin/assets/js/theme/default.min.js')}}"></script>

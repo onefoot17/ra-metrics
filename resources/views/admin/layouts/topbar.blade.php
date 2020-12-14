@@ -3,13 +3,13 @@
     <div class="ra__navbar__inner container-fluid">
         <!-- LOGO -->
         <div class="ra__navbar__logo-box logo-box">
-            <a href="{{route('home', [Request::segment(1)])}}" class="logo logo-light text-center">
+            <a href="{{ route('admin_home', [ Request::segment( 1 ) ] ) }}" class="logo logo-light text-center">
                 <span class="ra__navbar__logo-con logo-sm">
-                    <img class="ra__navbar__logo" src="{{asset( 'assets/images/logo-light.png')}}" alt="" width="150" />
+                    <img class="ra__navbar__logo" src="{{ asset( 'assets/images/logo-light.png' ) }}" alt="" width="150" />
                 </span>
 
                 <span class="ra__navbar__logo-con logo-lg">
-                    <img class="ra__navbar__logo" src="{{asset( 'assets/images/logo-light.png')}}" alt="" width="150" />
+                    <img class="ra__navbar__logo" src="{{ asset( 'assets/images/logo-light.png' ) }}" alt="" width="150" />
                 </span>
             </a>
         </div>
@@ -17,6 +17,91 @@
         @include('admin.layouts.topnav')
 
         <ul class="ra__navbar__topnav-menu list-unstyled topnav-menu float-right mb-0">
+            <li class="ra__navbar__topnav-menu__nav-link-con dropdown d-inline-block">
+                <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <i class="fe-search noti-icon"></i>
+                </a>
+                <div class="ra__dropdown-menu dropdown-menu dropdown-lg ra__dropdown-menu dropdown-menu-right p-0">
+                    <form class="p-3">
+                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                    </form>
+                </div>
+            </li>
+
+            <li class="ra__navbar__topnav-menu__nav-link-con ra__navbar__topnav-menu__nav-link-con--lang-con dropdown d-lg-inline-block topbar-dropdown">
+                <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    @if(App::getLocale() == 'en' or App::getLocale() == 'fr')
+                        <img src="{{asset('admin/assets/images/flags/ca.png')}}" alt="user-image" height="16">
+                    @elseif(App::getLocale() == 'ro')
+                        <img src="{{asset('admin/assets/images/flags/ro.png')}}" alt="user-image" height="16">
+                    @else
+                        <img src="{{asset('admin/assets/images/flags/br.png')}}" alt="user-image" height="16">
+                    @endif
+                </a>
+                <div class="ra__dropdown-menu dropdown-menu ra__dropdown-menu dropdown-menu-right">
+
+                    <!-- item-->
+                    <a href="{{route(Route::currentRouteName(), ['en', 'id' => request()->id])}}" class="dropdown-item">
+                        <img src="{{asset('admin/assets/images/flags/ca.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('English')</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="{{route(Route::currentRouteName(), ['fr', 'id' => request()->id])}}" class="dropdown-item">
+                        <img src="{{asset('admin/assets/images/flags/ca.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('French')</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="{{route(Route::currentRouteName(), ['ro', 'id' => request()->id])}}" class="dropdown-item">
+                        <img src="{{asset('admin/assets/images/flags/ro.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('Romanian')</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="{{route(Route::currentRouteName(), ['pt_BR', 'id' => request()->id])}}" class="dropdown-item">
+                        <img src="{{asset('admin/assets/images/flags/br.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('Portuguese')</span>
+                    </a>
+                </div>
+            </li>
+
+            <li class="ra__navbar__topnav-menu__nav-link-con dropdown notification-list topbar-dropdown">
+                <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    {{-- <img src="{{asset('admin/assets/images/users/user-1.jpg')}}" alt="user-image" class="rounded-circle"> --}}
+                    <span class="pro-user-name ml-1">
+                        {{Auth::user()->name}} <i class="mdi mdi-chevron-down"></i>
+                    </span>
+                </a>
+                <div class="ra__dropdown-menu dropdown-menu ra__dropdown-menu dropdown-menu-right profile-dropdown ">
+                    <!-- item-->
+                    <div class="dropdown-header noti-title">
+                        <h6 class="text-overflow m-0">Welcome !</h6>
+                    </div>
+
+                    <!-- item-->
+                    <a href="{{route('my_profile_edit', [Request::segment(1)])}}" class="dropdown-item notify-item">
+                        <i class="fe-user"></i>
+                        <span>@lang('My Profile')</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="{{route('settings_edit', [Request::segment(1)])}}" class="dropdown-item notify-item">
+                        <i class="fe-settings"></i>
+                        <span>@lang('Settings')</span>
+                    </a>
+
+                    <div class="dropdown-divider"></div>
+
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item" onclick="event.preventDefault();
+                        this.closest('form').submit();">
+                            <i class="fe-log-out"></i>
+                            <span>{{ __('Logout') }}</span>
+                        </a>
+                    </form>
+
+                </div>
+            </li>
+
             {{-- <li class="d-none d-lg-block">
                 <form class="app-search">
                     <div class="app-search-box dropdown">
@@ -45,7 +130,7 @@
                                 <i class="fe-aperture mr-1"></i>
                                 <span>How can I help you?</span>
                             </a>
-                
+
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
                                 <i class="fe-settings mr-1"></i>
@@ -81,29 +166,18 @@
                                 </a>
                             </div>
 
-                        </div>  
+                        </div>
                     </div>
                 </form>
-            </li> --}}
-
-            <li class="ra__navbar__topnav-menu__nav-link-con dropdown d-inline-block">
-                <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <i class="fe-search noti-icon"></i>
-                </a>
-                <div class="ra__dropdown-menu dropdown-menu dropdown-lg ra__dropdown-menu dropdown-menu-right p-0">
-                    <form class="p-3">
-                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                    </form>
-                </div>
             </li>
 
-            {{-- <li class="ra__navbar__topnav-menu__nav-link-con dropdown d-none d-lg-inline-block">
+            <li class="ra__navbar__topnav-menu__nav-link-con dropdown d-none d-lg-inline-block">
                 <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen" href="#">
                     <i class="fe-maximize noti-icon"></i>
                 </a>
-            </li> --}}
+            </li>
 
-            {{-- <li class="ra__navbar__topnav-menu__nav-link-con dropdown d-none d-lg-inline-block topbar-dropdown">
+            <li class="ra__navbar__topnav-menu__nav-link-con dropdown d-none d-lg-inline-block topbar-dropdown">
                 <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="fe-grid noti-icon"></i>
                 </a>
@@ -150,49 +224,14 @@
                                     <span>G Suite</span>
                                 </a>
                             </div>
-                
+
                         </div>
                     </div>
 
                 </div>
-            </li> --}}
-
-            <li class="ra__navbar__topnav-menu__nav-link-con ra__navbar__topnav-menu__nav-link-con--lang-con dropdown d-lg-inline-block topbar-dropdown">
-                <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    @if(App::getLocale() == 'en' or App::getLocale() == 'fr')
-                        <img src="{{asset('admin/assets/images/flags/ca.png')}}" alt="user-image" height="16">
-                    @elseif(App::getLocale() == 'ro')
-                        <img src="{{asset('admin/assets/images/flags/ro.png')}}" alt="user-image" height="16">
-                    @else
-                        <img src="{{asset('admin/assets/images/flags/br.png')}}" alt="user-image" height="16">
-                    @endif
-                </a>
-                <div class="ra__dropdown-menu dropdown-menu ra__dropdown-menu dropdown-menu-right">
-
-                    <!-- item-->
-                    <a href="{{route(Route::currentRouteName(), ['en', 'id' => request()->id])}}" class="dropdown-item">
-                        <img src="{{asset('admin/assets/images/flags/ca.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('English')</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="{{route(Route::currentRouteName(), ['fr', 'id' => request()->id])}}" class="dropdown-item">
-                        <img src="{{asset('admin/assets/images/flags/ca.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('French')</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="{{route(Route::currentRouteName(), ['ro', 'id' => request()->id])}}" class="dropdown-item">
-                        <img src="{{asset('admin/assets/images/flags/ro.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('Romanian')</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="{{route(Route::currentRouteName(), ['pt_BR', 'id' => request()->id])}}" class="dropdown-item">
-                        <img src="{{asset('admin/assets/images/flags/br.png')}}" alt="user-image" class="mr-1" height="12"> <span class="align-middle">@lang('Portuguese')</span>
-                    </a>
-
-                </div>
             </li>
 
-            {{-- <li class="ra__navbar__topnav-menu__nav-link-con dropdown notification-list topbar-dropdown">
+            <li class="ra__navbar__topnav-menu__nav-link-con dropdown notification-list topbar-dropdown">
                 <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <i class="fe-bell noti-icon"></i>
                     <span class="badge badge-danger rounded-circle noti-icon-badge">9</span>
@@ -281,54 +320,13 @@
                     </a>
 
                 </div>
-            </li> --}}
-
-            <li class="ra__navbar__topnav-menu__nav-link-con dropdown notification-list topbar-dropdown">
-                <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    {{-- <img src="{{asset('admin/assets/images/users/user-1.jpg')}}" alt="user-image" class="rounded-circle"> --}}
-                    <span class="pro-user-name ml-1">
-                        {{Auth::user()->name}} <i class="mdi mdi-chevron-down"></i> 
-                    </span>
-                </a>
-                <div class="ra__dropdown-menu dropdown-menu ra__dropdown-menu dropdown-menu-right profile-dropdown ">
-                    <!-- item-->
-                    <div class="dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">Welcome !</h6>
-                    </div>
-
-                    <!-- item-->
-                    <a href="{{route('my_profile_edit', [Request::segment(1)])}}" class="dropdown-item notify-item">
-                        <i class="fe-user"></i>
-                        <span>@lang('My Profile')</span>
-                    </a>
-
-                    <!-- item-->
-                    <a href="{{route('settings_edit', [Request::segment(1)])}}" class="dropdown-item notify-item">
-                        <i class="fe-settings"></i>
-                        <span>@lang('Settings')</span>
-                    </a>
-
-                    <div class="dropdown-divider"></div>
-
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item" onclick="event.preventDefault();
-                        this.closest('form').submit();">
-                            <i class="fe-log-out"></i>
-                            <span>{{ __('Logout') }}</span>
-                        </a>
-                    </form>
-
-                </div>
             </li>
 
-            {{-- <li class="ra__navbar__topnav-menu__nav-link-con dropdown notification-list">
+            <li class="ra__navbar__topnav-menu__nav-link-con dropdown notification-list">
                 <a href="javascript:void(0);" class="ra__navbar__topnav-menu__nav-link nav-link right-bar-toggle waves-effect waves-light">
                     <i class="fe-settings noti-icon"></i>
                 </a>
             </li> --}}
-
         </ul>
 
         <ul class="ra__navbar__topnav-menu-left list-unstyled topnav-menu topnav-menu-left m-0">
@@ -348,12 +346,12 @@
                     </div>
                 </a>
                 <!-- End mobile menu toggle-->
-            </li>   
+            </li>
 
             {{-- <li class="dropdown d-none d-xl-block">
                 <a class="ra__navbar__topnav-menu-left__nav-link nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     Create New
-                    <i class="mdi mdi-chevron-down"></i> 
+                    <i class="mdi mdi-chevron-down"></i>
                 </a>
                 <div class="ra__dropdown-menu dropdown-menu">
                     <!-- item-->

@@ -219,7 +219,7 @@ a:hover {
           }
 
           &:hover {
-              background-color: $purple;
+              background-color: $button-bg-color-success;
               border-color: $purple;
               color: $white;
 
@@ -253,7 +253,7 @@ a:hover {
           &:not(:disabled):not(.disabled):active,
           .show & > .dropdown-toggle,
           .show > &.dropdown-toggle {
-              background-color: $purple;
+              background-color: $button-bg-color-success;
               border-color: $purple;
               color: $white;
 
@@ -281,7 +281,8 @@ a:hover {
 .btn-success,
 .swal2-popup .swal2-styled.swal2-confirm,
 .btn-primary,
-.btn-danger {
+.btn-danger,
+.btn-info {
   border: none;
   box-shadow: none;
   color: #ffffff;
@@ -291,8 +292,28 @@ a:hover {
 .btn-success:hover,
 .swal2-popup .swal2-styled.swal2-confirm:hover,
 .btn-primary:hover,
-.btn-danger:hover {
+.btn-danger:hover,
+.btn-info:hover {
   background-color: #000000;
+}
+
+.ra__dark .btn-success,
+.ra__dark .swal2-popup .swal2-styled.swal2-confirm,
+.swal2-popup .ra__dark .swal2-styled.swal2-confirm,
+.ra__dark .btn-primary,
+.ra__dark .btn-danger,
+.ra__dark .btn-info {
+  color: #ffffff;
+}
+
+.ra__dark .btn-success:hover,
+.ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover,
+.swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover,
+.ra__dark .btn-primary:hover,
+.ra__dark .btn-danger:hover,
+.ra__dark .btn-info:hover {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .btn:hover,
@@ -301,29 +322,39 @@ a:hover {
 }
 
 .btn-success,
-.swal2-popup .swal2-styled.swal2-confirm,
-.btn-primary {
+.swal2-popup .swal2-styled.swal2-confirm {
   background-color: #972b84;
 }
 
 .ra__dark .btn-success,
 .ra__dark .swal2-popup .swal2-styled.swal2-confirm,
-.swal2-popup .ra__dark .swal2-styled.swal2-confirm,
-.ra__dark .btn-primary {
+.swal2-popup .ra__dark .swal2-styled.swal2-confirm {
   background-color: #61ff2a;
   color: #000000;
 }
 
-.ra__dark .btn-success:hover,
-.ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover,
-.swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover,
-.ra__dark .btn-primary:hover {
-  background-color: #000000;
-  color: #ffffff;
+.btn-primary {
+  background-color: #972b84;
+}
+
+.ra__dark .btn-primary {
+  background-color: #61ff2a;
 }
 
 .btn-danger {
   background-color: #dd3333;
+}
+
+.ra__dark .btn-danger {
+  background-color: #dd3333;
+}
+
+.btn-info {
+  background-color: #972b84;
+}
+
+.ra__dark .btn-info {
+  background-color: #61ff2a;
 }
 
 .swal2-popup {
@@ -399,6 +430,42 @@ body.ra__authentication[data-sidebar-size=condensed] {
 
 body.ra__authentication[data-sidebar-size=condensed] .logo span.logo-lg {
   display: block !important;
+}
+
+.ra__account-pages__bottom {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 1rem;
+}
+
+.ra__dark .ra__account-pages__bottom {
+  background-color: #1e2933;
+}
+
+.ra__authentication .auth-logo {
+  margin-bottom: 1rem;
+}
+
+.ra__authentication .auth-logo img {
+  display: inline-block;
+}
+
+.ra__authentication .custom-control {
+  padding-left: 0;
+}
+
+.ra__authentication button[type=submit] {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+body {
+  color: #000000;
+}
+
+body.ra__dark {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .ra__dark input::-moz-placeholder {
@@ -840,16 +907,6 @@ body[data-sidebar-size=condensed] .ra__navbar__logo-box {
 
 .ra__plants__display__td {
   border: none !important;
-}
-
-.ra__account-pages__bottom {
-  background-color: #ffffff;
-  margin: 0;
-  padding: 1rem;
-}
-
-.ra__dark .ra__account-pages__bottom {
-  background-color: #1e2933;
 }
 
 .footer {

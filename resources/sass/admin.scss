@@ -1,12 +1,9 @@
 // Intialization
 @import '_init';
-
-#{$html} {
-    // Login page
-    &.ra__authentication {
-        height: 100%;
-    }
-}
+@import '../views/admin/assets/sass/_init';
+@import '_buttons';
+@import '_alerts';
+@import '../views/admin/assets/sass/_auth';
 
 #{$body} {
     color: $black;
@@ -14,37 +11,6 @@
     &.ra__dark {
         background-color: $black;
         color: $white;
-    }
-    
-    &.ra__authentication {
-        &.authentication-bg-pattern {
-            // background-image: url($appUrl + 'assets/images/bg-login.jpg');
-            background-image: url('/assets/images/bg-login.jpg');
-            background-repeat: no-repeat;
-            height: 100%;
-        }
-
-        .account-pages {
-            background-color: rgba( var(--black--rgb), .2 );
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            // margin-top: 0 !important;
-            padding-top: $padding;
-
-            .ra__dark & {     
-                background-color: rgba( var(--black--rgb), .5 );
-            }
-        }
-
-        &[data-sidebar-size=condensed] {
-            min-height: initial !important;
-
-            .logo span.logo-lg {
-                display: block !important;
-            }
-        }
     }
 }
 
@@ -130,7 +96,7 @@ a {
             background-color: $gray-medium;
         }
     }
-    
+
     &-item {
         color: inherit !important;
 
@@ -169,7 +135,7 @@ a {
 
     &-control {
         font-size: inherit;
-        
+
         .ra__dark & {
             background-color: $gray-medium;
             color: $white;
@@ -248,7 +214,7 @@ a {
                 justify-content: center;
                 max-width: 200px;
             }
-    
+
             &-box {
                 height: auto;
                 padding-left: 0 !important;
@@ -263,7 +229,7 @@ a {
                     width: auto !important;
                 }
             }
-    
+
             display: block;
             width: 100%;
         }
@@ -276,7 +242,7 @@ a {
             padding: 0;
             padding-right: $padding;
             position: static;
-            
+
             .ra__dark & {
                 background-color: $gray-dark;
             }
@@ -286,7 +252,7 @@ a {
                 order: 2;
                 position: absolute;
                 top: 100%;
-                
+
                 .ra__dark & {
                     background-color: $gray-medium;
                 }
@@ -295,12 +261,12 @@ a {
             @include for-640-down {
                 top: 60%;
             }
-            
+
             .navbar-nav .nav-link {
                 color: rgba( var(--white--rgb), .6 );
 
                 font-size: initial;
-                
+
                 .ra__dark & {
                     color: $white;
                 }
@@ -311,7 +277,7 @@ a {
                     }
                 }
             }
-            
+
             &-menu {
                 @include display-flex(
                     $media-queries: false
@@ -326,19 +292,19 @@ a {
                     justify-content: center;
                     order: 4;
                 }
-                
+
                 @include for-640-down {
                     flex-basis: 100%;
                     justify-content: flex-end;
                 }
-                
+
                 &#{$es}nav-link {
                     color: rgba( var(--white--rgb), .6 ) !important;
                     max-height: initial !important;
                     line-height: 1 !important;
                     padding-left: 0 !important;
                     padding-right: $padding*2 !important;
-                    
+
                     .ra__dark & {
                         color: $white !important;
                     }
@@ -346,7 +312,7 @@ a {
                     @include for-992-down {
                         text-align: left !important;
                     }
-                    
+
                     &:hover {
                         color: $purple-light !important;
 
@@ -359,7 +325,7 @@ a {
                         a {
                             min-width: initial;
                         }
-                            
+
                         &:last-child > a {
                             padding-right: 0 !important;
                         }
@@ -379,7 +345,7 @@ a {
                         background-color: $gray-medium;
                     }
                 }
-                
+
                 .dropdown-item {
                     display: flex;
                     align-items: center;
@@ -387,7 +353,7 @@ a {
                     .ra__dark & {
                         color: $white;
                     }
-                    
+
                     &:hover {
                         .ra__dark & {
                             color: $green !important;
@@ -412,7 +378,7 @@ a {
                         margin-top: 0 !important;
                     }
                 }
-                
+
                 @include for-992-up {
                     display: none;
                 }
@@ -449,18 +415,6 @@ a {
             border: none !important;
         }
     }
-
-    // Authentication pages
-    &#{$es}account-pages__bottom {
-        background-color: $white;
-        // color: $black;
-        margin: 0;
-        padding: $padding;
-
-        .ra__dark & {     
-            background-color: $gray-dark;
-        }
-    }
 }
 
 .#{$footer} {
@@ -470,7 +424,7 @@ a {
         background-color: $gray-dark;
         color: $white;
     }
-    
+
     .footer-links a {
         .ra__dark & {
             color: $white;
