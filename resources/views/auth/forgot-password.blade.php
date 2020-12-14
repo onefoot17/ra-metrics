@@ -28,13 +28,13 @@
                                         <div class="auth-logo">
                                             <a href="{{route('index')}}" class="logo logo-dark text-center">
                                                 <span class="logo-lg">
-                                                    <img src="{{asset('/images/logo-dark.png')}}" alt="" height="30">
+                                                    <img src="{{ asset( 'assets/images/logo-dark.png' ) }}" alt="" height="30">
                                                 </span>
                                             </a>
 
                                             <a href="{{route('index')}}" class="logo logo-light text-center">
                                                 <span class="logo-lg">
-                                                    <img src="{{asset('/images/logo-light.png')}}" alt="" height="30">
+                                                    <img src="{{ asset( 'assets/images/logo-light.png' ) }}" alt="" height="30">
                                                 </span>
                                             </a>
                                         </div>
@@ -89,7 +89,7 @@
                                         <div class="auth-logo">
                                             <a href="index.html" class="logo logo-dark text-center">
                                                 <span class="logo-lg">
-                                                    <img src="{{asset('assets/images/logo-dark.png')}}" alt="" height="30">
+                                                    <img src="{{ asset( 'assets/images/logo-dark.png' ) }}" alt="" height="30">
                                                 </span>
                                             </a>
 
@@ -143,16 +143,14 @@
         </div>
         <!-- end page -->
 
-
         <footer class="footer">
             <script>document.write(new Date().getFullYear())</script> &copy; {{env('APP_NAME')}} by <a href="https://vcompinc.com" target='_blank' class="text-white-50">VCOMP Inc.</a>
         </footer>
 
         <!-- Vendor js -->
-        <script src="{{asset('admin/assets/js/vendor.min.js')}}"></script>
+        <script src="{{ asset( 'admin/assets/js/vendor.min.js' ) }}"></script>
 
         <!-- App js -->
-        <script src="{{asset('admin/assets/js/app.min.js')}}"></script>
-
+        <script src="{{ asset( 'admin/assets/js/app.min.js' ) }}"></script>
     </body>
 </html>
