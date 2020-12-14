@@ -13,7 +13,14 @@ class UserRepository implements UserRepositoryInterface {
 
     public function store($request)
     {
-        
+        $store = new User();
+        $store->name = $request->name;
+        $store->email = $request->email;
+        $store->password = Hash::make($request->password);
+        $store->phone_number = $request->phone_number;
+        $store->save();
+
+        return $store;
     }
 
     public function show($id)
@@ -39,12 +46,7 @@ class UserRepository implements UserRepositoryInterface {
     public function update($request, $id)
     {
         if(!empty($request->password)){
-            if($request->password === $request->password_confirmation){
-                $password_array = ['password' => Hash::make($request->password)];
-            } else {
-                $password_array = [];
-                $error = ['error' => __('validation.confirmed', ['attribute' => 'Password'])];
-            }
+            $password_array = ['password' => Hash::make($request->password)];
         } else {
             $password_array = [];
         }
@@ -56,19 +58,24 @@ class UserRepository implements UserRepositoryInterface {
 
         $update_array = array_merge($update_array, $password_array);
 
-        $update = User::where('id', Auth::User()->id)
+        $update = User::where('id', $id)
         ->update($update_array);
-
-        if(isset($error)){
-            return $error;
-        }
 
         return $update;
     }
 
     public function destroy($id)
     {
-        
+        $delete = User::where('id', $id)
+        ->delete();
+
+        return $delete;
     }
 
+    public function getAll()
+    {
+        $query = User::orderBy('id')->get();
+
+        return $query;
+    }
 }

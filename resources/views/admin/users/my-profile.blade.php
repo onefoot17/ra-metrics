@@ -28,7 +28,12 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">N</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="@lang('Name')" aria-label="@lang('Name')" aria-describedby="basic-addon1" value="{{Auth::User()->name}}" name="name" id='name'>
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="@lang('Name')" aria-label="@lang('Name')" aria-describedby="basic-addon1" value="{{Auth::User()->name}}" name="name" id='name'>
+                            @error('name')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
 
@@ -48,7 +53,12 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">P</span>
                             </div>
-                            <input type="password" class="form-control" placeholder="@lang('Password')" aria-label="@lang('Password')" aria-describedby="basic-addon1" name="password" id='password' readonly onfocus="this.removeAttribute('readonly');">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="@lang('Password')" aria-label="@lang('Password')" aria-describedby="basic-addon1" name="password" id='password' readonly onfocus="this.removeAttribute('readonly');">
+                            @error('password')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
 
@@ -58,7 +68,12 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">C</span>
                             </div>
-                            <input type="password" class="form-control" placeholder="@lang('Confirm Password')" aria-label="@lang('Confirm Password')" aria-describedby="basic-addon1" name="password_confirmation" id='password_confirmation' readonly onfocus="this.removeAttribute('readonly');">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="@lang('Confirm Password')" aria-label="@lang('Confirm Password')" aria-describedby="basic-addon1" name="password_confirmation" id='password_confirmation' readonly onfocus="this.removeAttribute('readonly');">
+                            @error('password')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
 
@@ -68,7 +83,12 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">P</span>
                             </div>
-                            <input type="text" class="form-control" placeholder="@lang('Phone Number')" aria-label="@lang('Phone Number')" aria-describedby="basic-addon1" value="{{Auth::User()->phone_number}}" name='phone_number' id='phone_number'>
+                            <input type="text" class="form-control @error('phone_number') is-invalid @enderror" placeholder="@lang('Phone Number')" aria-label="@lang('Phone Number')" aria-describedby="basic-addon1" value="{{Auth::User()->phone_number}}" name='phone_number' id='phone_number'>
+                            @error('phone_number')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
 
@@ -77,6 +97,16 @@
                             @lang('Edit')
                         </button>
                     </div>
+
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </form>
             </div> <!-- end card-body -->
         </div> <!-- end card -->

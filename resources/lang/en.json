@@ -17,6 +17,11 @@
     "Your file has been deleted.":"Your file has been deleted.",
     "My Profile edited succefully!":"My Profile edited succefully!",
     "Setting edited succefully!":"Setting edited succefully!",
+    "User stored succefully!":"User stored succefully!",
+    "User edited succefully!":"User edited succefully!",
+    "Internal system error. Please contact administrator if the problem persists.":"Internal system error. Please contact administrator if the problem persists.",
+    "User deleted succefully!":"User deleted succefully!",
+    "User updated succefully!":"User updated succefully!",
 
     "Settings":"Settings",
     "Send Feedback":"Send Feedback",
@@ -87,5 +92,8 @@
     "Phone Number":"Phone Number",
     "Confirm Password":"Confirm Password",
     "Users":"Users",
-    "New User":"New User"
+    "User":"User",
+    "New User":"New User",
+    "Edit Users":"Edit Users",
+    "Looks good!":"Looks good!"
 }

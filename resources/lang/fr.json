@@ -17,6 +17,11 @@
     "Your file has been deleted.":"",
     "My Profile edited succefully!":"",
     "Setting edited succefully!":"",
+    "User stored succefully!":"",
+    "User edited succefully!":"",
+    "Internal system error. Please contact administrator if the problem persists.":"",
+    "User deleted succefully!":"",
+    "User updated succefully!":"",
 
     "Settings":"",
     "Send Feedback":"",
@@ -87,5 +92,8 @@
     "Phone Number":"",
     "Confirm Password":"",
     "Users":"",
-    "New User":""
+    "User":"",
+    "New User":"",
+    "Edit Users":"",
+    "Looks good!":""
 }

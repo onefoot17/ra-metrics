@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Services\Users\Contracts\UserServiceInterface;
 
+use Auth;
+
 class MyProfileController extends Controller
 {
     public function __construct()
@@ -32,12 +34,13 @@ class MyProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id, UserServiceInterface $userService)
+    public function update($language, Request $request, UserServiceInterface $userService)
     {
-        $update = $userService->updateUserProfile($request, $id);
+        $id = Auth::User()->id;
+        $result = $userService->updateUserProfile($request, $id);
 
-        if(isset($update['error'])){
-            return back()->with('message-error', __($update['error']));
+        if($result instanceof \Illuminate\Support\MessageBag){
+            return back()->withInput()->withErrors($result);
         }
 
         return back()->with('message-success', __('My Profile edited succefully!'));
