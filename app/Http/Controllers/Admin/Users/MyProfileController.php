@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Services\Users\Contracts\UserServiceInterface;
 
+use Auth;
+
 class MyProfileController extends Controller
 {
     public function __construct()
@@ -32,8 +34,9 @@ class MyProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id, UserServiceInterface $userService)
+    public function update($language, Request $request, UserServiceInterface $userService)
     {
+        $id = Auth::User()->id;
         $update = $userService->updateUserProfile($request, $id);
 
         if(isset($update['error'])){
