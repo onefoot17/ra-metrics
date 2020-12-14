@@ -52,13 +52,13 @@
                         </a>
                     </li>
 
-                    @if ( preg_match( '/vcompinc.com/', Auth::user()->email ) )
+                    @auth ( Auth::check() && preg_match( '/vcompinc.com/', Auth::user()->email ) )
                     <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
                     <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="{{ env( 'APP_URL' ) }}admin/default/index.html" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false" target="_blank">
                             <i class="fas fa-asterisk"></i> @lang( 'Default Template' )
                         </a>
                     </li>
-                    @endif
+                    @endauth
 
                     {{-- <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
                         <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button"

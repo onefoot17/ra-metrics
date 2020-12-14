@@ -49,7 +49,8 @@ mix.sass( 'resources/sass/frontend.scss', 'public/website/assets/css' )
         }, */
         postCss: [
             require( 'postcss-css-variables' ) ()
-        ]
+        ],
+        processCssUrls: false,
     })
     .sourceMaps();
 
