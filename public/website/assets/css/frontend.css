@@ -219,7 +219,7 @@ a:hover {
           }
 
           &:hover {
-              background-color: $purple;
+              background-color: $button-bg-color-success;
               border-color: $purple;
               color: $white;
 
@@ -253,7 +253,7 @@ a:hover {
           &:not(:disabled):not(.disabled):active,
           .show & > .dropdown-toggle,
           .show > &.dropdown-toggle {
-              background-color: $purple;
+              background-color: $button-bg-color-success;
               border-color: $purple;
               color: $white;
 
@@ -281,7 +281,8 @@ a:hover {
 .btn-success,
 .swal2-popup .swal2-styled.swal2-confirm,
 .btn-primary,
-.btn-danger {
+.btn-danger,
+.btn-info {
   border: none;
   box-shadow: none;
   color: #ffffff;
@@ -291,8 +292,28 @@ a:hover {
 .btn-success:hover,
 .swal2-popup .swal2-styled.swal2-confirm:hover,
 .btn-primary:hover,
-.btn-danger:hover {
+.btn-danger:hover,
+.btn-info:hover {
   background-color: #000000;
+}
+
+.ra__dark .btn-success,
+.ra__dark .swal2-popup .swal2-styled.swal2-confirm,
+.swal2-popup .ra__dark .swal2-styled.swal2-confirm,
+.ra__dark .btn-primary,
+.ra__dark .btn-danger,
+.ra__dark .btn-info {
+  color: #ffffff;
+}
+
+.ra__dark .btn-success:hover,
+.ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover,
+.swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover,
+.ra__dark .btn-primary:hover,
+.ra__dark .btn-danger:hover,
+.ra__dark .btn-info:hover {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .btn:hover,
@@ -301,29 +322,39 @@ a:hover {
 }
 
 .btn-success,
-.swal2-popup .swal2-styled.swal2-confirm,
-.btn-primary {
+.swal2-popup .swal2-styled.swal2-confirm {
   background-color: #972b84;
 }
 
 .ra__dark .btn-success,
 .ra__dark .swal2-popup .swal2-styled.swal2-confirm,
-.swal2-popup .ra__dark .swal2-styled.swal2-confirm,
-.ra__dark .btn-primary {
+.swal2-popup .ra__dark .swal2-styled.swal2-confirm {
   background-color: #61ff2a;
   color: #000000;
 }
 
-.ra__dark .btn-success:hover,
-.ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover,
-.swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover,
-.ra__dark .btn-primary:hover {
-  background-color: #000000;
-  color: #ffffff;
+.btn-primary {
+  background-color: #972b84;
+}
+
+.ra__dark .btn-primary {
+  background-color: #61ff2a;
 }
 
 .btn-danger {
   background-color: #dd3333;
+}
+
+.ra__dark .btn-danger {
+  background-color: #dd3333;
+}
+
+.btn-info {
+  background-color: #972b84;
+}
+
+.ra__dark .btn-info {
+  background-color: #61ff2a;
 }
 
 .swal2-popup {
@@ -359,5 +390,30 @@ a:hover {
 
 .swal2-popup .swal2-styled {
   transition: all 200ms ease-in-out;
+}
+
+.navbar-custom .logo {
+  max-width: 200px;
+}
+
+.navbar-custom .logo-img {
+  width: 100%;
+}
+
+.navbar-custom .navbar-nav .nav-item .nav-link {
+  line-height: 1;
+  color: #ffffff;
+}
+
+.navbar-custom .navbar-nav .nav-item .nav-link:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-custom.nav-sticky .navbar-nav .nav-item .nav-link {
+  color: #000000;
+}
+
+.navbar-custom.nav-sticky .navbar-nav .nav-item .nav-link:hover {
+  color: #972b84;
 }
 

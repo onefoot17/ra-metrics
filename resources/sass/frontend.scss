@@ -1,2 +1,42 @@
 // Intialization
 @import '_init';
+@import '../views/website/assets/sass/_init';
+@import '_buttons';
+@import '_alerts';
+
+#{$nav}bar {
+    &-custom {
+        .logo {
+            max-width: 200px;
+
+            &-img {
+                // display: block;
+                width: 100%;
+            }
+        }
+
+        .navbar-nav {
+            #{$nav}-item #{$nav}-link {
+                @include line-height(
+                    $line-height: 1
+                );
+
+                color: $nav-link-color;
+
+                &:hover {
+                    color: $nav-link-hover-color;
+                }
+            }
+        }
+
+        &.nav-sticky .navbar-nav {
+            #{$nav}-item #{$nav}-link {
+                color: $nav-sticky-link-color;
+
+                &:hover {
+                    color: $nav-sticky-link-hover-color;
+                }
+            }
+        }
+    }
+}

@@ -6,38 +6,62 @@
 
     &-success,
     &-primary,
-    &-danger {
+    &-danger,
+    &-info {
         border: none;
         box-shadow: none;
-        color: $white;
+        color: $button-color;
         width: auto !important;
 
         &:hover {
-            background-color: $black;
+            background-color: $button-bg-hover-color;
         }
-    }
-
-    &:hover {
-        background-color: $black;
-    }
-
-    &-success,
-    &-primary {
-        background-color: $purple;
 
         .ra__dark & {
-            background-color: $green;
-            color: $black;
-            
+            color: $button-color-dark;
+
             &:hover {
-                background-color: $black;
-                color: $white;
+                background-color: $button-bg-hover-color-dark;
+                color: $button-hover-color;
             }
         }
     }
 
+    &:hover {
+        background-color: $button-bg-hover-color;
+    }
+
+    &-success {
+        background-color: $button-bg-color-success;
+
+        .ra__dark & {
+            background-color: $button-bg-color-success-dark;
+            color: $button-color-success-dark;
+        }
+    }
+
+    &-primary {
+        background-color: $button-bg-color-primary;
+
+        .ra__dark & {
+            background-color: $button-bg-color-primary-dark;
+        }
+    }
+
     &-danger {
-        background-color: $red;
+        background-color: $button-bg-color-danger;
+
+        .ra__dark & {
+            background-color: $button-bg-color-danger-dark;
+        }
+    }
+
+    &-info {
+        background-color: $button-bg-color-info;
+
+        .ra__dark & {
+            background-color: $button-bg-color-info-dark;
+        }
     }
 
     /* // .ra__settings {
@@ -45,17 +69,17 @@
             border-color: $purple;
             color: $purple;
             width: auto !important;
-            
+
             .ra__dark & {
                 border-color: $green;
                 color: $green;
             }
 
             &:hover {
-                background-color: $purple;
+                background-color: $button-bg-color-success;
                 border-color: $purple;
                 color: $white;
-                
+
                 .ra__dark & {
                     background-color: $green;
                     border-color: $green;
@@ -66,7 +90,7 @@
             &.focus,
             &:focus {
                 box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-                
+
                 .ra__dark & {
                     box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
                 }
@@ -76,7 +100,7 @@
             &:disabled {
                 background-color: transparent;
                 color: $purple;
-                
+
                 .ra__dark & {
                     color: $green;
                 }
@@ -86,10 +110,10 @@
             &:not(:disabled):not(.disabled):active,
             .show & > .dropdown-toggle,
             .show > &.dropdown-toggle {
-                background-color: $purple;
+                background-color: $button-bg-color-success;
                 border-color: $purple;
                 color: $white;
-                
+
                 .ra__dark & {
                     background-color: $green;
                     border-color: $green;
@@ -102,7 +126,7 @@
             .show & > .dropdown-toggle:focus,
             .show > &.dropdown-toggle:focus {
                 box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-                
+
                 .ra__dark & {
                     box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
                 }

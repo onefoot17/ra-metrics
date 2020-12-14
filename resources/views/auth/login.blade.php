@@ -1,11 +1,15 @@
 @section( 'html_class' ) {{ $html_class ?? __( 'ra__authentication' ) }} @stop
 
+@section( 'login_class' ) {{ $login_class ?? __( 'loading authentication-bg authentication-bg-pattern' ) }} @stop
+
+@section( 'login_data' ){{ $login_data ?? __( 'horizontal' ) }}@stop
+
 @section('title') {{ $title ?? __('Log In') }} @stop
 
 @include('admin.layouts.styles')
 
-@section('css-default')
-    <link rel="stylesheet" href="{{asset('admin/assets/css/admin.css')}}">
+@section( 'css-default' )
+    <link rel="stylesheet" href="{{ asset( 'admin/assets/css/admin.css' ) }}">
 @stop
 
 @include('layouts.header')
@@ -15,26 +19,21 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card bg-pattern">
-
                             <div class="card-body p-4">
-                                
-                                <div class="text-center w-75 m-auto">
+                                <div class="w-75 m-auto">
                                     <div class="auth-logo">
                                         <a href="{{route('index')}}" class="logo logo-dark text-center">
                                             <span class="logo-lg">
-												{{-- <img src="{{asset('admin/assets/images/logo-dark.png')}}" alt="" height="22"> --}}
-												<img src="{{asset('assets/images/logo-dark.png')}}" alt="" height="30">
+												<img src="{{asset('assets/images/logo-dark.png')}}" alt="" width="150">
                                             </span>
                                         </a>
-                    
+
                                         <a href="{{route('index')}}" class="logo logo-light text-center">
                                             <span class="logo-lg">
-												{{-- <img src="{{asset('admin/assets/images/logo-light.png')}}" alt="" height="22"> --}}
-												<img src="{{asset( 'assets/images/logo-light.png')}}" alt="" height="30">
+												<img src="{{asset( 'assets/images/logo-light.png')}}" alt="" width="150" />
                                             </span>
                                         </a>
                                     </div>
-                                    <p class="mb-4 mt-3">Enter your email address and password to access admin panel.</p>
                                 </div>
 
                                 <form action="{{ route('authenticate') }}" method="POST">
@@ -68,11 +67,11 @@
 									</div>
 
 									<br>
-									
+
 									<div class="text-danger">
 										<x-jet-validation-errors class="mb-4" />
                                     </div>
-                                    
+
                                     @if (session('status'))
                                         <div class="text-success">
                                             {{ session('status') }}
@@ -106,7 +105,7 @@
                         <div class="ra__account-pages__bottom row">
                             <div class="col-12 text-center">
                                 <p class="ml-1"><a href="{{route('password.request')}}" class="ml-1">Forgot your password?</a></p>
-                                
+
                                 {{-- <p class="text-white-50">Don't have an account? <a href="auth-register.html" class="text-white ml-1"><b>Sign Up</b></a></p> --}}
                             </div> <!-- end col -->
                         </div>
@@ -122,7 +121,7 @@
 
 
         <footer class="footer">
-            <script>document.write(new Date().getFullYear())</script> &copy; {{env('APP_NAME')}} by <a href="https://vcompinc.com" target='_blank' class="text-white-50">VCOMP Inc.</a> 
+            <script>document.write(new Date().getFullYear())</script> &copy; {{env('APP_NAME')}} by <a href="https://vcompinc.com" target='_blank' class="text-white-50">VCOMP Inc.</a>
         </footer>
 
         <!-- Vendor js -->
@@ -130,6 +129,6 @@
 
         <!-- App js -->
         <script src="{{asset('admin/assets/js/app.min.js')}}"></script>
-        
+
     </body>
 </html>

@@ -1,63 +1,16 @@
-@section('title') {{ $title ?? __('Home') }} @stop
+@section( 'title' ) {{ $title ?? __( 'Home' ) }} @stop
 
-@include('website.styles')
+@section( 'css' )
+    @include( 'website.layouts.styles' )
+@stop
 
-@section('css-default')
+@section( 'css-default' )
     <link rel="stylesheet" href="{{ asset( 'website/assets/css/frontend.css' ) }}">
 @stop
 
-@include('layouts.header')
+@include( 'layouts.header' )
 
-        <!--Navbar Start-->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
-            <div class="container-fluid">
-                <!-- LOGO -->
-                <a class="logo text-uppercase" href="index.html">
-                    <img src="{{asset('assets/images/logo-light.png')}}" alt="" class="logo-light" height="30" />
-                    <img src="{{asset('assets/images/logo-dark.png')}}" alt="" class="logo-dark" height="30" />
-                </a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="mdi mdi-menu"></i>
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
-                        <li class="nav-item active">
-                            <a href="#home" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#contact" class="nav-link">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#contact" class="nav-link">Contact Us</a>
-                        </li>
-
-                        @auth
-                        <li class="nav-item">
-                            <a href="{{ route('admin_home', [ Request::segment( 1 ) ] ) }}" class="nav-link">Admin</a>
-                        </li>
-                        @endauth
-                    </ul>
-
-                    <button class="btn btn-info navbar-btn">
-                        @auth
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <a href="javascript:void(0);" class="" onclick="event.preventDefault(); this.closest('form').submit();">
-                                    <i class="fe-log-out"></i>
-
-                                    <span>{{ __( 'Logout' ) }}</span>
-                                </a>
-                            </form>
-                        @else
-                            <a href="{{ route('login' ) }}" class="">Login</a>
-                        @endauth
-                    </button>
-                </div>
-            </div>
-        </nav>
-        <!-- Navbar End -->
+@include( 'website.layouts.topbar' )
 
         <!-- home start -->
         <section class="bg-home bg-gradient" id="home">
@@ -653,9 +606,9 @@
                         </div>
                     </div>
                     <!-- end col -->
-                </div> 
+                </div>
                 <!-- end row -->
-            </div> 
+            </div>
             <!-- end container-fluid -->
         </section>
         <!-- testimonial end -->
@@ -808,7 +761,7 @@
                             <p class="text-white-50">Ubold is a fully featured premium admin template built on top of awesome Bootstrap 4.1.3, modern web technology HTML5, CSS3 and jQuery.</p>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-2">
                         <div class="footer-list">
                             <p class="text-white mb-2 footer-list-title">About</p>
@@ -843,7 +796,7 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-2">
                         <div class="footer-list">
                             <p class="text-white mb-2 footer-list-title">More Info</p>
@@ -882,8 +835,8 @@
             <!-- container-fluid -->
         </footer>
         <!-- footer end -->
-        
-        <!-- Back to top -->    
+
+        <!-- Back to top -->
         <a href="#" class="back-to-top" id="back-to-top"> <i class="mdi mdi-chevron-up"> </i> </a>
 
         <!-- javascript -->

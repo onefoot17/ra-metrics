@@ -1,11 +1,15 @@
 @section( 'html_class' ) {{ $html_class ?? __( 'ra__authentication' ) }} @stop
 
-@section('title') {{ $title ?? __('Forgot Password') }} @stop
+@section( 'login_class' ) {{ $login_class ?? __( 'loading authentication-bg authentication-bg-pattern' ) }} @stop
+
+@section( 'login_data' ){{ $login_data ?? __( 'horizontal' ) }}@stop
+
+@section( 'title' ) {{ $title ?? __( 'Forgot Password' ) }} @stop
 
 @include('admin.layouts.styles')
 
 @section('css-default')
-    <link rel="stylesheet" href="{{asset('admin/assets/css/admin.css')}}">
+    <link rel="stylesheet" href="{{ asset( 'admin/assets/css/admin.css' ) }}">
 @stop
 
 @include('layouts.header')
@@ -15,11 +19,11 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card bg-pattern">
-                            
+
                             @if (session('status'))
 
                                 <div class="card-body p-4">
-                                    
+
                                     <div class="text-center w-75 m-auto">
                                         <div class="auth-logo">
                                             <a href="{{route('index')}}" class="logo logo-dark text-center">
@@ -27,7 +31,7 @@
                                                     <img src="{{asset('/images/logo-dark.png')}}" alt="" height="30">
                                                 </span>
                                             </a>
-                        
+
                                             <a href="{{route('index')}}" class="logo logo-light text-center">
                                                 <span class="logo-lg">
                                                     <img src="{{asset('/images/logo-light.png')}}" alt="" height="30">
@@ -80,7 +84,7 @@
                                 </div> <!-- end card-body -->
                             @else
                                 <div class="card-body p-4">
-                                    
+
                                     <div class="text-center w-75 m-auto">
                                         <div class="auth-logo">
                                             <a href="index.html" class="logo logo-dark text-center">
@@ -88,7 +92,7 @@
                                                     <img src="{{asset('assets/images/logo-dark.png')}}" alt="" height="30">
                                                 </span>
                                             </a>
-                        
+
                                             <a href="{{route('index')}}" class="logo logo-light text-center">
                                                 <span class="logo-lg">
                                                     <img src="{{asset( 'assets/images/logo-light.png')}}" alt="" height="30">
@@ -111,7 +115,7 @@
                                         </div>
 
                                         <br>
-                                        
+
                                         <div class="text-danger">
                                             <x-jet-validation-errors class="mb-4" />
                                         </div>
@@ -141,7 +145,7 @@
 
 
         <footer class="footer">
-            <script>document.write(new Date().getFullYear())</script> &copy; {{env('APP_NAME')}} by <a href="https://vcompinc.com" target='_blank' class="text-white-50">VCOMP Inc.</a> 
+            <script>document.write(new Date().getFullYear())</script> &copy; {{env('APP_NAME')}} by <a href="https://vcompinc.com" target='_blank' class="text-white-50">VCOMP Inc.</a>
         </footer>
 
         <!-- Vendor js -->
@@ -149,6 +153,6 @@
 
         <!-- App js -->
         <script src="{{asset('admin/assets/js/app.min.js')}}"></script>
-        
+
     </body>
 </html>
