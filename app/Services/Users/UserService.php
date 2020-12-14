@@ -31,7 +31,26 @@ class UserService implements UserServiceInterface
 
     public function updateUserProfile($request, $id)
     {
-        $update = $this->UserRepositoryInterface->update($request, $id);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:3',
+            'email' => 'email:rfc,dns',
+            'phone_number' => 'min:10'
+        ]);
+
+        if(!is_null($request->password)){
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|min:3',
+                'email' => 'email:rfc,dns',
+                'password' => 'required|string|min:8|confirmed',
+                'phone_number' => 'min:10'
+            ]);
+        }
+
+        if($validator->fails()){
+            $update = $validator->errors();
+        } else {
+            $update = $this->UserRepositoryInterface->update($request, $id);
+        }
 
         return $update;
     }
@@ -68,8 +87,6 @@ class UserService implements UserServiceInterface
 
     public function storeUser($request)
     {
-        //$checkUser = $this->UserRepositoryInterface->checkUserByEmail($request->email);
-
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:3',
             'email' => 'email:rfc,dns||unique:App\Models\User',

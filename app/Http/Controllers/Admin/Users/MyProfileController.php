@@ -37,10 +37,10 @@ class MyProfileController extends Controller
     public function update($language, Request $request, UserServiceInterface $userService)
     {
         $id = Auth::User()->id;
-        $update = $userService->updateUserProfile($request, $id);
+        $result = $userService->updateUserProfile($request, $id);
 
-        if(isset($update['error'])){
-            return back()->with('message-error', __($update['error']));
+        if($result instanceof \Illuminate\Support\MessageBag){
+            return back()->withInput()->withErrors($result);
         }
 
         return back()->with('message-success', __('My Profile edited succefully!'));

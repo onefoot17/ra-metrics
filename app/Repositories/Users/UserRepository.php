@@ -46,12 +46,7 @@ class UserRepository implements UserRepositoryInterface {
     public function update($request, $id)
     {
         if(!empty($request->password)){
-            if($request->password === $request->password_confirmation){
-                $password_array = ['password' => Hash::make($request->password)];
-            } else {
-                $password_array = [];
-                $error = ['error' => __('validation.confirmed', ['attribute' => 'Password'])];
-            }
+            $password_array = ['password' => Hash::make($request->password)];
         } else {
             $password_array = [];
         }
@@ -65,10 +60,6 @@ class UserRepository implements UserRepositoryInterface {
 
         $update = User::where('id', $id)
         ->update($update_array);
-
-        if(isset($error)){
-            return $error;
-        }
 
         return $update;
     }
@@ -86,12 +77,5 @@ class UserRepository implements UserRepositoryInterface {
         $query = User::orderBy('id')->get();
 
         return $query;
-    }
-
-    public function checkUserByEmail($email)
-    {
-        $user = User::where('email', $email)->first();
-
-        return $user;
     }
 }
