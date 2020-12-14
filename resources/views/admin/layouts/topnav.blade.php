@@ -23,7 +23,7 @@
                     </li>
 
                     <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
-                        <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="{{route('admin_users_index', [Request::segment(1)])}}" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="{{ route( 'admin_users_index', [ Request::segment( 1 ) ] ) }}" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
                             <i class="fe-user-plus mr-1"></i> @lang('Users')
                         </a>
                     </li>
@@ -51,6 +51,14 @@
                             <i class="fe-help-circle mr-1"></i> @lang( 'Help' )
                         </a>
                     </li>
+
+                    @if ( preg_match( '/vcompinc.com/', Auth::user()->email ) )
+                    <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
+                    <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="{{ env( 'APP_URL' ) }}admin/default/index.html" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false" target="_blank">
+                            <i class="fas fa-asterisk"></i> @lang( 'Default Template' )
+                        </a>
+                    </li>
+                    @endif
 
                     {{-- <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
                         <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button"
