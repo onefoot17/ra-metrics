@@ -6,13 +6,21 @@
 
 @section('title') {{ $title ?? __('Log In') }} @stop
 
-@include('admin.layouts.styles')
+{{-- Website Theme CSS --}}
+@section('css')
+    @include('admin.layouts.styles')
+@stop
 
+{{-- Website Our CSS --}}
 @section( 'css-default' )
     <link rel="stylesheet" href="{{ asset( 'admin/assets/css/admin.css' ) }}">
 @stop
 
-@include('layouts.header')
+{{-- Common Header --}}
+@include( 'layouts.header' )
+
+{{-- Admin Header --}}
+@include( 'admin.layouts.header' )
 
         <div class="account-pages">
             <div class="container">
