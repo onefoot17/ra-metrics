@@ -100,4 +100,4 @@
             })(window.jQuery);
         </script>
 
-@include( 'layouts.footer' )
+@include( 'layouts.components.footer' )

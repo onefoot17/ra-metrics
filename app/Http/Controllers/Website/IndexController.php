@@ -9,6 +9,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view('website.pages.index');
+        return view('website.layouts.pages.home');
     }
 }

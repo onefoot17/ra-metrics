@@ -123,4 +123,4 @@
 
 @include( 'admin.layouts.footernav' )
 
-@include( 'layouts.footer' )
+@include( 'layouts.components.footer' )

@@ -21,6 +21,14 @@ input:focus {
 }
 
 .form {
+    /* &-row {
+        margin-bottom: $margin*2;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    } */
+
     &-group {
         margin-bottom: $margin*2;
 

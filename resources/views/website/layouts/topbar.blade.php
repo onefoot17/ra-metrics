@@ -2,7 +2,7 @@
     <div class="header-body border-top-0 bg-dark box-shadow-none">
         <div class="header-container container">
             <div class="header-row">
-                <div class="header-column">
+                <div class="header-column header-column-logo">
                     <div class="header-row">
                         <div class="header-logo">
                             <a href="index.html">
