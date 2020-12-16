@@ -50,14 +50,14 @@ Route::group(['prefix' => '{language}'], function(){
     Route::group(['prefix' => 'admin'], function(){
 
         Route::get('/', function () {
-            return view('admin.main.index');
+            return view('admin.layouts.pages.index');
         })->name('admin_home')->middleware('auth');
-    
+
         Route::group(['prefix' => 'my-profile'], function(){
             Route::get('/', [MyProfileController::class, 'edit'])->name('my_profile_edit');
             Route::put('/edit', [MyProfileController::class, 'update'])->name('my_profile_update');
         });
-    
+
         Route::group(['prefix' => 'settings'], function(){
             Route::get('/', [SettingsController::class, 'edit'])->name('settings_edit');
             Route::put('/edit/{id}', [SettingsController::class, 'update'])->name('settings_update');
@@ -83,7 +83,7 @@ Route::group(['prefix' => '{language}'], function(){
                 Route::post('/update/{id}', [PlantParentSpecieController::class, 'update'])->name('plant_parents_species_update');
                 Route::delete('/destroy/{id}', [PlantParentSpecieController::class, 'destroy'])->name('plant_parents_species_destroy');
             });
-        
+
             Route::group(['prefix' => 'plant-types'], function(){
                 Route::get('/', [PlantTypeController::class, 'index'])->name('plant_types_index');
                 Route::get('/create', [PlantTypeController::class, 'create'])->name('plant_types_create');
@@ -92,7 +92,7 @@ Route::group(['prefix' => '{language}'], function(){
                 Route::put('/update/{id}', [PlantTypeController::class, 'update'])->name('plant_types_update');
                 Route::delete('/destroy/{id}', [PlantTypeController::class, 'destroy'])->name('plant_types_destroy');
             });
-        
+
             Route::group(['prefix' => 'plants'], function(){
                 Route::get('/index', [PlantsController::class, 'index'])->name('plant_index');
                 Route::get('/create', [PlantsController::class, 'create'])->name('plant_create');

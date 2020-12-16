@@ -92,4 +92,4 @@
         <!-- App js -->
         <script src="../assets/js/app.min.js"></script>
 
-@include( 'layouts.footer' )
+@include( 'layouts.components.footer' )

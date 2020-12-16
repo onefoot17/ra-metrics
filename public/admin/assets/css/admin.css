@@ -225,6 +225,15 @@ a:hover {
   color: #ffffff;
 }
 
+.form {
+  /* &-row {
+      margin-bottom: $margin*2;
+
+      &:last-of-type {
+          margin-bottom: 0;
+      }
+  } */
+}
 .form-group {
   margin-bottom: 2rem;
 }

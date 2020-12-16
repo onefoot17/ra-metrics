@@ -129,4 +129,4 @@
             </div>
         </div>
 
-@include( 'layouts.footer' )
+@include( 'layouts.components.footer' )
