@@ -6,7 +6,7 @@
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-	
+
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 	<link href="{{asset('color-admin/assets/css/default/app.min.css')}}" rel="stylesheet" />
@@ -18,7 +18,7 @@
 		<span class="spinner"></span>
 	</div>
 	<!-- end #page-loader -->
-	
+
 	<!-- begin #page-container -->
 	<div id="page-container" class="fade">
 		<!-- begin error -->
@@ -36,16 +36,16 @@
 			</div>
 		</div>
 		<!-- end error -->
-		
+
 		<!-- begin scroll to top btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
 		<!-- end scroll to top btn -->
 	</div>
 	<!-- end page container -->
-	
+
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="{{asset('color-admin/assets/js/app.min.js')}}"></script>
 	<script src="{{asset('color-admin/assets/js/theme/default.min.js')}}"></script>
-	<!-- ================== END BASE JS ================== -->
-</body>
-</html>
+    <!-- ================== END BASE JS ================== -->
+
+@include( 'layouts.footer' )

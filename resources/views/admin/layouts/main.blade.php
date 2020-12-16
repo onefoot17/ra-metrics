@@ -1,8 +1,8 @@
 @section('title') {{ $title ?? __('Admin') }} @stop
 
-@include('admin.layouts.styles')
-
 @section('css')
+    @include( 'admin.layouts.styles' )
+
     <!-- Jquery Toast css -->
     <link href="{{ asset( 'admin/assets/libs/jquery-toast-plugin/jquery.toast.min.css' ) }}" rel="stylesheet" type="text/css" />
 
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset( 'admin/assets/css/admin.css' ) }}">
 @stop
 
-@include('layouts.header')
+@include( 'layouts.header' )
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -44,10 +44,10 @@
 
                         @yield('content')
 
-                    </div> <!-- container -->        
+                    </div> <!-- container -->
                 </div> <!-- content -->
-        
-                @include('layouts.footer')
+
+                @include( 'admin.layouts.footernav' )
             </div>
 
             <!-- ============================================================== -->
@@ -70,7 +70,7 @@
         <script src="{{asset('admin/assets/libs/jquery-toast-plugin/jquery.toast.min.js')}}"></script>
 
         @section('js')
-        
+
         @show
 
         <!-- App js -->
@@ -99,6 +99,5 @@
                 @endif
             })(window.jQuery);
         </script>
-        
-    </body>
-</html>
+
+@include( 'layouts.footer' )

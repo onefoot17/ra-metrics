@@ -15,18 +15,6 @@
     }
 }
 
-input::placeholder {
-    .ra__dark & {
-        color: rgba( var(--white--rgb), .5 ) !important;
-    }
-}
-
-input:focus {
-    .ra__dark & {
-        color: $white !important;
-    }
-}
-
 .h1,
 .h2,
 .h3,
@@ -111,35 +99,6 @@ a {
             &:hover {
                 color: $green !important;
             }
-        }
-    }
-}
-
-// Forms
-.input-group-text {
-    font-size: inherit;
-
-    .ra__dark & {
-        background-color: $gray-medium;
-        color: $white;
-    }
-}
-
-.form {
-    &-group {
-        margin-bottom: $margin*2;
-
-        &:last-of-type {
-            margin-bottom: 0;
-        }
-    }
-
-    &-control {
-        font-size: inherit;
-
-        .ra__dark & {
-            background-color: $gray-medium;
-            color: $white;
         }
     }
 }

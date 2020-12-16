@@ -31,7 +31,7 @@
                         <div class="card bg-pattern">
 
                             <div class="card-body p-4">
-                                
+
                                 <div class="text-center w-75 m-auto">
                                     <div class="auth-logo">
                                         <a href="index.html" class="logo logo-dark text-center">
@@ -39,7 +39,7 @@
                                                 <img src="../assets/images/logo-dark.png" alt="" height="22">
                                             </span>
                                         </a>
-                    
+
                                         <a href="index.html" class="logo logo-light text-center">
                                             <span class="logo-lg">
                                                 <img src="../assets/images/logo-light.png" alt="" height="22">
@@ -83,7 +83,7 @@
 
 
         <footer class="footer footer-alt">
-            2015 - <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="" class="text-white-50">Coderthemes</a> 
+            2015 - <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="" class="text-white-50">Coderthemes</a>
         </footer>
 
         <!-- Vendor js -->
@@ -91,6 +91,5 @@
 
         <!-- App js -->
         <script src="../assets/js/app.min.js"></script>
-        
-    </body>
-</html>
+
+@include( 'layouts.footer' )
