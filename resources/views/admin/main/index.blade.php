@@ -1,4 +1,4 @@
-@extends('admin.layouts.main')
+@extends( 'admin.layouts.main' )
 
 @section('title') {{ $title ?? __('List Plant Parents Species') }} @stop
 
@@ -216,7 +216,7 @@
                                 <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close"></i></a>
                             </div>
                             <h4 class="header-title mb-0">Lifetime Sales</h4>
-        
+
                             <div id="cardCollpase1" class="collapse pt-3 show">
                                 <div class="text-center">
                                     <div class="row mt-2">
@@ -233,15 +233,15 @@
                                             <p class="font-13 mb-0 text-truncate">@lang('Total Plants')</p>
                                         </div>
                                     </div> <!-- end row -->
-        
-                                    <div id="lifetime-sales" data-colors="#4fc6e1,#6658dd,#ebeff2" style="height: 270px;" class="morris-chart mt-3"></div>                
-                                
+
+                                    <div id="lifetime-sales" data-colors="#4fc6e1,#6658dd,#ebeff2" style="height: 270px;" class="morris-chart mt-3"></div>
+
                                 </div>
                             </div> <!-- end collapse-->
                         </div> <!-- end card-body-->
                     </div> <!-- end card-->
                 </div> <!-- end col-->
-        
+
                 <div class="col-lg-12">
                     <div class="ra__card card">
                         <div class="card-body">
@@ -251,7 +251,7 @@
                                 <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close"></i></a>
                             </div>
                             <h4 class="header-title mb-0">Total Users</h4>
-        
+
                             <div id="cardCollpase3" class="collapse pt-3 show">
                                 <div class="text-center">
                                     <div id="total-users" data-colors="#00acc1,#4b88e4,#e3eaef,#fd7e14"></div>
@@ -278,7 +278,7 @@
             <!-- end row -->
         </div>
     </div>
-    <!-- end row -->   
+    <!-- end row -->
 
     <div class="row">
         <div class="col-xl-4 col-md-6">
@@ -309,8 +309,8 @@
                                 </div>
                             </div> <!-- end row -->
 
-                            <div id="lifetime-sales2" data-colors="#4fc6e1,#6658dd,#ebeff2" style="height: 270px;" class="morris-chart mt-3"></div>                
-                        
+                            <div id="lifetime-sales2" data-colors="#4fc6e1,#6658dd,#ebeff2" style="height: 270px;" class="morris-chart mt-3"></div>
+
                         </div>
                     </div> <!-- end collapse-->
                 </div> <!-- end card-body-->
@@ -338,7 +338,7 @@
                 <h4 class="header-title mb-0">Radial Bars Chart</h4>
 
                 <div class="widget-chart text-center" dir="ltr">
-                    
+
                     <div id="total-revenue" class="mt-0"  data-colors="#f1556c"></div>
 
                     <h5 class="mt-0">Total sales made today</h5>
@@ -360,7 +360,7 @@
                             <h4><i class="fe-arrow-down text-danger mr-1"></i>$15k</h4>
                         </div>
                     </div>
-                    
+
                 </div>
             </div> <!-- end ra__card-box card-box -->
         </div> <!-- end col-->
@@ -409,7 +409,7 @@
 
     <script>
         $( document ).ready(function() {
-    
+
             var DrawSparkline = function() {
                 // Pie Chart
                 var colors = ['#00acc1','#4b88e4','#e3eaef','#fd7e14'];
@@ -431,9 +431,9 @@
                     sliceColors: colors
                 });
             };
-            
+
             DrawSparkline();
-            
+
             var resizeChart;
 
             $(window).resize(function(e) {
@@ -455,7 +455,7 @@
             "use strict";
 
             var Dashboard4 = function() {};
-                
+
             //creates Donut chart
             Dashboard4.prototype.createDonutChart = function(element, data, colors) {
                 Morris.Donut({
@@ -488,7 +488,7 @@
             $.Dashboard4 = new Dashboard4, $.Dashboard4.Constructor = Dashboard4
         }(window.jQuery),
 
-        //initializing 
+        //initializing
         function($) {
             "use strict";
             $.Dashboard4.init();

@@ -123,5 +123,5 @@ bgcolor="#f6f6f6">
     valign="top"></td>
 </tr>
 </table>
-</body>
-</html>
+
+@include( 'layouts.footer' )

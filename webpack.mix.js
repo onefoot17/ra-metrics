@@ -1,15 +1,29 @@
 const mix = require('laravel-mix');
+/* const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const CopyPlugin = require('copy-webpack-plugin');
+const imageminMozjpeg = require('imagemin-mozjpeg'); */
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel applications. By default, we are compiling the CSS
- | file for the application as well as bundling up all the JS files.
- |
- */
+// Images
+/* mix.webpackConfig({
+    plugins: [
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: 'resources/assets/images',
+                    to: 'assets/images'
+                },
+            ],
+        }),
+        new ImageminPlugin({
+            test: /\.(jpe?g|png|gif|svg)$/i,
+            plugins: [
+                imageminMozjpeg({
+                    quality: 80,
+                })
+            ]
+        })
+    ]
+}); */
 
 mix.js( 'resources/js/app.js', 'public/assets/js' )
     .postCss( 'resources/css/app.css', 'public/assets/css', [
@@ -17,7 +31,7 @@ mix.js( 'resources/js/app.js', 'public/assets/js' )
         require( 'tailwindcss' ),
     ])
     .webpackConfig( require( './webpack.config' ) )
-    .sourceMaps();;
+    .sourceMaps();
 
 // Admin
 mix.sass( 'resources/sass/admin.scss', 'public/admin/assets/css', {

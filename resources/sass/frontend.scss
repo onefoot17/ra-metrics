@@ -5,6 +5,15 @@
 @import '_buttons';
 @import '_alerts';
 
+.header-logo {
+    max-width: 200px;
+
+    img {
+        // display: block;
+        width: 100%;
+    }
+}
+
 #{$nav}bar {
     &-custom {
         .logo {
@@ -39,5 +48,20 @@
                 }
             }
         }
+    }
+}
+
+.owl-carousel.nav-dark:not(.nav-style-1):not(.nav-style-2):not(.nav-style-3):not(.show-nav-title):not(.nav-arrows-1) .owl-nav button[class*="owl-"] {
+    @include transition;
+
+    background-color: $slider-button-bg-color !important;
+}
+
+##{$footer} {
+    background: $footer-bg-color;
+    border: none;
+
+    .footer-copyright {
+        background: $footer-bg-color;
     }
 }

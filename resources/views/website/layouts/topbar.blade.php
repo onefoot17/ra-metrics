@@ -1,14 +1,19 @@
-<!--Navbar Start-->
-<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
-    <div class="container-fluid">
-        <!-- LOGO -->
-        <a class="logo text-uppercase" href="{{ route( 'home', [ Request::segment( 1 ) ] ) }}">
-            <img src="{{ asset( 'assets/images/logo-light.png' ) }}" alt="" class="logo-img logo-light" width="150" />
+<header id="header" class="header-transparent header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
+    <div class="header-body border-top-0 bg-dark box-shadow-none">
+        <div class="header-container container">
+            <div class="header-row">
+                <div class="header-column">
+                    <div class="header-row">
+                        <div class="header-logo">
+                            <a href="index.html">
+                                <img alt="Porto" src="{{ asset( 'assets/images/logo-light.png' ) }}" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-            <img src="{{ asset( 'assets/images/logo-dark.png' ) }}" alt="" class="logo-img logo-dark" width="150" />
-        </a>
-
-        @include( 'website.layouts.topnav' )
+                @include( 'website.layouts.topnav' )
+            </div>
+        </div>
     </div>
-</nav>
-<!-- Navbar End -->
+</header>
