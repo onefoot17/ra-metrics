@@ -120,4 +120,4 @@
 	<script src="{{asset('color-admin/assets/js/theme/default.min.js')}}"></script>
     <!-- ================== END BASE JS ================== -->
 
-@include( 'layouts.components.footer' )
+@include( 'layouts.footer' )

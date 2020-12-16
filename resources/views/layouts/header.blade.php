@@ -4,29 +4,31 @@
     <head>
         <meta charset="utf-8" />
 
-        <title>{{ env( 'APP_NAME' ) }} | @yield( 'title' )</title>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-
-        <meta content="Coderthemes" name="author" />
+        <title>@yield( 'title' ) | {{ env( 'APP_NAME' ) }}</title>
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+        <meta name="keywords" content="{{ env( 'APP_NAME' ) }}" />
 
-        <!-- App CSS -->
+        <meta name="description" content="{{ env( 'APP_NAME' ) }}">
+
+        <meta name="author" content="{{ env( 'APP_NAME' ) }}">
+
+        {{-- Favicon --}}
+        <link rel="shortcut icon" href="{{ asset( 'assets/images/favicon.ico' ) }}">
+
+		<link rel="apple-touch-icon" href="{{ asset( 'assets/images/favicon.ico' ) }}">
+
+        {{-- Fonts --}}
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400&display=swap" rel="stylesheet" type="text/css">
+
+        {{-- App CSS --}}
 		<link href="{{ asset( 'assets/css/bootstrap.min.css' ) }}" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
 
         @yield( 'css' )
 
-        <!-- Default CSS -->
+        {{-- Default CSS --}}
         @yield( 'css-default' )
     </head>
-
-    <body class="@if ( Request::segment( 2 ) == 'admin' ) loading @endif @auth @if ( Request::segment( 2 ) == 'admin' ) ra__{{Auth::User()->settings->theme_color}} @endif @endauth  @yield('login_class') @yield('html_class') @if ( !empty( Request::segment( 1 ) ) ) ra__{{ Request::segment( 1 ) }}@endif @if ( !empty( Request::segment( 2 ) ) ) ra__{{ Request::segment( 2 ) }}@endif @if ( !empty( Request::segment( 3 ) ) ) ra__{{ Request::segment( 3 ) }}@endif" @if ( Auth::check() )data-layout-mode="horizontal" @endif data-layout-mode="@yield( 'login_data' )" @if ( Auth::check() ) data-layout='{"mode": "{{Auth::User()->settings->theme_color}}", "width": "fluid", "menuPosition": "fixed", "showRightSidebarOnPageLoad": false}'@endif>

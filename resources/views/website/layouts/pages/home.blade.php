@@ -1,3 +1,5 @@
+@section( 'title' ) {{ $title ?? __( 'Home' ) }} @stop
+
 @extends( 'website.layouts.main' )
 
 @section( 'css' )
