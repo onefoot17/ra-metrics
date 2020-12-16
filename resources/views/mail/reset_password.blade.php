@@ -124,4 +124,4 @@ bgcolor="#f6f6f6">
 </tr>
 </table>
 
-@include( 'layouts.components.footer' )
+@include( 'layouts.footer' )

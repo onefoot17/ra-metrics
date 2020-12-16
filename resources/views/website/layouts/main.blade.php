@@ -1,8 +1,9 @@
-@section( 'title' ) {{ $title ?? __( 'Home' ) }} @stop
-
 {{-- Website Theme CSS --}}
 @section( 'css' )
     @include( 'website.layouts.styles' )
+
+    {{-- Theme Custom CSS --}}
+    <link rel="stylesheet" href="{{ asset( 'website/porto/css/custom.css' ) }}">
 @stop
 
 {{-- Website Our CSS --}}
@@ -10,7 +11,15 @@
     <link rel="stylesheet" href="{{ asset( 'website/assets/css/frontend.css' ) }}" />
 @stop
 
-{{-- Header --}}
+@section( 'js' )
+    {{-- Head Libs --}}
+    <script src="{{ asset( 'website/porto/vendor/modernizr/modernizr.min.js' ) }}"></script>
+@stop
+
+{{-- Common Header --}}
+@include( 'layouts.header' )
+
+{{-- Website Header --}}
 @include( 'website.layouts.header' )
 
 {{-- Navbar --}}
@@ -23,4 +32,4 @@
 @include( 'website.layouts.footerscripts' )
 
 {{-- Common Footer --}}
-@include( 'layouts.components.footer' )
+@include( 'layouts.footer' )
