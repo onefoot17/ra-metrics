@@ -403,26 +403,57 @@ html .btn-info {
   width: 100%;
 }
 
-.navbar-custom .logo {
-  max-width: 200px;
+#header .header-nav-main nav > ul > li > a {
+  font-size: 1.4rem;
 }
-.navbar-custom .logo-img {
-  width: 100%;
-}
-.navbar-custom .navbar-nav .nav-item .nav-link {
-  line-height: 1;
-  color: #ffffff;
-}
-.navbar-custom .navbar-nav .nav-item .nav-link:hover {
-  color: rgba(255, 255, 255, 0.6);
-}
-.navbar-custom.nav-sticky .navbar-nav .nav-item .nav-link {
-  color: #000000;
-}
-.navbar-custom.nav-sticky .navbar-nav .nav-item .nav-link:hover {
-  color: #972b84;
+#header .header-nav-main nav > ul > li > a i {
+  margin-right: 0.5rem !important;
 }
 
+#header .header-nav.header-nav-links nav > ul li:hover > a {
+  color: #ff02c8;
+}
+
+#header .header-nav.header-nav-links nav > ul:not(:hover) > li > a.active {
+  color: #ff02c8;
+}
+
+/* .navbar {
+    &-custom {
+        .logo {
+            max-width: 200px;
+
+            &-img {
+                // display: block;
+                width: 100%;
+            }
+        }
+
+        .navbar-nav {
+            .nav-item .nav-link {
+                @include line-height(
+                    $line-height: 1
+                );
+
+                color: $nav-link-color;
+
+                &:hover {
+                    color: $nav-link-hover-color;
+                }
+            }
+        }
+
+        &.nav-sticky .navbar-nav {
+            .nav-item .nav-link {
+                color: $nav-sticky-link-color;
+
+                &:hover {
+                    color: $nav-sticky-link-hover-color;
+                }
+            }
+        }
+    }
+} */
 .owl-carousel.nav-dark:not(.nav-style-1):not(.nav-style-2):not(.nav-style-3):not(.show-nav-title):not(.nav-arrows-1) .owl-nav button[class*=owl-] {
   transition: all 200ms ease-in-out;
   background-color: #972b84 !important;

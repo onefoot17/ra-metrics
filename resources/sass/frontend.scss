@@ -14,7 +14,23 @@
     }
 }
 
-#{$nav}bar {
+#header .header-nav-main nav > ul > li > a {
+    font-size: 1.4rem;
+
+    i {
+        margin-right: $margin/2 !important;
+    }
+}
+
+#header .header-nav.header-nav-links nav > ul li:hover > a {
+    color: $nav-link-hover-color;
+}
+
+#header .header-nav.header-nav-links nav > ul:not(:hover) > li > a.active {
+    color: $nav-link-active-color;
+}
+
+/* #{$nav}bar {
     &-custom {
         .logo {
             max-width: 200px;
@@ -49,7 +65,7 @@
             }
         }
     }
-}
+} */
 
 .owl-carousel.nav-dark:not(.nav-style-1):not(.nav-style-2):not(.nav-style-3):not(.show-nav-title):not(.nav-arrows-1) .owl-nav button[class*="owl-"] {
     @include transition;

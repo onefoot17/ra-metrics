@@ -84,6 +84,7 @@ $button-bg-hover-color-dark: $black !default;
 // Navigation
 $nav-link-color: inherit !default;
 $nav-link-hover-color: inherit !default;
+$nav-link-active-color: $nav-link-hover-color !default;
 $nav-sticky-link-color: $black inherit !default;
 $nav-sticky-link-hover-color: inherit !default;
 
