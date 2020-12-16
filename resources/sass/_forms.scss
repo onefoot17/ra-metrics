@@ -1,4 +1,43 @@
 // Forms
+input::placeholder {
+    .ra__dark & {
+        color: rgba( var(--white--rgb), .5 ) !important;
+    }
+}
+
+input:focus {
+    .ra__dark & {
+        color: $white !important;
+    }
+}
+
+.input-group-text {
+    font-size: inherit !important;
+
+    .ra__dark & {
+        background-color: $gray-medium;
+        color: $white;
+    }
+}
+
+.form {
+    &-group {
+        margin-bottom: $margin*2;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &-control {
+        font-size: inherit !important;
+
+        .ra__dark & {
+            background-color: $gray-medium;
+            color: $white;
+        }
+    }
+}
 
 .form-control.is-invalid,
 .was-validated .form-control:invalid {

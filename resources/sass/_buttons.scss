@@ -1,137 +1,139 @@
 // Buttons
-.btn {
-    border-radius: .25rem;
-    font-size: $font-size;
-    padding: $padding/2 $padding*2;
+#{$html} {
+    .btn {
+        border-radius: .25rem;
+        font-size: $font-size;
+        padding: $padding/2 $padding*2;
 
-    &-success,
-    &-primary,
-    &-danger,
-    &-info {
-        border: none;
-        box-shadow: none;
-        color: $button-color;
-        width: auto !important;
+        &-success,
+        &-primary,
+        &-danger,
+        &-info {
+            border: none;
+            box-shadow: none;
+            color: $button-color;
+            width: auto !important;
+
+            &:hover {
+                background-color: $button-bg-hover-color;
+            }
+
+            .ra__dark & {
+                color: $button-color-dark;
+
+                &:hover {
+                    background-color: $button-bg-hover-color-dark;
+                    color: $button-hover-color;
+                }
+            }
+        }
 
         &:hover {
             background-color: $button-bg-hover-color;
         }
 
-        .ra__dark & {
-            color: $button-color-dark;
-
-            &:hover {
-                background-color: $button-bg-hover-color-dark;
-                color: $button-hover-color;
-            }
-        }
-    }
-
-    &:hover {
-        background-color: $button-bg-hover-color;
-    }
-
-    &-success {
-        background-color: $button-bg-color-success;
-
-        .ra__dark & {
-            background-color: $button-bg-color-success-dark;
-            color: $button-color-success-dark;
-        }
-    }
-
-    &-primary {
-        background-color: $button-bg-color-primary;
-
-        .ra__dark & {
-            background-color: $button-bg-color-primary-dark;
-            color: $button-color-primary-dark;
-        }
-    }
-
-    &-danger {
-        background-color: $button-bg-color-danger;
-
-        .ra__dark & {
-            background-color: $button-bg-color-danger-dark;
-        }
-    }
-
-    &-info {
-        background-color: $button-bg-color-info;
-
-        .ra__dark & {
-            background-color: $button-bg-color-info-dark;
-        }
-    }
-
-    /* // .ra__settings {
-        &-outline-success {
-            border-color: $purple;
-            color: $purple;
-            width: auto !important;
+        &-success {
+            background-color: $button-bg-color-success;
 
             .ra__dark & {
-                border-color: $green;
-                color: $green;
-            }
-
-            &:hover {
-                background-color: $button-bg-color-success;
-                border-color: $purple;
-                color: $white;
-
-                .ra__dark & {
-                    background-color: $green;
-                    border-color: $green;
-                    color: $black;
-                }
-            }
-
-            &.focus,
-            &:focus {
-                box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-
-                .ra__dark & {
-                    box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
-                }
-            }
-
-            &.disabled,
-            &:disabled {
-                background-color: transparent;
-                color: $purple;
-
-                .ra__dark & {
-                    color: $green;
-                }
-            }
-
-            &:not(:disabled):not(.disabled).active,
-            &:not(:disabled):not(.disabled):active,
-            .show & > .dropdown-toggle,
-            .show > &.dropdown-toggle {
-                background-color: $button-bg-color-success;
-                border-color: $purple;
-                color: $white;
-
-                .ra__dark & {
-                    background-color: $green;
-                    border-color: $green;
-                    color: $black;
-                }
-            }
-
-            &:not(:disabled):not(.disabled).active:focus,
-            &:not(:disabled):not(.disabled):active:focus,
-            .show & > .dropdown-toggle:focus,
-            .show > &.dropdown-toggle:focus {
-                box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-
-                .ra__dark & {
-                    box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
-                }
+                background-color: $button-bg-color-success-dark;
+                color: $button-color-success-dark;
             }
         }
-    // } */
+
+        &-primary {
+            background-color: $button-bg-color-primary;
+
+            .ra__dark & {
+                background-color: $button-bg-color-primary-dark;
+                color: $button-color-primary-dark;
+            }
+        }
+
+        &-danger {
+            background-color: $button-bg-color-danger;
+
+            .ra__dark & {
+                background-color: $button-bg-color-danger-dark;
+            }
+        }
+
+        &-info {
+            background-color: $button-bg-color-info;
+
+            .ra__dark & {
+                background-color: $button-bg-color-info-dark;
+            }
+        }
+
+        /* // .ra__settings {
+            &-outline-success {
+                border-color: $purple;
+                color: $purple;
+                width: auto !important;
+
+                .ra__dark & {
+                    border-color: $green;
+                    color: $green;
+                }
+
+                &:hover {
+                    background-color: $button-bg-color-success;
+                    border-color: $purple;
+                    color: $white;
+
+                    .ra__dark & {
+                        background-color: $green;
+                        border-color: $green;
+                        color: $black;
+                    }
+                }
+
+                &.focus,
+                &:focus {
+                    box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
+
+                    .ra__dark & {
+                        box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
+                    }
+                }
+
+                &.disabled,
+                &:disabled {
+                    background-color: transparent;
+                    color: $purple;
+
+                    .ra__dark & {
+                        color: $green;
+                    }
+                }
+
+                &:not(:disabled):not(.disabled).active,
+                &:not(:disabled):not(.disabled):active,
+                .show & > .dropdown-toggle,
+                .show > &.dropdown-toggle {
+                    background-color: $button-bg-color-success;
+                    border-color: $purple;
+                    color: $white;
+
+                    .ra__dark & {
+                        background-color: $green;
+                        border-color: $green;
+                        color: $black;
+                    }
+                }
+
+                &:not(:disabled):not(.disabled).active:focus,
+                &:not(:disabled):not(.disabled):active:focus,
+                .show & > .dropdown-toggle:focus,
+                .show > &.dropdown-toggle:focus {
+                    box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
+
+                    .ra__dark & {
+                        box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
+                    }
+                }
+            }
+        // } */
+    }
 }
