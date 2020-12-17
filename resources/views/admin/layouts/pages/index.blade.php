@@ -8,7 +8,6 @@
 @stop
 
 @section('content')
-
     <div class="row">
         <div class="col-md-6 col-xl-3">
             <div class="widget-rounded-circle ra__card-box card-box">
@@ -81,8 +80,7 @@
                 </div> <!-- end row-->
             </div> <!-- end widget-rounded-circle-->
         </div> <!-- end col-->
-    </div>
-    <!-- end row-->
+    </div> <!-- end row-->
 
     <div class="row">
         <div class="col-lg-6">

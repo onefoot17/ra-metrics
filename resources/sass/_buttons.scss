@@ -73,8 +73,8 @@
                 width: auto !important;
 
                 .ra__dark & {
-                    border-color: $green;
-                    color: $green;
+                    border-color: $green-light;
+                    color: $green-light;
                 }
 
                 &:hover {
@@ -83,8 +83,8 @@
                     color: $white;
 
                     .ra__dark & {
-                        background-color: $green;
-                        border-color: $green;
+                        background-color: $green-light;
+                        border-color: $green-light;
                         color: $black;
                     }
                 }
@@ -104,7 +104,7 @@
                     color: $purple;
 
                     .ra__dark & {
-                        color: $green;
+                        color: $green-light;
                     }
                 }
 
@@ -117,8 +117,8 @@
                     color: $white;
 
                     .ra__dark & {
-                        background-color: $green;
-                        border-color: $green;
+                        background-color: $green-light;
+                        border-color: $green-light;
                         color: $black;
                     }
                 }

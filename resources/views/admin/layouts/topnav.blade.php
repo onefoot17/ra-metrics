@@ -1,13 +1,22 @@
 <div class="ra__navbar__topnav topnav">
     <div class="container-fluid">
         <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
-
             <div class="collapse navbar-collapse" id="topnav-menu-content">
                 <ul class="navbar-nav">
                     <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
-                        <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="{{ route( 'home', [ Request::segment( 1 ) ] ) }}" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-home mr-1"></i> @lang( 'Website' )
+                        <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="{{ route('admin_home', [ Request::segment( 1 ) ] ) }}">
+                            <i class="fas fa-home mr-1"></i> @lang( 'Admin' )
                         </a>
+
+                        @if ( preg_match( '/vcompinc.com/', Auth::user()->email ) )
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" data-hash data-hash-offset="68" href="{{ env( 'APP_URL' ) }}admin/default/index.html" target="_blank">
+                                        <i class="fas fa-asterisk"></i> @lang( 'Default Template' )
+                                    </a>
+                                </li>
+                            </ul>
+                        @endif
                     </li>
 
                     <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
@@ -30,7 +39,7 @@
 
                     <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
                         <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="#" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="icon dripicons-location mr-1"></i> @lang('Locations/Sites')
+                            <i class="fas fa-map-marker-alt"></i> @lang('Locations/Sites')
                         </a>
                     </li>
 
@@ -51,14 +60,6 @@
                             <i class="fe-help-circle mr-1"></i> @lang( 'Help' )
                         </a>
                     </li>
-
-                    @if ( Auth::check() && preg_match( '/vcompinc.com/', Auth::user()->email ) )
-                    <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
-                    <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="{{ env( 'APP_URL' ) }}admin/default/index.html" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false" target="_blank">
-                            <i class="fas fa-asterisk"></i> @lang( 'Default Template' )
-                        </a>
-                    </li>
-                    @endif
 
                     {{-- <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
                         <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button"

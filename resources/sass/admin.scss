@@ -15,33 +15,6 @@
     }
 }
 
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    .ra__dark & {
-        color: $white;
-    }
-}
-
-h4.header-title {
-    font-size: 2.4rem;
-}
-
-p {
-    .ra__dark & {
-        color: $white;
-    }
-}
-
 a {
     &:not(.btn):not(.nav-link):not(.dropdown-item) {
         color: $black !important;
@@ -54,7 +27,7 @@ a {
             color: $purple !important;
 
             .ra__dark & {
-                color: $green !important;
+                color: $green-light !important;
             }
         }
     }
@@ -62,19 +35,6 @@ a {
 
 #wrapper {
     height: auto;
-}
-
-.text-muted {
-    .ra__dark & {
-        color: $white !important;
-    }
-}
-
-.table td,
-.table th {
-    .ra__dark & {
-        color: $white;
-    }
 }
 
 .dropdown {
@@ -97,7 +57,7 @@ a {
             color: $white !important;
 
             &:hover {
-                color: $green !important;
+                color: $green-light !important;
             }
         }
     }
@@ -110,16 +70,6 @@ a {
 .far,
 .fas {
     display: flex;
-}
-
-.card {
-    .ra__dark & {
-        background-color: $gray-dark;
-
-        &-box {
-            background-color: $gray-dark;
-        }
-    }
 }
 
 .#{$ra} {
@@ -277,7 +227,7 @@ a {
                         color: $purple-light !important;
 
                         .ra__dark & {
-                            color: $green !important;
+                            color: $green-light !important;
                         }
                     }
 
@@ -316,7 +266,7 @@ a {
 
                     &:hover {
                         .ra__dark & {
-                            color: $green !important;
+                            color: $green-light !important;
                         }
                     }
 

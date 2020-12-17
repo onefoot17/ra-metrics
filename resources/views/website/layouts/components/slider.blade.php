@@ -2,7 +2,7 @@
     <div class="owl-carousel dots-inside dots-horizontal-center show-dots-hover nav-inside nav-inside-plus nav-dark nav-md nav-font-size-md show-nav-hover mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 1}, '979': {'items': 1}, '1199': {'items': 1}}, 'loop': false, 'autoHeight': false, 'margin': 0, 'dots': true, 'dotsVerticalOffset': '-75px', 'nav': true, 'animateIn': 'fadeIn', 'animateOut': 'fadeOut', 'mouseDrag': false, 'touchDrag': false, 'pullDrag': false, 'autoplay': true, 'autoplayTimeout': 9000, 'autoplayHoverPause': true, 'rewind': true}">
 
         <!-- Carousel Slide 1 -->
-        <div class="position-relative overlay overlay-show overlay-op-8 pt-5" style="background-image: url({{ asset( 'website/assets/images/slide-1.jpg' ) }}); background-size: cover; background-position: center; height: 100vh;">
+        <div class="position-relative overlay overlay-show overlay-op-4 pt-5" style="background-image: url({{ asset( 'website/assets/images/slide-1.jpg' ) }}); background-size: cover; background-position: center; height: 100vh;">
             {{-- <div class="position-absolute top-0 left-0 w-50pct w-lg-auto z-index-2">
                 <img src="{{ asset( 'website/porto/img/slides/slide-one-page-1-2.jpg' ) }}" class="w-100 appear-animation" data-appear-animation="fadeInRightDownShorter" data-appear-animation-delay="500' ) }}" alt="">
             </div>
@@ -42,7 +42,7 @@
         </div>
 
         <!-- Carousel Slide 2 -->
-        <div class="position-relative overlay overlay-show overlay-op-8 pt-5" style="background-image: url({{ asset( 'website/assets/images/slide-2.jpg' ) }}); background-size: cover; background-position: center; height: 100vh;">
+        <div class="position-relative overlay overlay-show overlay-op-4 pt-5" style="background-image: url({{ asset( 'website/assets/images/slide-2.jpg' ) }}); background-size: cover; background-position: center; height: 100vh;">
             {{-- <div class="container position-relative z-index-3 h-100">
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-lg-6">
@@ -89,7 +89,7 @@
         </div>
 
         <!-- Carousel Slide 3 -->
-        <div class="position-relative overlay overlay-show overlay-op-8 pt-5" style="background-image: url({{ asset( 'website/assets/images/slide-3.jpg' ) }}); background-size: cover; background-position: center; height: 100vh;">
+        <div class="position-relative overlay overlay-show overlay-op-4 pt-5" style="background-image: url({{ asset( 'website/assets/images/slide-3.jpg' ) }}); background-size: cover; background-position: center; height: 100vh;">
             {{-- <div class="container position-relative z-index-3 h-100">
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-lg-6">
@@ -136,7 +136,7 @@
         </div>
 
         <!-- Carousel Slide 4 -->
-        <div class="position-relative overlay overlay-show overlay-op-8 pt-5" style="background-image: url({{ asset( 'website/assets/images/slide-4.jpg' ) }}); background-size: cover; background-position: center; height: 100vh;">
+        <div class="position-relative overlay overlay-show overlay-op-4 pt-5" style="background-image: url({{ asset( 'website/assets/images/slide-4.jpg' ) }}); background-size: cover; background-position: center; height: 100vh;">
             {{-- <div class="container position-relative z-index-3 h-100">
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-lg-6">
