@@ -3,7 +3,7 @@
     <div class="ra__navbar__inner container-fluid">
         <!-- LOGO -->
         <div class="ra__navbar__logo-box logo-box">
-            <a href="{{ route('admin_home', [ Request::segment( 1 ) ] ) }}" class="logo logo-light text-center">
+            <a href="{{ route( 'home', [ Request::segment( 1 ) ] ) }}" class="logo logo-light text-center">
                 <span class="ra__navbar__logo-con logo-sm">
                     <img class="ra__navbar__logo" src="{{ asset( 'assets/images/logo-light.png' ) }}" alt="" width="150" />
                 </span>

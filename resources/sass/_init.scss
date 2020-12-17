@@ -31,10 +31,22 @@ h4,
 h5,
 h6 {
     @include line-height;
+
+    .ra__dark & {
+        color: $white;
+    }
+}
+
+h4.header-title {
+    font-size: 2.4rem;
 }
 
 p {
     @include line-height;
+
+    .ra__dark & {
+        color: $white;
+    }
 }
 
 a {
@@ -44,5 +56,40 @@ a {
 
     &:hover {
         @include transition;
+    }
+}
+
+.table td,
+.table th {
+    .ra__dark & {
+        color: $white;
+    }
+}
+
+text {
+    .ra__dark & {
+        fill: $white !important;
+    }
+}
+
+.text-muted {
+    .ra__dark & {
+        color: $white !important;
+    }
+}
+
+.text-dark {
+    .ra__dark & {
+        color: $white !important;
+    }
+}
+
+.card {
+    .ra__dark & {
+        background-color: $gray-dark;
+
+        &-box {
+            background-color: $gray-dark;
+        }
     }
 }

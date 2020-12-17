@@ -5,7 +5,7 @@
                 <div class="header-column header-column-logo">
                     <div class="header-row">
                         <div class="header-logo">
-                            <a href="index.html">
+                            <a href="{{ route( 'home', [ Request::segment( 1 ) ] ) }}">
                                 <img alt="Porto" src="{{ asset( 'assets/images/logo-light.png' ) }}" />
                             </a>
                         </div>

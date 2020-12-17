@@ -18,6 +18,14 @@ h2 {
     }
 }
 
+html #header .header-body {
+    background: rgba( $black, 0.8 ) !important;
+}
+
+html:not(.sticky-header-active) #header.header-transparent:not(.header-semi-transparent) .header-body {
+    background: rgba( $black, 0.4 ) !important;
+}
+
 #header {
     .header-nav {
         &.header-nav-links {
@@ -117,10 +125,67 @@ h2 {
     }
 } */
 
-.owl-carousel.nav-dark:not(.nav-style-1):not(.nav-style-2):not(.nav-style-3):not(.show-nav-title):not(.nav-arrows-1) .owl-nav button[class*="owl-"] {
+.main {
+    min-height: 100vh;
+
+    &:not(#home) {
+        padding-top: 100px;
+    }
+}
+
+.owl-carousel.nav-dark:not(.nav-style-1):not(.nav-style-2):not(.nav-style-3):not(.show-nav-title):not(.nav-arrows-1) .owl-nav button[class*='owl-'] {
     @include transition;
 
     background-color: $slider-button-bg-color !important;
+}
+
+.card {
+    .ra__dark & {
+        background-color: $gray-dark;
+
+        &-box {
+            background-color: $gray-dark;
+        }
+    }
+
+    a {
+        .ra__dark & {
+            color: $white !important;
+        }
+    }
+
+    div[class*='apexcharts-'] svg {
+        .ra__dark & {
+            fill: $white !important;
+        }
+    }
+}
+
+#plant-data {
+    background-color: $bg-color-secondary;
+
+    .fa,
+    .fab,
+    .fad,
+    .fal,
+    .far,
+    .fas {
+        display: flex;
+    }
+}
+
+#reports {
+    .card {
+        flex-grow: 1;
+    }
+}
+
+#participants {
+    background-color: $bg-color-primary;
+
+    .card {
+        flex-grow: 1;
+    }
 }
 
 ##{$footer} {

@@ -8,7 +8,8 @@ $purple: #972b84 !default;
 $purple-light: #ff02c8 !default;
 $red: #dd3333 !default;
 $red-light: #f1556c !default;
-$green: #61ff2a !default;
+$green: green !default;
+$green-light: #61ff2a !default;
 $white: #ffffff !default;
 
 // IE Fallback
@@ -54,6 +55,7 @@ $footer: 'footer' !default;
     --red: #{ $red };
     --red-medium: #{ map-get( $vars, red-medium ) };
     --green: #{ $green };
+    --green-light: #{ $green-light };
     --white-very-light: #{ map-get( $vars, white-very-light ) };
     --white: #{ $white };
     --white--rgb: #{ hex-to-rgb( $white ) };
@@ -71,12 +73,12 @@ $button-hover-color: $white !default;
 $button-bg-color-danger: $red !default;
 $button-bg-color-danger-dark: $red !default;
 $button-bg-color-info: $purple !default;
-$button-bg-color-info-dark: $green !default;
+$button-bg-color-info-dark: $green-light !default;
 $button-bg-color-primary: $purple !default;
-$button-bg-color-primary-dark: $green !default;
+$button-bg-color-primary-dark: $green-light !default;
 $button-color-primary-dark: $black !default;
 $button-bg-color-success: $purple !default;
-$button-bg-color-success-dark: $green !default;
+$button-bg-color-success-dark: $green-light !default;
 $button-color-success-dark: $black !default;
 $button-bg-hover-color: $black !default;
 $button-bg-hover-color-dark: $black !default;
@@ -94,6 +96,10 @@ $form-error-border-color: $form-error-color !default;
 
 // Slider
 $slider-button-bg-color: $black !default;
+
+// Backgrounds
+$bg-color-primary: $purple !important !default;
+$bg-color-secondary: $green !important !default;
 
 // Footer
 $footer-bg-color: $black !default;

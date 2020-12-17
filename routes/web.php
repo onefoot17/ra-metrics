@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\Users\SettingsController;
 use App\Http\Controllers\Admin\Users\UsersController;
 
 use App\Http\Controllers\Website\IndexController;
+use App\Http\Controllers\Website\AboutController;
 
 
 /*
@@ -47,6 +48,8 @@ Route::group(['prefix' => '{language}'], function(){
     App::setLocale(Request::segment(1));
 
     Route::get('/', [IndexController::class, 'index'])->name('home');
+
+    Route::get('/about', [AboutController::class, 'about'])->name('about');
 
     Route::group(['prefix' => 'admin'], function(){
 
