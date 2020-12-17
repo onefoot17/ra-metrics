@@ -4,7 +4,7 @@
             <div class="row py-4">
                 <div class="col d-flex align-items-center justify-content-center">
                     <p>
-                        Site designed by <strong><a href="https://vcompinc.com" target="_blank">VCOMP Inc.</a></strong> - © Copyright <strong><a href="#home">RA-METRICS</a></strong> 2020. All Rights Reserved.</p>
+                        Site designed by <strong><a href="https://vcompinc.com" target="_blank">VCOMP Inc.</a></strong> - © Copyright <strong><a href="#home">{{ env( 'APP_NAME' ) }}</a></strong> 2020. All Rights Reserved.</p>
                 </div>
             </div>
         </div>

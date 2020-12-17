@@ -42,6 +42,10 @@ h2 {
             }
         }
     }
+
+    .header-btn-collapse-nav {
+        background: $purple;
+    }
 }
 
 @include for-992-down {

@@ -3,7 +3,7 @@
         <div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1 justify-content-center">
             <div class="header-nav-main header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
                 <nav class="collapse">
-                    <ul class="nav nav-pills" id="mainNav">
+                    <ul class="nav nav-pills justify-content-center" id="mainNav">
                         <li class="dropdown">
                             <a data-hash class="dropdown-item dropdown-toggle active" href="#home">
                                 Home
