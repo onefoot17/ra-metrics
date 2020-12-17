@@ -428,6 +428,9 @@ h2 {
 #header .header-nav.header-nav-links nav > ul:not(:hover) > li > a.active {
   color: #ff02c8;
 }
+#header .header-btn-collapse-nav {
+  background: #972b84;
+}
 
 @media (max-width: 991px) {
   .header-column-logo {
