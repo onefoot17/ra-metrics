@@ -207,8 +207,9 @@ h2.header-title {
   font-size: 2rem;
 }
 
-h4 {
-  font-size: 1.8rem;
+h4,
+h4.header-title {
+  font-size: 1.6rem;
 }
 
 p {
@@ -418,9 +419,15 @@ a:hover {
 .btn-primary {
   background-color: #2e3e4c;
 }
+.btn-primary:hover {
+  background-color: #2e3e4c;
+}
 .ra__dark .btn-primary {
   background-color: #2e3e4c;
   color: #ffffff;
+}
+.ra__dark .btn-primary:hover {
+  background-color: #61ff2a;
 }
 .btn-danger {
   background-color: #2e3e4c;
@@ -438,8 +445,14 @@ a:hover {
 .btn-info {
   background-color: #2e3e4c;
 }
+.btn-info:hover {
+  background-color: #2e3e4c;
+}
 .ra__dark .btn-info {
   background-color: #2e3e4c;
+}
+.ra__dark .btn-info:hover {
+  background-color: #61ff2a;
 }
 
 .swal2-popup {
@@ -484,6 +497,13 @@ a:hover {
 /* &__display__td {
     border: none !important;
 } */
+@media (max-width: 991px) {
+  #header .header-nav-main nav > ul li.dropdown .dropdown-menu,
+ul.navbar-nav > li.dropdown .dropdown-menu {
+    display: block;
+    padding-left: 2rem;
+  }
+}
 html.ra__authentication {
   height: 100%;
 }
@@ -826,13 +846,13 @@ body[data-sidebar-size=condensed] .ra__navbar__logo-box {
 .ra__plants__table-alt__img-con img {
   width: 100%;
 }
-.ra__plants__table-alt h4 {
+.ra__plants__table-alt h5 {
   flex-basis: 50%;
   flex-shrink: 1;
   line-height: 1;
 }
 @media (max-width: 639px) {
-  .ra__plants__table-alt h4 {
+  .ra__plants__table-alt h5 {
     flex-basis: 100%;
   }
 }

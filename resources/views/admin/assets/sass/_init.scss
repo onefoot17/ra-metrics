@@ -1,7 +1,12 @@
+// Intialization
+@import '_variables';
+@import '_mixins';
+
 // Theme Settings
 
 // Typography
 $body-font-size: 1.4rem;
+$h4-font-size: 1.6rem;
 
 // Buttons
 $button-bg-color-danger: $button-bg-color;

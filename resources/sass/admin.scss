@@ -1,10 +1,11 @@
 // Intialization
-@import '_init';
 @import '../views/admin/assets/sass/_init';
+@import '_init';
 @import '_forms';
 @import '_buttons';
 @import '_alerts';
 @import '_tables';
+@import '_nav';
 @import '../views/admin/assets/sass/_auth';
 
 #{$body} {
@@ -338,7 +339,7 @@ a {
                 }
             }
 
-            h4 {
+            h5 {
                 flex-basis: 50%;
                 flex-shrink: 1;
                 line-height: 1;

@@ -1,3 +1,7 @@
+html {
+  font-size: 12px;
+}
+
 html,
 body,
 div,
@@ -207,7 +211,8 @@ h2.header-title {
   font-size: 2rem;
 }
 
-h4 {
+h4,
+h4.header-title {
   font-size: 1.8rem;
 }
 
@@ -248,10 +253,6 @@ a:hover {
 }
 .ra__dark .card-box {
   background-color: #1e2933;
-}
-
-html {
-  font-size: 12px;
 }
 
 .ra__dark input::-moz-placeholder {
@@ -420,11 +421,17 @@ html {
   background-color: #000000;
 }
 .btn-primary {
-  background-color: #972b84;
+  background-color: #972b84 !important;
+}
+.btn-primary:hover {
+  background-color: #000000 !important;
 }
 .ra__dark .btn-primary {
   background-color: #61ff2a;
   color: #ffffff;
+}
+.ra__dark .btn-primary:hover {
+  background-color: #000000;
 }
 .btn-danger {
   background-color: #dd3333;
@@ -442,8 +449,14 @@ html {
 .btn-info {
   background-color: #972b84;
 }
+.btn-info:hover {
+  background-color: #000000;
+}
 .ra__dark .btn-info {
   background-color: #61ff2a;
+}
+.ra__dark .btn-info:hover {
+  background-color: #000000;
 }
 
 .swal2-popup {
@@ -476,6 +489,13 @@ html {
 }
 .swal2-popup .swal2-styled {
   transition: all 200ms ease-in-out;
+}
+@media (max-width: 991px) {
+  #header .header-nav-main nav > ul li.dropdown .dropdown-menu,
+ul.navbar-nav > li.dropdown .dropdown-menu {
+    display: block;
+    padding-left: 2rem;
+  }
 }
 body * {
   font-size: 1.4rem;
@@ -600,6 +620,9 @@ html:not(.sticky-header-active) #header.header-transparent:not(.header-semi-tran
 .owl-carousel.nav-dark:not(.nav-style-1):not(.nav-style-2):not(.nav-style-3):not(.show-nav-title):not(.nav-arrows-1) .owl-nav button[class*=owl-] {
   transition: all 200ms ease-in-out;
   background-color: #972b84 !important;
+}
+.owl-carousel.nav-dark:not(.nav-style-1):not(.nav-style-2):not(.nav-style-3):not(.show-nav-title):not(.nav-arrows-1) .owl-nav button[class*=owl-]:hover {
+  background-color: #000000 !important;
 }
 
 .ra__dark .card {

@@ -54,9 +54,17 @@
         &-primary {
             background-color: $button-bg-color-primary;
 
+            &:hover {
+                background-color: $button-bg-hover-color-primary;
+            }
+
             .ra__dark & {
                 background-color: $button-bg-color-primary-dark;
                 color: $button-color-primary-dark;
+
+                &:hover {
+                    background-color: $button-bg-hover-color-primary-dark;
+                }
             }
         }
 
@@ -80,8 +88,16 @@
         &-info {
             background-color: $button-bg-color-info;
 
+            &:hover {
+                background-color: $button-bg-hover-color-info;
+            }
+
             .ra__dark & {
                 background-color: $button-bg-color-info-dark;
+
+                &:hover {
+                    background-color: $button-bg-hover-color-info-dark;
+                }
             }
         }
 

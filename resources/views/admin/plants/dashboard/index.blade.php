@@ -19,7 +19,7 @@
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="header-title">@lang('New Plant Parents / Species')</h2>
+                    <h4 class="header-title">@lang('New Plant Parents / Species')</h4>
 
                     <div class="row">
                         <div class="col-lg-12">
@@ -55,7 +55,7 @@
 
         <div class="col-lg-8">
             <div class="card-box">
-                <h2 class="header-title">@lang('Plant Parents / Species')</h2>
+                <h4 class="header-title">@lang('Plant Parents / Species')</h4>
 
                 <div class="table-responsive">
                     <table class="table mb-0 ra__plants__table-alt">
@@ -71,7 +71,7 @@
 
                                     <td>
                                         <div class="d-flex flex-wrap justify-content-between h-100">
-                                            <h4>{{ $plantParentsSpeciesCollection->plant_parent_name }}</h4>
+                                            <h5>{{ $plantParentsSpeciesCollection->plant_parent_name }}</h5>
 
                                             <form method="POST" action="{{route('plant_parents_species_destroy', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" id='form-plant-parent-specie-{{$plantParentsSpeciesCollection->id}}'>
                                                 @csrf
