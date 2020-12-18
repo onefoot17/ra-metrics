@@ -8,6 +8,9 @@ use App\Repositories\Plants\Contracts\PlantParentSpecieRepositoryInterface;
 use App\Repositories\Plants\Contracts\PlantTypeRepositoryInterface;
 use App\Repositories\Plants\Contracts\PlantRepositoryInterface;
 
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
+
 use Str;
 
 class PlantService implements PlantServiceInterface
@@ -59,9 +62,22 @@ class PlantService implements PlantServiceInterface
 
     public function storePlantParentSpecie($request)
     {
+        $image_path = $this->saveImage($request);
+
+        $request->image_path = (!is_null($image_path))?$image_path:null;
+
         $insert = $this->plantParentSpecieRepository->store($request);
 
         return $insert;
+    }
+
+    public function saveImage($request)
+    {
+        $path = Storage::disk('local')->putFile('public/images/plant_parents', $request->file('image'));
+        
+        Storage::setVisibility($path, 'public');
+
+        return $path;
     }
 
     public function destroyPlantParentSpecie($id)
