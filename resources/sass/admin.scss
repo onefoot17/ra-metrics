@@ -4,6 +4,7 @@
 @import '_forms';
 @import '_buttons';
 @import '_alerts';
+@import '_tables';
 @import '../views/admin/assets/sass/_auth';
 
 #{$body} {
@@ -301,7 +302,7 @@ a {
     }
 
     &#{$es}plants {
-        &#{$es}display {
+        /* &#{$es}display {
             @include display-flex(
                 $align-items: flex-start
             );
@@ -312,17 +313,48 @@ a {
                     max-width: initial;
                 }
             }
+        } */
+
+        &#{$es}table-alt {
+            tr {
+                display: flex;
+            }
+
+            tr td:last-child {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                justify-content: space-between;
+            }
+
+            .btn {
+                background-color: $gray-medium;
+                padding: $padding/4 $padding;
+
+                &-success:hover{
+                    background-color: $button-bg-color-success-dark;
+                    color: $button-color-success-dark;
+                }
+
+                &-danger:hover{
+                    background-color: $button-bg-color-danger-dark;
+                }
+            }
         }
 
-        &#{$es}display__tr {
-            @include display-flex(
-                $align-items: flex-start,
-                $flex-shrink: 1
-            );
+        &#{$es}img-con {
+            flex-basis: 10%;
+            flex-shrink: 0;
+            min-width: 100px;
+            width: 10%;
+
+            img {
+                width: 100%;
+            }
         }
 
-        &#{$es}display__td {
-            border: none !important;
+        .text-truncate {
+            width: 400px;
         }
     }
 }
