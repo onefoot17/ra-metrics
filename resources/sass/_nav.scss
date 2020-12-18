@@ -1,0 +1,8 @@
+// Navigation
+@include for-992-down {
+    #header .header-nav-main nav > ul li.dropdown .dropdown-menu,
+    ul.navbar-nav > li.dropdown .dropdown-menu {
+        display: block;
+        padding-left: $padding*2;
+    }
+}

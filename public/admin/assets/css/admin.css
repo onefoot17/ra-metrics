@@ -203,8 +203,13 @@ h6 {
   color: #ffffff;
 }
 
+h2.header-title {
+  font-size: 2rem;
+}
+
+h4,
 h4.header-title {
-  font-size: 2.4rem;
+  font-size: 1.6rem;
 }
 
 p {
@@ -303,10 +308,11 @@ a:hover {
   font-size: 1.6rem;
 }
 
-html .btn, html .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup html .swal2-styled.swal2-confirm {
+.btn, .swal2-popup .swal2-styled.swal2-confirm {
+  background-color: #2e3e4c;
   border-radius: 0.25rem;
   font-size: 1.4rem;
-  padding: 0.5rem 2rem;
+  padding: 0.25rem 1rem;
   /* // .ra__settings {
       &-outline-success {
           border-color: $purple;
@@ -377,57 +383,87 @@ html .btn, html .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup html .swa
       }
   // } */
 }
-html .btn-success, html .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup html .swal2-styled.swal2-confirm, html .btn-primary, html .btn-danger, html .btn-info {
+.btn-success, .swal2-popup .swal2-styled.swal2-confirm, .btn-primary, .btn-danger, .btn-info {
   border: none;
   box-shadow: none;
   color: #ffffff;
   width: auto !important;
 }
-html .btn-success:hover, html .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup html .swal2-styled.swal2-confirm:hover, html .btn-primary:hover, html .btn-danger:hover, html .btn-info:hover {
+.btn-success:hover, .swal2-popup .swal2-styled.swal2-confirm:hover, .btn-primary:hover, .btn-danger:hover, .btn-info:hover {
   background-color: #000000;
 }
-.ra__dark html .btn-success, .ra__dark html .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark html .swal2-styled.swal2-confirm, .ra__dark html .btn-primary, .ra__dark html .btn-danger, .ra__dark html .btn-info {
+.ra__dark .btn-success, .ra__dark .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark .swal2-styled.swal2-confirm, .ra__dark .btn-primary, .ra__dark .btn-danger, .ra__dark .btn-info {
+  background-color: #2e3e4c;
   color: #ffffff;
 }
-.ra__dark html .btn-success:hover, .ra__dark html .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup .ra__dark html .swal2-styled.swal2-confirm:hover, .ra__dark html .btn-primary:hover, .ra__dark html .btn-danger:hover, .ra__dark html .btn-info:hover {
+.ra__dark .btn-success:hover, .ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover, .ra__dark .btn-primary:hover, .ra__dark .btn-danger:hover, .ra__dark .btn-info:hover {
   background-color: #000000;
+  color: #000000;
+}
+.btn:hover, .swal2-popup .swal2-styled.swal2-confirm:hover {
+  background-color: #000000;
+}
+.btn-success, .swal2-popup .swal2-styled.swal2-confirm {
+  background-color: #2e3e4c;
+}
+.btn-success:hover, .swal2-popup .swal2-styled.swal2-confirm:hover {
+  background-color: #2e3e4c;
+}
+.ra__dark .btn-success, .ra__dark .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark .swal2-styled.swal2-confirm {
+  background-color: #2e3e4c;
   color: #ffffff;
 }
-html .btn:hover, html .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup html .swal2-styled.swal2-confirm:hover {
-  background-color: #000000;
-}
-html .btn-success, html .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup html .swal2-styled.swal2-confirm {
-  background-color: #972b84;
-}
-.ra__dark html .btn-success, .ra__dark html .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark html .swal2-styled.swal2-confirm {
+.ra__dark .btn-success:hover, .ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover {
   background-color: #61ff2a;
-  color: #000000;
 }
-html .btn-primary {
-  background-color: #972b84;
+.btn-primary {
+  background-color: #2e3e4c;
 }
-.ra__dark html .btn-primary {
+.btn-primary:hover {
+  background-color: #2e3e4c;
+}
+.ra__dark .btn-primary {
+  background-color: #2e3e4c;
+  color: #ffffff;
+}
+.ra__dark .btn-primary:hover {
   background-color: #61ff2a;
-  color: #000000;
 }
-html .btn-danger {
+.btn-danger {
+  background-color: #2e3e4c;
+}
+.btn-danger:hover {
+  background-color: #2e3e4c;
+}
+.ra__dark .btn-danger {
+  background-color: #2e3e4c;
+}
+.ra__dark .btn-danger:hover {
   background-color: #dd3333;
+  color: #ffffff;
 }
-.ra__dark html .btn-danger {
-  background-color: #dd3333;
+.btn-info {
+  background-color: #2e3e4c;
 }
-html .btn-info {
-  background-color: #972b84;
+.btn-info:hover {
+  background-color: #2e3e4c;
 }
-.ra__dark html .btn-info {
+.ra__dark .btn-info {
+  background-color: #2e3e4c;
+}
+.ra__dark .btn-info:hover {
   background-color: #61ff2a;
 }
 
 .swal2-popup {
   background-color: #1e2933;
   border-radius: 0.25rem;
-  max-width: 400px;
-  width: 40%;
+}
+@media (min-width: 640px) {
+  .swal2-popup {
+    max-width: 400px;
+    width: 40%;
+  }
 }
 .ra__dark .swal2-popup {
   background-color: #ffffff;
@@ -450,6 +486,24 @@ html .btn-info {
 .swal2-popup .swal2-styled {
   transition: all 200ms ease-in-out;
 }
+/* table.table {
+    tr {
+        @include display-flex(
+            $align-items: flex-start,
+            $flex-shrink: 1
+        );
+    }
+} */
+/* &__display__td {
+    border: none !important;
+} */
+@media (max-width: 991px) {
+  #header .header-nav-main nav > ul li.dropdown .dropdown-menu,
+ul.navbar-nav > li.dropdown .dropdown-menu {
+    display: block;
+    padding-left: 2rem;
+  }
+}
 html.ra__authentication {
   height: 100%;
 }
@@ -462,7 +516,7 @@ body.ra__dark {
   color: #ffffff;
 }
 body.ra__authentication.authentication-bg-pattern {
-  background-image: url("/assets/images/bg-login.jpg");
+  background-image: url(/images/bg-login.jpg?36a493e296ea15996044cd8ab3a17639);
   background-repeat: no-repeat;
   height: 100%;
 }
@@ -760,52 +814,97 @@ body[data-sidebar-size=condensed] .ra__navbar__logo-box {
 .ra__navbar__navbar-toggle {
   padding-right: 0 !important;
 }
-.ra__plants__display {
-  align-items: flex-start;
+.ra__plants {
+  /* &__display {
+      @include display-flex(
+          $align-items: flex-start
+      );
+
+      @include for-desktop-1400-down {
+          > * {
+              flex-basis: 100%;
+              max-width: initial;
+          }
+      }
+  } */
+}
+.ra__plants__table-alt tr {
   display: flex;
-  flex-wrap: wrap;
+}
+.ra__plants__table-alt tr td:last-child {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   justify-content: space-between;
 }
-@media (max-width: 599px) {
-  .ra__plants__display {
-    flex-wrap: wrap;
-  }
+.ra__plants__table-alt__img-con {
+  flex-basis: 10%;
+  flex-shrink: 0;
+  min-width: 100px;
+  width: 10%;
 }
-.ra__plants__display > * {
-  flex: 0 0 auto;
+.ra__plants__table-alt__img-con img {
+  width: 100%;
 }
-@media (max-width: 599px) {
-  .ra__plants__display > * {
+.ra__plants__table-alt h5 {
+  flex-basis: 50%;
+  flex-shrink: 1;
+  line-height: 1;
+}
+@media (max-width: 639px) {
+  .ra__plants__table-alt h5 {
     flex-basis: 100%;
   }
 }
-@media (max-width: 1399px) {
-  .ra__plants__display > * {
-    flex-basis: 100%;
-    max-width: initial;
-  }
-}
-.ra__plants__display__tr {
-  align-items: flex-start;
+.ra__plants__table-alt form {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
+  flex-basis: 50%;
+  flex-grow: 1;
 }
-@media (max-width: 599px) {
-  .ra__plants__display__tr {
-    flex-wrap: wrap;
-  }
-}
-.ra__plants__display__tr > * {
-  flex: 0 1 auto;
-}
-@media (max-width: 599px) {
-  .ra__plants__display__tr > * {
+@media (max-width: 639px) {
+  .ra__plants__table-alt form {
+    display: flex;
+    align-items: flex-end;
+    align-self: flex-end;
     flex-basis: 100%;
+    justify-content: flex-start;
+    order: 1;
   }
 }
-.ra__plants__display__td {
-  border: none !important;
+@media (max-width: 479px) {
+  .ra__plants__table-alt form {
+    justify-content: space-between;
+  }
+}
+.ra__plants__table-alt form > * {
+  align-self: flex-start;
+  margin-right: 0.25rem;
+}
+.ra__plants__table-alt form > *:last-child {
+  margin-right: 0;
+}
+.ra__plants__table-alt .text-truncate {
+  align-self: flex-end;
+  width: 600px;
+}
+@media (max-width: 1199px) {
+  .ra__plants__table-alt .text-truncate {
+    width: 400px;
+  }
+}
+@media (max-width: 639px) {
+  .ra__plants__table-alt .text-truncate {
+    align-items: center;
+    flex-basis: auto;
+    margin-bottom: 0.5rem;
+    width: 200px;
+  }
+}
+@media (max-width: 479px) {
+  .ra__plants__table-alt .text-truncate {
+    width: 100px;
+  }
 }
 
 .footer {

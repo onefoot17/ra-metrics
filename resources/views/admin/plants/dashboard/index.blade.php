@@ -1,6 +1,6 @@
 @extends('admin.layouts.main')
 
-@php 
+@php
 
 @endphp
 
@@ -15,12 +15,12 @@
 
 @section('content')
 
-    <div class="row ra__plants__display">
-
-        <div class="col-6">
+    <div class="row">
+        <div class="col-lg-4">
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title">@lang('New Plant Parents / Species')</h4>
+
                     <div class="row">
                         <div class="col-lg-12">
                             <form action="{{route('plant_parents_species_store', [Request::Segment(1)])}}" method="POST" enctype="multipart/form-data">
@@ -53,52 +53,49 @@
             </div> <!-- end card -->
         </div><!-- end col -->
 
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             <div class="card-box">
                 <h4 class="header-title">@lang('Plant Parents / Species')</h4>
 
-                <div class="table-responsive inbox-widget" data-simplebar style="max-height: 970px;">
-                    <table class="table table-striped mb-0 ra__plants__display__table">
-                        <tbody class="ra__plants__display__tbody">
+                <div class="table-responsive">
+                    <table class="table mb-0 ra__plants__table-alt">
+                        <tbody>
                             @foreach($plantParentsSpecies as $ind => $plantParentsSpeciesCollection)
-                                
+
                                 @php $ind++ @endphp
-    
-                                <tr class="ra__plants__display__tr">
-                                    <td class="ra__plants__display__td">
-                                        <img src="{{ asset(Storage::url($plantParentsSpeciesCollection->image_path)) }}" alt="image" class="img-fluid avatar-lg rounded" />
-                                    </td>
-                                    
-                                    <td class="ra__plants__display__td">
-                                        <h4>{{$plantParentsSpeciesCollection->plant_parent_name}}</h4>
+
+                                <tr>
+                                    <td class="ra__plants__table-alt__img-con">
+                                        <img src="{{asset('admin/assets/images/users/user-'.$ind.'.jpg')}}" />
                                     </td>
 
-                                    <td class="with-btn ra__plants__display__td" nowrap>
-                                        <form method="POST" action="{{route('plant_parents_species_destroy', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" id='form-plant-parent-specie-{{$plantParentsSpeciesCollection->id}}' class="ra__plants__display__buttons">
-                                            @csrf
-                                            <input type="hidden" name="_method" value="DELETE">
-                                            <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-success waves-effect waves-light ra__plants__display__buttons__edit">@lang('Edit')</a>
-                                            <a href="javascript:;" 
-                                                class="btn btn-danger waves-effect waves-light delete_data"
-                                                variable-name='plant-parent-specie' plant-parent-specie='{{$plantParentsSpeciesCollection->id}}'
-                                                {{-- onclick="event.preventDefault();
-                                                    this.closest('form').submit();" --}}
-                                                    >@lang('Delete')</a>
-                                        </form>
+                                    <td>
+                                        <div class="d-flex flex-wrap justify-content-between h-100">
+                                            <h5>{{ $plantParentsSpeciesCollection->plant_parent_name }}</h5>
+
+                                            <form method="POST" action="{{route('plant_parents_species_destroy', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" id='form-plant-parent-specie-{{$plantParentsSpeciesCollection->id}}'>
+                                                @csrf
+
+                                                <input type="hidden" name="_method" value="DELETE">
+
+                                                <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-success waves-effect waves-light">@lang('More')</a>
+
+                                                <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-success waves-effect waves-light">@lang('Edit')</a>
+
+                                                <a href="javascript:;" class="btn btn-danger waves-effect waves-light delete_data" variable-name='plant-parent-specie' plant-parent-specie='{{$plantParentsSpeciesCollection->id}}' {{-- onclick="event.preventDefault(); this.closest('form').submit();" --}}>@lang('Delete')</a>
+                                            </form>
+
+                                            <p class="text-truncate">{{ $plantParentsSpeciesCollection->comments_less }}</p>
+                                        </div>
                                     </td>
-                                    
-                                    <td class="ra__plants__display__td">{{$plantParentsSpeciesCollection->comments_less}}</td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div> <!-- end table-responsive-->
-
             </div> <!-- end card-box -->
         </div> <!-- end col -->
-    </div>
-    <!-- end row -->
-
+    </div> <!-- end row -->
 @stop
 
 @section('js')
@@ -129,20 +126,20 @@
             }).then(function (t) {
 
                 if(t.value === true){
-                    Swal.fire({ 
-                        title: "@lang('Deleted!')", 
-                        text: "@lang('Your file has been deleted.')", 
-                        type: "success" 
+                    Swal.fire({
+                        title: "@lang('Deleted!')",
+                        text: "@lang('Your file has been deleted.')",
+                        type: "success"
                     }).then(function(button_success){
-                        
+
                         document.getElementById('form-'+variable_name+'-'+id).submit();
 
                     });
                 } else {
-                    t.dismiss === Swal.DismissReason.cancel && Swal.fire({ 
-                        title: "@lang('Cancelled')", 
-                        text: "@lang('Nothing was deleted')", 
-                        type: "error" 
+                    t.dismiss === Swal.DismissReason.cancel && Swal.fire({
+                        title: "@lang('Cancelled')",
+                        text: "@lang('Nothing was deleted')",
+                        type: "error"
                     });
                 }
             });

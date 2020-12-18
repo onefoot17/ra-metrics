@@ -1,4 +1,31 @@
+// Intialization
+@import '_variables';
+@import '_mixins';
+
 // Theme Settings
 
 // Typography
-$font-size: 1.4rem;
+$body-font-size: 1.4rem;
+$h4-font-size: 1.6rem;
+
+// Buttons
+$button-bg-color-danger: $button-bg-color;
+$button-bg-hover-color-danger: $button-bg-color-danger;
+$button-bg-hover-color-danger-dark: $button-bg-color-danger-dark;
+$button-bg-color-danger-dark: $button-bg-color;
+$button-hover-color-danger-dark: $white;
+
+$button-bg-color-info: $button-bg-color;
+$button-bg-hover-color-info: $button-bg-color-info;
+$button-bg-hover-color-info-dark: $button-bg-color-info-dark;
+$button-bg-color-info-dark: $button-bg-color;
+
+$button-bg-color-primary: $button-bg-color;
+$button-bg-hover-color-primary: $button-bg-color-primary;
+$button-bg-hover-color-primary-dark: $button-bg-color-primary-dark;
+$button-bg-color-primary-dark: $button-bg-color;
+
+$button-bg-color-success: $button-bg-color;
+$button-bg-hover-color-success: $button-bg-color-success;
+$button-bg-hover-color-success-dark: $button-bg-color-success-dark;
+$button-bg-color-success-dark: $button-bg-color;

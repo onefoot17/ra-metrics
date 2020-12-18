@@ -1,3 +1,7 @@
+html {
+  font-size: 12px;
+}
+
 html,
 body,
 div,
@@ -203,8 +207,13 @@ h6 {
   color: #ffffff;
 }
 
+h2.header-title {
+  font-size: 2rem;
+}
+
+h4,
 h4.header-title {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
 }
 
 p {
@@ -244,10 +253,6 @@ a:hover {
 }
 .ra__dark .card-box {
   background-color: #1e2933;
-}
-
-html {
-  font-size: 12px;
 }
 
 .ra__dark input::-moz-placeholder {
@@ -307,10 +312,11 @@ html {
   font-size: 1.6rem;
 }
 
-html .btn, html .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup html .swal2-styled.swal2-confirm {
+.btn, .swal2-popup .swal2-styled.swal2-confirm {
+  background-color: #2e3e4c;
   border-radius: 0.25rem;
   font-size: 1.4rem;
-  padding: 0.5rem 2rem;
+  padding: 0.25rem 1rem;
   /* // .ra__settings {
       &-outline-success {
           border-color: $purple;
@@ -381,57 +387,87 @@ html .btn, html .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup html .swa
       }
   // } */
 }
-html .btn-success, html .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup html .swal2-styled.swal2-confirm, html .btn-primary, html .btn-danger, html .btn-info {
+.btn-success, .swal2-popup .swal2-styled.swal2-confirm, .btn-primary, .btn-danger, .btn-info {
   border: none;
   box-shadow: none;
   color: #ffffff;
   width: auto !important;
 }
-html .btn-success:hover, html .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup html .swal2-styled.swal2-confirm:hover, html .btn-primary:hover, html .btn-danger:hover, html .btn-info:hover {
+.btn-success:hover, .swal2-popup .swal2-styled.swal2-confirm:hover, .btn-primary:hover, .btn-danger:hover, .btn-info:hover {
   background-color: #000000;
 }
-.ra__dark html .btn-success, .ra__dark html .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark html .swal2-styled.swal2-confirm, .ra__dark html .btn-primary, .ra__dark html .btn-danger, .ra__dark html .btn-info {
+.ra__dark .btn-success, .ra__dark .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark .swal2-styled.swal2-confirm, .ra__dark .btn-primary, .ra__dark .btn-danger, .ra__dark .btn-info {
+  background-color: #2e3e4c;
   color: #ffffff;
 }
-.ra__dark html .btn-success:hover, .ra__dark html .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup .ra__dark html .swal2-styled.swal2-confirm:hover, .ra__dark html .btn-primary:hover, .ra__dark html .btn-danger:hover, .ra__dark html .btn-info:hover {
+.ra__dark .btn-success:hover, .ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover, .ra__dark .btn-primary:hover, .ra__dark .btn-danger:hover, .ra__dark .btn-info:hover {
+  background-color: #000000;
+  color: #000000;
+}
+.btn:hover, .swal2-popup .swal2-styled.swal2-confirm:hover {
+  background-color: #000000;
+}
+.btn-success, .swal2-popup .swal2-styled.swal2-confirm {
+  background-color: #972b84;
+}
+.btn-success:hover, .swal2-popup .swal2-styled.swal2-confirm:hover {
+  background-color: #000000;
+}
+.ra__dark .btn-success, .ra__dark .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark .swal2-styled.swal2-confirm {
+  background-color: #61ff2a;
+  color: #ffffff;
+}
+.ra__dark .btn-success:hover, .ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover {
+  background-color: #000000;
+}
+.btn-primary {
+  background-color: #972b84 !important;
+}
+.btn-primary:hover {
+  background-color: #000000 !important;
+}
+.ra__dark .btn-primary {
+  background-color: #61ff2a;
+  color: #ffffff;
+}
+.ra__dark .btn-primary:hover {
+  background-color: #000000;
+}
+.btn-danger {
+  background-color: #dd3333;
+}
+.btn-danger:hover {
+  background-color: #000000;
+}
+.ra__dark .btn-danger {
+  background-color: #dd3333;
+}
+.ra__dark .btn-danger:hover {
   background-color: #000000;
   color: #ffffff;
 }
-html .btn:hover, html .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup html .swal2-styled.swal2-confirm:hover {
+.btn-info {
+  background-color: #972b84;
+}
+.btn-info:hover {
   background-color: #000000;
 }
-html .btn-success, html .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup html .swal2-styled.swal2-confirm {
-  background-color: #972b84;
-}
-.ra__dark html .btn-success, .ra__dark html .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark html .swal2-styled.swal2-confirm {
+.ra__dark .btn-info {
   background-color: #61ff2a;
-  color: #000000;
 }
-html .btn-primary {
-  background-color: #972b84;
-}
-.ra__dark html .btn-primary {
-  background-color: #61ff2a;
-  color: #000000;
-}
-html .btn-danger {
-  background-color: #dd3333;
-}
-.ra__dark html .btn-danger {
-  background-color: #dd3333;
-}
-html .btn-info {
-  background-color: #972b84;
-}
-.ra__dark html .btn-info {
-  background-color: #61ff2a;
+.ra__dark .btn-info:hover {
+  background-color: #000000;
 }
 
 .swal2-popup {
   background-color: #1e2933;
   border-radius: 0.25rem;
-  max-width: 400px;
-  width: 40%;
+}
+@media (min-width: 640px) {
+  .swal2-popup {
+    max-width: 400px;
+    width: 40%;
+  }
 }
 .ra__dark .swal2-popup {
   background-color: #ffffff;
@@ -453,6 +489,13 @@ html .btn-info {
 }
 .swal2-popup .swal2-styled {
   transition: all 200ms ease-in-out;
+}
+@media (max-width: 991px) {
+  #header .header-nav-main nav > ul li.dropdown .dropdown-menu,
+ul.navbar-nav > li.dropdown .dropdown-menu {
+    display: block;
+    padding-left: 2rem;
+  }
 }
 body * {
   font-size: 1.4rem;
@@ -577,6 +620,9 @@ html:not(.sticky-header-active) #header.header-transparent:not(.header-semi-tran
 .owl-carousel.nav-dark:not(.nav-style-1):not(.nav-style-2):not(.nav-style-3):not(.show-nav-title):not(.nav-arrows-1) .owl-nav button[class*=owl-] {
   transition: all 200ms ease-in-out;
   background-color: #972b84 !important;
+}
+.owl-carousel.nav-dark:not(.nav-style-1):not(.nav-style-2):not(.nav-style-3):not(.show-nav-title):not(.nav-arrows-1) .owl-nav button[class*=owl-]:hover {
+  background-color: #000000 !important;
 }
 
 .ra__dark .card {

@@ -1,9 +1,11 @@
 // Intialization
-@import '_init';
 @import '../views/admin/assets/sass/_init';
+@import '_init';
 @import '_forms';
 @import '_buttons';
 @import '_alerts';
+@import '_tables';
+@import '_nav';
 @import '../views/admin/assets/sass/_auth';
 
 #{$body} {
@@ -301,7 +303,7 @@ a {
     }
 
     &#{$es}plants {
-        &#{$es}display {
+        /* &#{$es}display {
             @include display-flex(
                 $align-items: flex-start
             );
@@ -312,17 +314,90 @@ a {
                     max-width: initial;
                 }
             }
-        }
+        } */
 
-        &#{$es}display__tr {
-            @include display-flex(
-                $align-items: flex-start,
-                $flex-shrink: 1
-            );
-        }
+        &#{$es}table-alt {
+            tr {
+                display: flex;
+            }
 
-        &#{$es}display__td {
-            border: none !important;
+            tr td:last-child {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                justify-content: space-between;
+            }
+
+            &#{$es}img-con {
+                flex-basis: 10%;
+                flex-shrink: 0;
+                min-width: 100px;
+                width: 10%;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            h5 {
+                flex-basis: 50%;
+                flex-shrink: 1;
+                line-height: 1;
+
+                @include for-640-down {
+                    flex-basis: 100%;
+                }
+            }
+
+            form {
+                display: flex;
+                justify-content: flex-end;
+                flex-basis: 50%;
+                flex-grow: 1;
+
+                @include for-640-down {
+                    display: flex;
+                    align-items: flex-end;
+                    align-self: flex-end;
+                    flex-basis: 100%;
+                    justify-content: flex-start;
+                    order: 1;
+                }
+
+                @include for-480-down {
+                    justify-content: space-between;
+                }
+
+                > * {
+                    align-self: flex-start;
+                    margin-right: $margin/4;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .text-truncate {
+                align-self: flex-end;
+                width: 600px;
+
+                @include for-desktop-down {
+                    width: 400px;
+                }
+
+
+                @include for-640-down {
+                    align-items: center;
+                    flex-basis: auto;
+                    margin-bottom: $margin/2;
+                    width: 200px;
+                }
+
+                @include for-480-down {
+                    width: 100px;
+                }
+            }
         }
     }
 }

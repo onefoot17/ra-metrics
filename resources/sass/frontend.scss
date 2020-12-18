@@ -1,13 +1,14 @@
 // Intialization
-@import '_init';
 @import '../views/website/assets/sass/_init';
+@import '_init';
 @import '_forms';
 @import '_buttons';
 @import '_alerts';
+@import '_nav';
 
 #{$body} {
     * {
-        font-size: $font-size;
+        font-size: $body-font-size;
     }
 }
 
@@ -158,6 +159,10 @@ html:not(.sticky-header-active) #header.header-transparent:not(.header-semi-tran
     @include transition;
 
     background-color: $slider-button-bg-color !important;
+
+    &:hover {
+        background-color: $slider-button-hover-bg-color !important;
+    }
 }
 
 .card {

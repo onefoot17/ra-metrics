@@ -1,3 +1,7 @@
+// Intialization
+@import '_variables';
+@import '_mixins';
+
 // Theme Settings
 
 // Typography
@@ -16,8 +20,13 @@ $nav-link-active-color: $nav-link-hover-color;
 $nav-sticky-link-color: $black;
 $nav-sticky-link-hover-color: $purple;
 
+// Buttons
+$button-bg-color-primary: $purple !important;
+$button-bg-hover-color-primary: $black !important;
+
 // Slider
 $slider-button-bg-color: $purple;
+$slider-button-hover-bg-color: $black;
 
 // Background
 

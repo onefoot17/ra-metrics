@@ -69,23 +69,41 @@ $color: transparent !default;
 
 // Typography
 $font-size: 1.4rem !default;
+$body-font-size: 1.4rem !default;
+$h2-font-size: 2rem !default;
+$h4-font-size: 1.8rem !default;
 
 // Buttons
 $button-color: $white !default;
 $button-color-dark: $button-color !default;
-$button-hover-color: $white !default;
-$button-bg-color-danger: $red !default;
-$button-bg-color-danger-dark: $red !default;
-$button-bg-color-info: $purple !default;
-$button-bg-color-info-dark: $green-light !default;
-$button-bg-color-primary: $purple !default;
-$button-bg-color-primary-dark: $green-light !default;
-$button-color-primary-dark: $black !default;
-$button-bg-color-success: $purple !default;
-$button-bg-color-success-dark: $green-light !default;
-$button-color-success-dark: $black !default;
+$button-hover-color: $black !default;
+$button-bg-color: $gray-medium !default;
 $button-bg-hover-color: $black !default;
+$button-bg-color-dark: $gray-medium !default;
 $button-bg-hover-color-dark: $black !default;
+// Danger
+$button-bg-color-danger: $red !default;
+$button-bg-hover-color-danger: $button-bg-hover-color !default;
+$button-bg-color-danger-dark: $red !default;
+$button-bg-hover-color-danger-dark: $button-bg-hover-color-dark !default;
+$button-hover-color-danger-dark: $white !default;
+// Info
+$button-bg-color-info: $purple !default;
+$button-bg-hover-color-info: $button-bg-hover-color !default;
+$button-bg-color-info-dark: $green-light !default;
+$button-bg-hover-color-info-dark: $button-bg-hover-color-dark !default;
+// Primary
+$button-bg-color-primary: $purple !default;
+$button-bg-hover-color-primary: $button-bg-hover-color !default;
+$button-bg-color-primary-dark: $green-light !default;
+$button-bg-hover-color-primary-dark: $button-bg-hover-color-dark !default;
+$button-color-primary-dark: $white !default;
+// Success
+$button-bg-color-success: $purple !default;
+$button-bg-hover-color-success: $button-bg-hover-color !default;
+$button-bg-color-success-dark: $green-light !default;
+$button-bg-hover-color-success-dark: $button-bg-hover-color-dark !default;
+$button-color-success-dark: $white !default;
 
 // Navigation
 $nav-link-color: inherit !default;

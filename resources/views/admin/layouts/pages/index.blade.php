@@ -1,6 +1,6 @@
 @extends( 'admin.layouts.main' )
 
-@section('title') {{ $title ?? __('List Plant Parents Species') }} @stop
+@section('title') {{ $title ?? __('Admin Home') }} @stop
 
 @section('css')
     @parent
@@ -12,12 +12,13 @@
         <div class="col-md-6 col-xl-3">
             <div class="widget-rounded-circle ra__card-box card-box">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-3">
                         <div class="avatar-lg rounded-circle bg-soft-primary border-primary border">
                             <i class="fas fa-tree font-22 avatar-title text-primary"></i>
                         </div>
                     </div>
-                    <div class="col-6">
+
+                    <div class="col-9">
                         <div class="text-right">
                             <h3 class="mt-1"><span data-plugin="counterup">548</span></h3>
                             <p class="mb-1 text-truncate">@lang('Plant Parents / Species')</p>
@@ -30,12 +31,13 @@
         <div class="col-md-6 col-xl-3">
             <div class="widget-rounded-circle ra__card-box card-box">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-3">
                         <div class="avatar-lg rounded-circle bg-soft-success border-success border">
                             <i class="fe-archive font-22 avatar-title text-success"></i>
                         </div>
                     </div>
-                    <div class="col-6">
+
+                    <div class="col-9">
                         <div class="text-right">
                             <h3 class="text-dark mt-1"><span data-plugin="counterup">214</span></h3>
                             <p class="mb-1 text-truncate">@lang('Plant Types')</p>
@@ -48,12 +50,13 @@
         <div class="col-md-6 col-xl-3">
             <div class="widget-rounded-circle ra__card-box card-box">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-3">
                         <div class="avatar-lg rounded-circle bg-soft-info border-info border">
                             <i class="fab fa-pagelines font-22 avatar-title text-info"></i>
                         </div>
                     </div>
-                    <div class="col-6">
+
+                    <div class="col-9">
                         <div class="text-right">
                             <h3 class="text-dark mt-1"><span data-plugin="counterup">1009</span></h3>
                             <p class="mb-1 text-truncate">@lang('Total Plants')</p>
@@ -66,12 +69,13 @@
         <div class="col-md-6 col-xl-3">
             <div class="widget-rounded-circle ra__card-box card-box">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-3">
                         <div class="avatar-lg rounded-circle bg-soft-warning border-warning border">
                             <i class="fe-users font-22 avatar-title text-warning"></i>
                         </div>
                     </div>
-                    <div class="col-6">
+
+                    <div class="col-9">
                         <div class="text-right">
                             <h3 class="text-dark mt-1"><span data-plugin="counterup">97</span></h3>
                             <p class="mb-1 text-truncate">@lang('Participants')</p>
