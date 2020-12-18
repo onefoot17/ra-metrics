@@ -8,6 +8,8 @@ use App\Repositories\Plants\Contracts\PlantParentSpecieRepositoryInterface;
 use App\Repositories\Plants\Contracts\PlantTypeRepositoryInterface;
 use App\Repositories\Plants\Contracts\PlantRepositoryInterface;
 
+use Str;
+
 class PlantService implements PlantServiceInterface
 {
     // Plant Parents Species
@@ -35,6 +37,17 @@ class PlantService implements PlantServiceInterface
         $plantParentsSpecies = $this->plantParentSpecieRepository->list();
 
         return $plantParentsSpecies;
+    }
+
+    public function getPlantParentsSpeciesLimitedCharacters()
+    {
+        $parentSpecies = $this->getPlantParentsSpecies();
+
+        foreach($parentSpecies as $ind => $parentSpeciesCollection){
+            $parentSpeciesCollection->comments_less = Str::limit($parentSpeciesCollection->comments, 50);
+        }
+
+        return $parentSpecies;
     }
 
     public function updatePlantParentSpecie($request, $id)

@@ -99,6 +99,68 @@
     </div>
     <!-- end row -->
 
+    <div class="row ra__plants__display">
+
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">@lang('New List Plant Types')</h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form action="{{route('plant_types_store', [Request::Segment(1)])}}" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="simpleinput">@lang('Characteristic')</label>
+                                    <input type="text" class="form-control" placeholder="Characteristic" name="characteristic" id='characteristic' />
+                                </div>
+                                <div class="form-group">
+                                    <label for="simpleinput">@lang('Comments')</label>
+                                    <textarea class="form-control" rows="3" name='comments' id='plant_type_comments'></textarea>
+                                    <small class="f-s-12 text-grey-darker pull-right">@lang('Only 255 characters')</small>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success waves-effect waves-light">@lang('Submit')</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> <!-- end card-body -->
+            </div> <!-- end card -->
+        </div><!-- end col -->
+
+        <div class="col-lg-6">
+            <div class="card-box">
+                <h4 class="header-title">@lang('List Plant Types')</h4>
+
+                <div class="table-responsive">
+
+                    <div class="table-responsive">
+                        <table class="table table-striped mb-0">
+                            <tbody>
+                                @foreach($plantTypes as $ind => $plantTypesCollection)
+                                    <tr>
+                                        <td>{{$plantTypesCollection->characteristic}}</td>
+                                        <td>{{$plantTypesCollection->comments}}</td>
+                                        <td class="with-btn" nowrap>
+                                            <form method="POST" action="{{route('plant_types_destroy', [Request::segment(1), 'id' => $plantTypesCollection->id])}}" id='form-plant-type-{{$plantTypesCollection->id}}'>
+                                                @csrf
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                <a href="{{route('plant_types_edit', [Request::segment(1), 'id' => $plantTypesCollection->id])}}"  type="button" class="btn btn-primary waves-effect waves-light">@lang('Edit')</a>
+                                                <button type="button" class="btn btn-danger waves-effect waves-light delete_data" data-click="swal-danger" plant-type="{{$plantTypesCollection->id}}" variable-name='plant-type'>@lang('Delete')</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div> <!-- end table-responsive-->
+                </div> <!-- end table-responsive-->
+
+            </div> <!-- end card-box -->
+        </div> <!-- end col -->
+    </div>
+    <!-- end row -->
+
 @stop
 
 @section('js')

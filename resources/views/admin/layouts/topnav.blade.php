@@ -20,9 +20,16 @@
                     </li>
 
                     <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
-                        <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="{{route('plant_dashboard_index', [Request::segment(1)])}}" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a class="ra__navbar__topnav-menu__nav-link nav-link dropdown-toggle arrow-none" href="#" id="topnav-ui" role="button" aria-haspopup="true" aria-expanded="false">
                             <i class="fab fa-pagelines mr-1"></i> @lang( 'Plants' )
                         </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" data-hash data-hash-offset="68" href="{{route('plant_dashboard_index', [Request::segment(1)])}}">
+                                    <i class="fas fa-asterisk"></i> @lang( 'Plant Parents' )
+                                </a>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="ra__navbar__topnav-menu__nav-link-con nav-item dropdown">
