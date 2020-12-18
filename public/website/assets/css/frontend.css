@@ -246,6 +246,10 @@ a:hover {
   background-color: #1e2933;
 }
 
+html {
+  font-size: 12px;
+}
+
 .ra__dark input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
 }
@@ -450,8 +454,26 @@ html .btn-info {
 .swal2-popup .swal2-styled {
   transition: all 200ms ease-in-out;
 }
+body * {
+  font-size: 1.4rem;
+}
+
 h2 {
   font-size: 3rem;
+}
+
+html .bg-color-primary,
+html .bg-primary,
+section.page-header .page-header-title-border,
+.owl-carousel .owl-dots .owl-dot.active span,
+.owl-carousel .owl-dots .owl-dot:hover span,
+html .toggle-primary .toggle > label:after,
+html .toggle-primary .toggle > .toggle-title:after {
+  background-color: #972b84 !important;
+}
+
+.alternative-font {
+  color: #972b84;
 }
 
 .header-logo {
