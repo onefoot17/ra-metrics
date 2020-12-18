@@ -72,7 +72,7 @@
                                     <td>
                                         <h4>{{ $plantParentsSpeciesCollection->plant_parent_name }}</h4>
 
-                                        <p class="text-truncate mt-2 mb-2">{{ \Illuminate\Support\Str::limit($plantParentsSpeciesCollection->comments, 4,'....') }}</p>
+                                        <p class="text-truncate mt-2 mb-2">{{ $plantParentsSpeciesCollection->comments_less }}</p>
 
                                         <form method="POST" action="{{route('plant_parents_species_destroy', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" id='form-plant-parent-specie-{{$plantParentsSpeciesCollection->id}}'>
                                             @csrf

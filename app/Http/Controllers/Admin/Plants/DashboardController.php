@@ -22,7 +22,7 @@ class DashboardController extends Controller
      */
     public function indexParentSpecies(PlantServiceInterface $plantService)
     {
-        $plantParentsSpecies = $plantService->getPlantParentsSpecies();
+        $plantParentsSpecies = $plantService->getPlantParentsSpeciesLimitedCharacters();
         $plantTypes = $plantService->getPlantTypes();
         $plants = $plantService->getPlants();
 
