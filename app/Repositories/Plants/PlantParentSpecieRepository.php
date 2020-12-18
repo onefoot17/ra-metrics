@@ -29,6 +29,7 @@ class PlantParentSpecieRepository implements PlantParentSpecieRepositoryInterfac
         $insert = new PlantParentSpecie();
         $insert->plant_parent_name = $request->plant_parent_name;
         $insert->comments = $comments;
+        $insert->image_path = $request->image_path;
         $insert->save();
 
         return $insert;

@@ -66,7 +66,7 @@
     
                                 <tr class="ra__plants__display__tr">
                                     <td class="ra__plants__display__td">
-                                        <img src="{{asset('admin/assets/images/users/user-'.$ind.'.jpg')}}" alt="image" class="img-fluid avatar-lg rounded" />
+                                        <img src="{{ asset(Storage::url($plantParentsSpeciesCollection->image_path)) }}" alt="image" class="img-fluid avatar-lg rounded" />
                                     </td>
                                     
                                     <td class="ra__plants__display__td">

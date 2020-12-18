@@ -20,7 +20,7 @@ class CreatePlantParentsSpeciesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('plant_parent_name');
-            $table->string('plant_image')->nullable();
+            $table->string('image_path')->nullable();
             $table->string('comments')->nullable();
         });
     }
