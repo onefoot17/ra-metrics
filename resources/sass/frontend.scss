@@ -5,8 +5,29 @@
 @import '_buttons';
 @import '_alerts';
 
+#{$body} {
+    * {
+        font-size: $font-size;
+    }
+}
+
 h2 {
     font-size: 3rem;
+}
+
+// Reset
+html .bg-color-primary,
+html .bg-primary,
+section.page-header .page-header-title-border,
+.owl-carousel .owl-dots .owl-dot.active span,
+.owl-carousel .owl-dots .owl-dot:hover span,
+html .toggle-primary .toggle > label:after,
+html .toggle-primary .toggle > .toggle-title:after {
+    background-color: $bg-color !important;
+}
+
+.alternative-font {
+    color: $color;
 }
 
 .header-logo {
