@@ -65,26 +65,28 @@
                                 @php $ind++ @endphp
 
                                 <tr>
-                                    <td class="ra__plants__img-con">
+                                    <td class="ra__plants__table-alt__img-con">
                                         <img src="{{asset('admin/assets/images/users/user-'.$ind.'.jpg')}}" />
                                     </td>
 
                                     <td>
-                                        <h4>{{ $plantParentsSpeciesCollection->plant_parent_name }}</h4>
+                                        <div class="d-flex flex-wrap justify-content-between h-100">
+                                            <h4>{{ $plantParentsSpeciesCollection->plant_parent_name }}</h4>
 
-                                        <p class="text-truncate mt-2 mb-2">{{ $plantParentsSpeciesCollection->comments_less }}</p>
+                                            <form method="POST" action="{{route('plant_parents_species_destroy', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" id='form-plant-parent-specie-{{$plantParentsSpeciesCollection->id}}'>
+                                                @csrf
 
-                                        <form method="POST" action="{{route('plant_parents_species_destroy', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" id='form-plant-parent-specie-{{$plantParentsSpeciesCollection->id}}'>
-                                            @csrf
+                                                <input type="hidden" name="_method" value="DELETE">
 
-                                            <input type="hidden" name="_method" value="DELETE">
+                                                <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-success waves-effect waves-light">@lang('More')</a>
 
-                                            <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-success waves-effect waves-light">@lang('More')</a>
+                                                <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-success waves-effect waves-light">@lang('Edit')</a>
 
-                                            <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-success waves-effect waves-light">@lang('Edit')</a>
+                                                <a href="javascript:;" class="btn btn-danger waves-effect waves-light delete_data" variable-name='plant-parent-specie' plant-parent-specie='{{$plantParentsSpeciesCollection->id}}' {{-- onclick="event.preventDefault(); this.closest('form').submit();" --}}>@lang('Delete')</a>
+                                            </form>
 
-                                            <a href="javascript:;" class="btn btn-danger waves-effect waves-light delete_data" variable-name='plant-parent-specie' plant-parent-specie='{{$plantParentsSpeciesCollection->id}}' {{-- onclick="event.preventDefault(); this.closest('form').submit();" --}}>@lang('Delete')</a>
-                                        </form>
+                                            <p class="text-truncate">{{ $plantParentsSpeciesCollection->comments_less }}</p>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

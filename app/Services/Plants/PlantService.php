@@ -15,7 +15,7 @@ class PlantService implements PlantServiceInterface
     // Plant Parents Species
 
     public function __construct(
-        PlantParentSpecieRepositoryInterface $plantParentSpecieRepository, 
+        PlantParentSpecieRepositoryInterface $plantParentSpecieRepository,
         PlantTypeRepositoryInterface $plantTypeRepository,
         PlantRepositoryInterface $plantRepository
     )
@@ -44,7 +44,7 @@ class PlantService implements PlantServiceInterface
         $parentSpecies = $this->getPlantParentsSpecies();
 
         foreach($parentSpecies as $ind => $parentSpeciesCollection){
-            $parentSpeciesCollection->comments_less = Str::limit($parentSpeciesCollection->comments, 50);
+            $parentSpeciesCollection->comments_less = Str::limit($parentSpeciesCollection->comments, 100, '...');
         }
 
         return $parentSpecies;

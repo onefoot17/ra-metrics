@@ -1,9 +1,10 @@
 // Buttons
-#{$html} {
+// #{$html} {
     .btn {
+        background-color: $button-bg-color;
         border-radius: .25rem;
         font-size: $font-size;
-        padding: $padding/2 $padding*2;
+        padding: $padding/4 $padding;
 
         &-success,
         &-primary,
@@ -19,6 +20,7 @@
             }
 
             .ra__dark & {
+                background-color: $button-bg-color-dark;
                 color: $button-color-dark;
 
                 &:hover {
@@ -35,9 +37,17 @@
         &-success {
             background-color: $button-bg-color-success;
 
+            &:hover {
+                background-color: $button-bg-hover-color-success;
+            }
+
             .ra__dark & {
                 background-color: $button-bg-color-success-dark;
                 color: $button-color-success-dark;
+
+                &:hover {
+                    background-color: $button-bg-hover-color-success-dark;
+                }
             }
         }
 
@@ -53,8 +63,17 @@
         &-danger {
             background-color: $button-bg-color-danger;
 
+            &:hover {
+                background-color: $button-bg-hover-color-danger;
+            }
+
             .ra__dark & {
                 background-color: $button-bg-color-danger-dark;
+
+                &:hover {
+                    background-color: $button-bg-hover-color-danger-dark;
+                    color: $button-hover-color-danger-dark;
+                }
             }
         }
 
@@ -136,4 +155,4 @@
             }
         // } */
     }
-}
+// }
