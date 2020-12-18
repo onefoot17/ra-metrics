@@ -462,7 +462,7 @@ body.ra__dark {
   color: #ffffff;
 }
 body.ra__authentication.authentication-bg-pattern {
-  background-image: url(/images/bg-login.jpg?36a493e296ea15996044cd8ab3a17639);
+  background-image: url("/assets/images/bg-login.jpg");
   background-repeat: no-repeat;
   height: 100%;
 }
