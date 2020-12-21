@@ -21,7 +21,7 @@
                     <div class="col-9">
                         <div class="text-right">
                             <h3 class="mt-1"><span data-plugin="counterup">548</span></h3>
-                            <p class="mb-1 text-truncate">@lang('Plant Parents / Species')</p>
+                            <p class="mb-1 text-truncate">@lang('Plant Parents')</p>
                         </div>
                     </div>
                 </div> <!-- end row-->
@@ -95,7 +95,7 @@
                         <a data-toggle="collapse" href="#cardCollpase5" role="button" aria-expanded="false" aria-controls="cardCollpase5"><i class="mdi mdi-minus"></i></a>
                         <a href="javascript: void(0);" data-toggle="remove"><i class="mdi mdi-close"></i></a>
                     </div>
-                    <h4 class="header-title mb-0">Top 15 @lang('Plant Parent / Species')</h4>
+                    <h4 class="header-title mb-0">Top 15 @lang('Plant Parent')</h4>
 
                     <div id="cardCollpase5" class="collapse pt-3 show">
                         <div class="table-responsive">
@@ -224,7 +224,7 @@
                                     <div class="row mt-2">
                                         <div class="col-4">
                                             <h3 data-plugin="counterup">548</h3>
-                                            <p class="font-13 mb-0 text-truncate">@lang('Plant Parents / Species')</p>
+                                            <p class="font-13 mb-0 text-truncate">@lang('Plant Parents')</p>
                                         </div>
                                         <div class="col-4">
                                             <h3 data-plugin="counterup">214</h3>
