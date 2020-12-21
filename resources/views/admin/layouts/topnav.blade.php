@@ -25,7 +25,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" data-hash data-hash-offset="68" href="{{route('plant_dashboard_index', [Request::segment(1)])}}">
+                                <a class="dropdown-item" data-hash data-hash-offset="68" href="{{route('plant_parents_species_index', [Request::segment(1)])}}">
                                     <i class="fas fa-asterisk"></i> @lang( 'Plant Parents' )
                                 </a>
                             </li>

@@ -55,6 +55,17 @@ class PlantService implements PlantServiceInterface
 
     public function updatePlantParentSpecie($request, $id)
     {
+        $current_image_path = $this->getPlantParentSpecie($id);
+
+        if(!is_null($request->image)){
+            $request->image_path = $this->saveImage($request);
+
+            Storage::delete($current_image_path->image_path);
+
+        } else {
+            $request->image_path = $current_image_path->image_path;
+        }
+
         $update = $this->plantParentSpecieRepository->update($request, $id);
 
         return $update;

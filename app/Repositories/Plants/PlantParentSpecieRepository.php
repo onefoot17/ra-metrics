@@ -42,7 +42,8 @@ class PlantParentSpecieRepository implements PlantParentSpecieRepositoryInterfac
         $update = PlantParentSpecie::where('id', $id)
         ->update([
             'plant_parent_name' => $request->plant_parent_name,
-            'comments' => $comments
+            'comments' => $comments,
+            'image_path' => $request->image_path
         ]);
 
         return $update;

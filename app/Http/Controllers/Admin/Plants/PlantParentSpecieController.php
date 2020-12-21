@@ -22,7 +22,7 @@ class PlantParentSpecieController extends Controller
      */
     public function index(PlantServiceInterface $plantService)
     {
-        $plantParentsSpecies = $plantService->getPlantParentsSpecies();
+        $plantParentsSpecies = $plantService->getPlantParentsSpeciesLimitedCharacters();
 
         return view('admin.plants.plants-parents-species.index', [
             'plantParentsSpecies' => $plantParentsSpecies
@@ -74,10 +74,9 @@ class PlantParentSpecieController extends Controller
     public function edit($lang, $id, PlantServiceInterface $plantService)
     {
         $plantParentSpecie = $plantService->getPlantParentSpecie($id);
+        $plantParentsSpecies = $plantService->getPlantParentsSpeciesLimitedCharacters();
 
-        return view('admin.plants.plants-parents-species.edit', [
-            'plantParentSpecie' => $plantParentSpecie
-        ]);
+        return view('admin.plants.plants-parents-species.index', compact('plantParentSpecie', 'plantParentsSpecies'));
     }
 
     /**
