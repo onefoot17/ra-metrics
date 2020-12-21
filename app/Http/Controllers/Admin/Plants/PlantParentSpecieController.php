@@ -47,10 +47,13 @@ class PlantParentSpecieController extends Controller
      */
     public function store(Request $request, PlantServiceInterface $plantService)
     {
-        $plantService->storePlantParentSpecie($request);
+        $result = $plantService->storePlantParentSpecie($request);
 
-        // return redirect()->route('plant_parents_species_index', [$request->Segment(1)])->with('message-success', __('Plant parent specie saved succefully!'));
-        return redirect()->back()->with('message-success', __('Plant parent specie saved succefully!'));
+        if($result instanceof \Illuminate\Support\MessageBag){
+            return back()->withInput()->withErrors($result);
+        } else {
+            return redirect()->back()->with('message-success', __('Plant parent specie saved succefully!'));
+        }
     }
 
     /**
@@ -89,9 +92,13 @@ class PlantParentSpecieController extends Controller
      */
     public function update(Request $request, $lang, $id, PlantServiceInterface $plantService)
     {
-        $plantService->updatePlantParentSpecie($request, $id);
+        $result = $plantService->updatePlantParentSpecie($request, $id);
 
-        return back()->with('message-success', __('Plant parent specie updated succefully!'));
+        if($result instanceof \Illuminate\Support\MessageBag){
+            return back()->withInput()->withErrors($result);
+        } else {
+            return back()->with('message-success', __('Plant parent specie updated succefully!'));
+        }
     }
 
     /**

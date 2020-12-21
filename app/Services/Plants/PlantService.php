@@ -10,6 +10,7 @@ use App\Repositories\Plants\Contracts\PlantRepositoryInterface;
 
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 use Str;
 
@@ -55,29 +56,46 @@ class PlantService implements PlantServiceInterface
 
     public function updatePlantParentSpecie($request, $id)
     {
-        $current_image_path = $this->getPlantParentSpecie($id);
+        $validator = Validator::make($request->all(), [
+            'plant_parent_name' => 'required|min:5',
+            'comments' => 'min:5'
+        ]);
 
-        if(!is_null($request->image)){
-            $request->image_path = $this->saveImage($request);
-
-            Storage::delete($current_image_path->image_path);
-
+        if($validator->fails()){
+            $update = $validator->errors();
         } else {
-            $request->image_path = $current_image_path->image_path;
-        }
+            $current_image_path = $this->getPlantParentSpecie($id);
 
-        $update = $this->plantParentSpecieRepository->update($request, $id);
+            if(!is_null($request->image)){
+                $request->image_path = $this->saveImage($request);
+
+                Storage::delete($current_image_path->image_path);
+
+            } else {
+                $request->image_path = $current_image_path->image_path;
+            }
+
+            $update = $this->plantParentSpecieRepository->update($request, $id);
+        }
 
         return $update;
     }
 
     public function storePlantParentSpecie($request)
     {
-        $image_path = $this->saveImage($request);
+        $validator = Validator::make($request->all(), [
+            'plant_parent_name' => 'required|min:5',
+            'image' => 'required',
+            'comments' => 'min:5'
+        ]);
 
-        $request->image_path = (!is_null($image_path))?$image_path:null;
-
-        $insert = $this->plantParentSpecieRepository->store($request);
+        if($validator->fails()){
+            $insert = $validator->errors();
+        } else {
+            $image_path = $this->saveImage($request);
+            $request->image_path = (!is_null($image_path))?$image_path:null;
+            $insert = $this->plantParentSpecieRepository->store($request);
+        }
 
         return $insert;
     }

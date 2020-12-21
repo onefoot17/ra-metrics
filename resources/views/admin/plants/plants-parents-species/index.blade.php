@@ -29,7 +29,12 @@
                                     <input type="hidden" name="_method" value="PUT">
                                     <div class="form-group">
                                         <label for="simpleinput">@lang('Parent name')</label>
-                                        <input type="text" class="form-control" name="plant_parent_name" id='plant_specie_name' value="{{$plantParentSpecie->plant_parent_name}}" />
+                                        <input type="text" class="form-control @error('plant_parent_name') is-invalid @enderror" name="plant_parent_name" id='plant_specie_name' value="{{$plantParentSpecie->plant_parent_name}}" />
+                                        @error('plant_parent_name')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>@lang('Image')</label>
@@ -43,11 +48,16 @@
                                     <div class="form-group">
                                         <label for="simpleinput">@lang('Comments')</label>
                                         <small class="f-s-12 text-grey-darker pull-right" style="font-size: 10px">@lang('(Only 255 characters)')</small>
-                                        <textarea class="form-control" rows="3" name='comments' id='comments'>{{$plantParentSpecie->comments}}</textarea>
+                                        <textarea class="form-control @error('comments') is-invalid @enderror" rows="3" name='comments' id='comments'>{{$plantParentSpecie->comments}}</textarea>
+                                        @error('comments')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
-                                        <a href="{{route('plant_parents_species_index', [Request::segment(1)])}}" type="submit" class="btn btn-success waves-effect waves-light">@lang('Clean')</a>
                                         <button type="submit" class="btn btn-success waves-effect waves-light">@lang('Update')</button>
+                                        <a href="{{route('plant_parents_species_index', [Request::segment(1)])}}" type="submit" class="btn btn-success waves-effect waves-light">@lang('Clean')</a>
                                     </div>
                                 </form>
                             </div>
@@ -59,21 +69,36 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="simpleinput">@lang('Parent name')</label>
-                                        <input type="text" class="form-control" name="plant_parent_name" id='plant_specie_name' />
+                                        <input type="text" class="form-control @error('plant_parent_name') is-invalid @enderror" name="plant_parent_name" id='plant_specie_name' value="{{old('plant_parent_name')}}" />
+                                        @error('plant_parent_name')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <label>@lang('Image')</label>
                                         <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="parent_image" name="image">
+                                            {{-- <div class="custom-file"> --}}
+                                                <input type="file" class="custom-file-input @error('image') is-invalid @enderror" id="parent_image" name="image" value="{{old('image')}}">
+                                                @error('image')
+                                                    <div class="invalid-feedback">
+                                                        {{$message}}
+                                                    </div>
+                                                @enderror
                                                 <label class="custom-file-label" for="parent_image">Choose file</label>
-                                            </div>
+                                            {{-- </div> --}}
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="simpleinput">@lang('Comments')</label>
                                         <small class="f-s-12 text-grey-darker pull-right" style="font-size: 10px">@lang('(Only 255 characters)')</small>
-                                        <textarea class="form-control" rows="3" name='comments' id='comments'></textarea>
+                                        <textarea class="form-control @error('comments') is-invalid @enderror" rows="3" name='comments' id='comments'>{{old('comments')}}</textarea>
+                                        @error('comments')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-success waves-effect waves-light">@lang('Save')</button>
