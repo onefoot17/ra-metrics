@@ -66,7 +66,7 @@
 
                                 <tr>
                                     <td class="ra__plants__table-alt__img-con">
-                                        <img src="{{ asset(Storage::url($plantParentsSpeciesCollection->image_path)) }}" alt="image" class="img-fluid avatar-lg rounded" />
+                                        <img src="{{ asset(Storage::url($plantParentsSpeciesCollection->image_path)) }}" alt="image" class="img-fluid rounded" />
                                     </td>
 
                                     <td>
@@ -110,7 +110,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-danger waves-effect waves-light delete_data" data-dismiss="modal">@lang('Close')</button>
                                                             </div>
                                                         </div>
                                                     </div>
