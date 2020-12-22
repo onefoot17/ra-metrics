@@ -21,11 +21,11 @@ class PlantsController extends Controller
      */
     public function index(PlantServiceInterface $plantService)
     {
-        $plants = $plantService->getPlants();
+        $plantParentsSpecies = $plantService->getPlantParentsSpecies();
+        $plantTypes = $plantService->getPlantTypes();
+        $plants = $plantService->getPlantsLimitedCharacters();
 
-        return view('plants.plants.index', [
-            'plants' => $plants
-        ]);
+        return view('admin.plants.plants.index', compact('plantParentsSpecies', 'plantTypes', 'plants'));
     }
 
     /**
@@ -52,20 +52,24 @@ class PlantsController extends Controller
      */
     public function store(Request $request, PlantServiceInterface $plantService)
     {
-        $validateData = $request->validate([
-            'plant_parent_specieid' => [
-                'required'
-            ],
-            'plant_typeid' => [
-                'required'
-            ],
-            'comments' => [
-                'max:255'
-            ]
-        ]);
-        $plantService->storePlant($request);
+        // $validateData = $request->validate([
+        //     'plant_parent_specieid' => [
+        //         'required'
+        //     ],
+        //     'plant_typeid' => [
+        //         'required'
+        //     ],
+        //     'comments' => [
+        //         'max:255'
+        //     ]
+        // ]);
+        $result = $plantService->storePlant($request);
 
-        return redirect()->route('plant_index', [$request->segment(1)])->with('message-success', __('Plant saved succefully!'));
+        if($result instanceof \Illuminate\Support\MessageBag){
+            return back()->withInput()->withErrors($result);
+        } else {
+            return redirect()->back()->with('message-success', __('Plant saved succefully!'));
+        }
     }
 
     /**

@@ -26,10 +26,13 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a class="dropdown-item" data-hash data-hash-offset="68" href="{{route('plant_parents_species_index', [Request::segment(1)])}}">
-                                    <i class="fas fa-asterisk"></i> @lang( 'Plant Parents' )
+                                    <i class="fab fa-pagelines mr-1"></i> @lang( 'Plant Parents' )
                                 </a>
                                 <a class="dropdown-item" data-hash data-hash-offset="68" href="{{route('plant_types_index', [Request::segment(1)])}}">
-                                    <i class="fas fa-asterisk"></i> @lang( 'Plant Types' )
+                                    <i class="fab fa-pagelines mr-1"></i> @lang( 'Plant Types' )
+                                </a>
+                                <a class="dropdown-item" data-hash data-hash-offset="68" href="{{route('plant_index', [Request::segment(1)])}}">
+                                    <i class="fab fa-pagelines mr-1"></i> @lang( 'Plants' )
                                 </a>
                             </li>
                         </ul>

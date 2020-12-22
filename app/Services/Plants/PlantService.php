@@ -58,7 +58,7 @@ class PlantService implements PlantServiceInterface
     {
         $validator = Validator::make($request->all(), [
             'plant_parent_name' => 'required|min:5',
-            'comments' => 'min:5'
+            'comments' => 'min:5|max:255'
         ]);
 
         if($validator->fails()){
@@ -86,7 +86,7 @@ class PlantService implements PlantServiceInterface
         $validator = Validator::make($request->all(), [
             'plant_parent_name' => 'required|min:5',
             'image' => 'required',
-            'comments' => 'min:5'
+            'comments' => 'min:5|max:255'
         ]);
 
         if($validator->fails()){
@@ -148,7 +148,7 @@ class PlantService implements PlantServiceInterface
     {
         $validator = Validator::make($request->all(), [
             'characteristic' => 'required|min:5',
-            'comments' => 'min:5'
+            'comments' => 'min:5|max:255'
         ]);
 
         if($validator->fails()){
@@ -164,7 +164,7 @@ class PlantService implements PlantServiceInterface
     {
         $validator = Validator::make($request->all(), [
             'characteristic' => 'required|min:5',
-            'comments' => 'min:5'
+            'comments' => 'min:5|max:255'
         ]);
 
         if($validator->fails()){
@@ -199,6 +199,17 @@ class PlantService implements PlantServiceInterface
         return $plant;
     }
 
+    public function getPlantsLimitedCharacters()
+    {
+        $plants = $this->getPlants();
+
+        foreach($plants as $ind => $plantsCollection){
+            $plantsCollection->comments_less = Str::limit($plantsCollection->comments, 100, '...');
+        }
+
+        return $plants;
+    }
+
     public function updatePlant($request, $id)
     {
         $update = $this->plantRepository->update($request, $id);
@@ -208,7 +219,17 @@ class PlantService implements PlantServiceInterface
 
     public function storePlant($request)
     {
-        $insert = $this->plantRepository->store($request);
+        $validator = Validator::make($request->all(), [
+            'plant_parent_specieid' => 'required',
+            'plant_typeid' => 'required',
+            'comments' => 'min:5|max:255'
+        ]);
+
+        if($validator->fails()){
+            $insert = $validator->errors();
+        } else {
+            $insert = $this->plantRepository->store($request);
+        }
 
         return $insert;
     }
