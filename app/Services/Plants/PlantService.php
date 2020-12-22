@@ -133,16 +133,45 @@ class PlantService implements PlantServiceInterface
         return $plantType;
     }
 
+    public function getTypesLimitedCharacters()
+    {
+        $parentTypes = $this->getPlantTypes();
+
+        foreach($parentTypes as $ind => $parentTypesCollection){
+            $parentTypesCollection->comments_less = Str::limit($parentTypesCollection->comments, 100, '...');
+        }
+
+        return $parentTypes;
+    }
+
     public function updatePlantType($request, $id)
     {
-        $update = $this->plantTypeRepository->update($request, $id);
+        $validator = Validator::make($request->all(), [
+            'characteristic' => 'required|min:5',
+            'comments' => 'min:5'
+        ]);
+
+        if($validator->fails()){
+            $update = $validator->errors();
+        } else {
+            $update = $this->plantTypeRepository->update($request, $id);
+        }
 
         return $update;
     }
 
     public function storePlantType($request)
     {
-        $insert = $this->plantTypeRepository->store($request);
+        $validator = Validator::make($request->all(), [
+            'characteristic' => 'required|min:5',
+            'comments' => 'min:5'
+        ]);
+
+        if($validator->fails()){
+            $insert = $validator->errors();
+        } else {
+            $insert = $this->plantTypeRepository->store($request);
+        }
 
         return $insert;
     }
