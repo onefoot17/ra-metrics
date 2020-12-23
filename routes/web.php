@@ -98,7 +98,7 @@ Route::group(['prefix' => '{language}'], function(){
             });
 
             Route::group(['prefix' => 'plants'], function(){
-                Route::get('/index', [PlantsController::class, 'index'])->name('plant_index');
+                Route::get('/', [PlantsController::class, 'index'])->name('plant_index');
                 Route::get('/create', [PlantsController::class, 'create'])->name('plant_create');
                 Route::post('/store', [PlantsController::class, 'store'])->name('plant_store');
                 Route::get('/edit/{id}', [PlantsController::class, 'edit'])->name('plant_edit');

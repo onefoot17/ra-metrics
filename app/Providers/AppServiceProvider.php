@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\Plants\Contracts\PlantParentSpecieRepositoryInterface', 'App\Repositories\Plants\PlantParentSpecieRepository');
         $this->app->bind('App\Repositories\Plants\Contracts\PlantTypeRepositoryInterface', 'App\Repositories\Plants\PlantTypeRepository');
         $this->app->bind('App\Repositories\Plants\Contracts\PlantRepositoryInterface', 'App\Repositories\Plants\PlantRepository');
+        $this->app->bind('App\Repositories\Plants\Contracts\PlantChildRepositoryInterface', 'App\Repositories\Plants\PlantChildRepository');
         $this->app->bind('App\Repositories\Users\Contracts\UserRepositoryInterface', 'App\Repositories\Users\UserRepository');
         $this->app->bind('App\Repositories\Users\Contracts\SettingRepositoryInterface', 'App\Repositories\Users\SettingRepository');
     }

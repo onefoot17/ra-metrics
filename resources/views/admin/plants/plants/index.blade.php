@@ -24,37 +24,58 @@
                     <h4 class="header-title">@lang('Plants')</h4>
                     
                     @if(isset($plant))
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form action="{{route('plant_types_update', [Request::Segment(1), 'id' => $plantType->id])}}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <input type="hidden" name="_method" value="PUT">
-                                <div class="form-group">
-                                    <label for="simpleinput">@lang('Characteristic')</label>
-                                    <input type="text" class="form-control @error('characteristic') is-invalid @enderror" name="characteristic" id='characteristic' value="{{$plantType->characteristic}}" />
-                                    @error('characteristic')
-                                        <div class="invalid-feedback">
-                                            {{$message}}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="simpleinput">@lang('Comments')</label>
-                                    <small class="f-s-12 text-grey-darker pull-right" style="font-size: 10px">@lang('(Only 255 characters)')</small>
-                                    <textarea class="form-control @error('comments') is-invalid @enderror" rows="3" name='comments' id='comments'>{{$plantType->comments}}</textarea>
-                                    @error('comments')
-                                        <div class="invalid-feedback">
-                                            {{$message}}
-                                        </div>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-success waves-effect waves-light">@lang('Update')</button>
-                                    <a href="{{route('plant_types_index', [Request::segment(1)])}}" type="submit" class="btn btn-success waves-effect waves-light">@lang('Clean')</a>
-                                </div>
-                            </form>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form action="{{route('plant_update', [Request::Segment(1), 'id' => $plant->id])}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="PUT">
+                                    <div class="form-group">
+                                        <label for="simpleinput">@lang('Plant Parent')</label>
+                                        <select class="selectpicker @error('plant_parent_specieid') is-invalid @enderror" multiple data-selected-text-format="count > 3" data-style="btn-light" name="plant_parent_specieid[]" id="plant_parent_specieid">
+                                            <option value="">Select an item</option>
+                                            @foreach($plantParentsSpecies as $ind => $plantParentsSpeciesCollection)
+                                                <option value="{{$plantParentsSpeciesCollection->id}}" @if($plant->plantChildren->contains('id', $plantParentsSpeciesCollection->id)) selected @endif>{{$plantParentsSpeciesCollection->plant_parent_name}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('plant_parent_specieid')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="simpleinput">@lang('Plant Type')</label>
+                                        <select class="selectpicker @error('plant_typeid') is-invalid @enderror" {{--multiple--}} data-selected-text-format="count > 3" data-style="btn-light" name="plant_typeid" id="plant_typeid">
+                                            <option value="">Select an item</option>
+                                            @foreach($plantTypes as $ind => $plantTypesCollection)
+                                                <option value="{{$plantTypesCollection->id}}" @if($plantTypesCollection->id == $plant->plant_typeid) selected @endif>{{$plantTypesCollection->characteristic}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('plant_typeid')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="simpleinput">@lang('Comments')</label>
+                                        <small class="f-s-12 text-grey-darker pull-right" style="font-size: 10px">@lang('(Only 255 characters)')</small>
+                                        <textarea class="form-control @error('comments') is-invalid @enderror" rows="3" name='comments' id='comments'>{{$plant->comments}}</textarea>
+                                        @error('comments')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success waves-effect waves-light">@lang('Save')</button>
+                                        <a href="{{route('plant_index', [Request::segment(1)])}}" type="submit" class="btn btn-success waves-effect waves-light">@lang('Clean')</a>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                    </div>
                     @else
                         <div class="row">
                             <div class="col-lg-12">
@@ -62,22 +83,32 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="simpleinput">@lang('Plant Parent')</label>
-                                        <select class="selectpicker" multiple data-selected-text-format="count > 3" data-style="btn-light" name="plant_parent_specieid" id="plant_parent_specieid">
+                                        <select class="selectpicker @error('plant_parent_specieid') is-invalid @enderror" multiple data-selected-text-format="count > 3" data-style="btn-light" name="plant_parent_specieid[]" id="plant_parent_specieid">
+                                            <option value="">Select an iten</option>
                                             @foreach($plantParentsSpecies as $ind => $plantParentsSpeciesCollection)
                                                 <option value="{{$plantParentsSpeciesCollection->id}}">{{$plantParentsSpeciesCollection->plant_parent_name}}</option>
                                             @endforeach
-                                            
                                         </select>
+                                        @error('plant_parent_specieid')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
                                         <label for="simpleinput">@lang('Plant Type')</label>
-                                        <select class="selectpicker" multiple data-selected-text-format="count > 3" data-style="btn-light" name="plant_typeid" id="plant_typeid">
+                                        <select class="selectpicker @error('plant_typeid') is-invalid @enderror" {{--multiple--}} data-selected-text-format="count > 3" data-style="btn-light" name="plant_typeid" id="plant_typeid">
+                                            <option value="">Select an iten</option>
                                             @foreach($plantTypes as $ind => $plantTypesCollection)
                                                 <option value="{{$plantTypesCollection->id}}">{{$plantTypesCollection->characteristic}}</option>
                                             @endforeach
-
                                         </select>
+                                        @error('plant_typeid')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
 
                                     <div class="form-group">
@@ -115,7 +146,11 @@
                                 <tr>
                                     <td>
                                         <div class="d-flex flex-wrap justify-content-between h-100">
-                                            <h5>{{ $plantsCollection->plantParentSpecie->plant_parent_name }}</h5>
+                                            <h5>
+                                                @foreach($plantsCollection->plantChildren as $ind => $plantChildrenCollection)
+                                                    {{$plantChildrenCollection->plant_parent_name}} *
+                                                @endforeach
+                                            </h5>
 
                                             <form method="POST" action="{{route('plant_destroy', [Request::segment(1), 'id' => $plantsCollection->id])}}" id='form-plant-{{$plantsCollection->id}}'>
                                                 @csrf
@@ -129,13 +164,18 @@
                                                     <div class="modal-dialog modal-dialog-centered modal-lg">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title">{{ $plantsCollection->plantParentSpecie->plant_parent_name }}</h4>
+                                                                <h4 class="modal-title">Plants list</h4>
                                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                                             </div>
                                                             <div class="modal-body p-4">
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <div class="form-group no-margin">
+                                                                            <label for="field-7" class="control-label">@lang('Plant Parents'):</label>
+                                                                            @foreach($plantsCollection->plantChildren as $ind => $plantChildrenCollection)
+                                                                                <p>{{ $plantChildrenCollection->plant_parent_name }}</p>
+                                                                            @endforeach
+                                                                            <br>
                                                                             <label for="field-7" class="control-label">@lang('Type'):</label>
                                                                             <p>{{ $plantsCollection->plantType->characteristic }}</p>
                                                                             <br>

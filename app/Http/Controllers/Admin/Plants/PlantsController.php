@@ -52,17 +52,6 @@ class PlantsController extends Controller
      */
     public function store(Request $request, PlantServiceInterface $plantService)
     {
-        // $validateData = $request->validate([
-        //     'plant_parent_specieid' => [
-        //         'required'
-        //     ],
-        //     'plant_typeid' => [
-        //         'required'
-        //     ],
-        //     'comments' => [
-        //         'max:255'
-        //     ]
-        // ]);
         $result = $plantService->storePlant($request);
 
         if($result instanceof \Illuminate\Support\MessageBag){
@@ -92,15 +81,12 @@ class PlantsController extends Controller
      */
     public function edit($lang, $id, PlantServiceInterface $plantService)
     {
-        $plant = $plantService->getPlant($id);
         $plantParentsSpecies = $plantService->getPlantParentsSpecies();
         $plantTypes = $plantService->getPlantTypes();
+        $plants = $plantService->getPlantsLimitedCharacters();
+        $plant = $plantService->getPlant($id);
 
-        return view('plants.plants.edit', [
-            'plant' => $plant,
-            'plantParentsSpecies' => $plantParentsSpecies,
-            'plantTypes' => $plantTypes
-        ]);
+        return view('admin.plants.plants.index', compact('plantParentsSpecies', 'plantTypes', 'plants',  'plant'));
     }
 
     /**
@@ -113,21 +99,13 @@ class PlantsController extends Controller
      */
     public function update(Request $request, $lang, $id, PlantServiceInterface $plantService)
     {
-        $validateData = $request->validate([
-            'plant_parent_specieid' => [
-                'required'
-            ],
-            'plant_typeid' => [
-                'required'
-            ],
-            'comments' => [
-                'max:255'
-            ]
-        ]);
+        $result = $plantService->updatePlant($request, $id);
 
-        $plantService->updatePlant($request, $id);
-
-        return back()->with('message-success', __('Plant updated succefully!'));
+        if($result instanceof \Illuminate\Support\MessageBag){
+            return back()->withInput()->withErrors($result);
+        } else {
+            return back()->with('message-success', __('Plant updated succefully!'));
+        }
     }
 
     /**

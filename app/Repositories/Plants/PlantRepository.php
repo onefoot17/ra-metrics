@@ -27,7 +27,7 @@ class PlantRepository implements PlantRepositoryInterface {
         $comments = substr($request->comments, 0, 254);
 
         $insert = new Plant();
-        $insert->plant_parent_specieid = $request->plant_parent_specieid;
+        //$insert->plant_parent_specieid = $request->plant_parent_specieid;
         $insert->plant_typeid = $request->plant_typeid;
         $insert->comments = $comments;
         $insert->save();
@@ -41,6 +41,7 @@ class PlantRepository implements PlantRepositoryInterface {
 
         $update = Plant::where('id', $id)
         ->update([
+            'plant_typeid' => $request->plant_typeid,
             'comments' => $comments
         ]);
 

@@ -7,12 +7,14 @@ use App\Services\Plants\Contracts\PlantServiceInterface;
 use App\Repositories\Plants\Contracts\PlantParentSpecieRepositoryInterface;
 use App\Repositories\Plants\Contracts\PlantTypeRepositoryInterface;
 use App\Repositories\Plants\Contracts\PlantRepositoryInterface;
+use App\Repositories\Plants\Contracts\PlantChildRepositoryInterface;
 
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 use Str;
+use stdClass;
 
 class PlantService implements PlantServiceInterface
 {
@@ -21,12 +23,14 @@ class PlantService implements PlantServiceInterface
     public function __construct(
         PlantParentSpecieRepositoryInterface $plantParentSpecieRepository,
         PlantTypeRepositoryInterface $plantTypeRepository,
-        PlantRepositoryInterface $plantRepository
+        PlantRepositoryInterface $plantRepository,
+        PlantChildRepositoryInterface $plantChildRepository
     )
     {
         $this->plantParentSpecieRepository = $plantParentSpecieRepository;
         $this->plantTypeRepository = $plantTypeRepository;
         $this->plantRepository = $plantRepository;
+        $this->plantChildRepository = $plantChildRepository;
     }
 
     public function getPlantParentSpecie($id)
@@ -147,8 +151,8 @@ class PlantService implements PlantServiceInterface
     public function updatePlantType($request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'characteristic' => 'required|min:5',
-            'comments' => 'min:5|max:255'
+            'characteristic' => 'required|min:3',
+            'comments' => 'min:3|max:255'
         ]);
 
         if($validator->fails()){
@@ -163,8 +167,8 @@ class PlantService implements PlantServiceInterface
     public function storePlantType($request)
     {
         $validator = Validator::make($request->all(), [
-            'characteristic' => 'required|min:5',
-            'comments' => 'min:5|max:255'
+            'characteristic' => 'required|min:3',
+            'comments' => 'min:3|max:255'
         ]);
 
         if($validator->fails()){
@@ -212,7 +216,24 @@ class PlantService implements PlantServiceInterface
 
     public function updatePlant($request, $id)
     {
-        $update = $this->plantRepository->update($request, $id);
+        $validator = Validator::make($request->all(), [
+            //'plant_parent_specieid' => 'required',
+            'plant_typeid' => 'required',
+            'comments' => 'min:5|max:255'
+        ]);
+
+        if($validator->fails()){
+            $update = $validator->errors();
+        } else {
+            $update[] = $this->plantRepository->update($request, $id);
+            
+            $this->plantChildRepository->deleteByPlantId($id);
+
+            $plant_parents_species_obj = $this->mountPlantChildObject($request, $id);
+            foreach($plant_parents_species_obj as $ind => $plan_parents_species_object){
+                $update[] = $this->plantChildRepository->store($plan_parents_species_object);
+            }
+        }
 
         return $update;
     }
@@ -228,10 +249,29 @@ class PlantService implements PlantServiceInterface
         if($validator->fails()){
             $insert = $validator->errors();
         } else {
-            $insert = $this->plantRepository->store($request);
+            $insert[] = $this->plantRepository->store($request);
+
+            $plant_parents_species_obj = $this->mountPlantChildObject($request, $insert[0]->id);
+
+            foreach($plant_parents_species_obj as $ind => $plan_parents_species_object){
+                $insert[] = $this->plantChildRepository->store($plan_parents_species_object);
+            }
         }
 
         return $insert;
+    }
+
+    public function mountPlantChildObject($request, $plantid)
+    {
+        foreach($request->plant_parent_specieid as $ind => $plant_parent_specieid){
+            $plantChildObj[$ind] = new stdClass;
+            $plantChildObj[$ind]->plant_parent_specieid = $plant_parent_specieid;
+            $plantChildObj[$ind]->plantid = $plantid;
+        }
+
+        $return = collect($plantChildObj);
+
+        return $return;
     }
 
     public function destroyPlant($id)
