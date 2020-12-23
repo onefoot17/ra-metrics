@@ -22,7 +22,7 @@ class CreatePlantsTable extends Migration
 
             //$table->foreign('plant_parent_specieid')->references('id')->on('plants.plant_parents_species')->onDelete('cascade');
             $table->foreign('plant_typeid')->references('id')->on('plants.plant_types')->onDelete('cascade');
-            $table->foreign('id')->references('plantid')->on('plants.plant_children')->onDelete('cascade');
+            //$table->foreign('id')->references('plantid')->on('plants.plant_children')->onDelete('cascade');
         });
     }
 
