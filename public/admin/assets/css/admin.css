@@ -311,77 +311,10 @@ a:hover {
 .btn, .swal2-popup .swal2-styled.swal2-confirm {
   background-color: #2e3e4c;
   border-radius: 0.25rem;
+  color: #ffffff;
   font-size: 1.4rem;
+  line-height: 1;
   padding: 0.25rem 1rem;
-  /* // .ra__settings {
-      &-outline-success {
-          border-color: $purple;
-          color: $purple;
-          width: auto !important;
-
-          .ra__dark & {
-              border-color: $green-light;
-              color: $green-light;
-          }
-
-          &:hover {
-              background-color: $button-bg-color-success;
-              border-color: $purple;
-              color: $white;
-
-              .ra__dark & {
-                  background-color: $green-light;
-                  border-color: $green-light;
-                  color: $black;
-              }
-          }
-
-          &.focus,
-          &:focus {
-              box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-
-              .ra__dark & {
-                  box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
-              }
-          }
-
-          &.disabled,
-          &:disabled {
-              background-color: transparent;
-              color: $purple;
-
-              .ra__dark & {
-                  color: $green-light;
-              }
-          }
-
-          &:not(:disabled):not(.disabled).active,
-          &:not(:disabled):not(.disabled):active,
-          .show & > .dropdown-toggle,
-          .show > &.dropdown-toggle {
-              background-color: $button-bg-color-success;
-              border-color: $purple;
-              color: $white;
-
-              .ra__dark & {
-                  background-color: $green-light;
-                  border-color: $green-light;
-                  color: $black;
-              }
-          }
-
-          &:not(:disabled):not(.disabled).active:focus,
-          &:not(:disabled):not(.disabled):active:focus,
-          .show & > .dropdown-toggle:focus,
-          .show > &.dropdown-toggle:focus {
-              box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-
-              .ra__dark & {
-                  box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
-              }
-          }
-      }
-  // } */
 }
 .btn-success, .swal2-popup .swal2-styled.swal2-confirm, .btn-primary, .btn-danger, .btn-info {
   border: none;
@@ -391,6 +324,7 @@ a:hover {
 }
 .btn-success:hover, .swal2-popup .swal2-styled.swal2-confirm:hover, .btn-primary:hover, .btn-danger:hover, .btn-info:hover {
   background-color: #000000;
+  color: #000000;
 }
 .ra__dark .btn-success, .ra__dark .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark .swal2-styled.swal2-confirm, .ra__dark .btn-primary, .ra__dark .btn-danger, .ra__dark .btn-info {
   background-color: #2e3e4c;
@@ -403,37 +337,27 @@ a:hover {
 .btn:hover, .swal2-popup .swal2-styled.swal2-confirm:hover {
   background-color: #000000;
 }
-.btn-success, .swal2-popup .swal2-styled.swal2-confirm {
-  background-color: #2e3e4c;
-}
-.btn-success:hover, .swal2-popup .swal2-styled.swal2-confirm:hover {
-  background-color: #2e3e4c;
-}
-.ra__dark .btn-success, .ra__dark .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark .swal2-styled.swal2-confirm {
+.btn-info {
   background-color: #2e3e4c;
   color: #ffffff;
 }
-.ra__dark .btn-success:hover, .ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover {
-  background-color: #61ff2a;
+.btn-info:hover {
+  background-color: #972b84;
+  color: #ffffff;
 }
-.btn-primary {
-  background-color: #2e3e4c;
-}
-.btn-primary:hover {
-  background-color: #2e3e4c;
-}
-.ra__dark .btn-primary {
+.ra__dark .btn-info {
   background-color: #2e3e4c;
   color: #ffffff;
 }
-.ra__dark .btn-primary:hover {
+.ra__dark .btn-info:hover {
   background-color: #61ff2a;
+  color: #ffffff;
 }
 .btn-danger {
   background-color: #2e3e4c;
 }
 .btn-danger:hover {
-  background-color: #2e3e4c;
+  background-color: #dd3333;
 }
 .ra__dark .btn-danger {
   background-color: #2e3e4c;
@@ -442,16 +366,33 @@ a:hover {
   background-color: #dd3333;
   color: #ffffff;
 }
-.btn-info {
+.btn-primary {
+  background-color: #2e3e4c;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: #972b84;
+  color: #ffffff;
+}
+.ra__dark .btn-primary {
+  background-color: #2e3e4c;
+  color: #ffffff;
+}
+.ra__dark .btn-primary:hover {
+  background-color: #61ff2a;
+  color: #ffffff;
+}
+.btn-success, .swal2-popup .swal2-styled.swal2-confirm {
   background-color: #2e3e4c;
 }
-.btn-info:hover {
-  background-color: #2e3e4c;
+.btn-success:hover, .swal2-popup .swal2-styled.swal2-confirm:hover {
+  background-color: #972b84;
 }
-.ra__dark .btn-info {
+.ra__dark .btn-success, .ra__dark .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark .swal2-styled.swal2-confirm {
   background-color: #2e3e4c;
+  color: #ffffff;
 }
-.ra__dark .btn-info:hover {
+.ra__dark .btn-success:hover, .ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover {
   background-color: #61ff2a;
 }
 
@@ -516,7 +457,7 @@ body.ra__dark {
   color: #ffffff;
 }
 body.ra__authentication.authentication-bg-pattern {
-  background-image: url(/images/bg-login.jpg?36a493e296ea15996044cd8ab3a17639);
+  background-image: url("../../../assets/images/bg-login.jpg");
   background-repeat: no-repeat;
   height: 100%;
 }
