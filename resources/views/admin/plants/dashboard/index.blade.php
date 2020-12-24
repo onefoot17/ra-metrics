@@ -4,7 +4,7 @@
 
 @endphp
 
-@section('title') {{ $title ?? __('List Plant Parents Species') }} @stop
+@section('title') {{ $title ?? __('List Plant Parents / Species') }} @stop
 
 @section('css')
     @parent
@@ -19,7 +19,7 @@
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title">@lang('New Plant Parents / Species')</h4>
+                    <h4 class="header-title">@lang('New Plant Parents')</h4>
 
                     <div class="row">
                         <div class="col-lg-12">
@@ -40,8 +40,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="simpleinput">@lang('Comments')</label>
+                                    <small class="f-s-12 text-grey-darker pull-right" style="font-size: 10px">@lang('(Only 255 characters)')</small>
                                     <textarea class="form-control" rows="3" name='comments' id='comments'></textarea>
-                                    <small class="f-s-12 text-grey-darker pull-right">@lang('Only 255 characters')</small>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-success waves-effect waves-light">@lang('Submit')</button>
@@ -55,7 +55,7 @@
 
         <div class="col-lg-8">
             <div class="card-box">
-                <h4 class="header-title">@lang('Plant Parents / Species')</h4>
+                <h4 class="header-title">@lang('Plant Parents')</h4>
 
                 <div class="table-responsive">
                     <table class="table mb-0 ra__plants__table-alt">
@@ -66,7 +66,7 @@
 
                                 <tr>
                                     <td class="ra__plants__table-alt__img-con">
-                                        <img src="{{asset('admin/assets/images/users/user-'.$ind.'.jpg')}}" />
+                                        <img src="{{ asset(Storage::url($plantParentsSpeciesCollection->image_path)) }}" alt="image" class="img-fluid rounded" />
                                     </td>
 
                                     <td>
@@ -78,7 +78,45 @@
 
                                                 <input type="hidden" name="_method" value="DELETE">
 
-                                                <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-success waves-effect waves-light">@lang('More')</a>
+                                                <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#modal-plant-parent-{{$plantParentsSpeciesCollection->id}}">@lang('More')</a>
+
+                                                <!-- Modals -->
+                                                <div id="modal-plant-parent-{{$plantParentsSpeciesCollection->id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">{{ $plantParentsSpeciesCollection->plant_parent_name }}</h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                            </div>
+                                                            <div class="modal-body p-4">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group no-margin">
+                                                                            <center>
+                                                                                <img src="{{ asset(Storage::url($plantParentsSpeciesCollection->image_path)) }}" alt="image" class="img-fluid rounded" />
+                                                                            </center>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group no-margin">
+                                                                            <label for="field-7" class="control-label">@lang('Comments'):</label>
+                                                                            <br>
+                                                                            <br>
+                                                                            <p>{{ $plantParentsSpeciesCollection->comments }}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger waves-effect waves-light delete_data" data-dismiss="modal">@lang('Close')</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- /.modal -->
+
+                                                <!-- End of Modals-->
 
                                                 <a href="{{route('plant_parents_species_edit', [Request::segment(1), 'id' => $plantParentsSpeciesCollection->id])}}" class="btn btn-success waves-effect waves-light">@lang('Edit')</a>
 

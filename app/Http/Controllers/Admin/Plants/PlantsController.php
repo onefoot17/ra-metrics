@@ -21,11 +21,11 @@ class PlantsController extends Controller
      */
     public function index(PlantServiceInterface $plantService)
     {
-        $plants = $plantService->getPlants();
+        $plantParentsSpecies = $plantService->getPlantParentsSpecies();
+        $plantTypes = $plantService->getPlantTypes();
+        $plants = $plantService->getPlantsLimitedCharacters();
 
-        return view('plants.plants.index', [
-            'plants' => $plants
-        ]);
+        return view('admin.plants.plants.index', compact('plantParentsSpecies', 'plantTypes', 'plants'));
     }
 
     /**
@@ -52,20 +52,13 @@ class PlantsController extends Controller
      */
     public function store(Request $request, PlantServiceInterface $plantService)
     {
-        $validateData = $request->validate([
-            'plant_parent_specieid' => [
-                'required'
-            ],
-            'plant_typeid' => [
-                'required'
-            ],
-            'comments' => [
-                'max:255'
-            ]
-        ]);
-        $plantService->storePlant($request);
+        $result = $plantService->storePlant($request);
 
-        return redirect()->route('plant_index', [$request->segment(1)])->with('message-success', __('Plant saved succefully!'));
+        if($result instanceof \Illuminate\Support\MessageBag){
+            return back()->withInput()->withErrors($result);
+        } else {
+            return redirect()->back()->with('message-success', __('Plant saved succefully!'));
+        }
     }
 
     /**
@@ -88,15 +81,12 @@ class PlantsController extends Controller
      */
     public function edit($lang, $id, PlantServiceInterface $plantService)
     {
-        $plant = $plantService->getPlant($id);
         $plantParentsSpecies = $plantService->getPlantParentsSpecies();
         $plantTypes = $plantService->getPlantTypes();
+        $plants = $plantService->getPlantsLimitedCharacters();
+        $plant = $plantService->getPlant($id);
 
-        return view('plants.plants.edit', [
-            'plant' => $plant,
-            'plantParentsSpecies' => $plantParentsSpecies,
-            'plantTypes' => $plantTypes
-        ]);
+        return view('admin.plants.plants.index', compact('plantParentsSpecies', 'plantTypes', 'plants',  'plant'));
     }
 
     /**
@@ -109,21 +99,13 @@ class PlantsController extends Controller
      */
     public function update(Request $request, $lang, $id, PlantServiceInterface $plantService)
     {
-        $validateData = $request->validate([
-            'plant_parent_specieid' => [
-                'required'
-            ],
-            'plant_typeid' => [
-                'required'
-            ],
-            'comments' => [
-                'max:255'
-            ]
-        ]);
+        $result = $plantService->updatePlant($request, $id);
 
-        $plantService->updatePlant($request, $id);
-
-        return back()->with('message-success', __('Plant updated succefully!'));
+        if($result instanceof \Illuminate\Support\MessageBag){
+            return back()->withInput()->withErrors($result);
+        } else {
+            return back()->with('message-success', __('Plant updated succefully!'));
+        }
     }
 
     /**

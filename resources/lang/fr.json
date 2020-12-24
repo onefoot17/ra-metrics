@@ -61,7 +61,7 @@
     "New Plant Parents / Species":"",
     "insert":"",
     "Insert":"",
-    "Only 255 characters":"",
+    "(Only 255 characters)":"",
     "Submit":"",
     "List Plant Types":"",
     "New List Plant Types":"",
@@ -96,5 +96,9 @@
     "User":"",
     "New User":"",
     "Edit Users":"",
-    "Looks good!":""
+    "Looks good!":"",
+    "Close":"",
+    "Reset":"",
+    "Clean":"",
+    "Type name":""
 }

@@ -7,6 +7,7 @@ interface PlantServiceInterface
     // Plant Parents Species
     public function getPlantParentSpecie($id);
     public function getPlantParentsSpecies();
+    public function getPlantParentsSpeciesLimitedCharacters();
     public function storePlantParentSpecie($request);
     public function updatePlantParentSpecie($request, $id);
     public function destroyPlantParentSpecie($id);
@@ -14,6 +15,7 @@ interface PlantServiceInterface
     // Plant Types
     public function getPlantType($id);
     public function getPlantTypes();
+    public function getTypesLimitedCharacters();
     public function storePlantType($request);
     public function updatePlantType($request, $id);
     public function destroyPlantType($id);

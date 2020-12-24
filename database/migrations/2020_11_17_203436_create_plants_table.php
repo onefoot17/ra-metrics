@@ -16,13 +16,13 @@ class CreatePlantsTable extends Migration
         Schema::create('plants.plants', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('plant_parent_specieid');
+            //$table->unsignedBigInteger('plant_parent_specieid');
             $table->unsignedBigInteger('plant_typeid');
             $table->string('comments')->nullable();
 
-            $table->foreign('plant_parent_specieid')->references('id')->on('plants.plant_parents_species')->onDelete('cascade');
+            //$table->foreign('plant_parent_specieid')->references('id')->on('plants.plant_parents_species')->onDelete('cascade');
             $table->foreign('plant_typeid')->references('id')->on('plants.plant_types')->onDelete('cascade');
-
+            //$table->foreign('id')->references('plantid')->on('plants.plant_children')->onDelete('cascade');
         });
     }
 

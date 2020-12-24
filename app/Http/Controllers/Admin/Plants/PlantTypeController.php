@@ -21,7 +21,7 @@ class PlantTypeController extends Controller
      */
     public function index(PlantServiceInterface $plantService)
     {
-        $plantTypes = $plantService->getPlantTypes();
+        $plantTypes = $plantService->getTypesLimitedCharacters();
 
         return view('admin.plants.plants-types.index', [
             'plantTypes' => $plantTypes
@@ -46,10 +46,14 @@ class PlantTypeController extends Controller
      */
     public function store(Request $request, PlantServiceInterface $plantService)
     {
-        $plantService->storePlantType($request);
 
-        //return redirect()->route('plant_types_index', [$request->segment(1)])->with('message-success', __('Plant type saved succefully!'));
-        return redirect()->back()->with('message-success', __('Plant type saved succefully!'));
+        $result = $plantService->storePlantType($request);
+
+        if($result instanceof \Illuminate\Support\MessageBag){
+            return back()->withInput()->withErrors($result);
+        } else {
+            return redirect()->back()->with('message-success', __('Plant type saved succefully!'));
+        }
     }
 
     /**
@@ -74,10 +78,9 @@ class PlantTypeController extends Controller
     public function edit($lang, $id, PlantServiceInterface $plantService)
     {
         $plantType = $plantService->getPlantType($id);
+        $plantTypes = $plantService->getTypesLimitedCharacters();
 
-        return view('admin.plants.plants-types.edit', [
-            'plantType' => $plantType
-        ]);
+        return view('admin.plants.plants-types.index', compact('plantType', 'plantTypes'));
     }
 
     /**
@@ -90,9 +93,14 @@ class PlantTypeController extends Controller
      */
     public function update(Request $request, $lang, $id, PlantServiceInterface $plantService)
     {
-        $plantService->updatePlantType($request, $id);
+        $result = $plantService->updatePlantType($request, $id);
 
-        return back()->with('message-success', __('Plant type updated succefully!'));
+        if($result instanceof \Illuminate\Support\MessageBag){
+            return back()->withInput()->withErrors($result);
+        } else {
+            return back()->with('message-success', __('Plant type updated succefully!'));
+        }
+
     }
 
     /**

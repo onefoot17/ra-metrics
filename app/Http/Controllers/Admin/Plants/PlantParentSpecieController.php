@@ -22,7 +22,7 @@ class PlantParentSpecieController extends Controller
      */
     public function index(PlantServiceInterface $plantService)
     {
-        $plantParentsSpecies = $plantService->getPlantParentsSpecies();
+        $plantParentsSpecies = $plantService->getPlantParentsSpeciesLimitedCharacters();
 
         return view('admin.plants.plants-parents-species.index', [
             'plantParentsSpecies' => $plantParentsSpecies
@@ -47,10 +47,13 @@ class PlantParentSpecieController extends Controller
      */
     public function store(Request $request, PlantServiceInterface $plantService)
     {
-        $plantService->storePlantParentSpecie($request);
+        $result = $plantService->storePlantParentSpecie($request);
 
-        // return redirect()->route('plant_parents_species_index', [$request->Segment(1)])->with('message-success', __('Plant parent specie saved succefully!'));
-        return redirect()->back()->with('message-success', __('Plant parent specie saved succefully!'));
+        if($result instanceof \Illuminate\Support\MessageBag){
+            return back()->withInput()->withErrors($result);
+        } else {
+            return redirect()->back()->with('message-success', __('Plant parent specie saved succefully!'));
+        }
     }
 
     /**
@@ -74,10 +77,9 @@ class PlantParentSpecieController extends Controller
     public function edit($lang, $id, PlantServiceInterface $plantService)
     {
         $plantParentSpecie = $plantService->getPlantParentSpecie($id);
+        $plantParentsSpecies = $plantService->getPlantParentsSpeciesLimitedCharacters();
 
-        return view('admin.plants.plants-parents-species.edit', [
-            'plantParentSpecie' => $plantParentSpecie
-        ]);
+        return view('admin.plants.plants-parents-species.index', compact('plantParentSpecie', 'plantParentsSpecies'));
     }
 
     /**
@@ -90,9 +92,13 @@ class PlantParentSpecieController extends Controller
      */
     public function update(Request $request, $lang, $id, PlantServiceInterface $plantService)
     {
-        $plantService->updatePlantParentSpecie($request, $id);
+        $result = $plantService->updatePlantParentSpecie($request, $id);
 
-        return back()->with('message-success', __('Plant parent specie updated succefully!'));
+        if($result instanceof \Illuminate\Support\MessageBag){
+            return back()->withInput()->withErrors($result);
+        } else {
+            return back()->with('message-success', __('Plant parent specie updated succefully!'));
+        }
     }
 
     /**
