@@ -1,8 +1,8 @@
+// Theme Settings
+
 // Intialization
 @import '_variables';
 @import '_mixins';
-
-// Theme Settings
 
 // Typography
 html {
@@ -21,11 +21,16 @@ $nav-sticky-link-color: $black;
 $nav-sticky-link-hover-color: $purple;
 
 // Buttons
+$button-hover-color-info: $black !important;
+$button-bg-hover-color-info: $white !important;
 $button-bg-color-primary: $purple !important;
+$button-hover-color-primary: $white !important;
 $button-bg-hover-color-primary: $black !important;
 
 // Slider
+$slider-button-color: $white !default;
 $slider-button-bg-color: $purple;
+$slider-button-hover-color: $white;
 $slider-button-hover-bg-color: $black;
 
 // Background

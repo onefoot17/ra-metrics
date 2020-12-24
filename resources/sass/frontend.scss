@@ -159,9 +159,11 @@ html:not(.sticky-header-active) #header.header-transparent:not(.header-semi-tran
     @include transition;
 
     background-color: $slider-button-bg-color !important;
+    color: $slider-button-color !important;
 
     &:hover {
         background-color: $slider-button-hover-bg-color !important;
+        color: $slider-button-hover-color !important;
     }
 }
 

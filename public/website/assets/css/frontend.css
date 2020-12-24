@@ -315,77 +315,10 @@ a:hover {
 .btn, .swal2-popup .swal2-styled.swal2-confirm {
   background-color: #2e3e4c;
   border-radius: 0.25rem;
+  color: #ffffff;
   font-size: 1.4rem;
+  line-height: 1;
   padding: 0.25rem 1rem;
-  /* // .ra__settings {
-      &-outline-success {
-          border-color: $purple;
-          color: $purple;
-          width: auto !important;
-
-          .ra__dark & {
-              border-color: $green-light;
-              color: $green-light;
-          }
-
-          &:hover {
-              background-color: $button-bg-color-success;
-              border-color: $purple;
-              color: $white;
-
-              .ra__dark & {
-                  background-color: $green-light;
-                  border-color: $green-light;
-                  color: $black;
-              }
-          }
-
-          &.focus,
-          &:focus {
-              box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-
-              .ra__dark & {
-                  box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
-              }
-          }
-
-          &.disabled,
-          &:disabled {
-              background-color: transparent;
-              color: $purple;
-
-              .ra__dark & {
-                  color: $green-light;
-              }
-          }
-
-          &:not(:disabled):not(.disabled).active,
-          &:not(:disabled):not(.disabled):active,
-          .show & > .dropdown-toggle,
-          .show > &.dropdown-toggle {
-              background-color: $button-bg-color-success;
-              border-color: $purple;
-              color: $white;
-
-              .ra__dark & {
-                  background-color: $green-light;
-                  border-color: $green-light;
-                  color: $black;
-              }
-          }
-
-          &:not(:disabled):not(.disabled).active:focus,
-          &:not(:disabled):not(.disabled):active:focus,
-          .show & > .dropdown-toggle:focus,
-          .show > &.dropdown-toggle:focus {
-              box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-
-              .ra__dark & {
-                  box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
-              }
-          }
-      }
-  // } */
 }
 .btn-success, .swal2-popup .swal2-styled.swal2-confirm, .btn-primary, .btn-danger, .btn-info {
   border: none;
@@ -395,6 +328,7 @@ a:hover {
 }
 .btn-success:hover, .swal2-popup .swal2-styled.swal2-confirm:hover, .btn-primary:hover, .btn-danger:hover, .btn-info:hover {
   background-color: #000000;
+  color: #000000;
 }
 .ra__dark .btn-success, .ra__dark .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark .swal2-styled.swal2-confirm, .ra__dark .btn-primary, .ra__dark .btn-danger, .ra__dark .btn-info {
   background-color: #2e3e4c;
@@ -407,31 +341,21 @@ a:hover {
 .btn:hover, .swal2-popup .swal2-styled.swal2-confirm:hover {
   background-color: #000000;
 }
-.btn-success, .swal2-popup .swal2-styled.swal2-confirm {
+.btn-info {
   background-color: #972b84;
+  color: #ffffff;
 }
-.btn-success:hover, .swal2-popup .swal2-styled.swal2-confirm:hover {
-  background-color: #000000;
+.btn-info:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
-.ra__dark .btn-success, .ra__dark .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark .swal2-styled.swal2-confirm {
+.ra__dark .btn-info {
   background-color: #61ff2a;
   color: #ffffff;
 }
-.ra__dark .btn-success:hover, .ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover {
+.ra__dark .btn-info:hover {
   background-color: #000000;
-}
-.btn-primary {
-  background-color: #972b84 !important;
-}
-.btn-primary:hover {
-  background-color: #000000 !important;
-}
-.ra__dark .btn-primary {
-  background-color: #61ff2a;
   color: #ffffff;
-}
-.ra__dark .btn-primary:hover {
-  background-color: #000000;
 }
 .btn-danger {
   background-color: #dd3333;
@@ -446,16 +370,33 @@ a:hover {
   background-color: #000000;
   color: #ffffff;
 }
-.btn-info {
+.btn-primary {
+  background-color: #972b84 !important;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+.ra__dark .btn-primary {
+  background-color: #61ff2a;
+  color: #ffffff;
+}
+.ra__dark .btn-primary:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+.btn-success, .swal2-popup .swal2-styled.swal2-confirm {
   background-color: #972b84;
 }
-.btn-info:hover {
+.btn-success:hover, .swal2-popup .swal2-styled.swal2-confirm:hover {
   background-color: #000000;
 }
-.ra__dark .btn-info {
+.ra__dark .btn-success, .ra__dark .swal2-popup .swal2-styled.swal2-confirm, .swal2-popup .ra__dark .swal2-styled.swal2-confirm {
   background-color: #61ff2a;
+  color: #ffffff;
 }
-.ra__dark .btn-info:hover {
+.ra__dark .btn-success:hover, .ra__dark .swal2-popup .swal2-styled.swal2-confirm:hover, .swal2-popup .ra__dark .swal2-styled.swal2-confirm:hover {
   background-color: #000000;
 }
 
@@ -620,9 +561,11 @@ html:not(.sticky-header-active) #header.header-transparent:not(.header-semi-tran
 .owl-carousel.nav-dark:not(.nav-style-1):not(.nav-style-2):not(.nav-style-3):not(.show-nav-title):not(.nav-arrows-1) .owl-nav button[class*=owl-] {
   transition: all 200ms ease-in-out;
   background-color: #972b84 !important;
+  color: #ffffff !important;
 }
 .owl-carousel.nav-dark:not(.nav-style-1):not(.nav-style-2):not(.nav-style-3):not(.show-nav-title):not(.nav-arrows-1) .owl-nav button[class*=owl-]:hover {
   background-color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .ra__dark .card {

@@ -3,7 +3,9 @@
     .btn {
         background-color: $button-bg-color;
         border-radius: .25rem;
+        color: $button-color;
         font-size: $font-size;
+        line-height: 1;
         padding: $padding/4 $padding;
 
         &-success,
@@ -17,6 +19,7 @@
 
             &:hover {
                 background-color: $button-bg-hover-color;
+                color: $button-hover-color;
             }
 
             .ra__dark & {
@@ -34,36 +37,22 @@
             background-color: $button-bg-hover-color;
         }
 
-        &-success {
-            background-color: $button-bg-color-success;
+        &-info {
+            background-color: $button-bg-color-info;
+            color: $button-color-info;
 
             &:hover {
-                background-color: $button-bg-hover-color-success;
+                background-color: $button-bg-hover-color-info;
+                color: $button-hover-color-info;
             }
 
             .ra__dark & {
-                background-color: $button-bg-color-success-dark;
-                color: $button-color-success-dark;
+                background-color: $button-bg-color-info-dark;
+                color: $button-color-info-dark;
 
                 &:hover {
-                    background-color: $button-bg-hover-color-success-dark;
-                }
-            }
-        }
-
-        &-primary {
-            background-color: $button-bg-color-primary;
-
-            &:hover {
-                background-color: $button-bg-hover-color-primary;
-            }
-
-            .ra__dark & {
-                background-color: $button-bg-color-primary-dark;
-                color: $button-color-primary-dark;
-
-                &:hover {
-                    background-color: $button-bg-hover-color-primary-dark;
+                    background-color: $button-bg-hover-color-info-dark;
+                    color: $button-hover-color-info-dark;
                 }
             }
         }
@@ -85,90 +74,41 @@
             }
         }
 
-        &-info {
-            background-color: $button-bg-color-info;
+        &-primary {
+            background-color: $button-bg-color-primary;
+            color: $button-color-primary;
 
             &:hover {
-                background-color: $button-bg-hover-color-info;
+                background-color: $button-bg-hover-color-primary;
+                color: $button-hover-color-primary;
             }
 
             .ra__dark & {
-                background-color: $button-bg-color-info-dark;
+                background-color: $button-bg-color-primary-dark;
+                color: $button-color-primary-dark;
 
                 &:hover {
-                    background-color: $button-bg-hover-color-info-dark;
+                    background-color: $button-bg-hover-color-primary-dark;
+                    color: $button-hover-color-primary-dark;
                 }
             }
         }
 
-        /* // .ra__settings {
-            &-outline-success {
-                border-color: $purple;
-                color: $purple;
-                width: auto !important;
+        &-success {
+            background-color: $button-bg-color-success;
 
-                .ra__dark & {
-                    border-color: $green-light;
-                    color: $green-light;
-                }
+            &:hover {
+                background-color: $button-bg-hover-color-success;
+            }
+
+            .ra__dark & {
+                background-color: $button-bg-color-success-dark;
+                color: $button-color-success-dark;
 
                 &:hover {
-                    background-color: $button-bg-color-success;
-                    border-color: $purple;
-                    color: $white;
-
-                    .ra__dark & {
-                        background-color: $green-light;
-                        border-color: $green-light;
-                        color: $black;
-                    }
-                }
-
-                &.focus,
-                &:focus {
-                    box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-
-                    .ra__dark & {
-                        box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
-                    }
-                }
-
-                &.disabled,
-                &:disabled {
-                    background-color: transparent;
-                    color: $purple;
-
-                    .ra__dark & {
-                        color: $green-light;
-                    }
-                }
-
-                &:not(:disabled):not(.disabled).active,
-                &:not(:disabled):not(.disabled):active,
-                .show & > .dropdown-toggle,
-                .show > &.dropdown-toggle {
-                    background-color: $button-bg-color-success;
-                    border-color: $purple;
-                    color: $white;
-
-                    .ra__dark & {
-                        background-color: $green-light;
-                        border-color: $green-light;
-                        color: $black;
-                    }
-                }
-
-                &:not(:disabled):not(.disabled).active:focus,
-                &:not(:disabled):not(.disabled):active:focus,
-                .show & > .dropdown-toggle:focus,
-                .show > &.dropdown-toggle:focus {
-                    box-shadow: 0 0 0 .15rem rgba( var(--purple), .5 );
-
-                    .ra__dark & {
-                        box-shadow: 0 0 0 .15rem rgba( var(--green), .5 );
-                    }
+                    background-color: $button-bg-hover-color-success-dark;
                 }
             }
-        // } */
+        }
     }
 // }
