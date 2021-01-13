@@ -1,5 +1,5 @@
 {
-    "Edit Plant Parents Species":"Edit Plant Parents Species",
+    "Edit Plant Parent Specie":"Edit Plant Parent Specie",
     "Plant parent specie saved succefully!":"Plant parent specie saved succefully!",
     "Plant parent specie deleted succefully!":"Plant parent specie deleted succefully!",
     "Plant parent specie updated succefully!":"Plant parent specie updated succefully!",
@@ -29,7 +29,7 @@
     "Navigation":"Navigation",
     "System":"System",
     "NEW":"NEW",
-    "Plant Parents Species":"Plant Parents Species",
+    "Plant Parent Specie":"Plant Parent Specie",
     "List":"List",
     "Create":"Create",
     "Plant Types":"Plant Types",
@@ -42,10 +42,9 @@
     "Home":"Home",
     "Plants":"Plants",
     "Plant":"Plant",
-    "List Plant Parents Species":"List Plant Parents Species",
+    "List Plant Parent Specie":"List Plant Parent Specie",
     "list":"list",
-    "Plant Parents / Species":"Plant Parents / Species",
-    "Plant Parents":"Plant Parents",
+    "Plant Parent / Specie":"Plant Parent / Specie",
     "Image":"Image",
     "Parent Name":"Parent Name",
     "Comments":"Comments",
@@ -58,7 +57,7 @@
     "RA-METRICS - Vcomp Inc All Rights Reserved":"RA-METRICS - Vcomp Inc All Rights Reserved",
     "more options":"more options",
     "Admin":"Admin",
-    "New Plant Parents / Species":"New Plant Parents / Species",
+    "New Plant Parent / Specie":"New Plant Parent / Specie",
     "insert":"insert",
     "Insert":"Insert",
     "(Only 255 characters)":"(Only 255 characters)",
@@ -101,5 +100,6 @@
     "Reset":"Reset",
     "Back":"Back",
     "Clean":"Clean",
-    "Type name":"Type name"
+    "Type name":"Type name",
+    "New Plant":"New Plant"
 }

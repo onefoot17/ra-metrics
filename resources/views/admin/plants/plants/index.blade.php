@@ -4,7 +4,7 @@
 
 @endphp
 
-@section('title') {{ $title ?? __('List Plants') }} @stop
+@section('title') {{ $title ?? __('Plants List') }} @stop
 
 @section('css')
     @parent
@@ -21,7 +21,7 @@
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title">@lang('Plants')</h4>
+                    <h4 class="header-title">@lang('New Plant')</h4>
                     
                     @if(isset($plant))
                         <div class="row">

@@ -1,5 +1,5 @@
 {
-    "Edit Plant Parents Species":"",
+    "Edit Plant Parent Specie":"",
     "Plant parent specie saved succefully!":"",
     "Plant parent specie deleted succefully!":"",
     "Plant parent specie updated succefully!":"",
@@ -22,7 +22,7 @@
     "Navigation":"Navegação",
     "System":"Sistema",
     "NEW":"NOVO",
-    "Plant Parents Species":"Espécies de Plantas Paternas",
+    "Plant Parent Specie":"Espécies de Plantas Paternas",
     "List":"Lista",
     "Create":"Criar",
     "Plant Types":"Tipos de Plantas",
@@ -35,9 +35,9 @@
     "Home":"Home",
     "Plants":"Plantas",
     "Plant":"Planta",
-    "List Plant Parents Species":"Lista de Espécies de Plantas Paternas",
+    "List Plant Parent Specie":"Lista de Espécies de Plantas Paternas",
     "list":"lista",
-    "Plant Parents / Species":"Plantas Paternas / Espécies",
+    "Plant Parent / Specie":"Plantas Paternas / Espécies",
     "Image":"Imagem",
     "Parent Name":"Nome Paterno",
     "Comments":"Comentários",
@@ -50,7 +50,7 @@
     "RA-METRICS - Vcomp Inc All Rights Reserved":"RA-METRICS - Vcomp Inc Todos os Direitos Reservados",
     "more options":"mais opções",
     "Admin":"",
-    "New Plant Parents / Species":"Nova Planta Pai / Espécies",
+    "New Plant Parent / Specie":"Nova Planta Pai / Espécies",
     "insert":"",
     "Insert":"",
     "Only 255 characters":"",
@@ -69,5 +69,6 @@
     "Locations/Sites":"",
     "Data":"",
     "Reports":"",
-    "Help":""
+    "Help":"",
+    "New Plant":"Nova Planta"
 }

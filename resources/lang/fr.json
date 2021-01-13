@@ -1,5 +1,5 @@
 {
-    "Edit Plant Parents Species":"",
+    "Edit Plant Parent Specie":"",
     "Plant parent specie saved succefully!":"",
     "Plant parent specie deleted succefully!":"",
     "Plant parent specie updated succefully!":"",
@@ -29,7 +29,7 @@
     "Navigation":"",
     "System":"",
     "NEW":"",
-    "Plant Parents Species":"",
+    "Plant Parent Specie":"",
     "List":"",
     "Create":"",
     "Plant Types":"",
@@ -42,10 +42,9 @@
     "Home":"",
     "Plants":"",
     "Plant":"",
-    "List Plant Parents Species":"",
+    "List Plant Parent Specie":"",
     "list":"",
-    "Plant Parents / Species":"",
-    "Plant Parents":"",
+    "Plant Parent / Specie":"",
     "Image":"",
     "Parent Name":"",
     "Comments":"",
@@ -58,7 +57,7 @@
     "RA-METRICS - Vcomp Inc All Rights Reserved":"",
     "more options":"",
     "Admin":"",
-    "New Plant Parents / Species":"",
+    "New Plant Parent / Specie":"",
     "insert":"",
     "Insert":"",
     "(Only 255 characters)":"",
@@ -100,5 +99,6 @@
     "Close":"",
     "Reset":"",
     "Clean":"",
-    "Type name":""
+    "Type name":"",
+    "New Plant":""
 }

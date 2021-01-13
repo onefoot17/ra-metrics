@@ -1,5 +1,5 @@
 {
-    "Edit Plant Parents Species":"",
+    "Edit Plant Parent Specie":"",
     "Plant parent specie saved succefully!":"",
     "Plant parent specie deleted succefully!":"",
     "Plant parent specie updated succefully!":"",
@@ -22,7 +22,7 @@
     "Navigation":"Navigare",
     "System":"Sistem",
     "NEW":"NOU",
-    "Plant Parents Species":"Specii de părinți de plante",
+    "Plant Parent Specie":"Specii de părinți de plante",
     "List":"Listă",
     "Create":"Crea",
     "Plant Types":"Tipuri de plante",
@@ -35,9 +35,9 @@
     "Home":"Acasă",
     "Plants":"Plantele",
     "Plant":"Plantă",
-    "List Plant Parents Species":"Lista Speciilor de Părinți de Plante",
+    "List Plant Parent Specie":"Lista Speciilor de Părinți de Plante",
     "list":"lista",
-    "Plant Parents / Species":"Părinți / Specii de Plante",
+    "Plant Parent / Specie":"Părinți / Specii de Plante",
     "Image":"Imagine",
     "Parent Name":"Nume Părinte",
     "Comments":"Comentarii",
@@ -50,7 +50,7 @@
     "RA-METRICS - Vcomp Inc All Rights Reserved":"RA-METRICS - Vcomp Inc Toate Drepturile Rezervate",
     "more options":"mai multe opțiuni",
     "Admin":"",
-    "New Plant Parents / Species":"Părinți / Specii de Plante Noi",
+    "New Plant Parent / Specie":"Părinți / Specii de Plante Noi",
     "insert":"",
     "Insert":"",
     "Only 255 characters":"",
@@ -69,5 +69,6 @@
     "Locations/Sites":"",
     "Data":"",
     "Reports":"",
-    "Help":""
+    "Help":"",
+    "New Plant":""
 }
