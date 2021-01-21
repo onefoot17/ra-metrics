@@ -9,6 +9,8 @@ use App\Services\Users\Contracts\UserServiceInterface;
 use App\Repositories\Users\Contracts\UserRepositoryInterface;
 use App\Repositories\Users\Contracts\SettingRepositoryInterface;
 
+use App\Models\Setting;
+
 class UserService implements UserServiceInterface
 {
     public function __construct(
@@ -98,6 +100,9 @@ class UserService implements UserServiceInterface
             $insert = $validator->errors();
         } else {
             $insert = $this->UserRepositoryInterface->store($request);
+
+            $settings = new Setting([]);
+            $insert->settings()->save($settings);
         }
 
         return $insert;

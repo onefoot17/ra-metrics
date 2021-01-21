@@ -124,7 +124,11 @@
 
                                 <tr>
                                     <td class="ra__plants__table-alt__img-con">
-                                        <img src="{{ asset(Storage::url($plantParentsSpeciesCollection->image_path)) }}" alt="image" class="img-fluid rounded" />
+                                        @if(is_null($plantParentsSpeciesCollection->image_path))
+                                            <img src="{{ asset('images/black-and-white-flower.jpg') }}" alt="image" class="img-fluid rounded" />
+                                        @else
+                                            <img src="{{ asset(Storage::url($plantParentsSpeciesCollection->image_path)) }}" alt="image" class="img-fluid rounded" />
+                                        @endif
                                     </td>
 
                                     <td>

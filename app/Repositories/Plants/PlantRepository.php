@@ -30,6 +30,9 @@ class PlantRepository implements PlantRepositoryInterface {
         //$insert->plant_parent_specieid = $request->plant_parent_specieid;
         $insert->plant_typeid = $request->plant_typeid;
         $insert->comments = $comments;
+        $insert->plant_name = $request->plant_name;
+        $insert->cross = $request->cross;
+        $insert->image_path = $request->image_path;
         $insert->save();
 
         return $insert;
@@ -42,7 +45,10 @@ class PlantRepository implements PlantRepositoryInterface {
         $update = Plant::where('id', $id)
         ->update([
             'plant_typeid' => $request->plant_typeid,
-            'comments' => $comments
+            'comments' => $comments,
+            'plant_name' => $request->plant_name,
+            'cross' => $request->cross,
+            'image_path' => $request->image_path,
         ]);
 
         return $update;

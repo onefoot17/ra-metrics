@@ -60,6 +60,41 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="simpleinput">@lang('Plant Name')</label>
+                                        <input type="text" class="form-control @error('plant_name') is-invalid @enderror" name="plant_name" id='plant_name' value="{{$plant->plant_name}}" />
+                                        @error('plant_name')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="simpleinput">@lang('Cross')</label>
+                                        <input type="text" class="form-control @error('cross') is-invalid @enderror" name="cross" id='cross' value="{{$plant->cross}}" />
+                                        @error('cross')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>@lang('Image')</label>
+                                        <div class="input-group">
+                                            {{-- <div class="custom-file"> --}}
+                                                <input type="file" class="custom-file-input @error('image') is-invalid @enderror" id="plant_image" name="image" value="{{old('image')}}">
+                                                @error('image')
+                                                    <div class="invalid-feedback">
+                                                        {{$message}}
+                                                    </div>
+                                                @enderror
+                                                <label class="custom-file-label" for="plant_image">Choose file</label>
+                                            {{-- </div> --}}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="simpleinput">@lang('Comments')</label>
                                         <small class="f-s-12 text-grey-darker pull-right" style="font-size: 10px">@lang('(Only 255 characters)')</small>
                                         <textarea class="form-control @error('comments') is-invalid @enderror" rows="3" name='comments' id='comments'>{{$plant->comments}}</textarea>
@@ -112,6 +147,41 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="simpleinput">@lang('Plant Name')</label>
+                                        <input type="text" class="form-control @error('plant_name') is-invalid @enderror" name="plant_name" id='plant_name' value="{{old('plant_name')}}" />
+                                        @error('plant_name')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="simpleinput">@lang('Cross')</label>
+                                        <input type="text" class="form-control @error('cross') is-invalid @enderror" name="cross" id='cross' value="{{old('cross')}}" />
+                                        @error('cross')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>@lang('Image')</label>
+                                        <div class="input-group">
+                                            {{-- <div class="custom-file"> --}}
+                                                <input type="file" class="custom-file-input @error('image') is-invalid @enderror" id="plant_image" name="image" value="{{old('image')}}">
+                                                @error('image')
+                                                    <div class="invalid-feedback">
+                                                        {{$message}}
+                                                    </div>
+                                                @enderror
+                                                <label class="custom-file-label" for="plant_image">Choose file</label>
+                                            {{-- </div> --}}
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="simpleinput">@lang('Comments')</label>
                                         <small class="f-s-12 text-grey-darker pull-right" style="font-size: 10px">@lang('(Only 255 characters)')</small>
                                         <textarea class="form-control @error('comments') is-invalid @enderror" rows="3" name='comments' id='comments'>{{old('comments')}}</textarea>
@@ -144,8 +214,20 @@
                                 @php $ind++ @endphp
 
                                 <tr>
+                                    <td class="ra__plants__table-alt__img-con">
+                                        @if(is_null($plantsCollection->image_path))
+                                            <img src="{{ asset('images/black-and-white-flower.jpg') }}" alt="image" class="img-fluid rounded" />
+                                        @else
+                                            <img src="{{ asset(Storage::url($plantsCollection->image_path)) }}" alt="image" class="img-fluid rounded" />
+                                        @endif
+                                    </td>
+
                                     <td>
                                         <div class="d-flex flex-wrap justify-content-between h-100">
+                                            <strong>{{$plantsCollection->plant_name}}</strong>
+                                            <br>
+                                            {{$plantsCollection->cross}}
+                                            <br>
                                             <h5>
                                                 @foreach($plantsCollection->plantChildren as $ind => $plantChildrenCollection)
                                                     {{$plantChildrenCollection->plant_parent_name}} *

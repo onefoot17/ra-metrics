@@ -89,7 +89,7 @@ class PlantService implements PlantServiceInterface
     {
         $validator = Validator::make($request->all(), [
             'plant_parent_name' => 'required|min:5',
-            'image' => 'required',
+            //'image' => 'required',
             'comments' => 'min:5|max:255'
         ]);
 
@@ -106,9 +106,26 @@ class PlantService implements PlantServiceInterface
 
     public function saveImage($request)
     {
-        $path = Storage::disk('local')->putFile('public/images/plant_parents', $request->file('image'));
+        if(!is_null($request->file('image'))){
+            $path = Storage::disk('local')->putFile('public/images/plant_parents', $request->file('image'));
         
-        Storage::setVisibility($path, 'public');
+            Storage::setVisibility($path, 'public');
+        } else {
+            $path = null;
+        }        
+
+        return $path;
+    }
+
+    public function savePlantImages($request)
+    {
+        if(!is_null($request->file('image'))){
+            $path = Storage::disk('local')->putFile('public/images/plants', $request->file('image'));
+        
+            Storage::setVisibility($path, 'public');
+        } else {
+            $path = null;
+        }        
 
         return $path;
     }
@@ -168,7 +185,7 @@ class PlantService implements PlantServiceInterface
     {
         $validator = Validator::make($request->all(), [
             'characteristic' => 'required|min:3',
-            'comments' => 'min:3|max:255'
+            'comments' => 'min:3|max:255',
         ]);
 
         if($validator->fails()){
@@ -219,12 +236,25 @@ class PlantService implements PlantServiceInterface
         $validator = Validator::make($request->all(), [
             //'plant_parent_specieid' => 'required',
             'plant_typeid' => 'required',
-            'comments' => 'min:5|max:255'
+            'comments' => 'required|min:5|max:255',
+            'plant_name' => 'required|min:3|max:255'
         ]);
 
         if($validator->fails()){
             $update = $validator->errors();
         } else {
+
+            $current_image_path = $this->getPlant($id);
+
+            if(!is_null($request->image)){
+                $request->image_path = $this->savePlantImages($request);
+
+                Storage::delete($current_image_path->image_path);
+
+            } else {
+                $request->image_path = $current_image_path->image_path;
+            }
+
             $update[] = $this->plantRepository->update($request, $id);
             
             $this->plantChildRepository->deleteByPlantId($id);
@@ -243,12 +273,17 @@ class PlantService implements PlantServiceInterface
         $validator = Validator::make($request->all(), [
             'plant_parent_specieid' => 'required',
             'plant_typeid' => 'required',
-            'comments' => 'min:5|max:255'
+            'comments' => 'required|min:5|max:255',
+            'plant_name' => 'required|min:3|max:255'
         ]);
 
         if($validator->fails()){
             $insert = $validator->errors();
         } else {
+
+            $image_path = $this->savePlantImages($request);
+            $request->image_path = (!is_null($image_path))?$image_path:null;
+
             $insert[] = $this->plantRepository->store($request);
 
             $plant_parents_species_obj = $this->mountPlantChildObject($request, $insert[0]->id);
