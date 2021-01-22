@@ -790,12 +790,20 @@ body[data-sidebar-size=condensed] .ra__navbar__logo-box {
 .ra__plants__table-alt h5 {
   flex-basis: 50%;
   flex-shrink: 1;
-  line-height: 1;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 @media (max-width: 639px) {
   .ra__plants__table-alt h5 {
     flex-basis: 100%;
   }
+}
+.ra__plants__table-alt h6 {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+}
+.ra__plants__table-alt p {
+  margin-bottom: 1rem;
 }
 .ra__plants__table-alt form {
   display: flex;

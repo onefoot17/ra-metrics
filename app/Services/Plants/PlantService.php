@@ -108,11 +108,11 @@ class PlantService implements PlantServiceInterface
     {
         if(!is_null($request->file('image'))){
             $path = Storage::disk('local')->putFile('public/images/plant_parents', $request->file('image'));
-        
+
             Storage::setVisibility($path, 'public');
         } else {
             $path = null;
-        }        
+        }
 
         return $path;
     }
@@ -121,11 +121,11 @@ class PlantService implements PlantServiceInterface
     {
         if(!is_null($request->file('image'))){
             $path = Storage::disk('local')->putFile('public/images/plants', $request->file('image'));
-        
+
             Storage::setVisibility($path, 'public');
         } else {
             $path = null;
-        }        
+        }
 
         return $path;
     }
@@ -234,7 +234,7 @@ class PlantService implements PlantServiceInterface
     public function updatePlant($request, $id)
     {
         $validator = Validator::make($request->all(), [
-            //'plant_parent_specieid' => 'required',
+            'plant_parent_specieid' => 'required',
             'plant_typeid' => 'required',
             'comments' => 'required|min:5|max:255',
             'plant_name' => 'required|min:3|max:255'
@@ -256,7 +256,7 @@ class PlantService implements PlantServiceInterface
             }
 
             $update[] = $this->plantRepository->update($request, $id);
-            
+
             $this->plantChildRepository->deleteByPlantId($id);
 
             $plant_parents_species_obj = $this->mountPlantChildObject($request, $id);

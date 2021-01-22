@@ -342,11 +342,22 @@ a {
             h5 {
                 flex-basis: 50%;
                 flex-shrink: 1;
-                line-height: 1;
+                font-size: 1.8rem;
+                // line-height: 1;
+                margin-bottom: $margin;
 
                 @include for-640-down {
                     flex-basis: 100%;
                 }
+            }
+
+            h6 {
+                font-size: 1.6rem;
+                margin-bottom: $margin/4;
+            }
+
+            p {
+                margin-bottom: $margin;
             }
 
             form {

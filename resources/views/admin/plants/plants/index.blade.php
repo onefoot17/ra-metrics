@@ -22,7 +22,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title">@lang('New Plant')</h4>
-                    
+
                     @if(isset($plant))
                         <div class="row">
                             <div class="col-lg-12">
@@ -223,67 +223,82 @@
                                     </td>
 
                                     <td>
-                                        <div class="d-flex flex-wrap justify-content-between h-100">
-                                            <strong>{{$plantsCollection->plant_name}}</strong>
-                                            <br>
-                                            {{$plantsCollection->cross}}
-                                            <br>
-                                            <h5>
-                                                @foreach($plantsCollection->plantChildren as $ind => $plantChildrenCollection)
-                                                    {{$plantChildrenCollection->plant_parent_name}} *
-                                                @endforeach
-                                            </h5>
+                                        <section class="d-flex flex-wrap justify-content-between h-100">
+                                            <section>
+                                                @if ( !empty ( $plantsCollection->plant_name ) )
+                                                    <h5>{{ $plantsCollection->plant_name }}</h5>
+                                                @endif
 
-                                            <form method="POST" action="{{route('plant_destroy', [Request::segment(1), 'id' => $plantsCollection->id])}}" id='form-plant-{{$plantsCollection->id}}'>
-                                                @csrf
+                                                @if ( !empty ( $plantsCollection->cross ) )
+                                                    <h6>Cross</h6>
+                                                    <p>{{ $plantsCollection->cross }}</p>
+                                                @endif
 
-                                                <input type="hidden" name="_method" value="DELETE">
+                                                @if ( $plantsCollection->plantChildren->count() > 0 )
+                                                    <h6>Parents</h6>
+                                                    <p>
+                                                        @foreach( $plantsCollection->plantChildren as $ind => $plantChildrenCollection )
+                                                            <span>{{ $plantChildrenCollection->plant_parent_name }}@if ( $loop->iteration < $loop->count ), @endif </span>
+                                                        @endforeach
+                                                    </p>
+                                                @endif
 
-                                                <a href="#" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#modal-plant-{{$plantsCollection->id}}">@lang('More')</a>
+                                                @if ( !empty ( $plantsCollection->plantType->characteristic ) )
+                                                    <h6>Type</h6>
+                                                    <p class="text-truncate">{{ $plantsCollection->plantType->characteristic }} - {{ $plantsCollection->comments_less }}</p>
+                                                @endif
+                                            </section>
 
-                                                <!-- Modals -->
-                                                <div id="modal-plant-{{$plantsCollection->id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                                                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Plants list</h4>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                            </div>
-                                                            <div class="modal-body p-4">
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <div class="form-group no-margin">
-                                                                            <label for="field-7" class="control-label">@lang('Plant Parents'):</label>
-                                                                            @foreach($plantsCollection->plantChildren as $ind => $plantChildrenCollection)
-                                                                                <p>{{ $plantChildrenCollection->plant_parent_name }}</p>
-                                                                            @endforeach
-                                                                            <br>
-                                                                            <label for="field-7" class="control-label">@lang('Type'):</label>
-                                                                            <p>{{ $plantsCollection->plantType->characteristic }}</p>
-                                                                            <br>
-                                                                            <label for="field-7" class="control-label">@lang('Comments'):</label>
-                                                                            <p>{{ $plantsCollection->comments }}</p>
-                                                                            <br>
+                                            <section>
+                                                <form method="POST" action="{{route('plant_destroy', [Request::segment(1), 'id' => $plantsCollection->id])}}" id='form-plant-{{$plantsCollection->id}}'>
+                                                    @csrf
+
+                                                    <input type="hidden" name="_method" value="DELETE">
+
+                                                    <a href="#" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#modal-plant-{{$plantsCollection->id}}">@lang('More')</a>
+
+                                                    <!-- Modals -->
+                                                    <div id="modal-plant-{{$plantsCollection->id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title">Plants list</h4>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                                </div>
+                                                                <div class="modal-body p-4">
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group no-margin">
+                                                                                <label for="field-7" class="control-label">@lang('Plant Parents'):</label>
+                                                                                @foreach($plantsCollection->plantChildren as $ind => $plantChildrenCollection)
+                                                                                    <p>{{ $plantChildrenCollection->plant_parent_name }}</p>
+                                                                                @endforeach
+                                                                                <br>
+                                                                                <label for="field-7" class="control-label">@lang('Type'):</label>
+                                                                                <p>{{ $plantsCollection->plantType->characteristic }}</p>
+                                                                                <br>
+                                                                                <label for="field-7" class="control-label">@lang('Comments'):</label>
+                                                                                <p>{{ $plantsCollection->comments }}</p>
+                                                                                <br>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-danger waves-effect waves-light delete_data" data-dismiss="modal">@lang('Close')</button>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger waves-effect waves-light delete_data" data-dismiss="modal">@lang('Close')</button>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div><!-- /.modal -->
+                                                    </div><!-- /.modal -->
 
-                                                <!-- End of Modals-->
+                                                    <!-- End of Modals-->
 
-                                                <a href="{{route('plant_edit', [Request::segment(1), 'id' => $plantsCollection->id])}}" class="btn btn-success waves-effect waves-light">@lang('Edit')</a>
+                                                    <a href="{{route('plant_edit', [Request::segment(1), 'id' => $plantsCollection->id])}}" class="btn btn-success waves-effect waves-light">@lang('Edit')</a>
 
-                                                <a href="javascript:;" class="btn btn-danger waves-effect waves-light delete_data" variable-name='plant' plant='{{$plantsCollection->id}}' {{-- onclick="event.preventDefault(); this.closest('form').submit();" --}}>@lang('Delete')</a>
-                                            </form>
-
-                                            <p class="text-truncate">{{ $plantsCollection->plantType->characteristic }} - {{ $plantsCollection->comments_less }}</p>
-                                        </div>
+                                                    <a href="javascript:;" class="btn btn-danger waves-effect waves-light delete_data" variable-name='plant' plant='{{$plantsCollection->id}}' {{-- onclick="event.preventDefault(); this.closest('form').submit();" --}}>@lang('Delete')</a>
+                                                </form>
+                                            </section>
+                                        </tr>
                                     </td>
                                 </tr>
                             @endforeach
