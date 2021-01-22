@@ -269,6 +269,15 @@
                                                                     <div class="row">
                                                                         <div class="col-md-12">
                                                                             <div class="form-group no-margin">
+                                                                                <center>
+                                                                                    <img src="{{ asset(Storage::url($plantsCollection->image_path)) }}" alt="image" class="img-fluid rounded" />
+                                                                                </center>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group no-margin">
                                                                                 <label for="field-7" class="control-label">@lang('Plant Parents'):</label>
                                                                                 @foreach($plantsCollection->plantChildren as $ind => $plantChildrenCollection)
                                                                                     <p>{{ $plantChildrenCollection->plant_parent_name }}</p>

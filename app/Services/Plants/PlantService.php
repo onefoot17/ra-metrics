@@ -71,7 +71,8 @@ class PlantService implements PlantServiceInterface
             $current_image_path = $this->getPlantParentSpecie($id);
 
             if(!is_null($request->image)){
-                $request->image_path = $this->saveImage($request);
+                //$request->image_path = $this->saveImage($request);
+                $request->image_path = $this->resizeImage($request);
 
                 Storage::delete($current_image_path->image_path);
 
@@ -96,7 +97,8 @@ class PlantService implements PlantServiceInterface
         if($validator->fails()){
             $insert = $validator->errors();
         } else {
-            $image_path = $this->saveImage($request);
+            //$image_path = $this->saveImage($request);
+            $image_path = $this->resizeImage($request);
             $request->image_path = (!is_null($image_path))?$image_path:null;
             $insert = $this->plantParentSpecieRepository->store($request);
         }
@@ -110,6 +112,29 @@ class PlantService implements PlantServiceInterface
             $path = Storage::disk('local')->putFile('public/images/plant_parents', $request->file('image'));
 
             Storage::setVisibility($path, 'public');
+        } else {
+            $path = null;
+        }
+
+        return $path;
+    }
+
+    public function resizeImage($request, $width = 600, $height = 400)
+    {
+        if(!is_null($request->file('image'))){
+            $image = $request->file('image');
+            $input['imagename'] = time().'.'.$image->extension();
+            //$input['imagename'] = 'test.'.$image->extension();
+                
+            $destinationPath = public_path('storage/images/plants');
+            $img = \Image::make($image->path());
+            $img->resize($width, $height, function($constraint){
+                $constraint->aspectratio();
+                $constraint->upsize();
+            })->save($destinationPath.'/'.$input['imagename']); 
+
+            $path = 'public/images/plants/'.$input['imagename'];
+            
         } else {
             $path = null;
         }
@@ -247,7 +272,10 @@ class PlantService implements PlantServiceInterface
             $current_image_path = $this->getPlant($id);
 
             if(!is_null($request->image)){
-                $request->image_path = $this->savePlantImages($request);
+
+                $request->image_path = $request->image = $this->resizeImage($request);
+
+                //$request->image_path = $this->savePlantImages($request);
 
                 Storage::delete($current_image_path->image_path);
 
@@ -281,7 +309,8 @@ class PlantService implements PlantServiceInterface
             $insert = $validator->errors();
         } else {
 
-            $image_path = $this->savePlantImages($request);
+            //$image_path = $this->savePlantImages($request);
+            $image_path = $this->resizeImage($request);
             $request->image_path = (!is_null($image_path))?$image_path:null;
 
             $insert[] = $this->plantRepository->store($request);
