@@ -234,7 +234,7 @@ class PlantService implements PlantServiceInterface
     public function updatePlant($request, $id)
     {
         $validator = Validator::make($request->all(), [
-            //'plant_parent_specieid' => 'required',
+            'plant_parent_specieid' => 'required',
             'plant_typeid' => 'required',
             'comments' => 'required|min:5|max:255',
             'plant_name' => 'required|min:3|max:255'
